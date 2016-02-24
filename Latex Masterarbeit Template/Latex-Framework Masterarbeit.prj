@@ -1,0 +1,37 @@
+0 Patch Control
+
+1
+1
+1
+Latex-Framework Masterarbeit.tex
+5
+1
+0
+
+config.tex
+TeX:DE
+286273531 0 -1 0 -1 1065 78 78 766 656 0 145 374 -1 -1 0 0 49 -1 -1 49 1 0 1065 -1   0
+Latex-Framework Masterarbeit.tex
+TeX
+135278587 0 -1 0 -1 777 145 145 674 609 1 249 260 0 -1 -1 0 1214 -1 -1 49 1 0 777 -1   0
+literature.bib
+BibTeX
+1049586 2 0 949 0 1 52 52 740 630 0 25 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0   0
+source\content.tex
+TeX
+1060859 2 -1 103 -1 81 26 26 714 604 0 25 17 -1 -1 0 0 -1 -1 -1 -1 1 0 81 -1   0
+source\explanation.tex
+TeX
+269496315 0 -1 0 -1 0 104 104 792 682 0 25 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1   0
+
+*Latex-Framework Masterarbeit.tex
+>
+*config.tex
+*literature.bib
+*source/cover
+*source/explanation
+*source/abstract
+*source/lists
+*source/content
+*source/appendix
+<

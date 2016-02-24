@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mainfile for Reports and theses               %
+%                                               %
+% designed by Tobias Schmidt                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Klebebindung
+%\documentclass[a4paper, 11pt, abstract=true, oneside, BCOR=13mm, listof=totoc, bibliography=totoc]{scrreprt}
+
+% Ringbindung
+\documentclass[a4paper, 11pt, abstract=true, oneside, BCOR=6mm, listof=totoc, bibliography=totoc]{scrreprt}
+
+\input{config.tex} % Include style definitions
+\hyphenation{}
+\addbibresource{literature.bib}
+%
+%\includeonly{source/content}
+%
+\begin{document}
+\pagenumbering{roman}
+%
+%-------------------------
+% Cover
+%-------------------------
+\include{source/cover}
+%
+%-------------------------
+% Explanation
+%-------------------------
+\include{source/explanation}
+%
+%-------------------------
+% Abstract
+%-------------------------
+\include{source/abstract}
+%
+%-------------------------
+% Lists (TOC,LOF,LOT,...)
+%-------------------------
+\include{source/lists}
+%
+%-------------------------
+% Content
+%-------------------------
+\pagenumbering{arabic}
+
+\include{source/Introduction}
+\include{source/content}
+%
+%-------------------------
+% bibliography
+%-------------------------
+\printbibliography
+%
+%-------------------------
+% appendix
+%-------------------------
+\include{source/appendix}
+\end{document}

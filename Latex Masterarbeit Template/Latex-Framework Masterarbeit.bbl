@@ -1,0 +1,223 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{nyt}{nyt}
+    \entry{burch1999advisor}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=b1afb46e9b4f9043fe82b68a096cc9dd}{Burch}{B\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b218cee1d7dc79604f55a521337acd2c}{Cuddy}{C\bibinitperiod}{Matt}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1bbfff1f1f3cdb003b336ed31b4012f2}{Markel}{M\bibinitperiod}{T}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{debb6f31f67aebf5f5cb928e8d1d3cc2}
+      \strng{fullhash}{debb6f31f67aebf5f5cb928e8d1d3cc2}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1999}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{National Renewable Energy Laboratory}
+      \field{title}{ADVISOR 2.1 Documentation}
+      \field{year}{1999}
+    \endentry
+    \entry{chen2014game}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,hash=83702ad2b0cc9ef7ee381daa5f80b7f0}{Chen}{C\bibinitperiod}{H}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cc5e9c2c556fac09b49822965a3e01ff}{Kessels}{K\bibinitperiod}{JTBA}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a9c17924a0226d7b46f421da81f8ac85}{Donkers}{D\bibinitperiod}{MCF}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1ec6bdd250bd88f5355d39a988936133}{Weiland}{W\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{ba3828225ac4f92ab41909539471846d}
+      \strng{fullhash}{afe2b452dfa9a8671a350e1f274197c2}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Vehicle Power and Propulsion Conference (VPPC), 2014 IEEE}
+      \field{title}{Game-theoretic approach for complete vehicle energy management}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
+    \entry{chin2010design}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=f9e8c7e3d83f883b911cb7d2255ffc98}{Chin}{C\bibinitperiod}{Hubert\bibnamedelima H}{H\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=85496921025235a74602a412fdfbcb72}{Jafari}{J\bibinitperiod}{Ayat\bibnamedelima A}{A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{44d299eca6adaa15a7b9fdec534c1f0f}
+      \strng{fullhash}{44d299eca6adaa15a7b9fdec534c1f0f}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{System Theory (SSST), 2010 42nd Southeastern Symposium on}
+      \field{title}{Design of power controller for hybrid vehicle}
+      \field{year}{2010}
+      \field{pages}{165\bibrangedash 170}
+      \range{pages}{6}
+    \endentry
+    \entry{dextreit2014game}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=257b40dd3c4f3b9123f301d9d25182a6}{Dextreit}{D\bibinitperiod}{Clement}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4b725fa94ca3b124d9b203690f9ed582}{Kolmanovsky}{K\bibinitperiod}{Ilya\bibnamedelima V}{I\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{29186b330916e147724afaff8e090658}
+      \strng{fullhash}{29186b330916e147724afaff8e090658}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Control Systems Technology, IEEE Transactions on}
+      \field{number}{2}
+      \field{title}{Game theory controller for hybrid electric vehicles}
+      \field{volume}{22}
+      \field{year}{2014}
+      \field{pages}{652\bibrangedash 663}
+      \range{pages}{12}
+    \endentry
+    \entry{gielniak2004power}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=d0f67a3600eebf17ddb28012a250f80e}{Gielniak}{G\bibinitperiod}{Michael\bibnamedelima J}{M\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=86746437fa54cd171d02d25f501f5486}{Shen}{S\bibinitperiod}{Z\bibnamedelima John}{Z\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{561dc45a7c52ad3edb935a0d852db18c}
+      \strng{fullhash}{561dc45a7c52ad3edb935a0d852db18c}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Vehicular Technology Conference, 2004. VTC2004-Fall. 2004 IEEE 60th}
+      \field{title}{Power management strategy based on game theory for fuel cell hybrid electric vehicles}
+      \field{volume}{6}
+      \field{year}{2004}
+      \field{pages}{4422\bibrangedash 4426}
+      \range{pages}{5}
+    \endentry
+    \entry{lafrance1973electrical}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=2806d1c364ddb059d5b665d5d73f0b33}{LaFrance}{L\bibinitperiod}{RC}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=65ea84767ee572110f19d7dd87691449}{Schult}{S\bibinitperiod}{RW}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{29a97e6e63ac4e433deffcde9d2b50c3}
+      \strng{fullhash}{29a97e6e63ac4e433deffcde9d2b50c3}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{1973}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Vehicular Technology, IEEE Transactions on}
+      \field{number}{1}
+      \field{title}{Electrical systems for hybrid vehicles}
+      \field{volume}{22}
+      \field{year}{1973}
+      \field{pages}{13\bibrangedash 19}
+      \range{pages}{7}
+    \endentry
+    \entry{lemke1964equilibrium}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=52b3f4e2280b39c113b904f3315e504c}{Lemke}{L\bibinitperiod}{Carlton\bibnamedelima E}{C\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e7eafe2c2069c1a28e80f402cabdef11}{Howson}{H\bibinitperiod}{Joseph\bibnamedelima T}{J\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{Jr}{J\bibinitperiod}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{036f41d2d52a3a738619e70c76e4c9c3}
+      \strng{fullhash}{036f41d2d52a3a738619e70c76e4c9c3}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{1964}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for Industrial and Applied Mathematics}
+      \field{number}{2}
+      \field{title}{Equilibrium points of bimatrix games}
+      \field{volume}{12}
+      \field{year}{1964}
+      \field{pages}{413\bibrangedash 423}
+      \range{pages}{11}
+    \endentry
+    \entry{nash1951non}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{Nash}{N\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{833e110f2d339a9323ef95f850c110d3}
+      \strng{fullhash}{833e110f2d339a9323ef95f850c110d3}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelyear}{1951}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of mathematics}
+      \field{title}{Non-cooperative games}
+      \field{year}{1951}
+      \field{pages}{286\bibrangedash 295}
+      \range{pages}{10}
+    \endentry
+    \entry{von1952theory}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7def203b8ec7da1ce1ecfd50236086c9}{Von\bibnamedelima Stackelberg}{V\bibinitperiod\bibinitdelim S\bibinitperiod}{Heinrich}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{7def203b8ec7da1ce1ecfd50236086c9}
+      \strng{fullhash}{7def203b8ec7da1ce1ecfd50236086c9}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelyear}{1952}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The theory of the market economy}
+      \field{year}{1952}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,0 +1,241 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuration for Reports and bachelor thesis %
+%                                               %
+% designed by Tobias Schmidt                    %
+% filename: ./config.tex                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BOOL
+\usepackage{ifthen}                % Verwenden von bool'schen Variablen
+\newboolean{draft}
+\setboolean{draft}{false}          % F�r Finale Version: draft=false !!!
+\newcommand{\draftfoot}{\ifthenelse{\boolean{draft}}{\fancyfoot[CO]{Entwurf vom \today}\fancyfoot[CE]{}}{\fancyfoot{}}}
+%% END BOOL
+
+%% Schrift
+\usepackage{gensymb}
+\usepackage[latin1]{inputenc}       % Deklaration der Zeichenkodierung (u.a. f�r Umlaute)
+\usepackage[T1]{fontenc}
+\usepackage[english,UKenglish]{babel}
+%\renewcommand\dateUKenglish{\def\today{\number\day~%
+% \ifcase \month \or January\or February\or March\or April\or May\or June\or
+%   July\or August\or September\or October\or November\or December\fi\space
+% \number\year}}
+
+%\usepackage{dsfont}               % F�r eine mathematische Schrift
+\usepackage{amssymb}              % F�r mathematische Symbole
+\usepackage[tbtags]{amsmath}      % F�r mathematische Befehle
+\usepackage{amsthm}
+\let\mbf\mathbf
+\renewcommand*{\mathbf}[1]{\boldsymbol{\mbf{#1}}}
+%\newcommand{\thmautorefname}{Satz}
+%\newtheorem{thm}{\thmautorefname}
+%\usepackage{times}
+\usepackage{helvet}               % Arial bei sffamily
+\usepackage{xspace}               % Setzt Leerzeichen, wenn welche hingeh�ren
+%\usepackage{lscape}             % Teile des Dokuments in Querformat
+%\usepackage{longtable}            % Tabellen mit Seitenumbr�chen
+\usepackage{multirow}             % Tabellen
+%\usepackage{booktabs}             % -''-
+%\usepackage{multicol}             % -''-
+\usepackage{tabularx}             % -''-
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage[inline]{enumitem}     % Erm�glicht inline-lists  \begin{enumerate*}[label=\itshape\alph*\upshape)] \item ... \end{enumerate*}
+
+\usepackage[
+	german,                        % deutsche �berschrift
+	intoc,                           % Im Inhaltsverzeichnis
+%	noprefix,                      % ohne Sortiergruppenangabe
+%	refpage,                       % mit Seitenangabe
+]{nomencl}              % Abk�rzungsverzeichnis
+\setlength{\nomitemsep}{-\parsep} % kein zus�tzlicher Abstand zwischen zwei Eintr�gen
+\setlength{\nomlabelwidth}{6em}
+\renewcommand{\nomname}{Abk�rzungs- und Zeichenverzeichnis}
+\RequirePackage{ifthen}
+\renewcommand{\nomgroup}[1]{%
+\ifthenelse{\equal{#1}{A}}{\item[\hspace*{10pt}\textbf{Abk�rzungen}]\medskip}{%
+\ifthenelse{\equal{#1}{B}}{\item[\hspace*{10pt}\textbf{Symbole}]\medskip}{%
+\ifthenelse{\equal{#1}{C}}{\item[\hspace*{10pt}\textbf{Variablen}]\medskip}{}%
+}}}
+\makenomenclature
+\newcommand{\abk}[2]{#1\nomenclature[A]{#1}{#2}}
+\newcommand{\rabk}[2]{#1\nomenclature[A]{#2}{#1}}
+\newcommand{\var}[2]{\nomenclature[C]{#1}{#2}}
+\newcommand{\sym}[2]{\nomenclature[B]{#1}{#2}}
+
+% Glossar mit referenzierter Seitenangabe (wirft Warnings bei mehreren Abk�rzungen auf der selben Seite)
+%\renewcommand{\pagedeclaration}[1]{\hfill Seite \pageref{glossar#1}}
+%\newcommand{\abk}[2]{#1\nomenclature{#1}{#2}\label{glossar\thepage}}
+%\newcommand{\rabk}[2]{#1\nomenclature{#2}{#1}\label{glossar\thepage}}
+
+%% Bibliographie mit BibLaTex und Biber
+\usepackage[autostyle, german=quotes]{csquotes}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+style=authoryear,
+natbib=true,
+]{biblatex}
+ 
+%\DefineBibliographyStrings{german}{andothers={et\addabbrvspace al\adddot}}
+
+\usepackage[
+	format=plain                % Text unter Bezeichner
+	, labelfont=bf              % Bezeichner fett
+	, font={
+		it                      % Alles ist kursiv
+		, small                 % Text kleiner
+		, singlespacing         % Einfacher Zeilenabstand
+	}
+	, width=.9\textwidth,       % Schmaler als Textbreite
+	, justification=raggedright % Text ist linksb�ndig
+	, skip=5mm                  % Abstand von Beschriftung zu Objekt
+]{caption,subcaption}           % Bild- und Tabellenunterschrift
+\usepackage{flafter} % Place floatings after reference
+%\captionsetup[sub]{
+%    subrefformat=parens       % subref{} in Klammern
+%}
+
+%\usepackage{subfig}
+%\newcommand{\subfigureautorefname}{\figureautorefname}
+
+%% Grafiken und Farbe
+\usepackage{graphicx}       % Einbindung von extern erzeugten .png Grafiken
+\usepackage{xcolor}         % Farbige Schrift
+
+\usepackage{fancyhdr}       % Kopf- und Fu�zeilen
+\pagestyle{fancy}           % Unterkapitelzahl in Kopfzeile links, Kapitel rechts
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{\chaptertitlename} \thechapter{} -- #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection{} #1}{}}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[RE]{\rightmark}
+\draftfoot
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+\draftfoot
+}
+\fancypagestyle{empty}{%
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\draftfoot
+}
+
+\setcounter{secnumdepth}{2}           % Grad, bis zu dem Bezifferung erfolgt (0=Chapter, 1=Section, 2=Subsection, ...)
+\setcounter{tocdepth}{2}              % Tiefe, bis zu der Eintrag ins Inhaltsverzeichnis
+\usepackage[onehalfspacing]{setspace} % 1,5facher Zeilenabstand
+\setlength{\parindent}{0pt}           % Erste Zeile im Absatz nicht einr�cken
+\parskip 1.6ex                        % Abstand zwischen den Abs�tzen
+
+%% Enable continuous footnote counting
+\usepackage{remreset}
+\makeatletter\@removefromreset{footnote}{chapter}\makeatother
+
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+% Kontrolliert Silbentrennung ([none]: keine Trennung im gesamten Text, \nohyphens{lalala}: keine Silbentrennung in lalala)
+% \usepackage{hyphenat}
+
+% Weniger Worttrennungen, daf�r gr��erer Wortabstand
+\sloppy
+
+\renewcommand{\floatpagefraction}{.7} % Bild erst auf eigene Seite, wenn 60% der Seite einnehmen.
+
+%% Quellcode
+\usepackage{color, listings}          % Quellcode einbinden
+\definecolor{olivegreen}{cmyk}{.25,0,1,.5}
+\definecolor{froggreen}{cmyk}{1,0,1,.25}
+\definecolor{dark_orange}{cmyk}{0,.5,1,.16}
+\usepackage{courier}                  % Courier als tt-Schriftart
+% http://blog.robert-kummer.de/2006/04/latex-quellcode-listing.html
+\lstdefinestyle{none}{
+	basicstyle=\ttfamily\scriptsize % Schriftart und -gr��e
+	, breaklines=true               % Zeilen werden umgebrochen
+%	, aboveskip=10pt                % Abstand nach oben
+%	, belowskip=-1pt                % Abstand nach unten
+	, fontadjust                    % Keine Blockausrichtung
+	, showstringspaces=false        % Leerzeichen im String
+	, captionpos=t                  % Beschreibung oben
+	, tabsize=2
+	, escapeinside={(*@}{@*)}       % Listing unterbrochen zwischen (*@ und @*)
+}
+\lstdefinestyle{default}{
+	style = none
+	, frame=single                  % Einfacher Rahmen
+	, rulecolor=\color{black}       % Rahmenfarbe
+	, numbers=left                  % Zeilennummern links
+	, numberstyle=\tiny             % Zeilennummernschrift klein
+	, numbersep=5pt                 % Zeilennummernabstand zum Listing
+	, stringstyle=\color{orange}    % Farbe der Zeichenketten
+	, commentstyle=\color{gray}     % Farbe der Kommentare
+  , float=tbh                     % Packe Listing in Float-Umgebung
+}
+\lstdefinestyle{c}{
+	style=default                       % Verwende defaultstyle
+	, emphstyle=\bfseries\ttfamily
+	, language=c                        % C
+	, commentstyle=\color{froggreen}
+	, keywordstyle=[1]\color{blue}
+    , morekeywords=[1]{__attribute__, byte, GPS_Pos_t, WPoint_t,  UART_VersionInfo_t, GPS_PosDev_t, NaviData_t, WPointResponse_t, size_t}
+    , emph={public, private, class}
+}
+\lstdefinestyle{line}{basicstyle=\ttfamily\small,breaklines=true,fontadjust}
+\newcommand{\inlcode}[1]{\lstinline[style=line]|#1|}
+
+% Paket f�r benutzerdefinierte Formatierung der �berschriften
+\usepackage{titlesec}
+\newcommand{\formatchaptertitle}[1]{\parbox[t]{\dimexpr\textwidth-10pt}{\raggedright#1}}
+\titleformat{\chapter}[block]
+{\Huge\bf\sffamily}
+{\llap{\color{gray}\fontsize{60}{60}\usefont{U}{eur}{b}{n}\thechapter\hspace{10pt}\vline}}
+{10pt}
+{\formatchaptertitle}
+
+%% Links und Urls
+\usepackage%
+%[
+%	pdftitle             = {Tobias\ Schmidt\ -\ Projektpraktikum}
+%	, pdfauthor          = {Tobias Schmidt}
+%	, breaklinks         = true
+%]%
+{hyperref}
+\urlstyle{same}
+\usepackage[
+    open=true       % Lesezeichen aufklappen
+    , openlevel=1   % Ge�ffnete Ebene der Lesezeichen (0=chapter, 1=section)
+]{bookmark}
+
+% Rename autorefnames
+\addto\extrasngerman{%
+\def\subsectionautorefname{\sectionautorefname}%
+\def\subsubsectionautorefname{\sectionautorefname}%
+}
+
+\usepackage{scrhack}
+
+\newcommand{\visit}[1]{; letzter Zugriff: #1}
+\newcommand{\Kommentar}[1]{\ifthenelse{\boolean{draft}}{\emph{\color{gray} Anm.: #1}}{}}
+\newcommand{\TODO}[1]{\ifthenelse{\boolean{draft}}{\par\emph{
+\colorbox{pink}{\textbf{TODO #1}}}\par}{}}
+\newcommand{\itembf}[1]{\item \textbf{#1}\newline}
+\newcommand{\ignore}[1]{}
+
+% Abk�rzungen
+\newcommand{\bspw}{beispielsweise\xspace}
+\newcommand{\ua}{u.\,a.\xspace}
+%\newcommand{\idR}{i.\,d.\,R.\xspace}
+\newcommand{\idR}{in der Regel\xspace}
+\newcommand{\sog}{so genannte\xspace}
+\newcommand{\zB}{z.\,B.\xspace}
+\newcommand{\usw}{usw.\xspace}
+\newcommand{\bzw}{bzw.\xspace}
+\newcommand{\etal}{et al.\xspace}
+\newcommand{\bzgl}{bzgl.\xspace}

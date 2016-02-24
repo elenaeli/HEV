@@ -1,0 +1,27 @@
+[0] Config.pm:327> INFO - This is Biber 2.3
+[1] Config.pm:330> INFO - Logfile is 'Latex-Framework Masterarbeit.blg'
+[101] biber-MSWIN:284> INFO - === 
+[145] Biber.pm:346> INFO - Reading 'Latex-Framework Masterarbeit.bcf'
+[373] Biber.pm:689> INFO - Found 9 citekeys in bib section 0
+[384] Biber.pm:3066> INFO - Processing section 0
+[422] Biber.pm:3206> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[429] bibtex.pm:1062> INFO - Decoding LaTeX character macros into UTF-8
+[431] bibtex.pm:923> INFO - Found BibTeX data source 'literature.bib'
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 9, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 15, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 25, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 34, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 44, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 50, warning: 1 characters of junk seen at toplevel
+[456] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 59, warning: 1 characters of junk seen at toplevel
+[457] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 67, warning: 1 characters of junk seen at toplevel
+[457] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 75, warning: 1 characters of junk seen at toplevel
+[457] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 85, warning: 1 characters of junk seen at toplevel
+[457] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\cnNFeJums1\literature.bib_6020.utf8, line 93, warning: 1 characters of junk seen at toplevel
+[719] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[719] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[719] Biber.pm:2943> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[720] Biber.pm:2947> INFO - No sort tailoring available for locale 'en-UK'
+[749] bbl.pm:505> INFO - Writing 'Latex-Framework Masterarbeit.bbl' with encoding 'latin1'
+[752] bbl.pm:596> INFO - Output to Latex-Framework Masterarbeit.bbl
+[757] Biber.pm:107> INFO - WARNINGS: 11

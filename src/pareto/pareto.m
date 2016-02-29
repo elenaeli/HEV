@@ -1,4 +1,4 @@
-function [ parA, parB ] = pareto( payoff )
+function [ parA, parB ] = paretoSet( payoff )
 [k,l] = size(payoff);
 M = zeros(k,l); 
 E = zeros(k,l);
@@ -28,7 +28,7 @@ Mrow=[]; Mcol=[];
 Erow=[]; Ecol=[];
 
 for i = 1 : max([k l])    
-    [Mrow, Mcol] = find(tmpM == min(min(tmpM)));
+    [Mrow, Mcol] = find(tmpM == min(min(tmpM)))
     indELess = find(tmpE < tmpE(Mrow,Mcol));
 
     if isempty(indELess)       
@@ -45,7 +45,7 @@ for i = 1 : max([k l])
     if (~isempty(indMLess) && ~isempty(indELess))       
         break; 
     end
-end
+%end
 
 plot(x,y,'-o')
 title('Game payoffs')

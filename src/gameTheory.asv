@@ -1,15 +1,17 @@
 function [engineTorque, motorTorque] = gameTheory(torque)
+
+addpath(genpath('src\fuel and emissions'));
 fuel
 exhaustEmis
-%torque = 87;
+torque = 189;
 engineSpeedRadPerS = 500;
 engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
 SOC_deviation = 0.05;
 maxEngineTorque = 136;
 maxMotorTorque = 400;
 maxRPM = 6000;
-M = 20;
-N = 20;
+M = 60;
+N = 60;
 payoffMotor = zeros(M+1,N+1);
 payoffEngine = zeros(M+1,N+1);
 percentage = 0:(1/M):1;
@@ -23,7 +25,6 @@ tmpTorque = repmat(strategyEng',1,M+1);
 
 tmpS = abs(FuelConsTable.speed - engineSpeedRadRPM);
 [~, idxS ] = min(tmpS);
-lookupSpeed = FuelConsTable.speed(idxS);
 
 for i = 1:M+1
     for j = 1:N+1
@@ -50,14 +51,9 @@ wHC = 45;
 for i = 1:M+1
     for j = 1:N+1
         tmpT = abs(FuelConsTable.torque - strategyEng(j));
-        [~, idxT] = min(tmpT);
-        lookupTorque = FuelConsTable.torque(idxT);
-        idxT;
-        idxS;
+        [~, idxT] = min(tmpT);      
         fuelConsumedGPS = FuelConsTable.lookupTableFuel(idxT, idxS);
-        powerKW = FuelConsTable.lookupTablePower(idxT,idxS);
-        wPower*powerKW;
-        wFuel*fuelConsumedGPS;
+        powerKW = FuelConsTable.lookupTablePower(idxT,idxS);  
         HCEmissions = GasEmisTable.lookupTableHC(idxT, idxS);
         COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
         NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);
@@ -66,12 +62,13 @@ for i = 1:M+1
     end
 end
 
-%[paretoFront, paretoIndices] = paretoEfficiency([payoffMotor payoffEngine]);
-%payoffEngine = payoffMotor';
-%[paretoFrontEng, paretoIndicesEng] = paretoEfficiency(payoffEngine);
-
 payoffBoth = reshape([payoffMotor;payoffEngine],size(payoffMotor,1),[]);
+payoff = zeros(
 payoff = mat2cell(payoffBoth, ones(1,M+1), ones(1,M+1).*2);
-[pareto paretoString] = paretoSet(payoff)
+[pareto, paretoString] = paretoSet(payoff);
+pareto
+paretoString
 
+motorTorque = strategyMot(pareto(1));
+engineTorque = strategyEng(pareto(2));
 end

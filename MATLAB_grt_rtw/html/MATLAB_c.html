@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/coder_app.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./rtwreport_utils.js"></script>
+<script type="text/javascript" src="./rtwannotate.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/coder_app.css"/>
+</head>
+<body onload="srcFileOnload();">
+<pre id="code">
+<table class="code" id="codeTbl">
+<tr name="1" id="1">
+<td>1</td><td><span class="ct">/*</span></td></tr>
+<tr name="2" id="2">
+<td>2</td><td><span class="ct"> * MATLAB.c</span></td></tr>
+<tr name="3" id="3">
+<td>3</td><td><span class="ct"> *</span></td></tr>
+<tr name="4" id="4">
+<td>4</td><td><span class="ct"> * Academic License - for use in teaching, academic research, and meeting</span></td></tr>
+<tr name="5" id="5">
+<td>5</td><td><span class="ct"> * course requirements at degree granting institutions only.  Not for</span></td></tr>
+<tr name="6" id="6">
+<td>6</td><td><span class="ct"> * government, commercial, or other organizational use.</span></td></tr>
+<tr name="7" id="7">
+<td>7</td><td><span class="ct"> *</span></td></tr>
+<tr name="8" id="8">
+<td>8</td><td><span class="ct"> * Code generation for model "MATLAB".</span></td></tr>
+<tr name="9" id="9">
+<td>9</td><td><span class="ct"> *</span></td></tr>
+<tr name="10" id="10">
+<td>10</td><td><span class="ct"> * Model version              : 1.108</span></td></tr>
+<tr name="11" id="11">
+<td>11</td><td><span class="ct"> * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015</span></td></tr>
+<tr name="12" id="12">
+<td>12</td><td><span class="ct"> * C source code generated on : Wed Mar 02 10:42:27 2016</span></td></tr>
+<tr name="13" id="13">
+<td>13</td><td><span class="ct"> *</span></td></tr>
+<tr name="14" id="14">
+<td>14</td><td><span class="ct"> * Target selection: grt.tlc</span></td></tr>
+<tr name="15" id="15">
+<td>15</td><td><span class="ct"> * Note: GRT includes extra infrastructure and instrumentation for prototyping</span></td></tr>
+<tr name="16" id="16">
+<td>16</td><td><span class="ct"> * Embedded hardware selection: 32-bit Generic</span></td></tr>
+<tr name="17" id="17">
+<td>17</td><td><span class="ct"> * Code generation objectives: Unspecified</span></td></tr>
+<tr name="18" id="18">
+<td>18</td><td><span class="ct"> * Validation result: Not run</span></td></tr>
+<tr name="19" id="19">
+<td>19</td><td><span class="ct"> */</span></td></tr>
+<tr name="20" id="20">
+<td>20</td><td></td></tr>
+<tr name="21" id="21">
+<td>21</td><td><span class="pp">#include "MATLAB.h"</span></td></tr>
+<tr name="22" id="22">
+<td>22</td><td><span class="pp">#include "MATLAB_private.h"</span></td></tr>
+<tr name="23" id="23">
+<td>23</td><td></td></tr>
+<tr name="24" id="24">
+<td>24</td><td><span class="ct">/* Block signals (auto storage) */</span></td></tr>
+<tr name="25" id="25">
+<td>25</td><td><a id="25c1" class="tk">B_MATLAB_T</a> <a id="25c12" class="tk">MATLAB_B</a>;</td></tr>
+<tr name="26" id="26">
+<td>26</td><td></td></tr>
+<tr name="27" id="27">
+<td>27</td><td><span class="ct">/* External inputs (root inport signals with auto storage) */</span></td></tr>
+<tr name="28" id="28">
+<td>28</td><td><a id="28c1" class="tk">ExtU_MATLAB_T</a> <a id="28c15" class="tk">MATLAB_U</a>;</td></tr>
+<tr name="29" id="29">
+<td>29</td><td></td></tr>
+<tr name="30" id="30">
+<td>30</td><td><span class="ct">/* External outputs (root outports fed by signals with auto storage) */</span></td></tr>
+<tr name="31" id="31">
+<td>31</td><td><a id="31c1" class="tk">ExtY_MATLAB_T</a> <a id="31c15" class="tk">MATLAB_Y</a>;</td></tr>
+<tr name="32" id="32">
+<td>32</td><td></td></tr>
+<tr name="33" id="33">
+<td>33</td><td><span class="ct">/* Real-time model */</span></td></tr>
+<tr name="34" id="34">
+<td>34</td><td><a id="34c1" class="tk">RT_MODEL_MATLAB_T</a> <a id="34c19" class="tk">MATLAB_M_</a>;</td></tr>
+<tr name="35" id="35">
+<td>35</td><td><a id="35c1" class="tk">RT_MODEL_MATLAB_T</a> *<span class="kw">const</span> <a id="35c26" class="tk">MATLAB_M</a> = &amp;<a id="35c38" class="tk">MATLAB_M_</a>;</td></tr>
+<tr name="36" id="36">
+<td>36</td><td></td></tr>
+<tr name="37" id="37">
+<td>37</td><td><span class="ct">/* Forward declaration for local functions */</span></td></tr>
+<tr name="38" id="38">
+<td>38</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="38c13" class="tk">MATLAB_repmat</a>(<span class="kw">const</span> <a id="38c33" class="tk">real_T</a> <a id="38c40" class="tk">a</a>[61], <a id="38c47" class="tk">real_T</a> <a id="38c54" class="tk">b</a>[3721]);</td></tr>
+<tr name="39" id="39">
+<td>39</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="39c13" class="tk">MATLAB_paretoSet</a>(<span class="kw">const</span> <a id="39c36" class="tk">real_T</a> <a id="39c43" class="tk">payoff</a>[7442], <a id="39c57" class="tk">real_T</a> <a id="39c64" class="tk">pareto_data</a>[],</td></tr>
+<tr name="40" id="40">
+<td>40</td><td>  <a id="40c3" class="tk">int32_T</a> <a id="40c11" class="tk">pareto_sizes</a>[2]);</td></tr>
+<tr name="41" id="41">
+<td>41</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="41c13" class="tk">MATLAB_abs</a>(<span class="kw">const</span> <a id="41c30" class="tk">real_T</a> <a id="41c37" class="tk">x</a>[10], <a id="41c44" class="tk">real_T</a> <a id="41c51" class="tk">y</a>[10]);</td></tr>
+<tr name="42" id="42">
+<td>42</td><td></td></tr>
+<tr name="43" id="43">
+<td>43</td><td><span class="ct">/* Function for MATLAB Function: '&lt;Root&gt;/MATLAB Function' */</span></td></tr>
+<tr name="44" id="44">
+<td>44</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="44c13" class="tk">MATLAB_repmat</a>(<span class="kw">const</span> <a id="44c33" class="tk">real_T</a> <a id="44c40" class="tk">a</a>[61], <a id="44c47" class="tk">real_T</a> <a id="44c54" class="tk">b</a>[3721])</td></tr>
+<tr name="45" id="45">
+<td>45</td><td><span class="br">{</span></td></tr>
+<tr name="46" id="46">
+<td>46</td><td>  <a id="46c3" class="tk">int32_T</a> <a id="46c11" class="tk">ibtile</a>;</td></tr>
+<tr name="47" id="47">
+<td>47</td><td>  <a id="47c3" class="tk">int32_T</a> <a id="47c11" class="tk">jtilecol</a>;</td></tr>
+<tr name="48" id="48">
+<td>48</td><td>  <span class="kw">for</span> (<a id="48c8" class="tk">jtilecol</a> = 0; <a id="48c22" class="tk">jtilecol</a> &lt; 61; <a id="48c37" class="tk">jtilecol</a>++) <span class="br">{</span></td></tr>
+<tr name="49" id="49">
+<td>49</td><td>    <a id="49c5" class="tk">ibtile</a> = <a id="49c14" class="tk">jtilecol</a> * 61;</td></tr>
+<tr name="50" id="50">
+<td>50</td><td>    <a id="50c5" class="tk">memcpy</a>(&amp;<a id="50c13" class="tk">b</a>[<a id="50c15" class="tk">ibtile</a>], &amp;<a id="50c25" class="tk">a</a>[0], 61U * <span class="kw">sizeof</span>(<a id="50c44" class="tk">real_T</a>));</td></tr>
+<tr name="51" id="51">
+<td>51</td><td>  <span class="br">}</span></td></tr>
+<tr name="52" id="52">
+<td>52</td><td><span class="br">}</span></td></tr>
+<tr name="53" id="53">
+<td>53</td><td></td></tr>
+<tr name="54" id="54">
+<td>54</td><td><span class="ct">/* Function for MATLAB Function: '&lt;Root&gt;/MATLAB Function' */</span></td></tr>
+<tr name="55" id="55">
+<td>55</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="55c13" class="tk">MATLAB_paretoSet</a>(<span class="kw">const</span> <a id="55c36" class="tk">real_T</a> <a id="55c43" class="tk">payoff</a>[7442], <a id="55c57" class="tk">real_T</a> <a id="55c64" class="tk">pareto_data</a>[],</td></tr>
+<tr name="56" id="56">
+<td>56</td><td>  <a id="56c3" class="tk">int32_T</a> <a id="56c11" class="tk">pareto_sizes</a>[2])</td></tr>
+<tr name="57" id="57">
+<td>57</td><td><span class="br">{</span></td></tr>
+<tr name="58" id="58">
+<td>58</td><td>  <a id="58c3" class="tk">int8_T</a> <a id="58c10" class="tk">paretoIndex</a>[2];</td></tr>
+<tr name="59" id="59">
+<td>59</td><td>  <a id="59c3" class="tk">int32_T</a> not;</td></tr>
+<tr name="60" id="60">
+<td>60</td><td>  <a id="60c3" class="tk">int32_T</a> <a id="60c11" class="tk">flag</a>;</td></tr>
+<tr name="61" id="61">
+<td>61</td><td>  <a id="61c3" class="tk">int32_T</a> <a id="61c11" class="tk">m</a>;</td></tr>
+<tr name="62" id="62">
+<td>62</td><td>  <a id="62c3" class="tk">int32_T</a> <a id="62c11" class="tk">n</a>;</td></tr>
+<tr name="63" id="63">
+<td>63</td><td>  <a id="63c3" class="tk">int32_T</a> <a id="63c11" class="tk">nb</a>;</td></tr>
+<tr name="64" id="64">
+<td>64</td><td>  <a id="64c3" class="tk">int32_T</a> <a id="64c11" class="tk">k</a>;</td></tr>
+<tr name="65" id="65">
+<td>65</td><td>  <a id="65c3" class="tk">boolean_T</a> <a id="65c13" class="tk">exitg1</a>;</td></tr>
+<tr name="66" id="66">
+<td>66</td><td>  <a id="66c3" class="tk">boolean_T</a> <a id="66c13" class="tk">exitg2</a>;</td></tr>
+<tr name="67" id="67">
+<td>67</td><td>  <a id="67c3" class="tk">real_T</a> <a id="67c10" class="tk">b_data</a>[2];</td></tr>
+<tr name="68" id="68">
+<td>68</td><td>  <a id="68c3" class="tk">real_T</a> <a id="68c10" class="tk">ycol_data</a>;</td></tr>
+<tr name="69" id="69">
+<td>69</td><td>  <span class="kw">for</span> (<a id="69c8" class="tk">k</a> = 0; <a id="69c15" class="tk">k</a> &lt; 61; <a id="69c23" class="tk">k</a>++) <span class="br">{</span></td></tr>
+<tr name="70" id="70">
+<td>70</td><td>    <span class="kw">for</span> (<a id="70c10" class="tk">nb</a> = 0; <a id="70c18" class="tk">nb</a> &lt; 122; <a id="70c28" class="tk">nb</a>++) <span class="br">{</span></td></tr>
+<tr name="71" id="71">
+<td>71</td><td>      <a id="71c7" class="tk">MATLAB_B</a>.<a id="71c16" class="tk">M</a>[<a id="71c18" class="tk">k</a> + 61 * <a id="71c27" class="tk">nb</a>] = <a id="71c33" class="tk">payoff</a>[(((1 + <a id="71c47" class="tk">k</a>) &lt;&lt; 1) + 61 * <a id="71c63" class="tk">nb</a>) - 1];</td></tr>
+<tr name="72" id="72">
+<td>72</td><td>      <a id="72c7" class="tk">MATLAB_B</a>.<a id="72c16" class="tk">E</a>[<a id="72c18" class="tk">k</a> + 61 * <a id="72c27" class="tk">nb</a>] = <a id="72c33" class="tk">payoff</a>[((1 + <a id="72c46" class="tk">k</a>) &lt;&lt; 1) + 61 * <a id="72c62" class="tk">nb</a>];</td></tr>
+<tr name="73" id="73">
+<td>73</td><td>    <span class="br">}</span></td></tr>
+<tr name="74" id="74">
+<td>74</td><td>  <span class="br">}</span></td></tr>
+<tr name="75" id="75">
+<td>75</td><td></td></tr>
+<tr name="76" id="76">
+<td>76</td><td>  <span class="ct">/*  connect last point to first in the graph */</span></td></tr>
+<tr name="77" id="77">
+<td>77</td><td>  <a id="77c3" class="tk">paretoIndex</a>[0] = 0;</td></tr>
+<tr name="78" id="78">
+<td>78</td><td>  <a id="78c3" class="tk">paretoIndex</a>[1] = 0;</td></tr>
+<tr name="79" id="79">
+<td>79</td><td>  <a id="79c3" class="tk">pareto_data</a>[0] = 0.0;</td></tr>
+<tr name="80" id="80">
+<td>80</td><td>  <a id="80c3" class="tk">pareto_data</a>[1] = 0.0;</td></tr>
+<tr name="81" id="81">
+<td>81</td><td>  <span class="kw">for</span> (<a id="81c8" class="tk">k</a> = 0; <a id="81c15" class="tk">k</a> &lt; 61; <a id="81c23" class="tk">k</a>++) <span class="br">{</span></td></tr>
+<tr name="82" id="82">
+<td>82</td><td>    <span class="kw">for</span> (<a id="82c10" class="tk">nb</a> = 0; <a id="82c18" class="tk">nb</a> &lt; 122; <a id="82c28" class="tk">nb</a>++) <span class="br">{</span></td></tr>
+<tr name="83" id="83">
+<td>83</td><td>      not = 0;</td></tr>
+<tr name="84" id="84">
+<td>84</td><td>      <a id="84c7" class="tk">flag</a> = 0;</td></tr>
+<tr name="85" id="85">
+<td>85</td><td>      <a id="85c7" class="tk">m</a> = 0;</td></tr>
+<tr name="86" id="86">
+<td>86</td><td>      <a id="86c7" class="tk">exitg1</a> = false;</td></tr>
+<tr name="87" id="87">
+<td>87</td><td>      <span class="kw">while</span> ((!<a id="87c16" class="tk">exitg1</a>) &amp;&amp; (<a id="87c28" class="tk">m</a> &lt; 61)) <span class="br">{</span></td></tr>
+<tr name="88" id="88">
+<td>88</td><td>        <a id="88c9" class="tk">n</a> = 0;</td></tr>
+<tr name="89" id="89">
+<td>89</td><td>        <a id="89c9" class="tk">exitg2</a> = false;</td></tr>
+<tr name="90" id="90">
+<td>90</td><td>        <span class="kw">while</span> ((!<a id="90c18" class="tk">exitg2</a>) &amp;&amp; (<a id="90c30" class="tk">n</a> &lt; 122)) <span class="br">{</span></td></tr>
+<tr name="91" id="91">
+<td>91</td><td>          <span class="kw">if</span> ((<a id="91c16" class="tk">MATLAB_B</a>.<a id="91c25" class="tk">E</a>[61 * <a id="91c32" class="tk">nb</a> + <a id="91c37" class="tk">k</a>] &gt; <a id="91c42" class="tk">MATLAB_B</a>.<a id="91c51" class="tk">E</a>[61 * <a id="91c58" class="tk">n</a> + <a id="91c62" class="tk">m</a>]) &amp;&amp; (<a id="91c70" class="tk">MATLAB_B</a>.<a id="91c79" class="tk">M</a></td></tr>
+<tr name="92" id="92">
+<td>92</td><td>               [61 * <a id="92c22" class="tk">nb</a> + <a id="92c27" class="tk">k</a>] &gt; <a id="92c32" class="tk">MATLAB_B</a>.<a id="92c41" class="tk">M</a>[61 * <a id="92c48" class="tk">n</a> + <a id="92c52" class="tk">m</a>])) <span class="br">{</span></td></tr>
+<tr name="93" id="93">
+<td>93</td><td>            not = 1;</td></tr>
+<tr name="94" id="94">
+<td>94</td><td>            <a id="94c13" class="tk">flag</a> = 1;</td></tr>
+<tr name="95" id="95">
+<td>95</td><td>            <a id="95c13" class="tk">exitg2</a> = true;</td></tr>
+<tr name="96" id="96">
+<td>96</td><td>          <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="97" id="97">
+<td>97</td><td>            <a id="97c13" class="tk">n</a>++;</td></tr>
+<tr name="98" id="98">
+<td>98</td><td>          <span class="br">}</span></td></tr>
+<tr name="99" id="99">
+<td>99</td><td>        <span class="br">}</span></td></tr>
+<tr name="100" id="100">
+<td>100</td><td></td></tr>
+<tr name="101" id="101">
+<td>101</td><td>        <span class="kw">if</span> (<a id="101c13" class="tk">flag</a> == 1) <span class="br">{</span></td></tr>
+<tr name="102" id="102">
+<td>102</td><td>          <a id="102c11" class="tk">exitg1</a> = true;</td></tr>
+<tr name="103" id="103">
+<td>103</td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="104" id="104">
+<td>104</td><td>          <a id="104c11" class="tk">m</a>++;</td></tr>
+<tr name="105" id="105">
+<td>105</td><td>        <span class="br">}</span></td></tr>
+<tr name="106" id="106">
+<td>106</td><td>      <span class="br">}</span></td></tr>
+<tr name="107" id="107">
+<td>107</td><td></td></tr>
+<tr name="108" id="108">
+<td>108</td><td>      <span class="kw">if</span> (not == 0) <span class="br">{</span></td></tr>
+<tr name="109" id="109">
+<td>109</td><td>        <a id="109c9" class="tk">paretoIndex</a>[0] = (<a id="109c27" class="tk">int8_T</a>)(1 + <a id="109c39" class="tk">k</a>);</td></tr>
+<tr name="110" id="110">
+<td>110</td><td>        <a id="110c9" class="tk">paretoIndex</a>[1] = (<a id="110c27" class="tk">int8_T</a>)(1 + <a id="110c39" class="tk">nb</a>);</td></tr>
+<tr name="111" id="111">
+<td>111</td><td>        <a id="111c9" class="tk">pareto_data</a>[0] = <a id="111c26" class="tk">MATLAB_B</a>.<a id="111c35" class="tk">M</a>[61 * <a id="111c42" class="tk">nb</a> + <a id="111c47" class="tk">k</a>];</td></tr>
+<tr name="112" id="112">
+<td>112</td><td>        <a id="112c9" class="tk">pareto_data</a>[1] = <a id="112c26" class="tk">MATLAB_B</a>.<a id="112c35" class="tk">E</a>[61 * <a id="112c42" class="tk">nb</a> + <a id="112c47" class="tk">k</a>];</td></tr>
+<tr name="113" id="113">
+<td>113</td><td>      <span class="br">}</span></td></tr>
+<tr name="114" id="114">
+<td>114</td><td>    <span class="br">}</span></td></tr>
+<tr name="115" id="115">
+<td>115</td><td>  <span class="br">}</span></td></tr>
+<tr name="116" id="116">
+<td>116</td><td></td></tr>
+<tr name="117" id="117">
+<td>117</td><td>  <a id="117c3" class="tk">b_data</a>[0] = <a id="117c15" class="tk">pareto_data</a>[0];</td></tr>
+<tr name="118" id="118">
+<td>118</td><td>  <a id="118c3" class="tk">ycol_data</a> = <a id="118c15" class="tk">pareto_data</a>[1];</td></tr>
+<tr name="119" id="119">
+<td>119</td><td>  <a id="119c3" class="tk">pareto_sizes</a>[0] = 1;</td></tr>
+<tr name="120" id="120">
+<td>120</td><td>  <a id="120c3" class="tk">pareto_sizes</a>[1] = 2;</td></tr>
+<tr name="121" id="121">
+<td>121</td><td>  <span class="kw">for</span> (<a id="121c8" class="tk">k</a> = 0; <a id="121c15" class="tk">k</a> &lt; 1; <a id="121c22" class="tk">k</a>++) <span class="br">{</span></td></tr>
+<tr name="122" id="122">
+<td>122</td><td>    <a id="122c5" class="tk">pareto_data</a>[0] = <a id="122c22" class="tk">b_data</a>[0];</td></tr>
+<tr name="123" id="123">
+<td>123</td><td>  <span class="br">}</span></td></tr>
+<tr name="124" id="124">
+<td>124</td><td></td></tr>
+<tr name="125" id="125">
+<td>125</td><td>  <span class="kw">for</span> (<a id="125c8" class="tk">k</a> = 0; <a id="125c15" class="tk">k</a> &lt; 1; <a id="125c22" class="tk">k</a>++) <span class="br">{</span></td></tr>
+<tr name="126" id="126">
+<td>126</td><td>    <a id="126c5" class="tk">pareto_data</a>[1] = <a id="126c22" class="tk">ycol_data</a>;</td></tr>
+<tr name="127" id="127">
+<td>127</td><td>  <span class="br">}</span></td></tr>
+<tr name="128" id="128">
+<td>128</td><td></td></tr>
+<tr name="129" id="129">
+<td>129</td><td>  <a id="129c3" class="tk">k</a> = 0;</td></tr>
+<tr name="130" id="130">
+<td>130</td><td>  <span class="kw">while</span> (<a id="130c10" class="tk">k</a> &lt;= 0) <span class="br">{</span></td></tr>
+<tr name="131" id="131">
+<td>131</td><td>    <span class="ct">/* text(M(paretoIndex(i,1), paretoIndex(i,2))+2, E(paretoIndex(i,1), paretoIndex(i,2)), 'Pareto optimum')   */</span></td></tr>
+<tr name="132" id="132">
+<td>132</td><td>    <a id="132c5" class="tk">pareto_data</a>[0] = <a id="132c22" class="tk">paretoIndex</a>[0];</td></tr>
+<tr name="133" id="133">
+<td>133</td><td>    <a id="133c5" class="tk">pareto_data</a>[1] = <a id="133c22" class="tk">paretoIndex</a>[1];</td></tr>
+<tr name="134" id="134">
+<td>134</td><td>    <a id="134c5" class="tk">k</a> = 1;</td></tr>
+<tr name="135" id="135">
+<td>135</td><td>  <span class="br">}</span></td></tr>
+<tr name="136" id="136">
+<td>136</td><td><span class="br">}</span></td></tr>
+<tr name="137" id="137">
+<td>137</td><td></td></tr>
+<tr name="138" id="138">
+<td>138</td><td><span class="ct">/* Function for MATLAB Function: '&lt;Root&gt;/MATLAB Function' */</span></td></tr>
+<tr name="139" id="139">
+<td>139</td><td><span class="kw">static</span> <span class="kw">void</span> <a id="139c13" class="tk">MATLAB_abs</a>(<span class="kw">const</span> <a id="139c30" class="tk">real_T</a> <a id="139c37" class="tk">x</a>[10], <a id="139c44" class="tk">real_T</a> <a id="139c51" class="tk">y</a>[10])</td></tr>
+<tr name="140" id="140">
+<td>140</td><td><span class="br">{</span></td></tr>
+<tr name="141" id="141">
+<td>141</td><td>  <a id="141c3" class="tk">int32_T</a> <a id="141c11" class="tk">k</a>;</td></tr>
+<tr name="142" id="142">
+<td>142</td><td>  <span class="kw">for</span> (<a id="142c8" class="tk">k</a> = 0; <a id="142c15" class="tk">k</a> &lt; 10; <a id="142c23" class="tk">k</a>++) <span class="br">{</span></td></tr>
+<tr name="143" id="143">
+<td>143</td><td>    <a id="143c5" class="tk">y</a>[<a id="143c7" class="tk">k</a>] = <a id="143c12" class="tk">fabs</a>(<a id="143c17" class="tk">x</a>[<a id="143c19" class="tk">k</a>]);</td></tr>
+<tr name="144" id="144">
+<td>144</td><td>  <span class="br">}</span></td></tr>
+<tr name="145" id="145">
+<td>145</td><td><span class="br">}</span></td></tr>
+<tr name="146" id="146">
+<td>146</td><td></td></tr>
+<tr name="147" id="147">
+<td>147</td><td><span class="ct">/* Model step function */</span></td></tr>
+<tr name="148" id="148">
+<td>148</td><td><span class="kw">void</span> <a id="148c6" class="tk">MATLAB_step</a>(<span class="kw">void</span>)</td></tr>
+<tr name="149" id="149">
+<td>149</td><td><span class="br">{</span></td></tr>
+<tr name="150" id="150">
+<td>150</td><td>  <a id="150c3" class="tk">real_T</a> <a id="150c10" class="tk">strategyEng</a>[61];</td></tr>
+<tr name="151" id="151">
+<td>151</td><td>  <a id="151c3" class="tk">real_T</a> <a id="151c10" class="tk">strategyMot</a>[61];</td></tr>
+<tr name="152" id="152">
+<td>152</td><td>  <a id="152c3" class="tk">real_T</a> <a id="152c10" class="tk">tmpT</a>[10];</td></tr>
+<tr name="153" id="153">
+<td>153</td><td>  <a id="153c3" class="tk">int32_T</a> <a id="153c11" class="tk">b_j</a>;</td></tr>
+<tr name="154" id="154">
+<td>154</td><td>  <a id="154c3" class="tk">real_T</a> <a id="154c10" class="tk">mtmp</a>;</td></tr>
+<tr name="155" id="155">
+<td>155</td><td>  <a id="155c3" class="tk">int32_T</a> <a id="155c11" class="tk">ixstart</a>;</td></tr>
+<tr name="156" id="156">
+<td>156</td><td>  <a id="156c3" class="tk">real_T</a> <a id="156c10" class="tk">b_mtmp</a>;</td></tr>
+<tr name="157" id="157">
+<td>157</td><td>  <a id="157c3" class="tk">int32_T</a> <a id="157c11" class="tk">itmp</a>;</td></tr>
+<tr name="158" id="158">
+<td>158</td><td>  <a id="158c3" class="tk">int32_T</a> <a id="158c11" class="tk">c_ixstart</a>;</td></tr>
+<tr name="159" id="159">
+<td>159</td><td>  <a id="159c3" class="tk">int32_T</a> <a id="159c11" class="tk">ix</a>;</td></tr>
+<tr name="160" id="160">
+<td>160</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="160c16" class="tk">real_T</a> <a id="160c23" class="tk">percentage</a>[61] = <span class="br">{</span> 0.0, 0.016666666666666666,</td></tr>
+<tr name="161" id="161">
+<td>161</td><td>    0.033333333333333333, 0.05, 0.066666666666666666, 0.083333333333333329, 0.1,</td></tr>
+<tr name="162" id="162">
+<td>162</td><td>    0.11666666666666667, 0.13333333333333333, 0.15, 0.16666666666666666,</td></tr>
+<tr name="163" id="163">
+<td>163</td><td>    0.18333333333333332, 0.2, 0.21666666666666667, 0.23333333333333334, 0.25,</td></tr>
+<tr name="164" id="164">
+<td>164</td><td>    0.26666666666666666, 0.28333333333333333, 0.3, 0.31666666666666665,</td></tr>
+<tr name="165" id="165">
+<td>165</td><td>    0.33333333333333331, 0.35, 0.36666666666666664, 0.3833333333333333, 0.4,</td></tr>
+<tr name="166" id="166">
+<td>166</td><td>    0.41666666666666669, 0.43333333333333335, 0.45, 0.46666666666666667,</td></tr>
+<tr name="167" id="167">
+<td>167</td><td>    0.48333333333333334, 0.5, 0.51666666666666661, 0.53333333333333333, 0.55,</td></tr>
+<tr name="168" id="168">
+<td>168</td><td>    0.56666666666666665, 0.58333333333333326, 0.6, 0.6166666666666667,</td></tr>
+<tr name="169" id="169">
+<td>169</td><td>    0.6333333333333333, 0.65, 0.66666666666666674, 0.68333333333333335, 0.7,</td></tr>
+<tr name="170" id="170">
+<td>170</td><td>    0.71666666666666667, 0.73333333333333339, 0.75, 0.76666666666666661,</td></tr>
+<tr name="171" id="171">
+<td>171</td><td>    0.78333333333333333, 0.8, 0.81666666666666665, 0.83333333333333337, 0.85,</td></tr>
+<tr name="172" id="172">
+<td>172</td><td>    0.8666666666666667, 0.8833333333333333, 0.9, 0.91666666666666663,</td></tr>
+<tr name="173" id="173">
+<td>173</td><td>    0.93333333333333335, 0.95, 0.96666666666666667, 0.98333333333333328, 1.0 <span class="br">}</span>;</td></tr>
+<tr name="174" id="174">
+<td>174</td><td></td></tr>
+<tr name="175" id="175">
+<td>175</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="175c16" class="tk">real_T</a> <a id="175c23" class="tk">b</a>[100] = <span class="br">{</span> 0.010670000000000011, 0.015618129299747378,</td></tr>
+<tr name="176" id="176">
+<td>176</td><td>    0.020296001506892716, 0.024703616621436039, 0.028840974643377336,</td></tr>
+<tr name="177" id="177">
+<td>177</td><td>    0.032708075572716613, 0.036304919409453865, 0.03963150615358909,</td></tr>
+<tr name="178" id="178">
+<td>178</td><td>    0.042687835805122309, 0.045473908364053496, 0.010741671544147057,</td></tr>
+<tr name="179" id="179">
+<td>179</td><td>    0.015692222222222232, 0.02037251580769538, 0.024782552300566515,</td></tr>
+<tr name="180" id="180">
+<td>180</td><td>    0.028922331700835628, 0.032791854008502715, 0.036391119223567775,</td></tr>
+<tr name="181" id="181">
+<td>181</td><td>    0.039720127346030816, 0.042778878375891845, 0.04556737231315084,</td></tr>
+<tr name="182" id="182">
+<td>182</td><td>    0.011078757424240504, 0.016031729480643488, 0.020714444444444452,</td></tr>
+<tr name="183" id="183">
+<td>183</td><td>    0.025126902315643393, 0.029269103094240308, 0.0331410467802352,</td></tr>
+<tr name="184" id="184">
+<td>184</td><td>    0.03674273337362808, 0.04007416287441893, 0.043135335282607774,</td></tr>
+<tr name="185" id="185">
+<td>185</td><td>    0.045926250598194586, 0.011681257640280347, 0.016636651075011145,</td></tr>
+<tr name="186" id="186">
+<td>186</td><td>    0.021321787417139918, 0.025736666666666672, 0.029881288823591402,</td></tr>
+<tr name="187" id="187">
+<td>187</td><td>    0.033755653887914114, 0.037359761859634792, 0.040693612738753458,</td></tr>
+<tr name="188" id="188">
+<td>188</td><td>    0.043757206525270105, 0.046550543219184719, 0.012549172192266598,</td></tr>
+<tr name="189" id="189">
+<td>189</td><td>    0.017506987005325204, 0.022194544725781789, 0.026611845353636351,</td></tr>
+<tr name="190" id="190">
+<td>190</td><td>    0.030758888888888898, 0.034635675331539419, 0.038242204681587913,</td></tr>
+<tr name="191" id="191">
+<td>191</td><td>    0.041578476939034388, 0.044644492103878844, 0.047440250176121281,</td></tr>
+<tr name="192" id="192">
+<td>192</td><td>    0.013682501080199246, 0.018642737271585667, 0.023332716370370061,</td></tr>
+<tr name="193" id="193">
+<td>193</td><td>    0.027752438376552432, 0.031901903290132788, 0.035781111111111118,</td></tr>
+<tr name="194" id="194">
+<td>194</td><td>    0.039390061839487421, 0.042728755475261705, 0.045797192018433991,</td></tr>
+<tr name="195" id="195">
+<td>195</td><td>    0.04859537146900423, 0.0150812443040783, 0.020043901873792531,</td></tr>
+<tr name="196" id="196">
+<td>196</td><td>    0.024736302350904734, 0.029158445735414922, 0.033310332027323086,</td></tr>
+<tr name="197" id="197">
+<td>197</td><td>    0.037191961226629225, 0.040803333333333344, 0.044144448347435437,</td></tr>
+<tr name="198" id="198">
+<td>198</td><td>    0.047215306268935518, 0.050015907097833566, 0.016745401863903747,</td></tr>
+<tr name="199" id="199">
+<td>199</td><td>    0.021710480811945789, 0.026405302667385805, 0.030829867430223798,</td></tr>
+<tr name="200" id="200">
+<td>200</td><td>    0.034984175100459779, 0.038868225678093733, 0.042482019163125655,</td></tr>
+<tr name="201" id="201">
+<td>201</td><td>    0.045825555555555564, 0.048898834855383454, 0.051701857062609317,</td></tr>
+<tr name="202" id="202">
+<td>202</td><td>    0.0186749737596756, 0.023642474086045456, 0.028339717319813287,</td></tr>
+<tr name="203" id="203">
+<td>203</td><td>    0.032766703460979089, 0.036923432509542879, 0.040809904465504643,</td></tr>
+<tr name="204" id="204">
+<td>204</td><td>    0.04442611932886438, 0.0477720770996221, 0.050847777777777804,</td></tr>
+<tr name="205" id="205">
+<td>205</td><td>    0.05365322136333147, 0.020869959991393856, 0.025839881696091523,</td></tr>
+<tr name="206" id="206">
+<td>206</td><td>    0.030539546308187164, 0.034968953827680775, 0.039128104254572374,</td></tr>
+<tr name="207" id="207">
+<td>207</td><td>    0.043016997588861947, 0.046635633830549493, 0.04998401297963502,</td></tr>
+<tr name="208" id="208">
+<td>208</td><td>    0.053062135036118542, 0.055870000000000038 <span class="br">}</span>;</td></tr>
+<tr name="209" id="209">
+<td>209</td><td></td></tr>
+<tr name="210" id="210">
+<td>210</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="210c16" class="tk">real_T</a> <a id="210c23" class="tk">c</a>[100] = <span class="br">{</span> 0.01539999999999999, 0.040819283413210207,</td></tr>
+<tr name="211" id="211">
+<td>211</td><td>    0.065157538456012326, 0.088414765128406347, 0.11059096343039229,</td></tr>
+<tr name="212" id="212">
+<td>212</td><td>    0.13168613336197016, 0.15170027492313992, 0.17063338811390161,</td></tr>
+<tr name="213" id="213">
+<td>213</td><td>    0.18848547293425519, 0.20525652938420072, 0.014238406323287857,</td></tr>
+<tr name="214" id="214">
+<td>214</td><td>    0.039477777777777751, 0.063636120861859546, 0.086713435575533265,</td></tr>
+<tr name="215" id="215">
+<td>215</td><td>    0.10870972191879891, 0.12962497989165642, 0.14945920949410588,</td></tr>
+<tr name="216" id="216">
+<td>216</td><td>    0.16821241072614723, 0.18588458358778051, 0.20247572807900568,</td></tr>
+<tr name="217" id="217">
+<td>217</td><td>    0.014517664934424461, 0.039577124430194038, 0.063555555555555518,</td></tr>
+<tr name="218" id="218">
+<td>218</td><td>    0.086452958310508893, 0.1082693326950542, 0.12900467870919144,</td></tr>
+<tr name="219" id="219">
+<td>219</td><td>    0.14865899635292054, 0.16723228562624159, 0.18472454652915452,</td></tr>
+<tr name="220" id="220">
+<td>220</td><td>    0.20113577906165939, 0.016237775833409816, 0.04111732337045907,</td></tr>
+<tr name="221" id="221">
+<td>221</td><td>    0.064915842537100227, 0.087633333333333313, 0.10926979575915829,</td></tr>
+<tr name="222" id="222">
+<td>222</td><td>    0.1298252298145752, 0.14929963549958397, 0.16769301281418469,</td></tr>
+<tr name="223" id="223">
+<td>223</td><td>    0.18500536175837731, 0.20123668233216183, 0.019398739020243878,</td></tr>
+<tr name="224" id="224">
+<td>224</td><td>    0.044098374598572812, 0.067716981806493659, 0.090254560644006415,</td></tr>
+<tr name="225" id="225">
+<td>225</td><td>    0.11171111111111107, 0.13208663320780767, 0.15138112693409611,</td></tr>
+<tr name="226" id="226">
+<td>226</td><td>    0.16959459228997653, 0.18672702927544879, 0.202778437890513,</td></tr>
+<tr name="227" id="227">
+<td>227</td><td>    0.024000554494926694, 0.048520278114535319, 0.071958973363735815,</td></tr>
+<tr name="228" id="228">
+<td>228</td><td>    0.094316640242528255, 0.11559327875091258, 0.13578888888888885,</td></tr>
+<tr name="229" id="229">
+<td>229</td><td>    0.154903470656457, 0.17293702405361708, 0.18988954908036906,</td></tr>
+<tr name="230" id="230">
+<td>230</td><td>    0.20576104573671292, 0.030043222257458254, 0.054383033918346549,</td></tr>
+<tr name="231" id="231">
+<td>231</td><td>    0.077641817208826749, 0.099819572128898859, 0.12091629867856288,</td></tr>
+<tr name="232" id="232">
+<td>232</td><td>    0.14093199685781882, 0.15986666666666663, 0.17772030810510642,</td></tr>
+<tr name="233" id="233">
+<td>233</td><td>    0.19449292117313802, 0.21018450587076162, 0.037526742307838527,</td></tr>
+<tr name="234" id="234">
+<td>234</td><td>    0.061686642010006495, 0.084765513341766366, 0.10676335630311815,</td></tr>
+<tr name="235" id="235">
+<td>235</td><td>    0.12768017089406186, 0.1475159571145975, 0.16627071496472498,</td></tr>
+<tr name="236" id="236">
+<td>236</td><td>    0.18394444444444441, 0.20053714555375571, 0.216048818292659,</td></tr>
+<tr name="237" id="237">
+<td>237</td><td>    0.046451114646067583, 0.070431102389515235, 0.093330061762554789,</td></tr>
+<tr name="238" id="238">
+<td>238</td><td>    0.11514799276518625, 0.13588489539740964, 0.15554076965922495,</td></tr>
+<tr name="239" id="239">
+<td>239</td><td>    0.17411561555063212, 0.19160943307163125, 0.20802222222222225,</td></tr>
+<tr name="240" id="240">
+<td>240</td><td>    0.22335398300240514, 0.056816339272145321, 0.080616415056872656,</td></tr>
+<tr name="241" id="241">
+<td>241</td><td>    0.10333546247119187, 0.12497348151510304, 0.14553047218860607,</td></tr>
+<tr name="242" id="242">
+<td>242</td><td>    0.16500643449170105, 0.18340136842438795, 0.20071527398666678,</td></tr>
+<tr name="243" id="243">
+<td>243</td><td>    0.21694815117853741, 0.23210000000000006 <span class="br">}</span>;</td></tr>
+<tr name="244" id="244">
+<td>244</td><td></td></tr>
+<tr name="245" id="245">
+<td>245</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="245c16" class="tk">real_T</a> <a id="245c23" class="tk">d</a>[100] = <span class="br">{</span> 0.0070700000000000112, 0.025685581693398636,</td></tr>
+<tr name="246" id="246">
+<td>246</td><td>    0.043220135016389181, 0.059673659968971622, 0.075046156551145993,</td></tr>
+<tr name="247" id="247">
+<td>247</td><td>    0.089337624762912266, 0.10254806460427043, 0.11467747607522047,</td></tr>
+<tr name="248" id="248">
+<td>248</td><td>    0.12572585917576251, 0.13569321390589639, 0.0028766489603381249,</td></tr>
+<tr name="249" id="249">
+<td>249</td><td>    0.021881111111111129, 0.039804544891476036, 0.056646950301432859,</td></tr>
+<tr name="250" id="250">
+<td>250</td><td>    0.0724083273409816, 0.08708867601012224, 0.10068799630885478,</td></tr>
+<tr name="251" id="251">
+<td>251</td><td>    0.11320628823717924, 0.12464355179509562, 0.1349997869826039,</td></tr>
+<tr name="252" id="252">
+<td>252</td><td>    -0.0010134346236644271, 0.018379907984482947, 0.03669222222222223,</td></tr>
+<tr name="253" id="253">
+<td>253</td><td>    0.053923508089553422, 0.07007376558647653, 0.085142994712991554,</td></tr>
+<tr name="254" id="254">
+<td>254</td><td>    0.09913119546909846, 0.11203836785479726, 0.12386451187008807,</td></tr>
+<tr name="255" id="255">
+<td>255</td><td>    0.13460962751497069, -0.0046002507520076343, 0.015181972313514114,</td></tr>
+<tr name="256" id="256">
+<td>256</td><td>    0.033883167008627771, 0.051503333333333338, 0.068042471287630815,</td></tr>
+<tr name="257" id="257">
+<td>257</td><td>    0.083500580871520208, 0.097877662085001482, 0.11117371492807468,</td></tr>
+<tr name="258" id="258">
+<td>258</td><td>    0.1233887394007398, 0.13452273550299684, -0.0078837994246914941,</td></tr>
+<tr name="259" id="259">
+<td>259</td><td>    0.012287304098204626, 0.031377379250692651, 0.04938642603277258,</td></tr>
+<tr name="260" id="260">
+<td>260</td><td>    0.066314444444444454, 0.0821614344857082, 0.096927396156563844,</td></tr>
+<tr name="261" id="261">
+<td>261</td><td>    0.11061232945701144, 0.12321623438705095, 0.13473911094668234,</td></tr>
+<tr name="262" id="262">
+<td>262</td><td>    -0.010864080641716005, 0.0096959033385544836, 0.029174858948416885,</td></tr>
+<tr name="263" id="263">
+<td>263</td><td>    0.04757278618787119, 0.064889685056917418, 0.081125555555555562,</td></tr>
+<tr name="264" id="264">
+<td>264</td><td>    0.096280397683785574, 0.11035421144160754, 0.12334699682902142,</td></tr>
+<tr name="265" id="265">
+<td>265</td><td>    0.13525875384602717, -0.013541094403081166, 0.0074077700345637019,</td></tr>
+<tr name="266" id="266">
+<td>266</td><td>    0.027275606101800472, 0.046062413798629152, 0.063768193125049763,</td></tr>
+<tr name="267" id="267">
+<td>267</td><td>    0.080392944081062262, 0.09593666666666667, 0.11039936088186297,</td></tr>
+<tr name="268" id="268">
+<td>268</td><td>    0.12378102672665123, 0.13608166420103138, -0.015914840708786966,</td></tr>
+<tr name="269" id="269">
+<td>269</td><td>    0.00542290418623227, 0.025679620710843412, 0.044855308865046468,</td></tr>
+<tr name="270" id="270">
+<td>270</td><td>    0.062949968648841448, 0.079963600062228329, 0.095896203105207078,</td></tr>
+<tr name="271" id="271">
+<td>271</td><td>    0.11074777777777778, 0.12451832407994037, 0.13720784201169492,</td></tr>
+<tr name="272" id="272">
+<td>272</td><td>    -0.017985319558833434, 0.003741305793560178, 0.0243869027755457,</td></tr>
+<tr name="273" id="273">
+<td>273</td><td>    0.043951471387123124, 0.062435011628292472, 0.079837523499053736,</td></tr>
+<tr name="274" id="274">
+<td>274</td><td>    0.096159006999406854, 0.11139946212935192, 0.12555888888888891,</td></tr>
+<tr name="275" id="275">
+<td>275</td><td>    0.1386372872780178, -0.019752530953220566, 0.0023629748565474149,</td></tr>
+<tr name="276" id="276">
+<td>276</td><td>    0.023397452295907305, 0.043350901364859105, 0.062223322063402822,</td></tr>
+<tr name="277" id="277">
+<td>277</td><td>    0.080014714391538455, 0.096725078349265942, 0.11235441393658541,</td></tr>
+<tr name="278" id="278">
+<td>278</td><td>    0.12690272115349677, 0.14037000000000002 <span class="br">}</span>;</td></tr>
+<tr name="279" id="279">
+<td>279</td><td></td></tr>
+<tr name="280" id="280">
+<td>280</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="280c16" class="tk">real_T</a> <a id="280c23" class="tk">e</a>[100] = <span class="br">{</span> 0.29967975409960163, 0.233912666284796,</td></tr>
+<tr name="281" id="281">
+<td>281</td><td>    0.20404960921488507, 0.21009058288986876, 0.25203558730974712,</td></tr>
+<tr name="282" id="282">
+<td>282</td><td>    0.32988462247452011, 0.44363768838418755, 0.59329478503874988,</td></tr>
+<tr name="283" id="283">
+<td>283</td><td>    0.77885591243820673, 1.0003210705825585, 0.61075918186834754,</td></tr>
+<tr name="284" id="284">
+<td>284</td><td>    0.56303468952046365, 0.55121422791747432, 0.57529779705937989,</td></tr>
+<tr name="285" id="285">
+<td>285</td><td>    0.6352853969461798, 0.73117702757787462, 0.86297268895446377,</td></tr>
+<tr name="286" id="286">
+<td>286</td><td>    1.0306723810759477, 1.2342761039423265, 1.4737838575535995,</td></tr>
+<tr name="287" id="287">
+<td>287</td><td>    0.84984938795835563, 0.8201674910773934, 0.82638962494132584,</td></tr>
+<tr name="288" id="288">
+<td>288</td><td>    0.86851578955015307, 0.94654598490387476, 1.0604802110024911,</td></tr>
+<tr name="289" id="289">
+<td>289</td><td>    1.2103184678460022, 1.3960607554344078, 1.6177070737677082,</td></tr>
+<tr name="290" id="290">
+<td>290</td><td>    1.8752574228459031, 1.0169503723696256, 1.005311070955585,</td></tr>
+<tr name="291" id="291">
+<td>291</td><td>    1.0295758002864392, 1.089744560362188, 1.1858173511828316,</td></tr>
+<tr name="292" id="292">
+<td>292</td><td>    1.3177941727483697, 1.4856750250588022, 1.6894599081141295,</td></tr>
+<tr name="293" id="293">
+<td>293</td><td>    1.9291488219143518, 2.2047417664594686, 1.1120621351021576,</td></tr>
+<tr name="294" id="294">
+<td>294</td><td>    1.1184654291550389, 1.1607727539528148, 1.2389841094954852,</td></tr>
+<tr name="295" id="295">
+<td>295</td><td>    1.3530994957830504, 1.5031189128155105, 1.6890423605928646,</td></tr>
+<tr name="296" id="296">
+<td>296</td><td>    1.9108698391151138, 2.1686013483822575, 2.4622368883942958,</td></tr>
+<tr name="297" id="297">
+<td>297</td><td>    1.1351846761559514, 1.1596305656757542, 1.2199804859404519,</td></tr>
+<tr name="298" id="298">
+<td>298</td><td>    1.3162344369500441, 1.4483924187045312, 1.6164544312039126,</td></tr>
+<tr name="299" id="299">
+<td>299</td><td>    1.8204204744481887, 2.0602905484373593, 2.3360646531714249,</td></tr>
+<tr name="300" id="300">
+<td>300</td><td>    2.6477427886503855, 1.0863179955310072, 1.1288064805177318,</td></tr>
+<tr name="301" id="301">
+<td>301</td><td>    1.207198996249351, 1.321495542725865, 1.4716961199472738, 1.6578007279135771,</td></tr>
+<tr name="302" id="302">
+<td>302</td><td>    1.8798093666247748, 2.1377220360808673, 2.4315387362818544,</td></tr>
+<tr name="303" id="303">
+<td>303</td><td>    2.7612594672277364, 0.96546209322732479, 1.0259931736809711,</td></tr>
+<tr name="304" id="304">
+<td>304</td><td>    1.122428284879512, 1.2547674268229476, 1.4230105995112781,</td></tr>
+<tr name="305" id="305">
+<td>305</td><td>    1.6271578029445033, 1.8672090371226227, 2.143164302045637,</td></tr>
+<tr name="306" id="306">
+<td>306</td><td>    2.4550235977135455, 2.80278692412635, 0.77261696924490408,</td></tr>
+<tr name="307" id="307">
+<td>307</td><td>    0.85119064516547227, 0.965668351830935, 1.1160500892412923,</td></tr>
+<tr name="308" id="308">
+<td>308</td><td>    1.3023358573965447, 1.5245256562966913, 1.7826194859417321,</td></tr>
+<tr name="309" id="309">
+<td>309</td><td>    2.0766173463316679, 2.4065192374664988, 2.7723251593462246,</td></tr>
+<tr name="310" id="310">
+<td>310</td><td>    0.50778262358374626, 0.60439889497123589, 0.73691919710362042,</td></tr>
+<tr name="311" id="311">
+<td>311</td><td>    0.90534352998089951, 1.1096718936030732, 1.3499042879701417,</td></tr>
+<tr name="312" id="312">
+<td>312</td><td>    1.6260407130821042, 1.9380811689389623, 2.2860256555407141,</td></tr>
+<tr name="313" id="313">
+<td>313</td><td>    2.6698741728873618 <span class="br">}</span>;</td></tr>
+<tr name="314" id="314">
+<td>314</td><td></td></tr>
+<tr name="315" id="315">
+<td>315</td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="315c16" class="tk">real_T</a> <a id="315c23" class="tk">f</a>[100] = <span class="br">{</span> 3.4069999999999823, -8.782110696067452,</td></tr>
+<tr name="316" id="316">
+<td>316</td><td>    -9.887460495000937, -2.0279260718719794, 12.677615898247943,</td></tr>
+<tr name="317" id="317">
+<td>317</td><td>    32.110288740287331, 54.151215779174656, 76.681520339838514,</td></tr>
+<tr name="318" id="318">
+<td>318</td><td>    97.582325747207321, 114.73475532620965, 25.347266483404233,</td></tr>
+<tr name="319" id="319">
+<td>319</td><td>    7.5641111111110888, 1.1129801380875364, 3.8749968892620941,</td></tr>
+<tr name="320" id="320">
+<td>320</td><td>    13.731284689563283, 28.5629668639196, 46.251166737259524, 64.677007634511639,</td></tr>
+<tr name="321" id="321">
+<td>321</td><td>    81.721612880604368, 95.266105800466278, 45.979276972078395,</td></tr>
+<tr name="322" id="322">
+<td>322</td><td>    23.060105646447674, 11.72122222222222, 9.843750024330534, 15.30881237770115,</td></tr>
+<tr name="323" id="323">
+<td>323</td><td>    25.997532607262549, 39.791034037943234, 54.570439994671744,</td></tr>
+<tr name="324" id="324">
+<td>324</td><td>    68.216873802376583, 78.611458785986244, 65.303031466022389,</td></tr>
+<tr name="325" id="325">
+<td>325</td><td>    37.705872909942272, 21.937265757403082, 15.87833333333333,</td></tr>
+<tr name="326" id="326">
+<td>326</td><td>    17.410198962661529, 24.413985970316194, 34.770817681225807,</td></tr>
+<tr name="327" id="327">
+<td>327</td><td>    46.361817420318914, 57.068108512524, 64.770814282769564, 83.318529965236252,</td></tr>
+<tr name="328" id="328">
+<td>328</td><td>    51.50141290159489, 31.761110743630141, 21.978746816270483,</td></tr>
+<tr name="329" id="329">
+<td>329</td><td>    20.035444444444444, 23.812326953080536, 31.190517667107233,</td></tr>
+<tr name="330" id="330">
+<td>330</td><td>    40.051139911453092, 48.2753170110466, 53.744172290816252, 100.02577246971997,</td></tr>
+<tr name="331" id="331">
+<td>331</td><td>    64.446725621405548, 41.1927571809034, 28.144990473141991, 23.184548823049884,</td></tr>
+<tr name="332" id="332">
+<td>332</td><td>    24.192555555555561, 29.05013399558753, 35.638407468074305,</td></tr>
+<tr name="333" id="333">
+<td>333</td><td>    41.838499297944381, 45.531532810126293, 115.42475897947357,</td></tr>
+<tr name="334" id="334">
+<td>334</td><td>    76.541811069374248, 50.232205069222843, 34.377064303947876,</td></tr>
+<tr name="335" id="335">
+<td>335</td><td>    26.857512098477851, 25.554671777741287, 28.349666666666671,</td></tr>
+<tr name="336" id="336">
+<td>336</td><td>    33.123620090182527, 37.757655373217375, 40.1328958406997, 129.515489494497,</td></tr>
+<tr name="337" id="337">
+<td>337</td><td>    87.786669245500931, 58.879454408588472, 40.674968308688094,</td></tr>
+<tr name="338" id="338">
+<td>338</td><td>    31.054334270728337, 27.898675619637689, 29.089115680344676,</td></tr>
+<tr name="339" id="339">
+<td>339</td><td>    32.506777777777785, 36.032785236865543, 37.548261382536438,</td></tr>
+<tr name="340" id="340">
+<td>340</td><td>    142.2979640147903, 98.18130014978567, 67.134505199000316, 47.0387024873627,</td></tr>
+<tr name="341" id="341">
+<td>341</td><td>    35.775015339801357, 31.2245670812448, 31.268481036621541, 33.787880530860079,</td></tr>
+<tr name="342" id="342">
+<td>342</td><td>    36.663888888888906, 37.777629435636555, 153.77218254035344,</td></tr>
+<tr name="343" id="343">
+<td>343</td><td>    107.72570378222841, 74.997357440458316, 53.468266839971626,</td></tr>
+<tr name="344" id="344">
+<td>344</td><td>    41.019555305696883, 35.5323461625626, 34.887762735497255, 36.966928349429367,</td></tr>
+<tr name="345" id="345">
+<td>345</td><td>    39.650966329287463, 40.821000000000012 <span class="br">}</span>;</td></tr>
+<tr name="346" id="346">
+<td>346</td><td></td></tr>
+<tr name="347" id="347">
+<td>347</td><td>  <a id="347c3" class="tk">boolean_T</a> <a id="347c13" class="tk">exitg1</a>;</td></tr>
+<tr name="348" id="348">
+<td>348</td><td>  <a id="348c3" class="tk">real_T</a> <a id="348c10" class="tk">tmp</a>[10];</td></tr>
+<tr name="349" id="349">
+<td>349</td><td>  <a id="349c3" class="tk">real_T</a> <a id="349c10" class="tk">pareto_data</a>[2];</td></tr>
+<tr name="350" id="350">
+<td>350</td><td>  <a id="350c3" class="tk">int32_T</a> <a id="350c11" class="tk">pareto_sizes</a>[2];</td></tr>
+<tr name="351" id="351">
+<td>351</td><td></td></tr>
+<tr name="352" id="352">
+<td>352</td><td>  <span class="ct">/* MATLAB Function: '&lt;Root&gt;/MATLAB Function' incorporates:</span></td></tr>
+<tr name="353" id="353">
+<td>353</td><td><span class="ct">   *  Inport: '&lt;Root&gt;/requiredTorque'</span></td></tr>
+<tr name="354" id="354">
+<td>354</td><td><span class="ct">   */</span></td></tr>
+<tr name="355" id="355">
+<td>355</td><td>  <span class="ct">/* MATLAB Function 'MATLAB Function': '&lt;S1&gt;:1' */</span></td></tr>
+<tr name="356" id="356">
+<td>356</td><td>  <span class="ct">/* FuelConsTable = fuel; */</span></td></tr>
+<tr name="357" id="357">
+<td>357</td><td>  <span class="ct">/* GasEmisTable = exhaustEmis; */</span></td></tr>
+<tr name="358" id="358">
+<td>358</td><td>  <span class="ct">/* requiredTorque = 189; */</span></td></tr>
+<tr name="359" id="359">
+<td>359</td><td>  <span class="ct">/* '&lt;S1&gt;:1:21' */</span></td></tr>
+<tr name="360" id="360">
+<td>360</td><td>  <span class="ct">/* '&lt;S1&gt;:1:22' */</span></td></tr>
+<tr name="361" id="361">
+<td>361</td><td>  <span class="kw">for</span> (<a id="361c8" class="tk">c_ixstart</a> = 0; <a id="361c23" class="tk">c_ixstart</a> &lt; 3721; <a id="361c41" class="tk">c_ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="362" id="362">
+<td>362</td><td>    <a id="362c5" class="tk">MATLAB_B</a>.<a id="362c14" class="tk">payoffMotor</a>[<a id="362c26" class="tk">c_ixstart</a>] = 0.0;</td></tr>
+<tr name="363" id="363">
+<td>363</td><td>    <a id="363c5" class="tk">MATLAB_B</a>.<a id="363c14" class="tk">payoffEngine</a>[<a id="363c27" class="tk">c_ixstart</a>] = 0.0;</td></tr>
+<tr name="364" id="364">
+<td>364</td><td>  <span class="br">}</span></td></tr>
+<tr name="365" id="365">
+<td>365</td><td></td></tr>
+<tr name="366" id="366">
+<td>366</td><td>  <span class="ct">/* '&lt;S1&gt;:1:23' */</span></td></tr>
+<tr name="367" id="367">
+<td>367</td><td>  <span class="ct">/* '&lt;S1&gt;:1:24' */</span></td></tr>
+<tr name="368" id="368">
+<td>368</td><td>  <a id="368c3" class="tk">ixstart</a> = 1;</td></tr>
+<tr name="369" id="369">
+<td>369</td><td>  <a id="369c3" class="tk">mtmp</a> = <a id="369c10" class="tk">MATLAB_U</a>.<a id="369c19" class="tk">RequiredtorqueNm</a>;</td></tr>
+<tr name="370" id="370">
+<td>370</td><td>  <span class="kw">if</span> (<a id="370c7" class="tk">rtIsNaN</a>(<a id="370c15" class="tk">MATLAB_U</a>.<a id="370c24" class="tk">RequiredtorqueNm</a>)) <span class="br">{</span></td></tr>
+<tr name="371" id="371">
+<td>371</td><td>    <a id="371c5" class="tk">ixstart</a> = 2;</td></tr>
+<tr name="372" id="372">
+<td>372</td><td>    <a id="372c5" class="tk">mtmp</a> = 400.0;</td></tr>
+<tr name="373" id="373">
+<td>373</td><td>  <span class="br">}</span></td></tr>
+<tr name="374" id="374">
+<td>374</td><td></td></tr>
+<tr name="375" id="375">
+<td>375</td><td>  <span class="kw">if</span> ((<a id="375c8" class="tk">ixstart</a> &lt; 2) &amp;&amp; (400.0 &lt; <a id="375c33" class="tk">mtmp</a>)) <span class="br">{</span></td></tr>
+<tr name="376" id="376">
+<td>376</td><td>    <a id="376c5" class="tk">mtmp</a> = 400.0;</td></tr>
+<tr name="377" id="377">
+<td>377</td><td>  <span class="br">}</span></td></tr>
+<tr name="378" id="378">
+<td>378</td><td></td></tr>
+<tr name="379" id="379">
+<td>379</td><td>  <span class="ct">/* '&lt;S1&gt;:1:25' */</span></td></tr>
+<tr name="380" id="380">
+<td>380</td><td>  <a id="380c3" class="tk">ixstart</a> = 1;</td></tr>
+<tr name="381" id="381">
+<td>381</td><td>  <a id="381c3" class="tk">b_mtmp</a> = <a id="381c12" class="tk">MATLAB_U</a>.<a id="381c21" class="tk">RequiredtorqueNm</a>;</td></tr>
+<tr name="382" id="382">
+<td>382</td><td>  <span class="kw">if</span> (<a id="382c7" class="tk">rtIsNaN</a>(<a id="382c15" class="tk">MATLAB_U</a>.<a id="382c24" class="tk">RequiredtorqueNm</a>)) <span class="br">{</span></td></tr>
+<tr name="383" id="383">
+<td>383</td><td>    <a id="383c5" class="tk">ixstart</a> = 2;</td></tr>
+<tr name="384" id="384">
+<td>384</td><td>    <a id="384c5" class="tk">b_mtmp</a> = 136.0;</td></tr>
+<tr name="385" id="385">
+<td>385</td><td>  <span class="br">}</span></td></tr>
+<tr name="386" id="386">
+<td>386</td><td></td></tr>
+<tr name="387" id="387">
+<td>387</td><td>  <span class="kw">if</span> ((<a id="387c8" class="tk">ixstart</a> &lt; 2) &amp;&amp; (136.0 &lt; <a id="387c33" class="tk">b_mtmp</a>)) <span class="br">{</span></td></tr>
+<tr name="388" id="388">
+<td>388</td><td>    <a id="388c5" class="tk">b_mtmp</a> = 136.0;</td></tr>
+<tr name="389" id="389">
+<td>389</td><td>  <span class="br">}</span></td></tr>
+<tr name="390" id="390">
+<td>390</td><td></td></tr>
+<tr name="391" id="391">
+<td>391</td><td>  <span class="ct">/* '&lt;S1&gt;:1:27' */</span></td></tr>
+<tr name="392" id="392">
+<td>392</td><td>  <span class="ct">/* '&lt;S1&gt;:1:28' */</span></td></tr>
+<tr name="393" id="393">
+<td>393</td><td>  <span class="kw">for</span> (<a id="393c8" class="tk">c_ixstart</a> = 0; <a id="393c23" class="tk">c_ixstart</a> &lt; 61; <a id="393c39" class="tk">c_ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="394" id="394">
+<td>394</td><td>    <a id="394c5" class="tk">strategyEng</a>[<a id="394c17" class="tk">c_ixstart</a>] = <a id="394c30" class="tk">percentage</a>[<a id="394c41" class="tk">c_ixstart</a>] * <a id="394c54" class="tk">b_mtmp</a>;</td></tr>
+<tr name="395" id="395">
+<td>395</td><td>    <a id="395c5" class="tk">strategyMot</a>[<a id="395c17" class="tk">c_ixstart</a>] = <a id="395c30" class="tk">percentage</a>[<a id="395c41" class="tk">c_ixstart</a>] * <a id="395c54" class="tk">mtmp</a>;</td></tr>
+<tr name="396" id="396">
+<td>396</td><td>  <span class="br">}</span></td></tr>
+<tr name="397" id="397">
+<td>397</td><td></td></tr>
+<tr name="398" id="398">
+<td>398</td><td>  <span class="ct">/* strategyMot = fliplr(strategyMot); */</span></td></tr>
+<tr name="399" id="399">
+<td>399</td><td>  <span class="ct">/* '&lt;S1&gt;:1:30' */</span></td></tr>
+<tr name="400" id="400">
+<td>400</td><td>  <a id="400c3" class="tk">MATLAB_repmat</a>(<a id="400c17" class="tk">strategyEng</a>, <a id="400c30" class="tk">MATLAB_B</a>.<a id="400c39" class="tk">tmpTorque</a>);</td></tr>
+<tr name="401" id="401">
+<td>401</td><td></td></tr>
+<tr name="402" id="402">
+<td>402</td><td>  <span class="ct">/* '&lt;S1&gt;:1:36' */</span></td></tr>
+<tr name="403" id="403">
+<td>403</td><td>  <span class="ct">/* '&lt;S1&gt;:1:37' */</span></td></tr>
+<tr name="404" id="404">
+<td>404</td><td>  <span class="kw">for</span> (<a id="404c8" class="tk">ixstart</a> = 0; <a id="404c21" class="tk">ixstart</a> &lt; 61; <a id="404c35" class="tk">ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="405" id="405">
+<td>405</td><td>    <span class="ct">/* '&lt;S1&gt;:1:37' */</span></td></tr>
+<tr name="406" id="406">
+<td>406</td><td>    <span class="ct">/* '&lt;S1&gt;:1:38' */</span></td></tr>
+<tr name="407" id="407">
+<td>407</td><td>    <span class="kw">for</span> (<a id="407c10" class="tk">b_j</a> = 0; <a id="407c19" class="tk">b_j</a> &lt; 61; <a id="407c29" class="tk">b_j</a>++) <span class="br">{</span></td></tr>
+<tr name="408" id="408">
+<td>408</td><td>      <span class="ct">/* '&lt;S1&gt;:1:38' */</span></td></tr>
+<tr name="409" id="409">
+<td>409</td><td>      <span class="ct">/* '&lt;S1&gt;:1:39' */</span></td></tr>
+<tr name="410" id="410">
+<td>410</td><td>      <a id="410c7" class="tk">MATLAB_B</a>.<a id="410c16" class="tk">totalTorque</a>[<a id="410c28" class="tk">ixstart</a> + 61 * <a id="410c43" class="tk">b_j</a>] = <a id="410c50" class="tk">MATLAB_B</a>.<a id="410c59" class="tk">tmpTorque</a>[61 * <a id="410c74" class="tk">b_j</a> +</td></tr>
+<tr name="411" id="411">
+<td>411</td><td>        <a id="411c9" class="tk">ixstart</a>] + <a id="411c20" class="tk">strategyMot</a>[<a id="411c32" class="tk">b_j</a>];</td></tr>
+<tr name="412" id="412">
+<td>412</td><td></td></tr>
+<tr name="413" id="413">
+<td>413</td><td>      <span class="ct">/* '&lt;S1&gt;:1:38' */</span></td></tr>
+<tr name="414" id="414">
+<td>414</td><td>    <span class="br">}</span></td></tr>
+<tr name="415" id="415">
+<td>415</td><td></td></tr>
+<tr name="416" id="416">
+<td>416</td><td>    <span class="ct">/* '&lt;S1&gt;:1:37' */</span></td></tr>
+<tr name="417" id="417">
+<td>417</td><td>  <span class="br">}</span></td></tr>
+<tr name="418" id="418">
+<td>418</td><td></td></tr>
+<tr name="419" id="419">
+<td>419</td><td>  <span class="ct">/* T = P * 9.549 / n */</span></td></tr>
+<tr name="420" id="420">
+<td>420</td><td>  <span class="ct">/* fuelConsumedGPS = zeros(1,1); */</span></td></tr>
+<tr name="421" id="421">
+<td>421</td><td>  <span class="ct">/* powerKW = zeros(1,1); */</span></td></tr>
+<tr name="422" id="422">
+<td>422</td><td>  <span class="ct">/* HCEmissions = zeros(1,1); */</span></td></tr>
+<tr name="423" id="423">
+<td>423</td><td>  <span class="ct">/* COEmissions = zeros(1,1); */</span></td></tr>
+<tr name="424" id="424">
+<td>424</td><td>  <span class="ct">/* NOXEmissions = zeros(1,1); */</span></td></tr>
+<tr name="425" id="425">
+<td>425</td><td>  <span class="ct">/* '&lt;S1&gt;:1:64' */</span></td></tr>
+<tr name="426" id="426">
+<td>426</td><td>  <span class="kw">for</span> (<a id="426c8" class="tk">ixstart</a> = 0; <a id="426c21" class="tk">ixstart</a> &lt; 61; <a id="426c35" class="tk">ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="427" id="427">
+<td>427</td><td>    <span class="ct">/* '&lt;S1&gt;:1:64' */</span></td></tr>
+<tr name="428" id="428">
+<td>428</td><td>    <span class="ct">/* '&lt;S1&gt;:1:65' */</span></td></tr>
+<tr name="429" id="429">
+<td>429</td><td>    <span class="kw">for</span> (<a id="429c10" class="tk">b_j</a> = 0; <a id="429c19" class="tk">b_j</a> &lt; 61; <a id="429c29" class="tk">b_j</a>++) <span class="br">{</span></td></tr>
+<tr name="430" id="430">
+<td>430</td><td>      <span class="ct">/* '&lt;S1&gt;:1:65' */</span></td></tr>
+<tr name="431" id="431">
+<td>431</td><td>      <span class="ct">/* '&lt;S1&gt;:1:66' */</span></td></tr>
+<tr name="432" id="432">
+<td>432</td><td>      <span class="kw">for</span> (<a id="432c12" class="tk">c_ixstart</a> = 0; <a id="432c27" class="tk">c_ixstart</a> &lt; 10; <a id="432c43" class="tk">c_ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="433" id="433">
+<td>433</td><td>        <a id="433c9" class="tk">tmp</a>[<a id="433c13" class="tk">c_ixstart</a>] = (8.1533333333333324 * (<a id="433c49" class="tk">real_T</a>)<a id="433c56" class="tk">c_ixstart</a> + 24.81) -</td></tr>
+<tr name="434" id="434">
+<td>434</td><td>          <a id="434c11" class="tk">strategyEng</a>[<a id="434c23" class="tk">b_j</a>];</td></tr>
+<tr name="435" id="435">
+<td>435</td><td>      <span class="br">}</span></td></tr>
+<tr name="436" id="436">
+<td>436</td><td></td></tr>
+<tr name="437" id="437">
+<td>437</td><td>      <a id="437c7" class="tk">MATLAB_abs</a>(<a id="437c18" class="tk">tmp</a>, <a id="437c23" class="tk">tmpT</a>);</td></tr>
+<tr name="438" id="438">
+<td>438</td><td>      <a id="438c7" class="tk">c_ixstart</a> = 1;</td></tr>
+<tr name="439" id="439">
+<td>439</td><td>      <a id="439c7" class="tk">mtmp</a> = <a id="439c14" class="tk">tmpT</a>[0];</td></tr>
+<tr name="440" id="440">
+<td>440</td><td>      <a id="440c7" class="tk">itmp</a> = 0;</td></tr>
+<tr name="441" id="441">
+<td>441</td><td>      <span class="kw">if</span> (<a id="441c11" class="tk">rtIsNaN</a>(<a id="441c19" class="tk">tmpT</a>[0])) <span class="br">{</span></td></tr>
+<tr name="442" id="442">
+<td>442</td><td>        <a id="442c9" class="tk">ix</a> = 1;</td></tr>
+<tr name="443" id="443">
+<td>443</td><td>        <a id="443c9" class="tk">exitg1</a> = false;</td></tr>
+<tr name="444" id="444">
+<td>444</td><td>        <span class="kw">while</span> ((!<a id="444c18" class="tk">exitg1</a>) &amp;&amp; (<a id="444c30" class="tk">ix</a> + 1 &lt; 11)) <span class="br">{</span></td></tr>
+<tr name="445" id="445">
+<td>445</td><td>          <a id="445c11" class="tk">c_ixstart</a> = <a id="445c23" class="tk">ix</a> + 1;</td></tr>
+<tr name="446" id="446">
+<td>446</td><td>          <span class="kw">if</span> (!<a id="446c16" class="tk">rtIsNaN</a>(<a id="446c24" class="tk">tmpT</a>[<a id="446c29" class="tk">ix</a>])) <span class="br">{</span></td></tr>
+<tr name="447" id="447">
+<td>447</td><td>            <a id="447c13" class="tk">mtmp</a> = <a id="447c20" class="tk">tmpT</a>[<a id="447c25" class="tk">ix</a>];</td></tr>
+<tr name="448" id="448">
+<td>448</td><td>            <a id="448c13" class="tk">itmp</a> = <a id="448c20" class="tk">ix</a>;</td></tr>
+<tr name="449" id="449">
+<td>449</td><td>            <a id="449c13" class="tk">exitg1</a> = true;</td></tr>
+<tr name="450" id="450">
+<td>450</td><td>          <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="451" id="451">
+<td>451</td><td>            <a id="451c13" class="tk">ix</a>++;</td></tr>
+<tr name="452" id="452">
+<td>452</td><td>          <span class="br">}</span></td></tr>
+<tr name="453" id="453">
+<td>453</td><td>        <span class="br">}</span></td></tr>
+<tr name="454" id="454">
+<td>454</td><td>      <span class="br">}</span></td></tr>
+<tr name="455" id="455">
+<td>455</td><td></td></tr>
+<tr name="456" id="456">
+<td>456</td><td>      <span class="kw">if</span> (<a id="456c11" class="tk">c_ixstart</a> &lt; 10) <span class="br">{</span></td></tr>
+<tr name="457" id="457">
+<td>457</td><td>        <span class="kw">while</span> (<a id="457c16" class="tk">c_ixstart</a> + 1 &lt; 11) <span class="br">{</span></td></tr>
+<tr name="458" id="458">
+<td>458</td><td>          <span class="kw">if</span> (<a id="458c15" class="tk">tmpT</a>[<a id="458c20" class="tk">c_ixstart</a>] &lt; <a id="458c33" class="tk">mtmp</a>) <span class="br">{</span></td></tr>
+<tr name="459" id="459">
+<td>459</td><td>            <a id="459c13" class="tk">mtmp</a> = <a id="459c20" class="tk">tmpT</a>[<a id="459c25" class="tk">c_ixstart</a>];</td></tr>
+<tr name="460" id="460">
+<td>460</td><td>            <a id="460c13" class="tk">itmp</a> = <a id="460c20" class="tk">c_ixstart</a>;</td></tr>
+<tr name="461" id="461">
+<td>461</td><td>          <span class="br">}</span></td></tr>
+<tr name="462" id="462">
+<td>462</td><td></td></tr>
+<tr name="463" id="463">
+<td>463</td><td>          <a id="463c11" class="tk">c_ixstart</a>++;</td></tr>
+<tr name="464" id="464">
+<td>464</td><td>        <span class="br">}</span></td></tr>
+<tr name="465" id="465">
+<td>465</td><td>      <span class="br">}</span></td></tr>
+<tr name="466" id="466">
+<td>466</td><td></td></tr>
+<tr name="467" id="467">
+<td>467</td><td>      <span class="ct">/* '&lt;S1&gt;:1:70' */</span></td></tr>
+<tr name="468" id="468">
+<td>468</td><td>      <span class="ct">/* '&lt;S1&gt;:1:71' */</span></td></tr>
+<tr name="469" id="469">
+<td>469</td><td>      <span class="ct">/* '&lt;S1&gt;:1:72' */</span></td></tr>
+<tr name="470" id="470">
+<td>470</td><td>      <span class="ct">/* '&lt;S1&gt;:1:73' */</span></td></tr>
+<tr name="471" id="471">
+<td>471</td><td>      <span class="ct">/* '&lt;S1&gt;:1:74' */</span></td></tr>
+<tr name="472" id="472">
+<td>472</td><td>      <span class="ct">/* '&lt;S1&gt;:1:77' */</span></td></tr>
+<tr name="473" id="473">
+<td>473</td><td>      <a id="473c7" class="tk">MATLAB_B</a>.<a id="473c16" class="tk">payoffEngine</a>[<a id="473c29" class="tk">ixstart</a> + 61 * <a id="473c44" class="tk">b_j</a>] = ((((<a id="473c55" class="tk">fabs</a></td></tr>
+<tr name="474" id="474">
+<td>474</td><td>        (<a id="474c10" class="tk">MATLAB_U</a>.<a id="474c19" class="tk">RequiredtorqueNm</a> - <a id="474c38" class="tk">MATLAB_B</a>.<a id="474c47" class="tk">totalTorque</a>[61 * <a id="474c64" class="tk">b_j</a> + <a id="474c70" class="tk">ixstart</a>]) +</td></tr>
+<tr name="475" id="475">
+<td>475</td><td>        <a id="475c9" class="tk">e</a>[90 + <a id="475c16" class="tk">itmp</a>] * 60.0) + 1.05) + <a id="475c40" class="tk">b</a>[90 + <a id="475c47" class="tk">itmp</a>] * 45.0) + <a id="475c63" class="tk">c</a>[90 + <a id="475c70" class="tk">itmp</a>] *</td></tr>
+<tr name="476" id="476">
+<td>476</td><td>        56.0) + <a id="476c17" class="tk">d</a>[90 + <a id="476c24" class="tk">itmp</a>] * 28.0;</td></tr>
+<tr name="477" id="477">
+<td>477</td><td></td></tr>
+<tr name="478" id="478">
+<td>478</td><td>      <span class="ct">/* '&lt;S1&gt;:1:78' */</span></td></tr>
+<tr name="479" id="479">
+<td>479</td><td>      <a id="479c7" class="tk">MATLAB_B</a>.<a id="479c16" class="tk">payoffMotor</a>[<a id="479c28" class="tk">ixstart</a> + 61 * <a id="479c43" class="tk">b_j</a>] = ((((<a id="479c54" class="tk">fabs</a></td></tr>
+<tr name="480" id="480">
+<td>480</td><td>        (<a id="480c10" class="tk">MATLAB_U</a>.<a id="480c19" class="tk">RequiredtorqueNm</a> - <a id="480c38" class="tk">MATLAB_B</a>.<a id="480c47" class="tk">totalTorque</a>[61 * <a id="480c64" class="tk">b_j</a> + <a id="480c70" class="tk">ixstart</a>]) +</td></tr>
+<tr name="481" id="481">
+<td>481</td><td>        <a id="481c9" class="tk">f</a>[90 + <a id="481c16" class="tk">itmp</a>] * 0.5) + 1.05) + <a id="481c39" class="tk">b</a>[90 + <a id="481c46" class="tk">itmp</a>] * 45.0) + <a id="481c62" class="tk">c</a>[90 + <a id="481c69" class="tk">itmp</a>] * 56.0)</td></tr>
+<tr name="482" id="482">
+<td>482</td><td>        + <a id="482c11" class="tk">d</a>[90 + <a id="482c18" class="tk">itmp</a>] * 28.0;</td></tr>
+<tr name="483" id="483">
+<td>483</td><td></td></tr>
+<tr name="484" id="484">
+<td>484</td><td>      <span class="ct">/* '&lt;S1&gt;:1:65' */</span></td></tr>
+<tr name="485" id="485">
+<td>485</td><td>    <span class="br">}</span></td></tr>
+<tr name="486" id="486">
+<td>486</td><td></td></tr>
+<tr name="487" id="487">
+<td>487</td><td>    <span class="ct">/* '&lt;S1&gt;:1:64' */</span></td></tr>
+<tr name="488" id="488">
+<td>488</td><td>  <span class="br">}</span></td></tr>
+<tr name="489" id="489">
+<td>489</td><td></td></tr>
+<tr name="490" id="490">
+<td>490</td><td>  <span class="ct">/* '&lt;S1&gt;:1:82' */</span></td></tr>
+<tr name="491" id="491">
+<td>491</td><td>  <span class="kw">for</span> (<a id="491c8" class="tk">c_ixstart</a> = 0; <a id="491c23" class="tk">c_ixstart</a> &lt; 61; <a id="491c39" class="tk">c_ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="492" id="492">
+<td>492</td><td>    <a id="492c5" class="tk">memcpy</a>(&amp;<a id="492c13" class="tk">MATLAB_B</a>.<a id="492c22" class="tk">x</a>[122 * <a id="492c30" class="tk">c_ixstart</a>], &amp;<a id="492c43" class="tk">MATLAB_B</a>.<a id="492c52" class="tk">payoffMotor</a>[61 * <a id="492c69" class="tk">c_ixstart</a>],</td></tr>
+<tr name="493" id="493">
+<td>493</td><td>           61U * <span class="kw">sizeof</span>(<a id="493c25" class="tk">real_T</a>));</td></tr>
+<tr name="494" id="494">
+<td>494</td><td>  <span class="br">}</span></td></tr>
+<tr name="495" id="495">
+<td>495</td><td></td></tr>
+<tr name="496" id="496">
+<td>496</td><td>  <span class="kw">for</span> (<a id="496c8" class="tk">c_ixstart</a> = 0; <a id="496c23" class="tk">c_ixstart</a> &lt; 61; <a id="496c39" class="tk">c_ixstart</a>++) <span class="br">{</span></td></tr>
+<tr name="497" id="497">
+<td>497</td><td>    <a id="497c5" class="tk">memcpy</a>(&amp;<a id="497c13" class="tk">MATLAB_B</a>.<a id="497c22" class="tk">x</a>[122 * <a id="497c30" class="tk">c_ixstart</a> + 61], &amp;<a id="497c48" class="tk">MATLAB_B</a>.<a id="497c57" class="tk">payoffEngine</a>[61 *</td></tr>
+<tr name="498" id="498">
+<td>498</td><td>           <a id="498c12" class="tk">c_ixstart</a>], 61U * <span class="kw">sizeof</span>(<a id="498c37" class="tk">real_T</a>));</td></tr>
+<tr name="499" id="499">
+<td>499</td><td>  <span class="br">}</span></td></tr>
+<tr name="500" id="500">
+<td>500</td><td></td></tr>
+<tr name="501" id="501">
+<td>501</td><td>  <a id="501c3" class="tk">memcpy</a>(&amp;<a id="501c11" class="tk">MATLAB_B</a>.<a id="501c20" class="tk">payoffBoth</a>[0], &amp;<a id="501c36" class="tk">MATLAB_B</a>.<a id="501c45" class="tk">x</a>[0], 7442U * <span class="kw">sizeof</span>(<a id="501c66" class="tk">real_T</a>));</td></tr>
+<tr name="502" id="502">
+<td>502</td><td></td></tr>
+<tr name="503" id="503">
+<td>503</td><td>  <span class="ct">/* payoff = mat2cell(payoffBoth, ones(1,M+1), ones(1,M+1).*2); */</span></td></tr>
+<tr name="504" id="504">
+<td>504</td><td>  <span class="ct">/* '&lt;S1&gt;:1:88' */</span></td></tr>
+<tr name="505" id="505">
+<td>505</td><td>  <a id="505c3" class="tk">MATLAB_paretoSet</a>(<a id="505c20" class="tk">MATLAB_B</a>.<a id="505c29" class="tk">payoffBoth</a>, <a id="505c41" class="tk">pareto_data</a>, <a id="505c54" class="tk">pareto_sizes</a>);</td></tr>
+<tr name="506" id="506">
+<td>506</td><td></td></tr>
+<tr name="507" id="507">
+<td>507</td><td>  <span class="ct">/* Outport: '&lt;Root&gt;/engineTorque' incorporates:</span></td></tr>
+<tr name="508" id="508">
+<td>508</td><td><span class="ct">   *  MATLAB Function: '&lt;Root&gt;/MATLAB Function'</span></td></tr>
+<tr name="509" id="509">
+<td>509</td><td><span class="ct">   */</span></td></tr>
+<tr name="510" id="510">
+<td>510</td><td>  <span class="ct">/* '&lt;S1&gt;:1:92' */</span></td></tr>
+<tr name="511" id="511">
+<td>511</td><td>  <span class="ct">/* '&lt;S1&gt;:1:93' */</span></td></tr>
+<tr name="512" id="512">
+<td>512</td><td>  <a id="512c3" class="tk">MATLAB_Y</a>.<a id="512c12" class="tk">engineTorque</a> = <a id="512c27" class="tk">strategyEng</a>[(<a id="512c40" class="tk">int32_T</a>)<a id="512c48" class="tk">pareto_data</a>[1] - 1];</td></tr>
+<tr name="513" id="513">
+<td>513</td><td></td></tr>
+<tr name="514" id="514">
+<td>514</td><td>  <span class="ct">/* Outport: '&lt;Root&gt;/motorTorque' incorporates:</span></td></tr>
+<tr name="515" id="515">
+<td>515</td><td><span class="ct">   *  MATLAB Function: '&lt;Root&gt;/MATLAB Function'</span></td></tr>
+<tr name="516" id="516">
+<td>516</td><td><span class="ct">   */</span></td></tr>
+<tr name="517" id="517">
+<td>517</td><td>  <a id="517c3" class="tk">MATLAB_Y</a>.<a id="517c12" class="tk">motorTorque</a> = <a id="517c26" class="tk">strategyMot</a>[(<a id="517c39" class="tk">int32_T</a>)<a id="517c47" class="tk">pareto_data</a>[0] - 1];</td></tr>
+<tr name="518" id="518">
+<td>518</td><td></td></tr>
+<tr name="519" id="519">
+<td>519</td><td>  <span class="ct">/* Matfile logging */</span></td></tr>
+<tr name="520" id="520">
+<td>520</td><td>  <a id="520c3" class="tk">rt_UpdateTXYLogVars</a>(<a id="520c23" class="tk">MATLAB_M</a>-&gt;<a id="520c33" class="tk">rtwLogInfo</a>, (&amp;<a id="520c47" class="tk">MATLAB_M</a>-&gt;<a id="520c57" class="tk">Timing</a>.<a id="520c64" class="tk">taskTime0</a>));</td></tr>
+<tr name="521" id="521">
+<td>521</td><td></td></tr>
+<tr name="522" id="522">
+<td>522</td><td>  <span class="ct">/* signal main to stop simulation */</span></td></tr>
+<tr name="523" id="523">
+<td>523</td><td>  <span class="br">{</span>                                    <span class="ct">/* Sample time: [6.0E-5s, 0.0s] */</span></td></tr>
+<tr name="524" id="524">
+<td>524</td><td>    <span class="kw">if</span> ((<a id="524c10" class="tk">rtmGetTFinal</a>(<a id="524c23" class="tk">MATLAB_M</a>)!=-1) &amp;&amp;</td></tr>
+<tr name="525" id="525">
+<td>525</td><td>        !((<a id="525c12" class="tk">rtmGetTFinal</a>(<a id="525c25" class="tk">MATLAB_M</a>)-<a id="525c35" class="tk">MATLAB_M</a>-&gt;<a id="525c45" class="tk">Timing</a>.<a id="525c52" class="tk">taskTime0</a>) &gt;</td></tr>
+<tr name="526" id="526">
+<td>526</td><td>          <a id="526c11" class="tk">MATLAB_M</a>-&gt;<a id="526c21" class="tk">Timing</a>.<a id="526c28" class="tk">taskTime0</a> * (<a id="526c41" class="tk">DBL_EPSILON</a>))) <span class="br">{</span></td></tr>
+<tr name="527" id="527">
+<td>527</td><td>      <a id="527c7" class="tk">rtmSetErrorStatus</a>(<a id="527c25" class="tk">MATLAB_M</a>, "Simulation finished");</td></tr>
+<tr name="528" id="528">
+<td>528</td><td>    <span class="br">}</span></td></tr>
+<tr name="529" id="529">
+<td>529</td><td>  <span class="br">}</span></td></tr>
+<tr name="530" id="530">
+<td>530</td><td></td></tr>
+<tr name="531" id="531">
+<td>531</td><td>  <span class="ct">/* Update absolute time for base rate */</span></td></tr>
+<tr name="532" id="532">
+<td>532</td><td>  <span class="ct">/* The "clockTick0" counts the number of times the code of this task has</span></td></tr>
+<tr name="533" id="533">
+<td>533</td><td><span class="ct">   * been executed. The absolute time is the multiplication of "clockTick0"</span></td></tr>
+<tr name="534" id="534">
+<td>534</td><td><span class="ct">   * and "Timing.stepSize0". Size of "clockTick0" ensures timer will not</span></td></tr>
+<tr name="535" id="535">
+<td>535</td><td><span class="ct">   * overflow during the application lifespan selected.</span></td></tr>
+<tr name="536" id="536">
+<td>536</td><td><span class="ct">   * Timer of this task consists of two 32 bit unsigned integers.</span></td></tr>
+<tr name="537" id="537">
+<td>537</td><td><span class="ct">   * The two integers represent the low bits Timing.clockTick0 and the high bits</span></td></tr>
+<tr name="538" id="538">
+<td>538</td><td><span class="ct">   * Timing.clockTickH0. When the low bit overflows to 0, the high bits increment.</span></td></tr>
+<tr name="539" id="539">
+<td>539</td><td><span class="ct">   */</span></td></tr>
+<tr name="540" id="540">
+<td>540</td><td>  <span class="kw">if</span> (!(++<a id="540c11" class="tk">MATLAB_M</a>-&gt;<a id="540c21" class="tk">Timing</a>.<a id="540c28" class="tk">clockTick0</a>)) <span class="br">{</span></td></tr>
+<tr name="541" id="541">
+<td>541</td><td>    ++<a id="541c7" class="tk">MATLAB_M</a>-&gt;<a id="541c17" class="tk">Timing</a>.<a id="541c24" class="tk">clockTickH0</a>;</td></tr>
+<tr name="542" id="542">
+<td>542</td><td>  <span class="br">}</span></td></tr>
+<tr name="543" id="543">
+<td>543</td><td></td></tr>
+<tr name="544" id="544">
+<td>544</td><td>  <a id="544c3" class="tk">MATLAB_M</a>-&gt;<a id="544c13" class="tk">Timing</a>.<a id="544c20" class="tk">taskTime0</a> = <a id="544c32" class="tk">MATLAB_M</a>-&gt;<a id="544c42" class="tk">Timing</a>.<a id="544c49" class="tk">clockTick0</a> *</td></tr>
+<tr name="545" id="545">
+<td>545</td><td>    <a id="545c5" class="tk">MATLAB_M</a>-&gt;<a id="545c15" class="tk">Timing</a>.<a id="545c22" class="tk">stepSize0</a> + <a id="545c34" class="tk">MATLAB_M</a>-&gt;<a id="545c44" class="tk">Timing</a>.<a id="545c51" class="tk">clockTickH0</a> *</td></tr>
+<tr name="546" id="546">
+<td>546</td><td>    <a id="546c5" class="tk">MATLAB_M</a>-&gt;<a id="546c15" class="tk">Timing</a>.<a id="546c22" class="tk">stepSize0</a> * 4294967296.0;</td></tr>
+<tr name="547" id="547">
+<td>547</td><td><span class="br">}</span></td></tr>
+<tr name="548" id="548">
+<td>548</td><td></td></tr>
+<tr name="549" id="549">
+<td>549</td><td><span class="ct">/* Model initialize function */</span></td></tr>
+<tr name="550" id="550">
+<td>550</td><td><span class="kw">void</span> <a id="550c6" class="tk">MATLAB_initialize</a>(<span class="kw">void</span>)</td></tr>
+<tr name="551" id="551">
+<td>551</td><td><span class="br">{</span></td></tr>
+<tr name="552" id="552">
+<td>552</td><td>  <span class="ct">/* Registration code */</span></td></tr>
+<tr name="553" id="553">
+<td>553</td><td></td></tr>
+<tr name="554" id="554">
+<td>554</td><td>  <span class="ct">/* initialize non-finites */</span></td></tr>
+<tr name="555" id="555">
+<td>555</td><td>  <a id="555c3" class="tk">rt_InitInfAndNaN</a>(<span class="kw">sizeof</span>(<a id="555c27" class="tk">real_T</a>));</td></tr>
+<tr name="556" id="556">
+<td>556</td><td></td></tr>
+<tr name="557" id="557">
+<td>557</td><td>  <span class="ct">/* initialize real-time model */</span></td></tr>
+<tr name="558" id="558">
+<td>558</td><td>  (<span class="kw">void</span>) <a id="558c10" class="tk">memset</a>((<span class="kw">void</span> *)<a id="558c25" class="tk">MATLAB_M</a>, 0,</td></tr>
+<tr name="559" id="559">
+<td>559</td><td>                <span class="kw">sizeof</span>(<a id="559c24" class="tk">RT_MODEL_MATLAB_T</a>));</td></tr>
+<tr name="560" id="560">
+<td>560</td><td>  <a id="560c3" class="tk">rtmSetTFinal</a>(<a id="560c16" class="tk">MATLAB_M</a>, 9.99996);</td></tr>
+<tr name="561" id="561">
+<td>561</td><td>  <a id="561c3" class="tk">MATLAB_M</a>-&gt;<a id="561c13" class="tk">Timing</a>.<a id="561c20" class="tk">stepSize0</a> = 6.0E-5;</td></tr>
+<tr name="562" id="562">
+<td>562</td><td></td></tr>
+<tr name="563" id="563">
+<td>563</td><td>  <span class="ct">/* Setup for data logging */</span></td></tr>
+<tr name="564" id="564">
+<td>564</td><td>  <span class="br">{</span></td></tr>
+<tr name="565" id="565">
+<td>565</td><td>    <span class="kw">static</span> <a id="565c12" class="tk">RTWLogInfo</a> <a id="565c23" class="tk">rt_DataLoggingInfo</a>;</td></tr>
+<tr name="566" id="566">
+<td>566</td><td>    <a id="566c5" class="tk">MATLAB_M</a>-&gt;<a id="566c15" class="tk">rtwLogInfo</a> = &amp;<a id="566c29" class="tk">rt_DataLoggingInfo</a>;</td></tr>
+<tr name="567" id="567">
+<td>567</td><td>  <span class="br">}</span></td></tr>
+<tr name="568" id="568">
+<td>568</td><td></td></tr>
+<tr name="569" id="569">
+<td>569</td><td>  <span class="ct">/* Setup for data logging */</span></td></tr>
+<tr name="570" id="570">
+<td>570</td><td>  <span class="br">{</span></td></tr>
+<tr name="571" id="571">
+<td>571</td><td>    <a id="571c5" class="tk">rtliSetLogXSignalInfo</a>(<a id="571c27" class="tk">MATLAB_M</a>-&gt;<a id="571c37" class="tk">rtwLogInfo</a>, (<a id="571c50" class="tk">NULL</a>));</td></tr>
+<tr name="572" id="572">
+<td>572</td><td>    <a id="572c5" class="tk">rtliSetLogXSignalPtrs</a>(<a id="572c27" class="tk">MATLAB_M</a>-&gt;<a id="572c37" class="tk">rtwLogInfo</a>, (<a id="572c50" class="tk">NULL</a>));</td></tr>
+<tr name="573" id="573">
+<td>573</td><td>    <a id="573c5" class="tk">rtliSetLogT</a>(<a id="573c17" class="tk">MATLAB_M</a>-&gt;<a id="573c27" class="tk">rtwLogInfo</a>, "tout");</td></tr>
+<tr name="574" id="574">
+<td>574</td><td>    <a id="574c5" class="tk">rtliSetLogX</a>(<a id="574c17" class="tk">MATLAB_M</a>-&gt;<a id="574c27" class="tk">rtwLogInfo</a>, "");</td></tr>
+<tr name="575" id="575">
+<td>575</td><td>    <a id="575c5" class="tk">rtliSetLogXFinal</a>(<a id="575c22" class="tk">MATLAB_M</a>-&gt;<a id="575c32" class="tk">rtwLogInfo</a>, "");</td></tr>
+<tr name="576" id="576">
+<td>576</td><td>    <a id="576c5" class="tk">rtliSetLogVarNameModifier</a>(<a id="576c31" class="tk">MATLAB_M</a>-&gt;<a id="576c41" class="tk">rtwLogInfo</a>, "rt_");</td></tr>
+<tr name="577" id="577">
+<td>577</td><td>    <a id="577c5" class="tk">rtliSetLogFormat</a>(<a id="577c22" class="tk">MATLAB_M</a>-&gt;<a id="577c32" class="tk">rtwLogInfo</a>, 0);</td></tr>
+<tr name="578" id="578">
+<td>578</td><td>    <a id="578c5" class="tk">rtliSetLogMaxRows</a>(<a id="578c23" class="tk">MATLAB_M</a>-&gt;<a id="578c33" class="tk">rtwLogInfo</a>, 1000);</td></tr>
+<tr name="579" id="579">
+<td>579</td><td>    <a id="579c5" class="tk">rtliSetLogDecimation</a>(<a id="579c26" class="tk">MATLAB_M</a>-&gt;<a id="579c36" class="tk">rtwLogInfo</a>, 1);</td></tr>
+<tr name="580" id="580">
+<td>580</td><td></td></tr>
+<tr name="581" id="581">
+<td>581</td><td>    <span class="ct">/*</span></td></tr>
+<tr name="582" id="582">
+<td>582</td><td><span class="ct">     * Set pointers to the data and signal info for each output</span></td></tr>
+<tr name="583" id="583">
+<td>583</td><td><span class="ct">     */</span></td></tr>
+<tr name="584" id="584">
+<td>584</td><td>    <span class="br">{</span></td></tr>
+<tr name="585" id="585">
+<td>585</td><td>      <span class="kw">static</span> <span class="kw">void</span> * <a id="585c21" class="tk">rt_LoggedOutputSignalPtrs</a>[] = <span class="br">{</span></td></tr>
+<tr name="586" id="586">
+<td>586</td><td>        &amp;<a id="586c10" class="tk">MATLAB_Y</a>.<a id="586c19" class="tk">engineTorque</a>,</td></tr>
+<tr name="587" id="587">
+<td>587</td><td>        &amp;<a id="587c10" class="tk">MATLAB_Y</a>.<a id="587c19" class="tk">motorTorque</a></td></tr>
+<tr name="588" id="588">
+<td>588</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="589" id="589">
+<td>589</td><td></td></tr>
+<tr name="590" id="590">
+<td>590</td><td>      <a id="590c7" class="tk">rtliSetLogYSignalPtrs</a>(<a id="590c29" class="tk">MATLAB_M</a>-&gt;<a id="590c39" class="tk">rtwLogInfo</a>, ((<a id="590c53" class="tk">LogSignalPtrsType</a>)</td></tr>
+<tr name="591" id="591">
+<td>591</td><td>        <a id="591c9" class="tk">rt_LoggedOutputSignalPtrs</a>));</td></tr>
+<tr name="592" id="592">
+<td>592</td><td>    <span class="br">}</span></td></tr>
+<tr name="593" id="593">
+<td>593</td><td></td></tr>
+<tr name="594" id="594">
+<td>594</td><td>    <span class="br">{</span></td></tr>
+<tr name="595" id="595">
+<td>595</td><td>      <span class="kw">static</span> <a id="595c14" class="tk">int_T</a> <a id="595c20" class="tk">rt_LoggedOutputWidths</a>[] = <span class="br">{</span></td></tr>
+<tr name="596" id="596">
+<td>596</td><td>        1,</td></tr>
+<tr name="597" id="597">
+<td>597</td><td>        1</td></tr>
+<tr name="598" id="598">
+<td>598</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="599" id="599">
+<td>599</td><td></td></tr>
+<tr name="600" id="600">
+<td>600</td><td>      <span class="kw">static</span> <a id="600c14" class="tk">int_T</a> <a id="600c20" class="tk">rt_LoggedOutputNumDimensions</a>[] = <span class="br">{</span></td></tr>
+<tr name="601" id="601">
+<td>601</td><td>        1,</td></tr>
+<tr name="602" id="602">
+<td>602</td><td>        1</td></tr>
+<tr name="603" id="603">
+<td>603</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="604" id="604">
+<td>604</td><td></td></tr>
+<tr name="605" id="605">
+<td>605</td><td>      <span class="kw">static</span> <a id="605c14" class="tk">int_T</a> <a id="605c20" class="tk">rt_LoggedOutputDimensions</a>[] = <span class="br">{</span></td></tr>
+<tr name="606" id="606">
+<td>606</td><td>        1,</td></tr>
+<tr name="607" id="607">
+<td>607</td><td>        1</td></tr>
+<tr name="608" id="608">
+<td>608</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="609" id="609">
+<td>609</td><td></td></tr>
+<tr name="610" id="610">
+<td>610</td><td>      <span class="kw">static</span> <a id="610c14" class="tk">boolean_T</a> <a id="610c24" class="tk">rt_LoggedOutputIsVarDims</a>[] = <span class="br">{</span></td></tr>
+<tr name="611" id="611">
+<td>611</td><td>        0,</td></tr>
+<tr name="612" id="612">
+<td>612</td><td>        0</td></tr>
+<tr name="613" id="613">
+<td>613</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="614" id="614">
+<td>614</td><td></td></tr>
+<tr name="615" id="615">
+<td>615</td><td>      <span class="kw">static</span> <span class="kw">void</span>* <a id="615c20" class="tk">rt_LoggedCurrentSignalDimensions</a>[] = <span class="br">{</span></td></tr>
+<tr name="616" id="616">
+<td>616</td><td>        (<a id="616c10" class="tk">NULL</a>),</td></tr>
+<tr name="617" id="617">
+<td>617</td><td>        (<a id="617c10" class="tk">NULL</a>)</td></tr>
+<tr name="618" id="618">
+<td>618</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="619" id="619">
+<td>619</td><td></td></tr>
+<tr name="620" id="620">
+<td>620</td><td>      <span class="kw">static</span> <a id="620c14" class="tk">int_T</a> <a id="620c20" class="tk">rt_LoggedCurrentSignalDimensionsSize</a>[] = <span class="br">{</span></td></tr>
+<tr name="621" id="621">
+<td>621</td><td>        4,</td></tr>
+<tr name="622" id="622">
+<td>622</td><td>        4</td></tr>
+<tr name="623" id="623">
+<td>623</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="624" id="624">
+<td>624</td><td></td></tr>
+<tr name="625" id="625">
+<td>625</td><td>      <span class="kw">static</span> <a id="625c14" class="tk">BuiltInDTypeId</a> <a id="625c29" class="tk">rt_LoggedOutputDataTypeIds</a>[] = <span class="br">{</span></td></tr>
+<tr name="626" id="626">
+<td>626</td><td>        <a id="626c9" class="tk">SS_DOUBLE</a>,</td></tr>
+<tr name="627" id="627">
+<td>627</td><td>        <a id="627c9" class="tk">SS_DOUBLE</a></td></tr>
+<tr name="628" id="628">
+<td>628</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="629" id="629">
+<td>629</td><td></td></tr>
+<tr name="630" id="630">
+<td>630</td><td>      <span class="kw">static</span> <a id="630c14" class="tk">int_T</a> <a id="630c20" class="tk">rt_LoggedOutputComplexSignals</a>[] = <span class="br">{</span></td></tr>
+<tr name="631" id="631">
+<td>631</td><td>        0,</td></tr>
+<tr name="632" id="632">
+<td>632</td><td>        0</td></tr>
+<tr name="633" id="633">
+<td>633</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="634" id="634">
+<td>634</td><td></td></tr>
+<tr name="635" id="635">
+<td>635</td><td>      <span class="kw">static</span> <span class="kw">const</span> <a id="635c20" class="tk">char_T</a> *<a id="635c28" class="tk">rt_LoggedOutputLabels</a>[] = <span class="br">{</span></td></tr>
+<tr name="636" id="636">
+<td>636</td><td>        "engineTorque",</td></tr>
+<tr name="637" id="637">
+<td>637</td><td>        "motorTorque" <span class="br">}</span>;</td></tr>
+<tr name="638" id="638">
+<td>638</td><td></td></tr>
+<tr name="639" id="639">
+<td>639</td><td>      <span class="kw">static</span> <span class="kw">const</span> <a id="639c20" class="tk">char_T</a> *<a id="639c28" class="tk">rt_LoggedOutputBlockNames</a>[] = <span class="br">{</span></td></tr>
+<tr name="640" id="640">
+<td>640</td><td>        "MATLAB/engineTorque",</td></tr>
+<tr name="641" id="641">
+<td>641</td><td>        "MATLAB/motorTorque" <span class="br">}</span>;</td></tr>
+<tr name="642" id="642">
+<td>642</td><td></td></tr>
+<tr name="643" id="643">
+<td>643</td><td>      <span class="kw">static</span> <a id="643c14" class="tk">RTWLogDataTypeConvert</a> <a id="643c36" class="tk">rt_RTWLogDataTypeConvert</a>[] = <span class="br">{</span></td></tr>
+<tr name="644" id="644">
+<td>644</td><td>        <span class="br">{</span> 0, <a id="644c14" class="tk">SS_DOUBLE</a>, <a id="644c25" class="tk">SS_DOUBLE</a>, 0, 0, 0, 1.0, 0, 0.0 <span class="br">}</span>,</td></tr>
+<tr name="645" id="645">
+<td>645</td><td></td></tr>
+<tr name="646" id="646">
+<td>646</td><td>        <span class="br">{</span> 0, <a id="646c14" class="tk">SS_DOUBLE</a>, <a id="646c25" class="tk">SS_DOUBLE</a>, 0, 0, 0, 1.0, 0, 0.0 <span class="br">}</span></td></tr>
+<tr name="647" id="647">
+<td>647</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="648" id="648">
+<td>648</td><td></td></tr>
+<tr name="649" id="649">
+<td>649</td><td>      <span class="kw">static</span> <a id="649c14" class="tk">RTWLogSignalInfo</a> <a id="649c31" class="tk">rt_LoggedOutputSignalInfo</a>[] = <span class="br">{</span></td></tr>
+<tr name="650" id="650">
+<td>650</td><td>        <span class="br">{</span></td></tr>
+<tr name="651" id="651">
+<td>651</td><td>          2,</td></tr>
+<tr name="652" id="652">
+<td>652</td><td>          <a id="652c11" class="tk">rt_LoggedOutputWidths</a>,</td></tr>
+<tr name="653" id="653">
+<td>653</td><td>          <a id="653c11" class="tk">rt_LoggedOutputNumDimensions</a>,</td></tr>
+<tr name="654" id="654">
+<td>654</td><td>          <a id="654c11" class="tk">rt_LoggedOutputDimensions</a>,</td></tr>
+<tr name="655" id="655">
+<td>655</td><td>          <a id="655c11" class="tk">rt_LoggedOutputIsVarDims</a>,</td></tr>
+<tr name="656" id="656">
+<td>656</td><td>          <a id="656c11" class="tk">rt_LoggedCurrentSignalDimensions</a>,</td></tr>
+<tr name="657" id="657">
+<td>657</td><td>          <a id="657c11" class="tk">rt_LoggedCurrentSignalDimensionsSize</a>,</td></tr>
+<tr name="658" id="658">
+<td>658</td><td>          <a id="658c11" class="tk">rt_LoggedOutputDataTypeIds</a>,</td></tr>
+<tr name="659" id="659">
+<td>659</td><td>          <a id="659c11" class="tk">rt_LoggedOutputComplexSignals</a>,</td></tr>
+<tr name="660" id="660">
+<td>660</td><td>          (<a id="660c12" class="tk">NULL</a>),</td></tr>
+<tr name="661" id="661">
+<td>661</td><td></td></tr>
+<tr name="662" id="662">
+<td>662</td><td>          <span class="br">{</span> <a id="662c13" class="tk">rt_LoggedOutputLabels</a> <span class="br">}</span>,</td></tr>
+<tr name="663" id="663">
+<td>663</td><td>          (<a id="663c12" class="tk">NULL</a>),</td></tr>
+<tr name="664" id="664">
+<td>664</td><td>          (<a id="664c12" class="tk">NULL</a>),</td></tr>
+<tr name="665" id="665">
+<td>665</td><td>          (<a id="665c12" class="tk">NULL</a>),</td></tr>
+<tr name="666" id="666">
+<td>666</td><td></td></tr>
+<tr name="667" id="667">
+<td>667</td><td>          <span class="br">{</span> <a id="667c13" class="tk">rt_LoggedOutputBlockNames</a> <span class="br">}</span>,</td></tr>
+<tr name="668" id="668">
+<td>668</td><td></td></tr>
+<tr name="669" id="669">
+<td>669</td><td>          <span class="br">{</span> (<a id="669c14" class="tk">NULL</a>) <span class="br">}</span>,</td></tr>
+<tr name="670" id="670">
+<td>670</td><td>          (<a id="670c12" class="tk">NULL</a>),</td></tr>
+<tr name="671" id="671">
+<td>671</td><td>          <a id="671c11" class="tk">rt_RTWLogDataTypeConvert</a></td></tr>
+<tr name="672" id="672">
+<td>672</td><td>        <span class="br">}</span></td></tr>
+<tr name="673" id="673">
+<td>673</td><td>      <span class="br">}</span>;</td></tr>
+<tr name="674" id="674">
+<td>674</td><td></td></tr>
+<tr name="675" id="675">
+<td>675</td><td>      <a id="675c7" class="tk">rtliSetLogYSignalInfo</a>(<a id="675c29" class="tk">MATLAB_M</a>-&gt;<a id="675c39" class="tk">rtwLogInfo</a>, <a id="675c51" class="tk">rt_LoggedOutputSignalInfo</a>);</td></tr>
+<tr name="676" id="676">
+<td>676</td><td></td></tr>
+<tr name="677" id="677">
+<td>677</td><td>      <span class="ct">/* set currSigDims field */</span></td></tr>
+<tr name="678" id="678">
+<td>678</td><td>      <a id="678c7" class="tk">rt_LoggedCurrentSignalDimensions</a>[0] = &amp;<a id="678c46" class="tk">rt_LoggedOutputWidths</a>[0];</td></tr>
+<tr name="679" id="679">
+<td>679</td><td>      <a id="679c7" class="tk">rt_LoggedCurrentSignalDimensions</a>[1] = &amp;<a id="679c46" class="tk">rt_LoggedOutputWidths</a>[1];</td></tr>
+<tr name="680" id="680">
+<td>680</td><td>    <span class="br">}</span></td></tr>
+<tr name="681" id="681">
+<td>681</td><td></td></tr>
+<tr name="682" id="682">
+<td>682</td><td>    <a id="682c5" class="tk">rtliSetLogY</a>(<a id="682c17" class="tk">MATLAB_M</a>-&gt;<a id="682c27" class="tk">rtwLogInfo</a>, "yout");</td></tr>
+<tr name="683" id="683">
+<td>683</td><td>  <span class="br">}</span></td></tr>
+<tr name="684" id="684">
+<td>684</td><td></td></tr>
+<tr name="685" id="685">
+<td>685</td><td>  <span class="ct">/* external inputs */</span></td></tr>
+<tr name="686" id="686">
+<td>686</td><td>  <a id="686c3" class="tk">MATLAB_U</a>.<a id="686c12" class="tk">RequiredtorqueNm</a> = 0.0;</td></tr>
+<tr name="687" id="687">
+<td>687</td><td></td></tr>
+<tr name="688" id="688">
+<td>688</td><td>  <span class="ct">/* external outputs */</span></td></tr>
+<tr name="689" id="689">
+<td>689</td><td>  (<span class="kw">void</span>) <a id="689c10" class="tk">memset</a>((<span class="kw">void</span> *)&amp;<a id="689c26" class="tk">MATLAB_Y</a>, 0,</td></tr>
+<tr name="690" id="690">
+<td>690</td><td>                <span class="kw">sizeof</span>(<a id="690c24" class="tk">ExtY_MATLAB_T</a>));</td></tr>
+<tr name="691" id="691">
+<td>691</td><td></td></tr>
+<tr name="692" id="692">
+<td>692</td><td>  <span class="ct">/* Matfile logging */</span></td></tr>
+<tr name="693" id="693">
+<td>693</td><td>  <a id="693c3" class="tk">rt_StartDataLoggingWithStartTime</a>(<a id="693c36" class="tk">MATLAB_M</a>-&gt;<a id="693c46" class="tk">rtwLogInfo</a>, 0.0, <a id="693c63" class="tk">rtmGetTFinal</a></td></tr>
+<tr name="694" id="694">
+<td>694</td><td>    (<a id="694c6" class="tk">MATLAB_M</a>), <a id="694c17" class="tk">MATLAB_M</a>-&gt;<a id="694c27" class="tk">Timing</a>.<a id="694c34" class="tk">stepSize0</a>, (&amp;<a id="694c47" class="tk">rtmGetErrorStatus</a>(<a id="694c65" class="tk">MATLAB_M</a>)));</td></tr>
+<tr name="695" id="695">
+<td>695</td><td><span class="br">}</span></td></tr>
+<tr name="696" id="696">
+<td>696</td><td></td></tr>
+<tr name="697" id="697">
+<td>697</td><td><span class="ct">/* Model terminate function */</span></td></tr>
+<tr name="698" id="698">
+<td>698</td><td><span class="kw">void</span> <a id="698c6" class="tk">MATLAB_terminate</a>(<span class="kw">void</span>)</td></tr>
+<tr name="699" id="699">
+<td>699</td><td><span class="br">{</span></td></tr>
+<tr name="700" id="700">
+<td>700</td><td>  <span class="ct">/* (no terminate code required) */</span></td></tr>
+<tr name="701" id="701">
+<td>701</td><td><span class="br">}</span></td></tr>
+<tr name="702" id="702">
+<td>702</td><td></td></tr>
+</table>
+</pre>
+</body>
+</html>

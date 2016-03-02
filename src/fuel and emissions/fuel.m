@@ -1,4 +1,4 @@
-function FuelConsTable = fuel()
+%function FuelConsTable = fuel()
 % Read fuel consumption data for Toyota Prius from 1999
 fileSpeed = fopen('data/speed_rpm.txt','r');
 fileTorque = fopen('data/torque_nm.txt','r');
@@ -23,10 +23,10 @@ gallons_per_m3 = 264.172;
 FuelCons.fuel_gps = (fuel_galps / gallons_per_m3) * gasoline_grams_per_m3;
 
 num_points_fuel = 10;
-FuelConsTable.speed = linspace(float(min(FuelCons.speed_rpm)), max(FuelCons.speed_rpm), num_points_fuel);
-FuelConsTable.torque = linspace(float(min(FuelCons.torque_Nm)), max(FuelCons.torque_Nm), num_points_fuel);
-FuelConsTable.fuel = linspace(float(min(FuelCons.fuel_gps)), max(FuelCons.fuel_gps), num_points_fuel);
-FuelConsTable.power = linspace(float(min(FuelCons.power_kw)), max(FuelCons.power_kw), num_points_fuel);
+FuelConsTable.speed = linspace(min(FuelCons.speed_rpm), max(FuelCons.speed_rpm), num_points_fuel);
+FuelConsTable.torque = linspace(min(FuelCons.torque_Nm), max(FuelCons.torque_Nm), num_points_fuel);
+FuelConsTable.fuel = linspace(min(FuelCons.fuel_gps), max(FuelCons.fuel_gps), num_points_fuel);
+FuelConsTable.power = linspace(min(FuelCons.power_kw), max(FuelCons.power_kw), num_points_fuel);
 
 speedMeshgridFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 torqueMeshgridFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
@@ -40,11 +40,8 @@ powerFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.
 %FuelConsTable.lookupTablePower = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 %Xhat = feval(fuelFit, FuelConsTable.fuel(:));
 
-FuelConsTable.lookupTableFuel = feval(fuelFit,speedMeshgridFuel,torqueMeshgridFuel)
-FuelConsTable.lookupTablePower = feval(powerFit,speedMeshgridFuel,torqueMeshgridFuel)
-
-
-
+FuelConsTable.lookupTableFuel = feval(fuelFit,speedMeshgridFuel,torqueMeshgridFuel);
+FuelConsTable.lookupTablePower = feval(powerFit,speedMeshgridFuel,torqueMeshgridFuel);
 
 figure
 plot3(FuelCons.speed_rpm, FuelCons.torque_Nm, FuelCons.fuel_gps,'o','MarkerFaceColor','blue','MarkerEdgeColor','white');
@@ -69,4 +66,4 @@ title('Power Consumption','FontSize',13,'FontWeight','Bold')
 set(gca,'XLim',[1200 4100]);
 set(gca,'YLim',[20 110]);
 set(gca,'ZLim',[0 45]);
-end
+%end

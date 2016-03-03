@@ -1,24 +1,19 @@
-function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasEmisTable)
-%#codegen
-    coder.extrinsic('genpath'); 
-    coder.extrinsic('addpath');
-    coder.extrinsic('mat2cell');
+%function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasEmisTable)
+%#codegen   
     if requiredTorque == 0
         motorTorque = 0;
         engineTorque = 0;
-    else     
-        motorTorque = 0;
-        engineTorque = 0;
-        addpath(genpath('C:\Users\Elena\Documents\MATLAB\HEV\src\fuel and emissions'));       
-        requiredTorque = 19;
+    else           
+        requiredTorque = 114;
+        
         engineSpeedRadPerS = 500;
         engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
         SOC_deviation = 0.05;
         maxEngineTorque = 136;
         maxMotorTorque = 400;
         maxRPM = 6000;
-        M = 10;
-        N = 10;
+        M = 20;
+        N = 20;
         payoffMotor = zeros(M+1,N+1);
         payoffEngine = zeros(M+1,N+1);
         percentage = 0:(1/M):1;
@@ -41,15 +36,14 @@ function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasE
             end
         end
 
-        %T = P * 9.549 / n
         engineMaxPower = 57000;
         motorMaxPower = 50000;
-
         motorSpeed = [0, 1200, 2000, 3000, 4000, 5000, 6000];
         motorTorqueRef = [400, 400, 280, 222, 179, 143, 119];
-
         engineSpeed = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
         engineTorqueRef = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
+        
+        % weights
         wFuel = 10;
         wPower = 0.1;
         wDrDem = 0.25;
@@ -57,11 +51,7 @@ function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasE
         wNOX = 10;
         wCO = 10;
         wHC = 10;
-        %fuelConsumedGPS = zeros(1,1);
-        %powerKW = zeros(1,1);
-        %HCEmissions = zeros(1,1);
-        %COEmissions = zeros(1,1);
-        %NOXEmissions = zeros(1,1);
+       
         for i = 1:M+1
             for j = 1:N+1
                 tmpT = abs(FuelConsTable.torque - strategyEng(j));
@@ -72,9 +62,9 @@ function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasE
                 HCEmissions = GasEmisTable.lookupTableHC(idxT, idxS);
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);               
-                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
-                payoffMotor(i,j) = wPower*powerKW + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
-                if i == 10 && j == 6
+                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
+                payoffMotor(i,j) = wPower*powerKW + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation ;
+                if i == 1 && j == 11
                     fu = wFuel*fuelConsumedGPS
                     po = wPower*powerKW                    
                     differenceTorque = abs(requiredTorque - totalTorque(i,j))
@@ -84,15 +74,11 @@ function [engineTorque,motorTorque] = gameTh(requiredTorque, FuelConsTable, GasE
             end
         end
 
-        payoffBoth = reshape([payoffMotor;payoffEngine],size(payoffMotor,1),[]);
-        p = zeros(M+1, (N+1)*2);
-        %payoff = mat2cell(payoffBoth, ones(1,M+1), ones(1,M+1).*2);
-        p = payoffBoth;
-        pareto = [];
+        payoffBoth = reshape([payoffMotor;payoffEngine],size(payoffMotor,1),[]);         
         tic
-        pareto = paretoSet(p)
+        pareto = paretoSet(payoffBoth)
         toc
         motorTorque = strategyMot(pareto(:,2))
         engineTorque = strategyEng(pareto(:,1))
     end
-end
+%end

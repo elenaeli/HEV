@@ -1,36 +1,38 @@
 function [ nash ] = nashSolution( payoffEngine, payoffMotor, requiredTorque )
-
-    [k l] = size(payoffEngine);
+    [k, l] = size(payoffEngine);
     Eng = payoffEngine;
     Mot = payoffMotor;
-    conflictPoint = [Eng(k,l) Mot(k,l)]
-    nash = [];
-    qNumRows = k*k+2;
-    qNumCols = l*l+2;
-    Q = zeros(qNumRows, qNumCols);
-    Q(qNumRows-1, qNumCols) = 1;
-    Q(qNumRows, qNumCols-1) = 1;    
-    c = zeros(qNumRows,1)';
-    c(1,qNumRows-1) = -conflictPoint(1);
-    c(1,qNumRows) = -conflictPoint(2);
-    c;
-    Q;
-    H = zeros(3,qNumCols);
-    H(1,1:qNumCols-2) = reshape(Eng,1,k*k);
-    H(2,1:qNumCols-2) = reshape(Mot,1,l*l);
-    H(1,qNumCols-1) = -1;
-    H(2,qNumCols) = -1;
-    H(3,1:qNumCols-2) = 1;
-    H(3,qNumCols-1:qNumCols) = 0;
-    r = [0 0 1]';
+    conflictPoint = [Eng(k,l) Mot(k,l)]   
+    hNumRows = k*k+2;
+    hNumRows = l*l+2;
+    H = zeros(hNumRows, hNumRows);
+    H(hNumRows-1, hNumRows) = 0.5;
+    H(hNumRows, hNumRows-1) = 0.5;    
+    f = zeros(hNumRows,1)';
+    f(1,hNumRows-1) = -conflictPoint(1);
+    f(1,hNumRows) = -conflictPoint(2);
+    f
+    H
+    Aeq = zeros(3,hNumRows);
+    Aeq(1,1:hNumRows-2) = reshape(Eng',k*k,1);
+    Aeq(2,1:hNumRows-2) = reshape(Mot',l*l,1);
+    Aeq(1,hNumRows-1) = -1;
+    Aeq(2,hNumRows) = -1;
+    Aeq(3,1:hNumRows) = 1;
+    Aeq(3,hNumRows-1:hNumRows) = 0;
+    Aeq
+    beq = [0 0 1]'
     
-    lb = zeros(qNumRows,1)';
-    lb(1,qNumRows-1) = conflictPoint(1);
-    lb(1,qNumRows) = conflictPoint(2);
-    ub = Inf([qNumRows,1]);
-    A = []; 
-    b = [];
-    [x obj] = quadprog(-Q,-c,A,b,H,r,lb,ub);
-    
+    up = zeros(hNumRows,1)';
+    up(1,hNumRows-1) = conflictPoint(1);
+    up(1,hNumRows) = conflictPoint(2);
+    up
+    lb = zeros(hNumRows,1)'
+    %
+    %ub = Inf([hNumRows,1])
+ 
+    options = optimoptions('quadprog', 'Algorithm','interior-point-convex','Display','off');
+    [sol, fval, exitflag] = quadprog(H,f,[],[],Aeq,beq,lb,up,[],options)
+    nash = fval;
 end
 

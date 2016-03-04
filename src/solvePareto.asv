@@ -1,5 +1,5 @@
-%function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 94;
+function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable, GasEmisTable)
+        %requiredTorque = 200
         
         engineSpeedRadPerS = 500;
         engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
@@ -7,8 +7,8 @@
         maxEngineTorque = 136;
         maxMotorTorque = 400;
         maxRPM = 6000;
-        M = 2;
-        N = 2;
+        M = 20;
+        N = 20;
         payoffMotor = zeros(M+1,N+1);
         payoffEngine = zeros(M+1,N+1);
         percentage = 0:(1/M):1;
@@ -58,8 +58,8 @@
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);               
                 payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;
-                payoffMotor(i,j) = 0.5*wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation;                
-                if i == 16 && j == 7
+                payoffMotor(i,j) = 0.5*wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation ;
+                if i == 13 && j == 9
                     fu = wFuel*fuelConsumedGPS
                     po = wPower*powerKW
                     HC = wHC*HCEmissions
@@ -68,7 +68,7 @@
                     differenceTorque = abs(requiredTorque - totalTorque(i,j))
                     payoffEngine(i,j)
                     payoffMotor(i,j)
-                end                
+                end
             end
         end
         %payoffMotor = payoffEngine';
@@ -79,7 +79,7 @@
         motorTorque = strategyMot(paretoStrategies(:,2))
         engineTorque = strategyEng(paretoStrategies(:,1))
 
-        nashStrategies = nashSolution(payoffEngine, payoffMotor, requiredTorque)
+        %nashStrategies = nashSolution(payoffEngine, payoffMotor, requiredTorque)
 
-%end
+end
 

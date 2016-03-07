@@ -1,5 +1,5 @@
-function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable, GasEmisTable)
-        %requiredTorque = 200
+%function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable, GasEmisTable)
+        requiredTorque = 200;
         
         engineSpeedRadPerS = 500;
         engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
@@ -7,8 +7,8 @@ function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable,
         maxEngineTorque = 136;
         maxMotorTorque = 400;
         maxRPM = 6000;
-        M = 20;
-        N = 20;
+        M = 10;
+        N = 10;
         payoffMotor = zeros(M+1,N+1);
         payoffEngine = zeros(M+1,N+1);
         percentage = 0:(1/M):1;
@@ -41,11 +41,11 @@ function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable,
         % weights
         wFuel = 10;
         wPower = 0.1;
-        wDrDem = 0.25;
-        wSOC = 8;
+        wDrDem = 3;
+        wSOC = 15;
         wNOX = 20;
-        wCO = 20;
-        wHC = 20;
+        wCO = 10;
+        wHC = 10;
        
         for i = 1:M+1
             for j = 1:N+1
@@ -57,29 +57,51 @@ function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable,
                 HCEmissions = GasEmisTable.lookupTableHC(idxT, idxS);
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);               
-                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;
-                payoffMotor(i,j) = 0.5*wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation ;
-                if i == 13 && j == 9
+                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW wDrDem*abs(requiredTorque - totalTorque(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
+                payoffMotor(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(requiredTorque - totalTorque(i,j)) + wSOC*SOC_deviation;                
+                if i == 16 && j == 7
                     fu = wFuel*fuelConsumedGPS
                     po = wPower*powerKW
                     HC = wHC*HCEmissions
                     CO = wCO*COEmissions
                     NOX = wNOX*NOXEmissions
                     differenceTorque = abs(requiredTorque - totalTorque(i,j))
-                    payoffEngine(i,j)
-                    payoffMotor(i,j)
-                end
+                    %payoffEngine(i,j)
+                    %payoffMotor(i,j)
+                end                
             end
         end
         %payoffMotor = payoffEngine';
         payoffBoth = reshape([payoffEngine;payoffMotor],size(payoffMotor,1),[]);         
         tic
-        paretoStrategies = paretoSet(payoffEngine, payoffMotor, requiredTorque)
+        [paretoStrategies, paretoIndex,x, y] = paretoSet(payoffEngine, payoffMotor, requiredTorque)
         toc
         motorTorque = strategyMot(paretoStrategies(:,2))
         engineTorque = strategyEng(paretoStrategies(:,1))
-
-        %nashStrategies = nashSolution(payoffEngine, payoffMotor, requiredTorque)
-
-end
+        paretoPayoffEng = payoffEngine(paretoIndex(1,1), paretoIndex(1,2));
+        paretoPayoffMot = payoffMotor(paretoIndex(1,1), paretoIndex(1,2));
+ 
+   
+        %[sol, fval] = nashSolution(payoffEngine, payoffMotor, requiredTorque, paretoPayoffEng, paretoPayoffMot)
+        stringRequiredTorque = int2str(requiredTorque);   
+   
+        p1 = plot(x,y,'ob');
+        title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
+        hold on
+   
+        for r = 1 : size(paretoStrategies,1)
+            %text(M(paretoIndex(i,1), paretoIndex(i,2))+2, E(paretoIndex(i,1), paretoIndex(i,2)), 'Pareto optimum')  
+            linearIndex = sub2ind([M+1 N+1], paretoIndex(r,2), paretoIndex(r,1));
+            p2 = plot(x(linearIndex), y(linearIndex), 'or', 'MarkerFaceColor','r');   
+            xlabel('Payoff Engine');
+            ylabel('Payoff Motor');
+            paretoStrategies(r,:) = [paretoIndex(r,1), paretoIndex(r,2)];       
+        end       
+        %p3 = plot(sol(size(sol,1)-1),sol(size(sol,1)),'og','MarkerFaceColor','g'); 
+        legend([p1 p2], 'payoff','Pareto optimum payoff','Nash Solution', 'Location','northwest');
+        hold off
+        nashEq = LemkeHowson(payoffEngine, payoffMotor)
+        nashEq{1,1}
+        nashEq{2,1}
+%end
 

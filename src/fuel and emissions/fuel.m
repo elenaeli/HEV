@@ -2,7 +2,7 @@
 % Read fuel consumption data for Toyota Prius from 1999
 fileSpeed = fopen('data/speed_rpm.txt','r');
 fileTorque = fopen('data/torque_nm.txt','r');
-fileFuel = fopen('data/fuel_gps.txt','r');
+fileFuel = fopen('data/fuel_galps.txt','r');
 filePower = fopen('data/power_kw.txt','r');
 coder.extrinsic('float');
 coder.extrinsic('fit');
@@ -51,8 +51,8 @@ xlabel('Engine Speed (rpm)','FontSize',11)
 ylabel('Engine Torque (Nm)','FontSize',11)
 zlabel('Fuel Rate (g/s)','FontSize',11)
 title('Fuel Consumption','FontSize',13,'FontWeight','Bold')
-set(gca,'XLim',[1200 4100]);
-set(gca,'YLim',[20 110]);
+set(gca,'XLim',[1200 5400]);
+set(gca,'YLim',[20 140]);
 set(gca,'ZLim',[0 2.85]);
 
 figure
@@ -63,7 +63,7 @@ xlabel('Engine Speed (rpm)','FontSize',11)
 ylabel('Engine Torque (Nm)','FontSize',11)
 zlabel('Power (kW)','FontSize',11)
 title('Power Consumption','FontSize',13,'FontWeight','Bold')
-set(gca,'XLim',[1200 4100]);
-set(gca,'YLim',[20 110]);
-set(gca,'ZLim',[0 45]);
+set(gca,'XLim',[1200 5400]);
+set(gca,'YLim',[20 140]);
+set(gca,'ZLim',[0 70]);
 %end

@@ -1,4 +1,4 @@
-function  paretoStrategies  = paretoSet( payoffEngine, payoffMotor, requiredTorque )
+function  [paretoStrategies, paretoIndex, x, y]  = paretoSet( payoffEngine, payoffMotor, requiredTorque )
     coder.extrinsic('legend');
     coder.extrinsic('int2str');
     
@@ -17,11 +17,7 @@ function  paretoStrategies  = paretoSet( payoffEngine, payoffMotor, requiredTorq
             y(ind) = Mot(i,j);
             ind = ind+1;          
         end
-    end    
-
-    % connect last point to first in the graph
-    %x = [x x(1)];
-    %y = [y y(1)];
+    end 
    
     paretoIndex = zeros(k,2);
     paretoStrategies = zeros(k,2);
@@ -65,22 +61,8 @@ function  paretoStrategies  = paretoSet( payoffEngine, payoffMotor, requiredTorq
     paretoIndex( ~any(paretoIndex,2), : ) = [];
     paretoStrategies( ~any(paretoStrategies,2), : ) = [];
 
-    stringRequiredTorque = int2str(requiredTorque);   
-    plot(x,y,'o');
-    title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
-    hold on
-   
     for r = 1 : size(paretoStrategies,1)
-        %text(M(paretoIndex(i,1), paretoIndex(i,2))+2, E(paretoIndex(i,1), paretoIndex(i,2)), 'Pareto optimum')  
-        linearIndex = sub2ind([k l], paretoIndex(r,2), paretoIndex(r,1));
-        plot(x(linearIndex), y(linearIndex), 'or', 'MarkerFaceColor','r');   
-        legend('payoff','Pareto optimum payoff', 'Location','northwest');
-        xlabel('Payoff Engine');
-        ylabel('Payoff Motor');
         paretoStrategies(r,:) = [paretoIndex(r,1), paretoIndex(r,2)];       
     end
-    hold off
-    %paretoStrategies
-   
 end
 

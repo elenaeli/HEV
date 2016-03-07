@@ -44,9 +44,9 @@ xlabel('Engine Speed (rpm)','FontSize',11)
 ylabel('Engine Torque (Nm)','FontSize',11)
 zlabel('HC Emissions (g/s)','FontSize',11)
 title('Hydrogen Carbon Emissions','FontSize',13,'FontWeight','Bold')
-set(gca,'XLim',[1200 4100]);
+set(gca,'XLim',[1200 5400]);
 set(gca,'YLim',[20 110]);
-set(gca,'ZLim',[0 0.06]);
+set(gca,'ZLim',[0 0.09]);
 
 figure
 plot3(GasEmis.speed_rpm, GasEmis.torque_Nm, GasEmis.co_gps,'o','MarkerFaceColor','blue','MarkerEdgeColor','white');
@@ -56,9 +56,9 @@ xlabel('Engine Speed (rpm)','FontSize',11)
 ylabel('Engine Torque (Nm)','FontSize',11)
 zlabel('CO Emissions (g/s)','FontSize',11)
 title('Carbon Oxide Emissions','FontSize',13,'FontWeight','Bold')
-set(gca,'XLim',[1200 4100]);
-set(gca,'YLim',[20 110]);
-set(gca,'ZLim',[0 0.22]);
+set(gca,'XLim',[1200 5400]);
+set(gca,'YLim',[20 140]);
+set(gca,'ZLim',[0 0.39]);
 
 figure
 plot3(GasEmis.speed_rpm, GasEmis.torque_Nm, GasEmis.nox_gps,'o','MarkerFaceColor','blue','MarkerEdgeColor','white');
@@ -68,8 +68,8 @@ xlabel('Engine Speed (rpm)','FontSize',11)
 ylabel('Engine Torque (Nm)','FontSize',11)
 zlabel('NOX Emissions (g/s)','FontSize',11)
 title('Nitrogen Oxide Emissions','FontSize',13,'FontWeight','Bold')
-set(gca,'XLim',[1200 4100]);
-set(gca,'YLim',[20 110]);
-set(gca,'ZLim',[0 0.16]);
+set(gca,'XLim',[1200 5400]);
+set(gca,'YLim',[20 140]);
+set(gca,'ZLim',[0 0.20]);
 %end
 

@@ -10,9 +10,7 @@ function [ sol, fval ] = nashSolution( payoffEngine, payoffMotor, requiredTorque
     H(hNumRows, hNumRows-1) = 0.5;    
     f = zeros(hNumRows,1)';
     f(1,hNumRows-1) = -conflictPoint(1);
-    f(1,hNumRows) = -conflictPoint(2);
-    H
-    f
+    f(1,hNumRows) = -conflictPoint(2);   
     Aeq = zeros(3,hNumRows);
     Aeq(1,1:hNumRows-2) = reshape(Eng',k*k,1);
     Aeq(2,1:hNumRows-2) = reshape(Mot',l*l,1);
@@ -20,16 +18,14 @@ function [ sol, fval ] = nashSolution( payoffEngine, payoffMotor, requiredTorque
     Aeq(2,hNumRows) = -1;
     Aeq(3,1:hNumRows) = 1;
     Aeq(3,hNumRows-1:hNumRows) = 0;
-    Aeq
-    beq = [0 0 1]'
+    Aeq;
+    beq = [0 0 1]';
     
     lb = zeros(hNumRows,1)';   
     lb(1,hNumRows-1) = conflictPoint(1);
     lb(1,hNumRows) = conflictPoint(2);    
-    ub = Inf(hNumRows,1)';
+    ub = Inf(hNumRows,1)';    
     
-    lb
-    ub
     options = optimoptions('quadprog','Algorithm','interior-point-convex','Display','off');
     [sol, fval, exitflag] = quadprog(-H,-f,[],[],Aeq,beq,lb,ub,[],options)
 

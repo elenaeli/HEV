@@ -12,10 +12,10 @@ formatSpec = '%f';
 FuelCons = struct('speed_rpm',[], 'torque_Nm',[], 'fuel_gps',[], 'power_kw', []);
 FuelConsTable = struct('speed', zeros(1,10), 'torque', zeros(1,10), 'fuel', zeros(1,10), 'power', zeros(1,10), 'lookupTableFuel', zeros(10,10), 'lookupTablePower', zeros(10,10));
 coder.extrinsic('fscanf');
-FuelCons.speed_rpm = fscanf(fileSpeed,formatSpec);
-FuelCons.torque_Nm = fscanf(fileTorque,formatSpec);
-FuelCons.power_kw = fscanf(filePower,formatSpec);
-fuel_galps = fscanf(fileFuel,formatSpec);
+FuelCons.speed_rpm = fscanf(fileSpeed, formatSpec);
+FuelCons.torque_Nm = fscanf(fileTorque, formatSpec);
+FuelCons.power_kw = fscanf(filePower, formatSpec);
+fuel_galps = fscanf(fileFuel, formatSpec);
 
 gasoline_grams_per_m3 = 719.7 * 1000;    % density 719.7 kg/m3 * 1000 grams
 gallons_per_m3 = 264.172;
@@ -35,7 +35,7 @@ torqueMeshgridFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torqu
 x = horzcat(FuelConsTable.speed(:), FuelConsTable.torque(:));
 
 fuelFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.fuel(:), 'poly22', 'Normalize', 'on');
-powerFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.power(:), 'poly23', 'Normalize', 'on');
+powerFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.power(:), 'poly22', 'Normalize', 'on');
 %FuelConsTable.lookupTableFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 %FuelConsTable.lookupTablePower = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 %Xhat = feval(fuelFit, FuelConsTable.fuel(:));

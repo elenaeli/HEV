@@ -130,6 +130,27 @@
       \field{pages}{4422\bibrangedash 4426}
       \range{pages}{5}
     \endentry
+    \entry{LemkeHowsonMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=cd945204d079e69a0142a7e43b84f7e1}{Katzwer}{K\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{cd945204d079e69a0142a7e43b84f7e1}
+      \strng{fullhash}{cd945204d079e69a0142a7e43b84f7e1}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lemke-Howson Algorithm for 2-Player Games}
+      \field{urlday}{08}
+      \field{urlmonth}{03}
+      \field{urlyear}{2010}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.mathworks.com/matlabcentral/fileexchange/44279-lemke-howson-algorithm-for-2-player-games
+      \endverb
+    \endentry
     \entry{lafrance1973electrical}{article}{}
       \name{author}{2}{}{%
         {{uniquename=0,hash=2806d1c364ddb059d5b665d5d73f0b33}{LaFrance}{L\bibinitperiod}{RC}{R\bibinitperiod}{}{}{}{}}%

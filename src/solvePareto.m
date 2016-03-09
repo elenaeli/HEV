@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvePareto(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 165;
+        requiredTorque = 385;
         
         engineSpeedRadPerS = 200;
         engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
@@ -105,7 +105,7 @@
         payoffEngPareto
         payoffMotPareto
         
-        nashEq = LemkeHowson(-payoffEngine, -payoffMotor, 10);      
+        nashEq = LemkeHowson(-payoffEngine, -payoffMotor, 12);      
         indE = find(nashEq{1,1});
         indM = find(nashEq{2,1});
         engineTorqueNash = strategyEng(indE);

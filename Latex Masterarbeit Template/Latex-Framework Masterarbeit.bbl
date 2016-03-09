@@ -130,7 +130,7 @@
       \field{pages}{4422\bibrangedash 4426}
       \range{pages}{5}
     \endentry
-    \entry{LemkeHowsonMatlab}{online}{}
+    \entry{lemkeHowson2014Matlab}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=cd945204d079e69a0142a7e43b84f7e1}{Katzwer}{K\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
       }
@@ -138,7 +138,7 @@
       \strng{fullhash}{cd945204d079e69a0142a7e43b84f7e1}
       \field{sortinit}{K}
       \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{2013}
+      \field{labelyear}{2014}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -146,7 +146,7 @@
       \field{urlday}{08}
       \field{urlmonth}{03}
       \field{urlyear}{2010}
-      \field{year}{2013}
+      \field{year}{2014}
       \verb{url}
       \verb http://www.mathworks.com/matlabcentral/fileexchange/44279-lemke-howson-algorithm-for-2-player-games
       \endverb
@@ -219,6 +219,46 @@
       \field{year}{1951}
       \field{pages}{286\bibrangedash 295}
       \range{pages}{10}
+    \endentry
+    \entry{nisan2007algorithmic}{book}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,hash=dd03ed102537d5040adaf7ede9bad0ec}{Nisan}{N\bibinitperiod}{Noam}{N\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{Roughgarden}{R\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b68fe90101326ab15c1bc77e49780304}{Tardos}{T\bibinitperiod}{Eva}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4344f3ab9820abfa99b0160d5d229257}{Vazirani}{V\bibinitperiod}{Vijay\bibnamedelima V}{V\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press Cambridge}%
+      }
+      \strng{namehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{fullhash}{8ff736583a9d96ebd6529c7a69f4d9f7}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algorithmic game theory}
+      \field{volume}{1}
+      \field{year}{2007}
+    \endentry
+    \entry{shapley1974note}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=02050ef6384404264a61641a4606717e}{Shapley}{S\bibinitperiod}{Lloyd\bibnamedelima S}{L\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{02050ef6384404264a61641a4606717e}
+      \strng{fullhash}{02050ef6384404264a61641a4606717e}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1974}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A note on the Lemke-Howson algorithm}
+      \field{year}{1974}
     \endentry
     \entry{von1952theory}{book}{}
       \name{author}{1}{}{%

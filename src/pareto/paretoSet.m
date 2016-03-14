@@ -1,4 +1,4 @@
-function  [paretoStrategies, paretoIndex, x, y]  = paretoSet( payoffEngine, payoffMotor, requiredTorque )
+function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, payoffMotor )
     coder.extrinsic('legend');
     coder.extrinsic('int2str');
     
@@ -19,7 +19,7 @@ function  [paretoStrategies, paretoIndex, x, y]  = paretoSet( payoffEngine, payo
         end
     end 
    
-    paretoIndex = zeros(k,2);
+    paretoIndices = zeros(k,2);
     paretoStrategies = zeros(k,2);
     coder.varsize('paretoIndex');
     coder.varsize('paretoStrategies');
@@ -44,8 +44,8 @@ function  [paretoStrategies, paretoIndex, x, y]  = paretoSet( payoffEngine, payo
             if isNotPareto == 0    
                 repeatedRow = ismember(paretoStrategies,[Eng(i,j) Mot(i,j)],'rows');
                 if ~any(repeatedRow)    
-                    paretoIndex(count,1) = i;
-                    paretoIndex(count,2) = j;
+                    paretoIndices(count,1) = i;
+                    paretoIndices(count,2) = j;
                     paretoStrategies(count,1) = Eng(i,j);
                     paretoStrategies(count,2) = Mot(i,j);
                     count = count+1;
@@ -58,11 +58,8 @@ function  [paretoStrategies, paretoIndex, x, y]  = paretoSet( payoffEngine, payo
     %paretoIndex = paretoIndex(ia, :); 
     
     % remove all rows with zeros
-    paretoIndex( ~any(paretoIndex,2), : ) = [];
+    paretoIndices( ~any(paretoIndices,2), : ) = [];
     paretoStrategies( ~any(paretoStrategies,2), : ) = [];
-
-    for r = 1 : size(paretoStrategies,1)
-        paretoStrategies(r,:) = [paretoIndex(r,1), paretoIndex(r,2)];       
-    end
+   
 end
 

@@ -1,4 +1,4 @@
-function [ sol, fval ] = nashSolution( payoffEngine, payoffMotor, requiredTorque, eng, mot )
+function [ sol, fval ] = nashSolutionOld(payoffEngine, payoffMotor, requiredTorque, eng, mot )
     [k, l] = size(payoffEngine);
     Eng = payoffEngine;
     Mot = payoffMotor;

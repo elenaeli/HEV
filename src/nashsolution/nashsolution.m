@@ -1,17 +1,17 @@
-function [ nashProduct, indN ] = nashsolution( payoffBoth, c )
+function [ nashSolution, indNP ] = nashsolution( payoffBoth, c )
 
-nashProduct = zeros(size(payoffBoth,1),1);
-for i = 1 : size(payoffBoth,1)
-    u1 = payoffBoth(i,1) - payoffBoth(c,1);
-    u2 = payoffBoth(i,2) - payoffBoth(c,2);
-    if payoffBoth(i,1) > payoffBoth(c,1) && payoffBoth(i,2) > payoffBoth(c,2)
-        nashProduct(i) = u1 * u2;
-    else
-        nashProduct(i) = Inf;
+    nashProduct = zeros(size(payoffBoth,1),1);
+    for u = 1 : size(payoffBoth,1)
+        u1 = - payoffBoth(u,1) + payoffBoth(c,1);
+        u2 = - payoffBoth(u,2) + payoffBoth(c,2);
+        if payoffBoth(u,1) <= payoffBoth(c,1) && payoffBoth(u,2) <= payoffBoth(c,2)
+            nashProduct(u) = u1 * u2;
+        else
+            nashProduct(u) = -Inf;
+        end
+
     end
-    
-end
-[ ~, indN ] = min(nashProduct);
-nashSolution = nashProduct(indN, :);
+    [ ~, indNP ] = max(nashProduct);
+    nashSolution = nashProduct(indNP, :);
 end
 

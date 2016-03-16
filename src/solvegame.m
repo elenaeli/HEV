@@ -1,6 +1,7 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 44;
+        requiredTorque = 98;
         
+        close all
         engineSpeedRadPerS = 200;
         engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
         SOC_deviation = 0.12;
@@ -12,8 +13,8 @@
         payoffMotor = zeros(M+1,N+1);
         payoffEngine = zeros(M+1,N+1);
         percentage = 0:(1/M):1;
-        maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
+        maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
 
         strategyEng = percentage .* maxEngineTorqueStrategy;
         strategyMot = percentage .* maxMotorTorqueStrategy;
@@ -57,8 +58,8 @@
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);   
                 torqueDeviation(i,j) = requiredTorque - totalTorque(i,j);
-                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW + wDrDem*abs(torqueDeviation(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
-                payoffMotor(i,j) = 0.6*wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;                
+                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW + wDrDem*abs(torqueDeviation(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;
+                payoffMotor(i,j) = 0.6*wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;                
                 if i == 12 && j == 6 
                     fu = wFuel*fuelConsumedGPS;
                     po = wPower*powerKW;
@@ -75,13 +76,24 @@
         tic
         [paretoStrategies, paretoIndex, x, y] = paretoset(payoffEngine, payoffMotor);                
         toc
+        payoffE = reshape(payoffEngine,(M+1)*(N+1),1);
+        payoffM = reshape(payoffMotor,(M+1)*(N+1),1);        
+        payoffB = horzcat(payoffE, payoffM);
         
+        front = paretofront(payoffB);
+        in = find(front);  
+        figure
+        plot(x,y,'ob');
+        hold on
+        plot(payoffB(in,1), payoffB(in,2), 'or');
+                
         engineTorquePareto = strategyEng(paretoIndex(:,1));
         motorTorquePareto = strategyMot(paretoIndex(:,2));
      
         %[sol, fval] = nashSolution(payoffEngine, payoffMotor, requiredTorque, paretoPayoffEng, paretoPayoffMot)
         stringRequiredTorque = int2str(requiredTorque);   
    
+        figure
         p1 = plot(x,y,'ob');
         title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
         hold on
@@ -96,7 +108,7 @@
         
         payoffEngPareto
         payoffMotPareto
-        torqueDeviationPareto
+        
         bestTorqDevPareto = min(abs(torqueDeviationPareto));
         Idxs = find(abs(torqueDeviationPareto)==bestTorqDevPareto);       
         if size(Idxs,2) > 1
@@ -135,33 +147,34 @@
         [minPayoffEngNash, indM] = min(payoffEngNash);
         switch indM
             case 1
-                nashIndEng = find(nashEq1{1,1}==1)
-                nashIndMot = find(nashEq1{2,1}==1)                
+                nashIndEng = find(nashEq1{1,1}==1);
+                nashIndMot = find(nashEq1{2,1}==1);                
             case 2
-                nashIndEng = find(nashEqQuat{1,1}==1)
-                nashIndMot = find(nashEqQuat{2,1}==1)
+                nashIndEng = find(nashEqQuat{1,1}==1);
+                nashIndMot = find(nashEqQuat{2,1}==1);
             case 3
-                nashIndEng = find(nashEqHalf{1,1}==1)
-                nashIndMot = find(nashEqHalf{2,1}==1)
+                nashIndEng = find(nashEqHalf{1,1}==1);
+                nashIndMot = find(nashEqHalf{2,1}==1);
             case 4
-                nashIndEng = find(nashEq3Quat{1,1}==1)
-                nashIndMot = find(nashEq3Quat{2,1}==1)
+                nashIndEng = find(nashEq3Quat{1,1}==1);
+                nashIndMot = find(nashEq3Quat{2,1}==1);
         end
-        conflictPoint = sub2ind([M+1 N+1], nashIndEng, nashIndMot);
+        c1 = find(nashEqQuat{1,1}==1)
+        c2 = find(nashEqQuat{2,1}==1)
+        conflictPoint = sub2ind([M+1 N+1], find(nashEqQuat{1,1}==1), find(nashEqQuat{2,1}==1))
 
-        bestPayoffEngNashLH = payoffEngNash(indM)
-        bestPayoffMotNashLH = payoffMotNash(indM)
-        
-        payoffE = reshape(payoffEngine,(M+1)*(N+1),1);
-        payoffM = reshape(payoffMotor,(M+1)*(N+1),1);        
-        payoffB = horzcat(payoffE, payoffM);
+        bestPayoffEngNashLH = payoffEngNash(2);
+        bestPayoffMotNashLH = payoffMotNash(2);        
+
         [A, payoffNPG, iterations, err] = npg([M+1 N+1], -payoffB);
         payoffEngNashNPG = -payoffNPG(1)
         payoffMotNashNPG = -payoffNPG(2)
         
-        [ nashProduct, indNP ] = nashsolution(payoffB, conflictPoint);
-        payoffEngNashSol = payoffB(indNP,1)
-        payoffMotNashSol = payoffB(indNP,2)
+        [~, indNP] = nashsolution(payoffB, conflictPoint);
+        payoffEngNashSol = payoffB(indNP,1);
+        payoffMotNashSol = payoffB(indNP,2);
+        
+        [ks, indKS] = kalaismorodinskysolution(payoffB, conflictPoint)
         
         p4 = plot(bestPayoffEngNashLH, bestPayoffMotNashLH, 'om', ...
             'MarkerFaceColor','m', 'MarkerSize', 15);    
@@ -172,11 +185,10 @@
             'MarkerFaceColor', 'g', 'MarkerSize', 9);
         p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
             'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
-            'MarkerSize', 7);         
-    
+            'MarkerSize', 7);            
         
         for r = 1 : size(paretoIndex,1)
-            linearIndex = sub2ind([M+1 N+1], paretoIndex(r,2), paretoIndex(r,1));
+            linearIndex = sub2ind([M+1 N+1], paretoIndex(r,2), paretoIndex(r,1));            
             p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
                 'MarkerEdgeColor', [0,0.6,0], 'MarkerFaceColor',[0,0.6,0],...
                 'MarkerSize',5);   

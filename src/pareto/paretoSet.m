@@ -5,20 +5,10 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     [k,l] = size(payoffEngine);    
     Eng = payoffEngine;
     Mot = payoffMotor;
-    ind = 1;
-    x = zeros(1,k*l);
-    y = zeros(1,k*l);
 
-    for i=1:k        
-        for j=1:l         
-            %Eng(i,count) = payoff(i,j);
-            %Mot(i,count) = payoff(i,j+1);           
-            x(ind) = Eng(i,j);
-            y(ind) = Mot(i,j);
-            ind = ind+1;          
-        end
-    end 
-   
+    x = reshape(Eng',1,k*l);
+    y = reshape(Mot',1,k*l);
+    
     paretoIndices = zeros(k,2);
     paretoStrategies = zeros(k,2);
     coder.varsize('paretoIndex');

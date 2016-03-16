@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 360;
+        requiredTorque = 61;
         
         close all
         engineSpeedRadPerS = 200;
@@ -176,17 +176,20 @@
         
         [ks, indKS] = kalaismorodinskysolution(payoffB, conflictPoint)
         
-        imputE = find(payoffEngine <= payoffEngine(M+1,1));
-        imputM = find(payoffMotor <= payoffMotor(1,N+1));
-        C = intersect(imputE,imputM);
-        payoffBCore = [];
-        payoffBCore(:,1) = payoffB(C,1);
-        payoffBCore(:,2) = payoffB(C,2);
-        payoffBCore(:,3) = payoffEngine(M+1,1)+payoffMotor(1,N+1)        ;
-        %payoffBCore(:,3) = payoffEngine(M+1,1) + payoffMotor(M+1,1);
+             
+        s = size(payoffEngine,1)
+        diagonal = payoffEngine(s:s-1:end-1);
+        v12 = diagonal(2:end-1)';
+        v1(1:M-1) = payoffEngine(M,1);
+        v2(1:M-1) = payoffMotor(1,N);
+        payoffCore = horzcat(v1',v2',v12);
+         
+        payoffBCore = payoffB;
+        payoffBCore(:,3) = payoffEngine(M,1) + payoffMotor(M,1);
         coreSol = core(payoffBCore);
-        ind = find(coreSol) 
-      
+        ind = find(coreSol);  
+        plot(payoffB(in,1), payoffB(in,2), 'or');
+
         p4 = plot(bestPayoffEngNashLH, bestPayoffMotNashLH, 'om', ...
             'MarkerFaceColor','m', 'MarkerSize', 15);    
         p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
@@ -197,8 +200,7 @@
         p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
             'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
             'MarkerSize', 7);            
-        plot(payoffB(C,1), payoffB(C,2), 'oc','MarkerFaceColor','c');
-
+        
         for r = 1 : size(paretoIndex,1)
             linearIndex = sub2ind([M+1 N+1], paretoIndex(r,2), paretoIndex(r,1));            
             p2 = plot(x(linearIndex), y(linearIndex), 'o', ...

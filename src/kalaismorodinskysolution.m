@@ -3,7 +3,7 @@ function [ ks, indKS ] = kalaismorodinskysolution( payoffBoth, c )
     m1 = min(payoffBoth(:,1))
     m2 = min(payoffBoth(:,2))   
     
-    plot(m1,m2,'xr');
+    %plot(m1,m2,'xr');
     
     ks(1,1) = Inf;
     ks(1,2) = Inf;

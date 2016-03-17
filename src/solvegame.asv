@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 61;
+        requiredTorque = 146;
         
         close all
         engineSpeedRadPerS = 200;
@@ -8,21 +8,21 @@
         maxEngineTorque = 136;
         maxMotorTorque = 400;
         maxRPM = 6000;
-        M = 14;
-        N = 14;
-        payoffMotor = zeros(M+1,N+1);
-        payoffEngine = zeros(M+1,N+1);
-        percentage = 0:(1/M):1;
+        M = 15;
+        N = 15;
+        payoffMotor = zeros(M,N);
+        payoffEngine = zeros(M,N);
+        percentage = 0:(1/(M-1)):1;
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
 
         strategyEng = percentage .* maxEngineTorqueStrategy;
         strategyMot = percentage .* maxMotorTorqueStrategy;
-        tmpTorque = repmat(strategyEng',1,M+1);
+        tmpTorque = repmat(strategyEng',1,M);
 
-        totalTorque = zeros(M+1, N+1);
-        for i = 1:M+1
-            for j = 1:N+1
+        totalTorque = zeros(M, N);
+        for i = 1:M
+            for j = 1:N
                 totalTorque(i,j) = tmpTorque(i,j) + strategyMot(j);
             end
         end
@@ -39,16 +39,16 @@
         [~, idxS ] = min(tmpS);
 
         % weights
-        wFuel = 1;
+        wFuel = 3;
         wPower = 0.4;
-        wDrDem = 0.8;
+        wDrDem = 0.5;
         wSOC = 40;
         wNOX = 50;
         wCO = 30;
         wHC = 30;
        
-        for i = 1:M+1
-            for j = 1:N+1
+        for i = 1:M
+            for j = 1:N
                 tmpT = abs(FuelConsTable.torque - strategyEng(j));
                 idxT = 0;
                 [~, idxT] = min(tmpT);      
@@ -60,13 +60,13 @@
                 torqueDeviation(i,j) = requiredTorque - totalTorque(i,j);
                 payoffEngine(i,j) = wFuel*fuelConsumedGPS + wPower*powerKW + wDrDem*abs(torqueDeviation(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;
                 payoffMotor(i,j) = 0.6*wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + wSOC*SOC_deviation;                
-                if i == 12 && j == 6 
-                    fu = wFuel*fuelConsumedGPS;
-                    po = wPower*powerKW;
-                    HC = wHC*HCEmissions;
-                    CO = wCO*COEmissions;
-                    NOX = wNOX*NOXEmissions;
-                    torqueDeviation(i,j);                   
+                if i == 1 && j == 1
+                    fu = wFuel*fuelConsumedGPS
+                    po = wPower*powerKW
+                    HC = wHC*HCEmissions
+                    CO = wCO*COEmissions
+                    NOX = wNOX*NOXEmissions
+                    torqueDeviation(i,j)                 
                 end                
             end
         end
@@ -76,8 +76,8 @@
         tic
         [paretoStrategies, paretoIndex, x, y] = paretoset(payoffEngine, payoffMotor);                
         toc
-        payoffE = reshape(payoffEngine,(M+1)*(N+1),1);
-        payoffM = reshape(payoffMotor,(M+1)*(N+1),1);        
+        payoffE = reshape(payoffEngine,(M)*(N),1);
+        payoffM = reshape(payoffMotor,(M)*(N),1);        
         payoffB = horzcat(payoffE, payoffM);
         
         front = paretofront(payoffB);
@@ -122,7 +122,7 @@
         bestPayoffEngPareto
         bestPayoffMotPareto        
 
-        numStratBoth = M+1+N+1;
+        numStratBoth = M+N;
         tic
         nashEq1 = LemkeHowson(-payoffEngine, -payoffMotor);      
         nashEqQuat = LemkeHowson(-payoffEngine, -payoffMotor, ceil(numStratBoth/4));      
@@ -161,48 +161,65 @@
         end
         c1 = find(nashEqQuat{1,1}==1)
         c2 = find(nashEqQuat{2,1}==1)
-        conflictPoint = sub2ind([M+1 N+1], find(nashEqQuat{1,1}==1), find(nashEqQuat{2,1}==1))
+        conflictPoint = sub2ind([M N], find(nashEqQuat{1,1}==1), find(nashEqQuat{2,1}==1))
 
         bestPayoffEngNashLH = payoffEngNash(2);
         bestPayoffMotNashLH = payoffMotNash(2);        
 
-        [A, payoffNPG, iterations, err] = npg([M+1 N+1], -payoffB);
-        payoffEngNashNPG = -payoffNPG(1)
-        payoffMotNashNPG = -payoffNPG(2)
+        
+        %[A, payoffNPG, iterations, err] = npg([M N], -payoffB);
+        %payoffEngNashNPG = -payoffNPG(1)
+        %payoffMotNashNPG = -payoffNPG(2)
+        
         
         [~, indNP] = nashsolution(payoffB, conflictPoint);
-        payoffEngNashSol = payoffB(indNP,1);
-        payoffMotNashSol = payoffB(indNP,2);
+        payoffEngNashSol = payoffB(indNP,1)
+        payoffMotNashSol = payoffB(indNP,2)
         
-        [ks, indKS] = kalaismorodinskysolution(payoffB, conflictPoint)
+        %[ks, indKS] = kalaismorodinskysolution(payoffB, conflictPoint)
         
-             
-        s = size(payoffEngine,1)
-        diagonal = payoffEngine(s:s-1:end-1);
-        v12 = diagonal(2:end-1)';
-        v1(1:M-1) = payoffEngine(M,1);
-        v2(1:M-1) = payoffMotor(1,N);
-        payoffCore = horzcat(v1',v2',v12);
-         
-        payoffBCore = payoffB;
-        payoffBCore(:,3) = payoffEngine(M,1) + payoffMotor(M,1);
+        %biggerThanAll = all(payoffEngine(M,:) >= payoffEngine(paretoIndex(:,1),paretoIndex(:,1)))
+        imputM = [];
+        imputE = [];
+    
+        for i = 1 : size(paretoIndex,1)             
+            if payoffEngine(M,:) >= payoffEngine(paretoIndex(i,1),paretoIndex(i,2))
+                imputM(1,i) = sub2ind(size(payoffEngine), paretoIndex(i,1), paretoIndex(i,2));
+            end                
+            if payoffMotor(:,N) >= payoffMotor(paretoIndex(i,1),paretoIndex(i,2))
+                imputE(1,i) = sub2ind(size(payoffMotor), paretoIndex(i,1), paretoIndex(i,2));
+            end
+        end              
+              
+        if payoffMotor(paretoIndex(:,1),paretoIndex(:,2)) <= payoffMotor(1,N)
+            imputM = sub2ind(size(payoffMotor), paretoIndex(:,1), paretoIndex(:,2));
+        end
+       
+        C = intersect(imputE,imputM)
+        payoffBCore = [];
+        payoffBCore(:,1) = payoffB(C,1);
+        payoffBCore(:,2) = payoffB(C,2);
+        payoffBCore(:,3) = payoffEngine(M,1)+payoffMotor(1,N);
+        %payoffBCore(:,3) = payoffEngine(M+1,1) + payoffMotor(M+1,1);
+        tic
         coreSol = core(payoffBCore);
-        ind = find(coreSol);  
-        plot(payoffB(in,1), payoffB(in,2), 'or');
-
+        ind = find(coreSol) 
+        toc
         p4 = plot(bestPayoffEngNashLH, bestPayoffMotNashLH, 'om', ...
-            'MarkerFaceColor','m', 'MarkerSize', 15);    
+            'MarkerFaceColor','m', 'MarkerSize', 17);    
         p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
             'MarkerFaceColor','y', 'MarkerEdgeColor', 'y',...
-            'MarkerSize', 12);  
+            'MarkerSize', 14);  
         p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
-            'MarkerFaceColor', 'g', 'MarkerSize', 9);
+            'MarkerFaceColor', 'g', 'MarkerSize', 11);
         p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
             'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
-            'MarkerSize', 7);            
-        
+            'MarkerSize', 9);            
+        plot(payoffB(C,1), payoffB(C,2), 'oc','MarkerFaceColor','c',...
+            'MarkerSize', 7);
+
         for r = 1 : size(paretoIndex,1)
-            linearIndex = sub2ind([M+1 N+1], paretoIndex(r,2), paretoIndex(r,1));            
+            linearIndex = sub2ind([M N], paretoIndex(r,2), paretoIndex(r,1));            
             p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
                 'MarkerEdgeColor', [0,0.6,0], 'MarkerFaceColor',[0,0.6,0],...
                 'MarkerSize',5);   

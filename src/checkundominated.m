@@ -9,7 +9,7 @@ for i = 1 : size(A,1)
         [k l] = ind2sub(size(payoffWholeCoalition), i);
         valCoal = payoffWholeCoalition(k,l);
         if A(i,1) > pareto(j,1) && A(i,2) > pareto(j,2) && sum12 >= valCoal            
-            flag = 1 
+            flag = 1; 
             break;
         end
         if flag == 1

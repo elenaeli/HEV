@@ -31,8 +31,8 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
                     break;
                 end
             end
-            if isNotPareto == 0    
-                repeatedRow = ismember(paretoStrategies,[Eng(i,j) Mot(i,j)],'rows');
+            if isNotPareto == 0                  
+                repeatedRow = ismembertol(paretoStrategies,[Eng(i,j) Mot(i,j)], 0.01, 'ByRows', true);
                 if ~any(repeatedRow)    
                     paretoIndices(count,1) = i;
                     paretoIndices(count,2) = j;

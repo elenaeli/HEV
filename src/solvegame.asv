@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 400;
+        requiredTorque = 80;
         
         close all
         engineSpeedRadPerS = 200;
@@ -161,7 +161,7 @@
         payoffEngNash(4) = payoffEngine(nashEq3Quat{1,1}==1, nashEq3Quat{2,1}==1);       
         payoffMotNash(4) = payoffMotor(nashEq3Quat{1,1}==1, nashEq3Quat{2,1}==1);
         
-        [~, indM] = min(payoffEngNash);
+        [minPayoffEngNash, indM] = min(payoffEngNash);
         switch indM
             case 1
                 nashIndEng = find(nashEq1{1,1}==1);

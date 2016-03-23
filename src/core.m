@@ -9,5 +9,4 @@ for i = 1:size(A,1)
         coreS(i) = 1;
     end
 end
-
 end

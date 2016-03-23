@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 400;
+        requiredTorque = 144;
         
         close all
         engineSpeedRadPerS = 200;
@@ -191,17 +191,16 @@
         payoffEngNashSol = payoffBoth(indNP,1)
         payoffMotNashSol = payoffBoth(indNP,2)
         
-        %[ks, indKS] = kalaismorodinskysolution(payoffBoth, conflictPoint)
-        
+        %[ks, indKS] = kalaismorodinskysolution(payoffBoth, conflictPoint)        
        
         if totalTorque <= 136
             payoffCoalCoef = ones(m,e);
-            payoffCoalCoef(m:m-1:end-1) = 0.5
+            payoffCoalCoef(m:m-1:end-1) = 0.5;
         else     
             payoffCoalCoef = torqueDeviation;
             payoffCoalCoef(~(torqueDeviation < 10 & torqueDeviation > -10)) = 1;
             payoffCoalCoef(torqueDeviation < 10 & torqueDeviation > -10) = 0.5;         
-        end    
+        end   
         payoffEngineCoal = payoffEngine .* payoffCoalCoef;
         payoffMotorCoal = payoffMotor .* payoffCoalCoef;
         payoffWholeCoalition = payoffEngineCoal + payoffMotorCoal;
@@ -210,19 +209,22 @@
         imputE = [];
     
         % get all undominated strategies (pareto optimality)
-        undominated = checkundominated(payoffBoth, paretoStrategies, payoffWholeCoalition);
-        % check individual rationality (player receives <= payoff in the
-        % colaition than when acting alone)
-        for i = 1 : size(paretoIndex,1)             
-            if undominated(i,1) <= payoffEngine(m,:)
-                imputM(1,i) = sub2ind(size(payoffEngine), paretoIndex(i,1), paretoIndex(i,2));
+        payoffMotCoalVec = reshape(payoffMotorCoal,(m)*(e),1);
+        payoffEngCoalVec = reshape(payoffEngineCoal,(m)*(e),1);
+        
+        [undomImp, undomImpInd] = checkimputation(payoffBoth, ...
+            paretoStrategies, payoffMotCoalVec, payoffEngCoalVec, payoffWholeCoalition);
+        
+        for i = 1 : size(undomImpInd,2)             
+            if undomImp(i,1) <= payoffEngine(m,:)
+                imputM(1,i) = undomImpInd(i);
             end                
-            if undominated(i,2) <= payoffMotor(:,e)
-                imputE(1,i) = sub2ind(size(payoffMotor), paretoIndex(i,1), paretoIndex(i,2));
+            if undomImp(i,2) <= payoffMotor(:,e)
+                imputE(1,i) = undomImpInd(i);
             end
         end
-                
-        imput = intersect(imputE, imputM)              
+        undomImpInd        
+        imput = undomImpInd         
           
         payoffImput = zeros(size(imput,2),3);
         for i = 1 : size(imput,2)
@@ -263,11 +265,11 @@
                 'MarkerSize',6);
         end
         legend([p1 p2 p3 p7], 'Payoff', 'Pareto optimal payoff', 'best Pareto optimal payoff', ...
-        'Core');
+        'Core','Location', 'northwest');
         % 'Nash Solution', 'Nash Equilibrium Lemke-Howson (conflict point)'); 
         %     'Nash Equilibrium Lemke-Howson k0=8', ...
         %     'Nash Equilibrium Lemke-Howson k0=15' , ... 
-        %     'Nash Equilibrium NPG', 'Location', 'northwest');         
+        %     'Nash Equilibrium NPG',          
        
         xlabel('Payoff Engine');
         ylabel('Payoff Motor');

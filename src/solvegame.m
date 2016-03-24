@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 398;
+        requiredTorque = 143;
         
         close all
         engineSpeedRadPerS = 200;
@@ -138,9 +138,9 @@
         nashIndEng = find(nashEq34{1,1}==1);
         nashIndMot = find(nashEq34{2,1}==1);
             
-        c1 = find(nashEqQuat{1,1}==1)
-        c2 = find(nashEqQuat{2,1}==1)
-        conflictPoint = sub2ind([m e], find(nashEqQuat{1,1}==1), find(nashEqQuat{2,1}==1))
+        c1 = find(nashEq34{1,1}==1)
+        c2 = find(nashEq34{2,1}==1)
+        conflictPoint = sub2ind([m e], find(nashEq34{1,1}==1), find(nashEq34{2,1}==1))
         
         [A, payoffNPG, iterations, err] = npg([m e], -payoffBoth);
         payoffEngNashNPG = -payoffNPG(1)

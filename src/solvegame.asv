@@ -156,7 +156,7 @@
             payoffCoalCoef = ones(m,e);
             payoffCoalCoef(m:m-1:end-1) = 0.5;
          
-        [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoffWholeCoalBefore ] = ...
+        [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal ] = ...
             coalitionpayoffs(payoffMotor, payoffEngine, torqueDeviation, percentReqTorq);
         
         indCoal = (coeffCoal == 0.4 | coeffCoal == 0.5)
@@ -198,11 +198,7 @@
         indCore = find(coreSol) 
         toc
         
-        [ shEngine, shMotor ] = shapleyvalue( payoffWholeCoal1, payoffMotor, ...
-            payoffEngine)
-        
-       
-
+        shapleyc
         %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
         %    'MarkerFaceColor','y', 'MarkerEdgeColor', 'y',...
         %    'MarkerSize', 11);

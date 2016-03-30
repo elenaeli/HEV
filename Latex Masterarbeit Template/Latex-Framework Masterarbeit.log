@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  14 MAR 2016 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  30 MAR 2016 16:34
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1157,11 +1157,13 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 7.
 [6
 
 
 
-] [7]) [8] [9]
+] [7] [8] [9]) [10]
 \openout2 = `source/content.aux'.
 
  (source/content.tex
@@ -1180,7 +1182,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-[10
+[11
 
 
 
@@ -1200,7 +1202,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 7.
 
-[11
+[12
 
 ]
 chapter 5.
@@ -1218,7 +1220,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 12.
 
-[12
+[13
 
 ]
 chapter 6.
@@ -1236,7 +1238,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 17.
 
-[13
+[14
 
 ]
 chapter 7.
@@ -1254,7 +1256,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 22.
 
-) [14
+) [15
 
 ]
 chapter without number
@@ -1272,10 +1274,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 54.
 
-[15
+[16
 
 
-] [16]
+] [17]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1294,7 +1296,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [17
+) [18
 
 
 ]
@@ -1312,11 +1314,11 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18699 strings out of 493634
- 300900 string characters out of 3141315
- 844956 words of memory out of 3000000
- 21681 multiletter control sequences out of 15000+200000
- 30841 words of font info for 64 fonts, out of 3000000 for 9000
+ 18717 strings out of 493634
+ 301128 string characters out of 3141315
+ 843958 words of memory out of 3000000
+ 21693 multiletter control sequences out of 15000+200000
+ 33571 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  59i,12n,66p,1579b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
@@ -1338,9 +1340,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (22 pages, 282098 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (23 pages, 289452 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

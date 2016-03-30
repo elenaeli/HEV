@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 143; 
+        requiredTorque = 124; 
        
         close all
         engineSpeedRadPerS = 200;
@@ -183,7 +183,8 @@
             end
         end
                         
-        imput = undomImpInd         
+        imput = undomImpInd
+        [impLinInd(:,1), impLinInd(:,2)] = ind2sub(size(payoffEngine), imput);
           
         payoffImput = zeros(size(imput,2),3);
         for i = 1 : size(imput,2)
@@ -199,7 +200,7 @@
         toc
         
         [ shEngine, shMotor ] = shapleyvalue( payoffWholeCoal1, payoffMotor, ...
-            payoffEngine)
+            payoffEngine, impLinInd)
         
        
 

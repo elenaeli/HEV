@@ -16,6 +16,21 @@ The goal of the game is to save fuel and to maintain low gas emissions while ach
 
 There exist two types of cooperative games - with transferable and with non-transferable utility. In transferable utillity (TU) games the payoff of one plyer can be transferred to another player without any loss. In contrast, in non-transferable utility (NTU) games the payoffs of each player cannot be redistributed among the other players. In this thesis the payoffs of the engine and the motor are not interchangeable, since decreasing the payoff of one player does not mean increasing the payoff of another at the same time.
 
+The payoff functions are constructed in the following way. The engine payoff is:
+\begin{equation}
+\begin{split}
+a_{ij} = w_1 \times fuelConsumed + w_2 \times | requiredTorque - actualTorque | + \\
+w_3 \times HC-emissions + w_4 \times CO-emissions + w_4 \times NOX-emissions + \\
+w_6 \times SOC-deviation
+\end{split}
+\end{equation}
+The motor payoff:
+\begin{equation}
+\begin{split}
+b_{ij} = 0.5 \times w_1 \times fuelConsumed + w_2 \times | requiredTorque - actualTorque | + \\
+w_3 \times HC-emissions + w_4 \times CO-emissions + w_4 \times NOX-emissions + w_6 \times SOC-deviation
+\end{split}
+\end{equation}
 All in all, the game defined is a non-cooperative bimatrix non-zero-sum game with non-transferable utility.
 
 \subsection{Pareto Optimum}

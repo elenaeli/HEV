@@ -2,7 +2,7 @@
 \label{chp:basics}
 
 \section{Game-theoretical solution approaches}
-This thesis examines a variety of solution approaches for cooperative games. They are Pareto Optimum, Nash Equilibrium, Nash bargaining solution, the Core and the Shapley value.
+This thesis examines a variety of solution approaches for cooperative games. They are Pareto Optimum, Nash Equilibrium, Nash bargaining solution, Kalai-Smorodinsky bargaining solution, the Core and the Shapley value.
 
 \subsection{Game definition}
 The generic game definition is described here. Additional definitions for each of the solution approaches are defined in the corresponding subsections of each solution.
@@ -28,7 +28,8 @@ The motor payoff:
 \begin{equation}
 \begin{split}
 b_{ij} = 0.5 \times w_1 \times fuelConsumed + w_2 \times | requiredTorque - actualTorque | + \\
-w_3 \times HC-emissions + w_4 \times CO-emissions + w_4 \times NOX-emissions + w_6 \times SOC-deviation
+w_3 \times HC-emissions + w_4 \times CO-emissions + w_4 \times NOX-emissions + \\
+w_6 \times SOC-deviation
 \end{split}
 \end{equation}
 All in all, the game defined is a non-cooperative bimatrix non-zero-sum game with non-transferable utility.

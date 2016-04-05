@@ -1,5 +1,5 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 81; 
+        requiredTorque = 146; 
        
         close all
         engineSpeedRadPerS = 200;
@@ -161,9 +161,9 @@
         [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoffWholeCoalBefore ] = ...
             coalitionpayoffs(payoffMotor, payoffEngine, torqueDeviation, percentReqTorq);
         
-        indCoal = (coeffCoal == 0.9 | coeffCoal == 0.91);
+        indCoal = (coeffCoal == 0.99 | coeffCoal == 0.991);
         indCoalition = +indCoal;
-        indCoalition(indCoal == true) = 0.95;
+        indCoalition(indCoal == true) = 0.98;
         indCoalition(indCoal == false) = 1;
         payoffWholeCoal1 = payoffWholeCoal .* indCoalition;      
     
@@ -201,10 +201,10 @@
         toc
         
         [ shEngine, shMotor ] = shapleyvalue( payoffWholeCoal1, payoffMotor, ...
-            payoffEngine, impLinInd)
-        
+            payoffEngine, impLinInd)    
        
-
+        [lin] = mixedstrategies(payoffMotor)
+        
         %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
         %    'MarkerFaceColor','y', 'MarkerEdgeColor', 'y',...
         %    'MarkerSize', 11);
@@ -219,21 +219,28 @@
         p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
             'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
             'MarkerSize', 9);
-        pink = [254 164 191] ./ 255;
         purple = [118 31 133] ./ 255;
-        p7 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
+        p7 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
+            'MarkerEdgeColor', purple, 'MarkerSize', 6);
+        pink = [254 164 191] ./ 255;       
+        p8 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
             'MarkerFaceColor',pink, 'MarkerEdgeColor',pink,...
             'MarkerSize', 7);
-        p8 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
-            'MarkerEdgeColor', purple, 'MarkerSize', 6);
+        
+        
+        limegreen = [194 242 1] ./ 255;
+        p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', limegreen, ...
+            'MarkerEdgeColor', limegreen, 'MarkerSize', 5);
+        
         for r = 1 : size(paretoIndex,1)
             linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));            
             p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
                 'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
-                'MarkerSize',5);
+                'MarkerSize',4);
         end
-        legend([p1 p2 p4 p6 p7 p8], 'Payoff', 'Pareto optimal payoff', ...
-        'Nash Equilibrium Lemke-Howson', 'Nash Solution', 'Core', 'Kalai-Smorodinsky', 'Location', 'northwest');
+        legend([p1 p2 p4 p6 p7 p8 p9], 'Payoff', 'Pareto optimal payoff', ...
+        'Nash Equilibrium Lemke-Howson', 'Nash Solution', 'Kalai-Smorodinsky Solution', ...
+        'Core', 'Shapley Value', 'Location', 'northwest');
         % 'Nash Solution', 'Nash Equilibrium Lemke-Howson (conflict point)'); 
         % 'Nash Equilibrium Lemke-Howson k0=8', ...
         %     'Nash Equilibrium Lemke-Howson k0=15' , ... 

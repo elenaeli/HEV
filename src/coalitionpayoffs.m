@@ -6,25 +6,25 @@ function [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoff
         for j = 1 : size(payoffEngine,2)       
                 absTorqDev = abs(torqDev(i,j));
                 if -percentReqTorque(2) < torqDev(i,j) && torqDev(i,j) < 0    
-                    coeffCoal(i,j) = 0.91;      
+                    coeffCoal(i,j) = 0.991;      
                 elseif torqDev(i,j) == 0
-                    coeffCoal(i,j) = 0.9;
+                    coeffCoal(i,j) = 0.99;
                 elseif 0 < torqDev(i,j) && torqDev(i,j) < percentReqTorque(2)
-                    coeffCoal(i,j) = 0.92;                            
+                    coeffCoal(i,j) = 0.992;                            
                 elseif percentReqTorque(2) < absTorqDev && absTorqDev < percentReqTorque(3)
-                    coeffCoal(i,j) = 0.93;    
+                    coeffCoal(i,j) = 0.993;    
                 elseif percentReqTorque(3) < absTorqDev && absTorqDev < percentReqTorque(4)
-                    coeffCoal(i,j) = 0.94;    
+                    coeffCoal(i,j) = 0.994;    
                 elseif percentReqTorque(4) < absTorqDev && absTorqDev < percentReqTorque(5)
-                    coeffCoal(i,j) = 0.95;    
+                    coeffCoal(i,j) = 0.995;    
                 elseif percentReqTorque(5) < absTorqDev && absTorqDev < percentReqTorque(6)
-                    coeffCoal(i,j) = 0.96;
+                    coeffCoal(i,j) = 0.996;
                 elseif percentReqTorque(6) < absTorqDev && absTorqDev < percentReqTorque(7)
-                    coeffCoal(i,j) = 0.97;   
+                    coeffCoal(i,j) = 0.997;   
                 elseif percentReqTorque(7) < absTorqDev && absTorqDev < percentReqTorque(8)
-                    coeffCoal(i,j) = 0.98;   
+                    coeffCoal(i,j) = 0.998;   
                 elseif percentReqTorque(8) < absTorqDev && absTorqDev < percentReqTorque(9)
-                    coeffCoal(i,j) = 0.99;   
+                    coeffCoal(i,j) = 0.999;   
                 elseif absTorqDev < -percentReqTorque(9) || percentReqTorque(9) < absTorqDev;    
                     coeffCoal(i,j) = 1.0;   
                 end

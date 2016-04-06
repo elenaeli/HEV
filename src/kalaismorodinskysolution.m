@@ -9,8 +9,8 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
     m1 = min(payoffBoth(:,1));
     m2 = min(payoffBoth(:,2));    
     darkred = [185 16 20] ./ 255;
-    plot(m1, m2, 'o', 'MarkerSize', 3, 'MarkerFaceColor',darkred ,...
-        'MarkerEdgeColor', darkred);
+    %plot(m1, m2, 'o', 'MarkerSize', 3, 'MarkerFaceColor',darkred ,...
+    %    'MarkerEdgeColor', darkred);
    
     % conflict and ideal point
     cP = [payoffBoth(conflictPoint,1) payoffBoth(conflictPoint,2)]

@@ -1,4 +1,4 @@
-function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
+function nashEqbm = LemkeHowson(varargin)
     % function nashEqbm = LEMKEHOWSON(varargin)
     %
     % This function computes a sample mixed strategy Nash equilibrium in a
@@ -43,10 +43,8 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
     %      "An experimental analysis of Lemke-Howson algorithm."
     
     %% Check inputs
-     coder.extrinsic('num2str');
-     nashEqbm1 = 0;
-     nashEqbm2 = 0;
-     if nargin < 2 || nargin > 4
+    
+    if nargin < 2 || nargin > 4
         error('This function takes between two and four arguments');
     end
     
@@ -86,14 +84,14 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
     end
     
     %% Build Tableaus
-    %Tab = cell(2,1);
-    Tab1 = [B',     eye(n), ones(n,1)];
-    Tab2 = [eye(m), A,      ones(m,1)];
+    Tab = cell(2,1);
+    Tab{1} = [B',     eye(n), ones(n,1)];
+    Tab{2} = [eye(m), A,      ones(m,1)];
     
     %% Declare row labels
-    %rowLabels = cell(2,1);
-    rowLabels1 = m+1:m+n;
-    rowLabels2 = 1:m;
+    rowLabels = cell(2,1);
+    rowLabels{1} = m+1:m+n;
+    rowLabels{2} = 1:m;
     
     %% Do complementary pivoting
     k = k0;
@@ -107,14 +105,10 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
     numPiv = 0;
     while numPiv < maxPivots
         
-        numPiv = numPiv+1;        
+        numPiv = numPiv+1;
+        
         % Use correct Tableau
-        if player == 1
-            LP = Tab1; 
-        else
-            LP = Tab2;
-        end
-      
+        LP = Tab{player};
         [m_, ~] = size(LP);
         
         % Find pivot row (variable exiting)
@@ -129,24 +123,14 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
         end
         
         if max_ > 0
-             if player == 1
-                Tab1 = pivot(LP, ind, k);
-             else
-                Tab2 = pivot(LP, ind, k);
-             end         
+            Tab{player} = pivot(LP, ind, k);
         else
             break;
         end
         
         % swap labels, set entering variable
-         if player == 1
-              temp = rowLabels1(ind);
-              rowLabels1(ind) = k;
-         else
-             temp = rowLabels2(ind);
-              rowLabels2(ind) = k;
-         end
-       
+        temp = rowLabels{player}(ind);
+        rowLabels{player}(ind) = k;
         k = temp;
         
         % If the entering variable is the same
@@ -163,23 +147,19 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
         end
         
     end
-   
+    
     if numPiv == maxPivots
         error(['Maximum pivot steps (' num2str(maxPivots) ') reached!']);
     end
     
     %% Extract the Nash equilibrium
-       
+    nashEqbm = cell(2,1);
+    
     for player = 1:2
         
         x = zeros(size_(player), 1);
-        if player == 1
-            rows = rowLabels1;
-            LP = Tab1;
-        else
-            rows = rowLabels2;
-            LP = Tab2;
-        end
+        rows = rowLabels{player};
+        LP = Tab{player};
         
         for i = 1:length(rows)
             if player == 1 && rows(i) <= size_(1)
@@ -189,12 +169,24 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
             end
         end
         
-        if player == 1
-            nashEqbm1= x/sum(x);
+        nashEqbm{player} = x/sum(x);
+        
+    end
+    
+end
+
+function B = pivot(A,r,s)
+% Pivots the tableau on the given row and column
+    
+    [m,~] = size(A);
+    B = A;
+    
+    for i = 1 : m
+        if i == r
+            continue;
         else
-            nashEqbm2= x/sum(x);
+            B(i,:) = A(i,:) - A(i,s) / A(r,s) * A(r,:);
         end
     end
-end
     
-
+end

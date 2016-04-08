@@ -1,12 +1,22 @@
-%function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 60; 
+%function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
+%    SOC, FuelConsTable, GasEmisTable)
+        requiredTorque = 37;        
+        close all       
        
-        close all
-        engineSpeedRadPerS = 200;
-        engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
-        SOC_deviation = 0.25;
+        %engineMaxPower = 57000;
+        %motorMaxPower = 50000;
+      
+        motorSpeed = [0, 1200, 2000, 3000, 4000, 5000, 6000];
+        motorTorque = [400 399 225 150 100 80 70];
+        tankCapacity = 45;
+        engineSpeed = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
+        engineTorque = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
+        
+        SOC_deviation = 0.15;
+        fuelConsumed = 3;
         maxEngineTorque = 136;
         maxMotorTorque = 400;
+        minMotorTorque = min(motorTorque);
         maxRPM = 6000;
         m = 15;
         e = 15;
@@ -15,9 +25,10 @@
         percentage = 0:(1/(m-1)):1;
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
-
+       
         strategyEng = percentage .* maxEngineTorqueStrategy;
-        strategyMot = percentage .* maxMotorTorqueStrategy;
+        if minMotorTorque <
+        strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy,15);
         tmpTorque = repmat(strategyEng',1,m);
 
         totalTorque = zeros(m, e);
@@ -25,22 +36,12 @@
             for j = 1:e
                 totalTorque(i,j) = tmpTorque(i,j) + strategyMot(j);
             end
-        end
-
-        %engineMaxPower = 57000;
-        %motorMaxPower = 50000;
-        motorSpeed = [0, 1200, 2000, 3000, 4000, 5000, 6000];
-        motorTorqueRef = [400 399 225 150 100 80 70];
-        engineSpeed = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
-        engineTorqueRef = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
+        end      
         
-        tmpS = abs(FuelConsTable.speed - engineSpeedRadRPM);
-        idxS = 0;
-        [~, idxS] = min(tmpS);
-
         % weights     
         wFuel = 3;
-        wPower = 0.5;     
+        wPower = 0.5;  
+        wTank = 0.5;
         wDrDem = 0.5;
         wSOC = 100;
         wNOX = 65;
@@ -50,49 +51,48 @@
         for i = 1:m
             for j = 1:e
                 tmpT = abs(FuelConsTable.torque - strategyEng(j));
-                idxT = 0;
-                [~, idxT] = min(tmpT);      
+                idxT = 0;                    
+                % Power(W) = Torque (N.m) x Speed (RPM) / 9.5488
+                % divide by 1000 for kW               
+                motorSpeedRef(j) = interp1(motorTorque, motorSpeed, strategyMot(j),'linear','extrap');
+                powerMotorKW(j) = strategyMot(j) * motorSpeedRef(j) / 9.5488 / 1000;       
+                tmpS = abs(FuelConsTable.speed - motorSpeedRef(j));
+                idxS = 0;
+                [~, idxS] = min(tmpS);
+                [~, idxT] = min(tmpT);    
+                
                 fuelConsumedGPS = FuelConsTable.lookupTableFuel(idxT, idxS);
                 powerKW = FuelConsTable.lookupTablePower(idxT, idxS);
                 HCEmissions = GasEmisTable.lookupTableHC(idxT, idxS);
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);   
-                torqueDeviation(i,j) = requiredTorque - totalTorque(i,j);
-             
-                motSpeedRef(j) = interp1(motorTorqueRef, motorSpeed, strategyMot(j),'linear','extrap');                
-                % Power(W) = Torque (N.m) x Speed (RPM) / 9.5488
-                % divide by 1000 for kW
-                powerMotKW(j) = strategyMot(j) * motSpeedRef(j) / 9.5488 / 1000;                
+                torqueDeviation(i,j) = requiredTorque - totalTorque(i,j);             
+       
+                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + ...
+                    wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + ...
+                    wTank*(tankCapacity - fuelConsumed);
+                payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotorKW(j) + ...
+                    wSOC*SOC_deviation;
                 
-                payoffEngine(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
-                payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotKW(j) + wSOC*SOC_deviation;                
                 fuel(j,1) = fuelConsumedGPS;
                 nox(j,1) = NOXEmissions;
-                power(j,1) = powerMotKW(j);
-                %if i == 12 && j == 5
-                %    fu = wFuel*fuelConsumedGPS
-                %    po = wPower*powerKW
-                %    HC = wHC*HCEmissions
-                %    CO = wCO*COEmissions
-                %    NOX = wNOX*NOXEmissions
-                %    wDrDem*abs(torqueDeviation(i,j))                
-                %end                
+                power(j,1) = powerMotorKW(j);                                
             end
         end
         %payoffMotor = payoffEngine';
         %payoffBoth = reshape([payoffEngine;payoffMotor],size(payoffMotor,1),[]);         
                 %figure
-        [A,b] = prtp(payoffBoth)
+        %[A,b] = prtp(payoffBoth)
      
-        payoffEngPareto
-        payoffMotPareto
+        %payoffEngPareto
+        %payoffMotPareto
         %plot(A(:,1), A(:,2), 'ob', 'MarkerSize',6);
         %hold on
-        B = paretofront(payoffBoth);
-        indP = find(B);
+        %B = paretofront(payoffBoth);
+        %indP = find(B);
        
         tic
-        [paretoStrategies, paretoIndex, x, y] = paretoset(payoffEngine, payoffMotor,b);                
+        [paretoStrategies, paretoIndex, x, y] = paretoset(payoffEngine, payoffMotor);                
         toc
         payoffE = reshape(payoffEngine,(m)*(e),1);
         payoffM = reshape(payoffMotor,(m)*(e),1);        
@@ -233,22 +233,22 @@
         %[X, lin, b] = mixedstrategies(payoffMotor);
          limegreen = [194 242 1] ./ 255;
         
-        p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
-            'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
-            'MarkerSize', 13);
+        %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
+        %    'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
+        %    'MarkerSize', 13);
         p4 = plot(payoffEngNash, payoffMotNash, 'om', ...
-            'MarkerFaceColor', 'm', 'MarkerSize', 11);    
-        p41 = plot(bestPayoffEngNashLH(1), bestPayoffMotNashLH(1), 'oc', ...
-            'MarkerFaceColor', 'c', 'MarkerSize', 9);      
-        p42 = plot(bestPayoffEngNashLH(2), bestPayoffMotNashLH(2), 'or', ...
-            'MarkerFaceColor', 'r', 'MarkerSize', 7);     
-        p43 = plot(bestPayoffEngNashLH(3), bestPayoffMotNashLH(3), 'o', ...
-            'MarkerFaceColor', limegreen, 'MarkerEdgeColor',limegreen, 'MarkerSize', 5);      
+            'MarkerFaceColor', 'm', 'MarkerSize', 10);    
+        %p41 = plot(bestPayoffEngNashLH(1), bestPayoffMotNashLH(1), 'oc', ...
+        %    'MarkerFaceColor', 'c', 'MarkerSize', 8);      
+        %p42 = plot(bestPayoffEngNashLH(2), bestPayoffMotNashLH(2), 'or', ...
+        %    'MarkerFaceColor', 'r', 'MarkerSize', 6);     
+        %p43 = plot(bestPayoffEngNashLH(3), bestPayoffMotNashLH(3), 'o', ...
+        %    'MarkerFaceColor', limegreen, 'MarkerEdgeColor',limegreen, 'MarkerSize', 5);      
         %p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
         %    'MarkerFaceColor', 'g', 'MarkerSize', 10);       
-        %p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
-        %    'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
-        %    'MarkerSize', 9);
+        p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
+            'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
+            'MarkerSize', 9);
           
         purple = [118 31 133] ./ 255;        
         %p7 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
@@ -256,18 +256,16 @@
         pink = [254 164 191] ./ 255;       
         %p8 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
         %    'MarkerFaceColor',pink, 'MarkerEdgeColor',pink,...
-        %    'MarkerSize', 7);
-        
-        
-       
+        %    'MarkerSize', 7);      
+               
         %p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', limegreen, ...
         %    'MarkerEdgeColor', limegreen, 'MarkerSize', 5);
         
         for r = 1 : size(paretoIndex,1)
             linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
-            %p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
-            %    'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
-            %    'MarkerSize',6);
+            p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
+                'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
+                'MarkerSize',6);
         end     
         
         m1 = min(payoffBoth(:,1));
@@ -276,16 +274,17 @@
         %pi = plot(m1, m2, 'o', 'MarkerSize', 3, 'MarkerFaceColor',darkred ,...
         %'MarkerEdgeColor', darkred);
         
-        legend([p1 p41 p42 p43 p4 p5], 'Payoff',...       
-        'Nash Equilibrium Lemke-Howson k0=1', ...
-        'Nash Equilibrium Lemke-Howson k0=8', ...
-        'Nash Equilibrium Lemke-Howson k0=15' , ... 
-         'Nash Equilibrium Lemke-Howson k0=23' , ...
-        'Nash Equilibrium NPG',...
-        'Location', 'northwest');
+        legend([p1 p2 p6 p4], 'Payoff', 'Pareto optimal payoff', ...      
+        'Nash Solution', 'Nash Equilibrium Lemke-Howson (conflict point)'); 
+        %'Nash Equilibrium Lemke-Howson k0=1', ...
+        %'Nash Equilibrium Lemke-Howson k0=8', ...
+        %'Nash Equilibrium Lemke-Howson k0=15' , ... 
+        %'Nash Equilibrium Lemke-Howson k0=23' , ...
+        %'Nash Equilibrium NPG',...
+        %'Location', 'northwest');
         %'Best Pareto payoff',);
         %'Ideal point', 'Kalai-Smorodinsky Solution', ...
-        % 'Nash Solution', 'Nash Equilibrium Lemke-Howson (conflict point)'); 
+        
        
               
        

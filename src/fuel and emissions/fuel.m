@@ -34,8 +34,8 @@ torqueMeshgridFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torqu
 [speedMeshgridFuel, torqueMeshgridFuel] = meshgrid(FuelConsTable.speed, FuelConsTable.torque);
 x = horzcat(FuelConsTable.speed(:), FuelConsTable.torque(:));
 
-fuelFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.fuel(:), 'poly22', 'Normalize', 'on');
-powerFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.power(:), 'poly22', 'Normalize', 'on');
+fuelFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.fuel(:), 'poly22');
+powerFit = fit([FuelConsTable.speed(:), FuelConsTable.torque(:)], FuelConsTable.power(:), 'poly22');
 %FuelConsTable.lookupTableFuel = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 %FuelConsTable.lookupTablePower = zeros(size(FuelConsTable.speed,2), size(FuelConsTable.torque,2));
 %Xhat = feval(fuelFit, FuelConsTable.fuel(:));

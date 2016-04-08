@@ -1,8 +1,9 @@
 function [imput, imputIndex] = checkimputation(payoff, pareto,...
     payoffMotCoal, payoffEngCoal, payoffWholeCoal)
     count = 1;
-    imput = [];
-    imputIndex = [];
+    m = size(payoff,1);
+    imput = zeros(m,2);
+    imputIndex = zeros(m,1);
 
     flag = 0;
     for i = 1 : size(payoff,1)
@@ -23,9 +24,10 @@ function [imput, imputIndex] = checkimputation(payoff, pareto,...
                 break;
             end        
         end 
-        if flag == 0
-            imput(count,:) = payoff(i,:);      
-            imputIndex(count) = i;        
+        if flag == 0            
+            imput(count,1) = payoff(i,1);    
+            imput(count,2) = payoff(i,2);
+            imputIndex(count) = i;     
             count = count + 1;
         end
         flag = 0;

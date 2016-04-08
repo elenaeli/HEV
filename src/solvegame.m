@@ -1,12 +1,22 @@
-%function [engineTorque,motorTorque] = solvegame(requiredTorque, FuelConsTable, GasEmisTable)
-        requiredTorque = 200; 
+%function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
+%    SOC, FuelConsTable, GasEmisTable)
+        requiredTorque = 69;        
+        close all       
        
-        close all
-        engineSpeedRadPerS = 200;
-        engineSpeedRadRPM = engineSpeedRadPerS*9.5492;
-        SOC_deviation = 0.25;
+        %engineMaxPower = 57000;
+        %motorMaxPower = 50000;
+      
+        motorSpeed = [0, 1200, 2000, 3000, 4000, 5000, 6000];
+        motorTorque = [400 399 225 150 100 80 70];
+        tankCapacity = 45;
+        engineSpeed = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
+        engineTorque = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
+        
+        SOC_deviation = 0.35;
+        fuelConsumed = 3;
         maxEngineTorque = 136;
         maxMotorTorque = 400;
+        minMotorTorque = min(motorTorque);
         maxRPM = 6000;
         m = 15;
         e = 15;
@@ -15,9 +25,13 @@
         percentage = 0:(1/(m-1)):1;
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
-
+       
         strategyEng = percentage .* maxEngineTorqueStrategy;
-        strategyMot = percentage .* maxMotorTorqueStrategy;
+        if minMotorTorque > maxMotorTorqueStrategy
+            strategyMot = zeros(1,15);
+        else
+            strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy,15);
+        end
         tmpTorque = repmat(strategyEng',1,m);
 
         totalTorque = zeros(m, e);
@@ -25,22 +39,12 @@
             for j = 1:e
                 totalTorque(i,j) = tmpTorque(i,j) + strategyMot(j);
             end
-        end
-
-        %engineMaxPower = 57000;
-        %motorMaxPower = 50000;
-        motorSpeed = [0, 1200, 2000, 3000, 4000, 5000, 6000];
-        motorTorqueRef = [400 399 225 150 100 80 70];
-        engineSpeed = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
-        engineTorqueRef = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
+        end      
         
-        tmpS = abs(FuelConsTable.speed - engineSpeedRadRPM);
-        idxS = 0;
-        [~, idxS] = min(tmpS);
-
         % weights     
         wFuel = 3;
-        wPower = 0.5;     
+        wPower = 0.5;  
+        wTank = 0.5;
         wDrDem = 0.5;
         wSOC = 100;
         wNOX = 65;
@@ -50,34 +54,32 @@
         for i = 1:m
             for j = 1:e
                 tmpT = abs(FuelConsTable.torque - strategyEng(j));
-                idxT = 0;
-                [~, idxT] = min(tmpT);      
+                idxT = 0;                    
+                % Power(W) = Torque (N.m) x Speed (RPM) / 9.5488
+                % divide by 1000 for kW               
+                motorSpeedRef(j) = interp1(motorTorque, motorSpeed, strategyMot(j),'linear','extrap');
+                powerMotorKW(j) = strategyMot(j) * motorSpeedRef(j) / 9.5488 / 1000;       
+                tmpS = abs(FuelConsTable.speed - motorSpeedRef(j));
+                idxS = 0;
+                [~, idxS] = min(tmpS);
+                [~, idxT] = min(tmpT);    
+                
                 fuelConsumedGPS = FuelConsTable.lookupTableFuel(idxT, idxS);
                 powerKW = FuelConsTable.lookupTablePower(idxT, idxS);
                 HCEmissions = GasEmisTable.lookupTableHC(idxT, idxS);
                 COEmissions = GasEmisTable.lookupTableCO(idxT, idxS);
                 NOXEmissions = GasEmisTable.lookupTableNOX(idxT, idxS);   
                 torqueDeviation(i,j) = requiredTorque - totalTorque(i,j);             
-                motSpeedRef(j) = interp1(motorTorqueRef, motorSpeed, strategyMot(j),'linear','extrap');                
-                % Power(W) = Torque (N.m) x Speed (RPM) / 9.5488
-                % divide by 1000 for kW
-                powerMotKW(j) = strategyMot(j) * motSpeedRef(j) / 9.5488 / 1000;                
-                
+       
                 payoffEngine(i,j) = wFuel*fuelConsumedGPS + wDrDem*abs(torqueDeviation(i,j)) + ...
-                    wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions;
-                payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotKW(j) + ...
-                    wSOC*SOC_deviation;                
+                    wHC*HCEmissions + wCO*COEmissions + wNOX*NOXEmissions + ...
+                    wTank*(tankCapacity - fuelConsumed);
+                payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotorKW(j) + ...
+                    wSOC*SOC_deviation;
+                
                 fuel(j,1) = fuelConsumedGPS;
                 nox(j,1) = NOXEmissions;
-                power(j,1) = powerMotKW(j);
-                %if i == 12 && j == 5
-                %    fu = wFuel*fuelConsumedGPS
-                %    po = wPower*powerKW
-                %    HC = wHC*HCEmissions
-                %    CO = wCO*COEmissions
-                %    NOX = wNOX*NOXEmissions
-                %    wDrDem*abs(torqueDeviation(i,j))                
-                %end                
+                power(j,1) = powerMotorKW(j);                                
             end
         end
         %payoffMotor = payoffEngine';
@@ -154,23 +156,23 @@
         nashEq1 = LemkeHowson(-payoffEngine, -payoffMotor);  
         nashEq14 = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/4*numStratBoth));  
         nashEq12 = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));          
-        nashEq34 = LemkeHowson(-payoffEngine, -payoffMotor, ceil(3/4*numStratBoth));                     
-        payoffEngNash = payoffEngine(nashEq34{1,1}==1, nashEq34{2,1}==1);
-        payoffMotNash = payoffMotor(nashEq34{1,1}==1, nashEq34{2,1}==1);
-        bestPayoffEngNashLH(1) = payoffEngine(nashEq1{1,1}==1, nashEq1{2,1}==1);
-        bestPayoffEngNashLH(2) = payoffEngine(nashEq14{1,1}==1, nashEq14{2,1}==1);
-        bestPayoffEngNashLH(3) = payoffEngine(nashEq12{1,1}==1, nashEq12{2,1}==1);
-        bestPayoffMotNashLH(1) = payoffMotor(nashEq1{1,1}==1, nashEq1{2,1}==1);
-        bestPayoffMotNashLH(2) = payoffMotor(nashEq14{1,1}==1, nashEq14{2,1}==1);
-        bestPayoffMotNashLH(3) = payoffMotor(nashEq12{1,1}==1, nashEq12{2,1}==1);
+        [nashEq34Pl1,nashEq34Pl2]  = LemkeHowson(-payoffEngine, -payoffMotor, ceil(3/4*numStratBoth));                     
+        payoffEngNash = payoffEngine(nashEq34Pl1==1, nashEq34Pl2==1);
+        payoffMotNash = payoffMotor(nashEq34Pl1==1, nashEq34Pl2==1);
+        %bestPayoffEngNashLH(1) = payoffEngine(nashEq1{1,1}==1, nashEq1{2,1}==1);
+        %bestPayoffEngNashLH(2) = payoffEngine(nashEq14{1,1}==1, nashEq14{2,1}==1);
+        %bestPayoffEngNashLH(3) = payoffEngine(nashEq12{1,1}==1, nashEq12{2,1}==1);
+        %bestPayoffMotNashLH(1) = payoffMotor(nashEq1{1,1}==1, nashEq1{2,1}==1);
+        %bestPayoffMotNashLH(2) = payoffMotor(nashEq14{1,1}==1, nashEq14{2,1}==1);
+        %bestPayoffMotNashLH(3) = payoffMotor(nashEq12{1,1}==1, nashEq12{2,1}==1);
         [~, indM] = min(payoffEngNash);
         
-        nashIndEng = find(nashEq34{1,1}==1);
-        nashIndMot = find(nashEq34{2,1}==1);
+        nashIndEng = find(nashEq34Pl1==1);
+        nashIndMot = find(nashEq34Pl2==1);
             
-        c1 = find(nashEq34{1,1}==1)
-        c2 = find(nashEq34{2,1}==1)
-        conflictPoint = sub2ind([m e], find(nashEq34{1,1}==1), find(nashEq34{2,1}==1))
+        c1 = find(nashEq34Pl1==1)
+        c2 = find(nashEq34Pl2==1)
+        conflictPoint = sub2ind([m e], find(nashEq34Pl1==1), find(nashEq34Pl2==1))
         
         [A, payoffNPG, iterations, err] = npg([m e], -payoffBoth);
         payoffEngNashNPG = -payoffNPG(1)

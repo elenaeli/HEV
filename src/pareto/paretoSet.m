@@ -1,6 +1,7 @@
 function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, payoffMotor)
     coder.extrinsic('legend');
     coder.extrinsic('int2str');
+    coder.extrinsic('ismembertol')
    
     [k,l] = size(payoffEngine);    
     Eng = payoffEngine;
@@ -13,6 +14,7 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     paretoStrategies = zeros(k,2);
     coder.varsize('paretoIndex');
     coder.varsize('paretoStrategies');
+    coder.varsize('paretoIndices');
     count = 1;
     
     for i=1:k      
@@ -49,7 +51,10 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     %paretoIndex = paretoIndex(ia, :); 
     
     % remove all rows with zeros
+      
+
     paretoIndices( ~any(paretoIndices,2), : ) = [];
+
     paretoStrategies( ~any(paretoStrategies,2), : ) = [];
    
 end

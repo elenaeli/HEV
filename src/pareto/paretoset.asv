@@ -1,7 +1,8 @@
-function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, payoffMotor)
+function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, payoffMotor, row,col )
     coder.extrinsic('legend');
     coder.extrinsic('int2str');
-   
+    in = v(row,col)
+    
     [k,l] = size(payoffEngine);    
     Eng = payoffEngine;
     Mot = payoffMotor;
@@ -19,9 +20,15 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
         for j=1:l                
             isNotPareto = 0;
             flag = 0;                        
-             ind = sub2ind(size(payoffMotor),i,j);
-            for m=1:k                  
-                for n=1:l
+            for m=1:k  
+                for n=1:l    
+                   
+                    if ismember(m,row) && ismember(n,col)
+                       % m
+                        %n
+                        %Eng(i,j) > Eng(m,n)
+                        %Mot(i,j) > Mot(m,n)
+                    end
                     if Eng(i,j) > Eng(m,n) && Mot(i,j) > Mot(m,n)                    
                         isNotPareto = 1;
                         flag = 1;
@@ -33,7 +40,7 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
                 end
             end
             if isNotPareto == 0                  
-                repeatedRow = ismembertol(paretoStrategies,[Eng(i,j) Mot(i,j)], 0.000001, 'ByRows', true);
+                repeatedRow = ismembertol(paretoStrategies,[Eng(i,j) Mot(i,j)], 0.01, 'ByRows', true);
                 if ~any(repeatedRow)    
                     paretoIndices(count,1) = i;
                     paretoIndices(count,2) = j;

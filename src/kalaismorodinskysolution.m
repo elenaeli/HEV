@@ -42,7 +42,8 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
         xPar(i) = pareto(i,1);
         yPar(i) = pareto(i,2);       
     end
-    
+    xPar
+    yPar
     % according to the number of pareto points
     if size(pareto,1) == 1
         payoffParetoFront = horzcat(xPar, yPar)  

@@ -8,7 +8,7 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
     % ideal point m (often not feasible)
     m1 = min(payoffBoth(:,1));
     m2 = min(payoffBoth(:,2));    
-    darkred = [185 16 20] ./ 255;
+    %darkred = [185 16 20] ./ 255;
     %plot(m1, m2, 'o', 'MarkerSize', 3, 'MarkerFaceColor',darkred ,...
     %    'MarkerEdgeColor', darkred);
    
@@ -27,7 +27,7 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
     elseif mP(1) ~= cP(1) && mP(2) ~= cP(2)       
         j = 1;        
     end
-    
+   
     % interpolate to get points between ideal and conflict point
     if mP(j) < cP(j) 
         X = linspace(mP(j), cP(j), 5);
@@ -36,7 +36,10 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
         X = linspace(cP(j), mP(j), 5);  
         interpolate(j, xCM, yCM, X);
     end
-        
+    % sort pareto points according to first column (X vaules)
+    [~,d2] = sort(pareto(:,1));
+    pareto = pareto(d2,:);
+    
     % get x and y coordinates of all pareto points
     for i = 1: size(pareto,1)       
         xPar(i) = pareto(i,1);
@@ -49,29 +52,27 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
         payoffParetoFront = horzcat(xPar, yPar)  
     elseif size(pareto,1) >= 2
         % interpolate from smaller to bigger x coordinate (1st to 2nd
-        % pareto point)
-        if pareto(1,1) < pareto(2,1)
-            xP12 = linspace(pareto(1,1),pareto(2,1),30);
-        else
-            xP12 = linspace(pareto(2,1),pareto(1,1),30);
-        end
+        % pareto point)      
+        xP12 = linspace(pareto(1,1),pareto(2,1),100);       
         yP12 = interp1(xPar(1:2), yPar(1:2), xP12);
         plot(xP12,yP12,'b');
         
         if size(pareto,1) == 2
             payoffParetoFront = horzcat(xP12', yP12');
-        elseif size(pareto,1) == 3
+        elseif size(pareto,1) >= 3
             % interpolate from smaller to bigger x coordinate (2nd to 3rd
-            % pareto point)
-            if pareto(2,1) < pareto(3,1)
-                xP23 = linspace(pareto(2,1),pareto(3,1),10);
-            else
-                xP23 = linspace(pareto(3,1),pareto(2,1),10);
-            end
+            % pareto point)         
+            xP23 = linspace(pareto(2,1),pareto(3,1),100);           
             yP23 = interp1(xPar(2:3), yPar(2:3), xP23);
             plot(xP23, yP23,'b');           
-            payoffParetoFront = horzcat(vertcat(xP12',xP23'), vertcat(yP12',yP23'));          
-        end          
+            payoffParetoFront = horzcat(vertcat(xP12',xP23'), vertcat(yP12',yP23'));
+            if size(pareto,1) == 4             
+                xP34 = linspace(pareto(3,1),pareto(4,1),100);               
+                yP34 = interp1(xPar(3:4), yPar(3:4), xP34);
+                plot(xP34, yP34,'b');     
+                payoffParetoFront = horzcat(vertcat(xP12',xP23',xP34'), vertcat(yP12',yP23',yP34'));
+            end         
+        end
     end
             
     ks(1,1) = Inf;
@@ -102,7 +103,7 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
     [minDiff, minInd] = min(abs(diff))   
     ks(1,1) = payoffParetoFront(minInd,1);
     ks(1,2) = payoffParetoFront(minInd,2); 
-  
+
     % function to interpolate between x and y coordinates of 
     function interpolate(j,x,y,X)
        if j == 1
@@ -113,5 +114,4 @@ function [ ks] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto )
            plot(Y,X,'r');
        end
     end
-
 end

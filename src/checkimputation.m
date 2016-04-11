@@ -9,7 +9,7 @@ function [imput, imputIndex] = checkimputation(payoff, pareto,...
     for i = 1 : size(payoff,1)
         for j = 1 : size(pareto,1)     
             sum12 = payoff(i,1) + payoff(i,2);
-            [k l] = ind2sub(size(payoffWholeCoal), i);
+            [k, l] = ind2sub(size(payoffWholeCoal), i);
             valCoal = payoffWholeCoal(k,l);
             % check if any pareto optimal point dominates this point and
             % check individual rationality (player receives <= payoff in the

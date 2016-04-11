@@ -20,8 +20,8 @@ function [ X, lin, b] = mixedstrategies( payoff )
     for i = 1 : m
         for k = i+1 : n   
             if k == m && i == m
-                payoff(i,:)
-                payoff(k,:)
+                payoff(:,i)
+                payoff(:,k)
             end
             lin(count,:) = payoff(:,i) - payoff(:,k) ;
             count = count +1;            
@@ -33,7 +33,7 @@ function [ X, lin, b] = mixedstrategies( payoff )
     b(linearSysSize+1) = 1;
     lin
     b
-    X = linsolve(lin, b)    
+    X = linsolve(lin, b)
     
     %X_a = linprog(-[1;zeros(m-1,1)],[],[],lin,b)
     %Xb = lin\b

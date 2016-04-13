@@ -1,6 +1,6 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 280;        
+        requiredTorque = 318;        
         close all       
        
         %engineMaxPower = 57000;
@@ -27,11 +27,14 @@
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
        
         strategyEng = percentage .* maxEngineTorqueStrategy;
+        %strategyMot = percentage .* maxMotorTorqueStrategy;
+
         if minMotorTorque > maxMotorTorqueStrategy
             strategyMot = zeros(1,15);
         else
             strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy,15);
         end
+        %strategyMot = percentage .* maxMotorTorqueStrategy;
         tmpTorque = repmat(strategyEng',1,m);
 
         totalTorque = zeros(m, e);
@@ -232,7 +235,12 @@
         %[ shEngine, shMotor ] = shapleyvalue( payoffWholeCoal1, payoffMotor, ...
         %    payoffEngine, impLinInd)    
        
-        [X, lin, b] = mixedstrategies(payoffMotor);
+        [X1, lin, b] = mixedstrategies(payoffEngine);
+        [X, lin, b ] = mixedstrategieslinsolve(payoffMotor, X1);
+
+        % check if probabilities add up to one
+        sum(X)
+        
         limegreen = [194 242 1] ./ 255;
         p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
             'MarkerFaceColor', 'g', 'MarkerSize', 12);    

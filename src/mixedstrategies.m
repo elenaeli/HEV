@@ -1,42 +1,42 @@
 function [ X, lin, b] = mixedstrategies( payoff )
     % Solve linear system of equation of the form
-    % A*X = B 
-    % where A is of size 14+13+12...+1 + 1  = 105 + 1 for 15 pure strategies
-    % A = 
-    % a1*x1 b1*x2 c1*x3 ... o1*x15 = 0
-    % a2*x1 b2*x2 c2*x3 ... o2*x15 = 0
-    % ...
-    % a15*x1 b15*x2 c15*x3 ... o15*x15 = 0
-    % x1 x2 x3 ... x15 = 0
-    %    
-    % b = [ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]
- 
+    % A*X = B      
+     
     [m,n] = size(payoff);   
-    linearSysSize = sum([1:m-1])
-    lin = zeros(linearSysSize+1,m);
-    %payoff(m+1,:) = ones(1,m);
-    %payoff
-    count = 1;
-    for i = 1 : m
-        for k = i+1 : n   
-            if k == m && i == m
-                payoff(:,i)
-                payoff(:,k)
-            end
-            lin(count,:) = payoff(:,i) - payoff(:,k) ;
-            count = count +1;            
-        end
-    end
-    % add last equation x1 + x2 + ... xm = 1
-    lin(linearSysSize + 1,:) = ones(1,m);
-    b = zeros(linearSysSize+1,1);
-    b(linearSysSize+1) = 1;
-    lin
-    b
-    X = linsolve(lin, b)
+    %linearSysSize = sum([1:m-1])
+    %lin = zeros(m,m);  
+    %for i = 1 : m-1           
+    %    lin(i,:) = payoff(:,i) - payoff(:,i+1) ;                  
+    %end
     
-    %X_a = linprog(-[1;zeros(m-1,1)],[],[],lin,b)
-    %Xb = lin\b
+    % add last equation x1 + x2 + ... xm = 1
+    lin(m,:) = ones(1,m);
+       
+    %lin2(1:end-1,:) = -lin(1:end-1,:);
+    %lin2(m,:) = ones(1,m);
 
+    %X = linsolve(lin, b)  
+   
+    %ub = [ones(n,1)];
+    %options = optimset('LargeScale','off','Simplex','off');
+    %options = optimoptions('linprog','Algorithm','interior-point');
+    %options = optimoptions('linprog','Algorithm','simplex');
+    %lin2 = licols(lin(1:end-1,:)')';
+    %[i, ~] = size(lin2);
+    
+    f = [zeros(m,1); -1];
+    lb = [zeros(m,1) ;-Inf];
+    A = payoff;
+    A(:,m+1) = ones(m,1);
+   
+    Aeq = [ones(1,m) 0];
+    beq = 1;
+    b = zeros(m,1);
+   
+    X = linprog(f,A,b,Aeq,beq,lb);
+    X(end,:) = []
+    
+    %X = linsolve(lin,b);
+    %X = lin\b;   
 end
 

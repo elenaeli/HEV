@@ -1,42 +1,55 @@
-function [ X, lin, b] = mixedstrategies( payoff )
-    % Solve linear system of equation of the form
-    % A*X = B      
+function [X1, X2, lin, b, v] = mixedstrategies( payoff, playerNum )
      
-    [m,n] = size(payoff);   
-    %linearSysSize = sum([1:m-1])
-    %lin = zeros(m,m);  
-    %for i = 1 : m-1           
-    %    lin(i,:) = payoff(:,i) - payoff(:,i+1) ;                  
-    %end
+    [m,n] = size(payoff);     
+    v = Inf;
+    % There is a saddle point in pure strategies
+    if min(max(payoff))==max(min(payoff,[],2))
+        maxP=max(payoff);
+        for i=1:m
+            for j=1:n
+                if isequal(maxP(j),payoff(i,j))      
+                    if isequal(payoff(i,j),min(payoff(i,:)))
+                        min(payoff(i,:));
+                        r = i;
+                        s = j;
+                        v = payoff(r,s);
+                    end
+                end
+            end
+        end
+        X1 = zeros(m,1);
+        X2 = zeros(m,1);
+        if playerNum == 1
+            X1(r) = 1.0;
+            X2(s) = 1.0;
+        elseif playerNum == 2
+            X2(r) = 1.0;
+            X1(s) = 1.0;
+        end
+        lin = [];
+        b = [];
+        v
+    % There is no saddle point in pure strategies, so extend to mixed
+    % strategies by solving linear system of equations Ax = b by linear
+    % programming
+    else
+        % add last equation x1 + x2 + ... xm = 1, probabilities must sum up
+        % to 1
+        lin(m,:) = ones(1,m);       
     
-    % add last equation x1 + x2 + ... xm = 1
-    lin(m,:) = ones(1,m);
-       
-    %lin2(1:end-1,:) = -lin(1:end-1,:);
-    %lin2(m,:) = ones(1,m);
+        f = [zeros(m,1); -1];
+        lb = [zeros(m,1) ;-Inf];
+        A = payoff;
+        A(:,m+1) = ones(m,1);
 
-    %X = linsolve(lin, b)  
-   
-    %ub = [ones(n,1)];
-    %options = optimset('LargeScale','off','Simplex','off');
-    %options = optimoptions('linprog','Algorithm','interior-point');
-    %options = optimoptions('linprog','Algorithm','simplex');
-    %lin2 = licols(lin(1:end-1,:)')';
-    %[i, ~] = size(lin2);
-    
-    f = [zeros(m,1); -1];
-    lb = [zeros(m,1) ;-Inf];
-    A = payoff;
-    A(:,m+1) = ones(m,1);
-   
-    Aeq = [ones(1,m) 0];
-    beq = 1;
-    b = zeros(m,1);
-   
-    X = linprog(f,A,b,Aeq,beq,lb);
-    X(end,:) = []
-    
-    %X = linsolve(lin,b);
-    %X = lin\b;   
+        Aeq = [ones(1,m) 0];
+        beq = 1;
+        b = zeros(m,1);
+
+        X1 = linprog(f,A,b,Aeq,beq,lb);
+        v = abs(X1(end,:))
+        X1(end,:) = [];
+        X2 = [];
+    end
 end
 

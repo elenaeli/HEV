@@ -1,6 +1,6 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 0.0468;        
+        requiredTorque = 45;        
         close all       
        
         %engineMaxPower = 57000;
@@ -353,6 +353,6 @@
         hold off
         
         [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
-            bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot);
+            bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot));
 
 %end

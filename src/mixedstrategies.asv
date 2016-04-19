@@ -1,10 +1,7 @@
 function [X1, X2, lin, b, v] = mixedstrategies( payoff, playerNum )     
     [m,n] = size(payoff);    
     coder.extrinsic('linprog');
-    coder.varsize('lin');
-    coder.varsize('b');
-    lin = [];
-    b = [];
+       
     v = Inf;
     % There is a saddle point in pure strategies
     if min(max(payoff))==max(min(payoff,[],2))
@@ -29,8 +26,10 @@ function [X1, X2, lin, b, v] = mixedstrategies( payoff, playerNum )
         elseif playerNum == 2
             X2(r) = 1.0;
             X1(s) = 1.0;
-        end       
-        
+        end
+        lin = [];
+        b = [];
+        v
     % There is no saddle point in pure strategies, so extend to mixed
     % strategies by solving linear system of equations Ax = b by linear
     % programming
@@ -47,10 +46,9 @@ function [X1, X2, lin, b, v] = mixedstrategies( payoff, playerNum )
         Aeq = [ones(1,m) 0];
         beq = 1;
         b = zeros(m,1);
-        coder.varsize('X1');
-        X1 = zeros(1,size(payoff,1));
+        coder.varsize('
         X1 = linprog(f,A,b,Aeq,beq,lb);
-        v = abs(X1(end,1))
+        v = abs(X1(end,:))
         X1(end,:) = [];
         X2 = [];
     end

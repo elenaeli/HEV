@@ -24,7 +24,7 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         j = 1;
     elseif mP(1) == cP(1)
         j = 2;
-    else
+    elseif mP(1) ~= cP(1) && mP(2) ~= cP(2)       
         j = 1;        
     end
    
@@ -39,19 +39,18 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
     % sort pareto points according to first column (X vaules)   
     paretoStrInd = sortrows(paretoStrInd,1);
     pareto = paretoStrInd(:,1:2);
-    xPar = zeros(1,size(pareto,1));
-    yPar = zeros(1,size(pareto,1));
+    xPar = 
+    yPar
     % get x and y coordinates of all pareto points
     for i = 1: size(pareto,1)       
         xPar(i) = pareto(i,1);
         yPar(i) = pareto(i,2);       
     end
-    coder.varsize('payoffParetoFront', [500,5]);
-    
+
     % according to the number of pareto points
     if size(pareto,1) == 1
-        payoffParetoFront = horzcat(xPar, yPar);
-    else
+        payoffParetoFront = horzcat(xPar, yPar)  
+    elseif size(pareto,1) >= 2
         % interpolate from smaller to bigger x coordinate (1st to 2nd
         % pareto point)      
         xP12 = linspace(pareto(1,1),pareto(2,1),100);       
@@ -80,7 +79,8 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         end
     end
             
-    ks = zeros(1,2);   
+    ks(1,1) = Inf;
+    ks(1,2) = Inf;   
     r = zeros(1,size(payoffParetoFront,1));
     l = zeros(1,size(payoffParetoFront,1));  
     
@@ -95,11 +95,11 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         
         % if either the numerator or denominator is 0, make the whole side
         % 0 to avoid NaN if denominator is 0.
-        if all(u2c2 == 0) || all(u1c1 == 0)
+        if u2c2 == 0 || u1c1 == 0
             l(u) = 0;              
         end
-        if all(m2c2 == 0) || all( m1c1 == 0)
-            r(u) = 0;
+        if m2c2 == 0 || m1c1 == 0
+            r(u) = 0;    
         end        
     end    
     diff = r - l;
@@ -118,5 +118,7 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
                 linePareto(2,:) = paretoStrInd(i+1,:);
             end
         end
-    end
+    end    
+        
+    
 end

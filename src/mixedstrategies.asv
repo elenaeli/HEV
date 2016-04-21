@@ -24,8 +24,8 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
                 end
             end
         end
-        X1 = zeros(m,1);
-        X2 = zeros(m,1);
+        X1 = zeros(m,1)
+        X2 = zeros(m,1)
         A = [];
         b = [];
         if playerNum == 1
@@ -45,17 +45,18 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
         %lin = zeros(m,n);
         %lin(m,:) = ones(1,m)       
     
-        f = [zeros(m,1); -1];
+        f = [zeros(m,1)];
         lb = [zeros(m,1) ;-Inf];
-        A = [payoff ones(m,1)];
-        b = zeros(m,1);     
+        A = [payoff];
+        %A(:,m+1) = ones(m,1);
 
         Aeq = [ones(1,m) 0];
         beq = 1;
-
-        X1 = zeros(m+1,1);
-        X1 = linprog(f,A,b,Aeq,beq,lb);       
-        v = abs(X1(end,1));
+        b = zeros(m,1);
+       
+        X1 = zeros(size(payoff,1),1)
+        X1 = linprog(f,A,b,Aeq,beq,lb);
+        v = abs(X1(end,1))
         X1(end,:) = [];
         X2 = [];
     end

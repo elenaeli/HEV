@@ -1,6 +1,6 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 84;        
+        requiredTorque = 205;        
         close all       
        
         %engineMaxPower = 57000;
@@ -248,17 +248,18 @@
         
         v12 = min(min(payoffWholeCoalBefore));
         [ shEngine, shMotor ] = shapleyvalue(v12, v1, v2)    
-        if ~ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true)            
+        if ~ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true)
+            
             IDX = knnsearch(payoffBoth,[shEngine shMotor],'K', 2);
             [idr1, idc1] = ind2sub(size(payoffEngine), IDX(1));        
             [idr2, idc2] = ind2sub(size(payoffEngine), IDX(2));
             nearestSh1 = [idr1 idc1];
             nearestSh2 = [idr2 idc2];
-            payoffNearestSh1 = [payoffEngine(idr1,idc1) payoffMotor(idr1,idc1)]
-            payoffNearestSh2 = [payoffEngine(idr2,idc2) payoffMotor(idr2,idc2)]
+            payoffNearestSh1 = [payoffEngine(idr1,idc1) payoffMotor(idr1,idc1)];
+            payoffNearestSh2 = [payoffEngine(idr2,idc2) payoffMotor(idr2,idc2)];
 
-            if payoffNearestSh2(1) < shEngine &&  ...
-                shEngine < payoffNearestSh1(1)
+            if payoffNearestSh1(2) < shEngine &&  ...
+                shEngine > payoffNearestSh2(1)
                 probNearSh2 = (shEngine - payoffNearestSh2(1)) / ...
                     (payoffNearestSh1(1) - payoffNearestSh2(1));
                 probNearSh1 = 1 - probNearSh2;
@@ -283,11 +284,7 @@
             shapleyMotorTorque = probNearSh1*strategyMot(idc1) + probNearSh2*strategyMot(idc2)
             shapleyEngineTorque + shapleyMotorTorque
         else
-             [~, ind] = ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true);        
-             ind
-             [idr1, idc1] = ind2sub(size(payoffEngine), ind);   
-             shapleyEngineTorque = strategyEng(idr1);
-             shapleyMotorTorque = strategyMot(idc1);
+             shapleyEngineTorque =
         end
         
         shapleyEngineTorque

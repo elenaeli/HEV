@@ -1,37 +1,40 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 84;        
-        close all       
+        requiredTorque = 71;        
+        SOC = 69.9998
+        fuelConsumed = 4.969e-05
+        if requiredTorque == 0
+            motorTorque = 0;
+            engineTorque = 0;
+        else
+        close all     
        
         %engineMaxPower = 57000;
         %motorMaxPower = 50000;
       
         motorSpeedCurve = [0, 1200, 2000, 3000, 4000, 5000, 6000];
-        motorTorqueCurve = [400 399 225 150 100 80 70];
-        tankCapacity = 45;
+        motorTorqueCurve = [400 399 225 150 100 80 70];       
         engineSpeedCurve = [0, 420, 900, 1380, 1860, 2340, 2820, 3300, 3780, 4260, 4740, 5220, 5700, 6000];
-        engineTorqueCurve = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];
-        
-        SOC_deviation = 0.35;
-        fuelConsumed = 8;
+        engineTorqueCurve = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];      
+    
+        SOC_deviation = abs(70 - SOC)/100;       
         maxEngineTorque = 136;
         maxMotorTorque = 400;
-        minMotorTorque = min(motorTorqueCurve);   
-        m = 15;
-        e = 15;
+        minMotorTorque = 0;   
+        m = 8;
+        e = 8;
         payoffMotor = zeros(m,e);
         payoffEngine = zeros(m,e);
         percentage = 0:(1/(m-1)):1;
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
        
-        strategyEng = percentage .* maxEngineTorqueStrategy;
-        %strategyMot = percentage .* maxMotorTorqueStrategy;
+        strategyEng = percentage .* maxEngineTorqueStrategy;        
 
         if minMotorTorque > maxMotorTorqueStrategy
-            strategyMot = zeros(1,15);
+            strategyMot = zeros(1,m);
         else
-            strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy, 15);
+            strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy, m);
         end
        
         tmpTorque = repmat(strategyEng',1,m);
@@ -113,24 +116,24 @@
         bestPayoffMotPareto        
 
         numStratBoth = m+e;  
-        [nashEq1Pl1, nashEq1Pl2] = LemkeHowson(-payoffEngine, -payoffMotor);  
-        [nashEq14Pl1, nashEq14Pl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/4*numStratBoth));  
-        [nashEq12Pl1, nashEq12Pl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));          
-        [nashEq34Pl1, nashEq34Pl2]  = LemkeHowson(-payoffEngine, -payoffMotor, ceil(3/4*numStratBoth));                     
-        payoffEngNash = payoffEngine(nashEq14Pl1==1, nashEq14Pl2==1);
-        payoffMotNash = payoffMotor(nashEq14Pl1==1, nashEq14Pl2==1);
-        bestPayoffEngNashLH(1) = payoffEngine(nashEq1Pl1==1, nashEq1Pl2==1);
-        bestPayoffEngNashLH(2) = payoffEngine(nashEq12Pl1==1, nashEq12Pl2==1);
-        bestPayoffEngNashLH(3) = payoffEngine(nashEq34Pl1==1, nashEq34Pl2==1);
-        bestPayoffMotNashLH(1) = payoffMotor(nashEq1Pl1==1, nashEq1Pl2==1);
-        bestPayoffMotNashLH(2) = payoffMotor(nashEq12Pl1==1, nashEq12Pl2==1);
-        bestPayoffMotNashLH(3) = payoffMotor(nashEq34Pl1==1, nashEq34Pl2==1);
+        %[nashEq1Pl1, nashEq1Pl2] = LemkeHowson(-payoffEngine, -payoffMotor);  
+        %[nashEq14Pl1, nashEq14Pl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/4*numStratBoth));  
+        %[nashEq12Pl1, nashEq12Pl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));          
+        [nashEqPl1, nashEqPl2]  = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
+        payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
+        payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);
+        %bestPayoffEngNashLH(1) = payoffEngine(nashEq1Pl1==1, nashEq1Pl2==1);
+       % bestPayoffEngNashLH(2) = payoffEngine(nashEq12Pl1==1, nashEq12Pl2==1);
+       % bestPayoffEngNashLH(3) = payoffEngine(nashEq34Pl1==1, nashEq34Pl2==1);
+        %%bestPayoffMotNashLH(1) = payoffMotor(nashEq1Pl1==1, nashEq1Pl2==1);
+        %bestPayoffMotNashLH(2) = payoffMotor(nashEq12Pl1==1, nashEq12Pl2==1);
+       % bestPayoffMotNashLH(3) = payoffMotor(nashEq34Pl1==1, nashEq34Pl2==1);
         [~, indM] = min(payoffEngNash);
         
-        nashIndEng = find(nashEq34Pl1==1);
-        nashIndMot = find(nashEq34Pl2==1);
+        nashIndEng = find(nashEqPl1==1);
+        nashIndMot = find(nashEqPl2==1);
  
-        conflictPoint = sub2ind([m e], find(nashEq14Pl1==1), find(nashEq14Pl2==1))
+        conflictPoint = sub2ind([m e], nashIndEng, nashIndMot)
         
         [A, payoffNPG, iterations, err] = npg([m e], -payoffBoth);
         payoffEngNashNPG = -payoffNPG(1)
@@ -138,12 +141,12 @@
         
         [~, indNP] = nashsolution(payoffBoth, conflictPoint);
         payoffEngNashSol = payoffBoth(indNP,1)
-        payoffMotNashSol = payoffBoth(indNP,2)
+        payoffMotNashSol = payoffBoth(indNP,2)        
+        paretoStrInd = horzcat(paretoStrategies, paretoIndex); 
         
-        paretoStrInd = horzcat(paretoStrategies, paretoIndex);        
         [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd)                
         percentReqTorq = linspace(0, requiredTorque, 10);
-        if size(linePareto,1) > 1
+        if ~isempty(linePareto)
             if linePareto(2,1) - linePareto(1,1) ~=0 && linePareto(1,2) - linePareto(2,2) ~= 0
                 probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
                 probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
@@ -167,6 +170,8 @@
                 probKsMixed(1)*abs(strategyEng(linePareto(1,3))-strategyEng(linePareto(2,3)))
             mixedMotorTorque = min(strategyMot(linePareto(1,4)),strategyMot(linePareto(2,4))) + ...
                 probKsMixed(1)*abs(strategyMot(linePareto(1,4))-strategyMot(linePareto(2,4)))
+        else
+            
         end
             
         %sum(probKsMixed)
@@ -256,35 +261,39 @@
             nearestSh2 = [idr2 idc2];
             payoffNearestSh1 = [payoffEngine(idr1,idc1) payoffMotor(idr1,idc1)]
             payoffNearestSh2 = [payoffEngine(idr2,idc2) payoffMotor(idr2,idc2)]
-
-            if payoffNearestSh2(1) < shEngine &&  ...
-                shEngine < payoffNearestSh1(1)
-                probNearSh2 = (shEngine - payoffNearestSh2(1)) / ...
-                    (payoffNearestSh1(1) - payoffNearestSh2(1));
+            if payoffNearestSh1(1) ~= payoffNearestSh2(1)
+                j = 1;
+                shapley = shEngine;
+            else
+                j = 2;
+                shapley = shMotor;
+            end
+            if payoffNearestSh2(j) < shapley &&  ...
+                shapley < payoffNearestSh1(j)
+                probNearSh2 = (shapley - payoffNearestSh2(j)) / ...
+                    (payoffNearestSh1(j) - payoffNearestSh2(j));
                 probNearSh1 = 1 - probNearSh2;
-            elseif payoffNearestSh1(1) < shEngine && ...                    
-                shEngine < payoffNearestSh2(1)
-                probNearSh1 = (shEngine - payoffNearestSh1(1)) / ...
-                    (payoffNearestSh2(1) - payoffNearestSh1(1));
+            elseif payoffNearestSh1(j) < shapley && ...                    
+                shapley < payoffNearestSh2(j)
+                probNearSh1 = (shapley - payoffNearestSh1(j)) / ...
+                    (payoffNearestSh2(j) - payoffNearestSh1(j));
                 probNearSh2 = 1 - probNearSh1;
-            elseif shEngine < payoffNearestSh1(1) &&  ...
-                shEngine < payoffNearestSh2(1)            
-                if payoffNearestSh1(1) < payoffNearestSh2(1)
-                    probNearSh1 = shEngine / payoffNearestSh1(1);
+            elseif shapley < payoffNearestSh1(j) &&  ...
+                shapley < payoffNearestSh2(j)            
+                if payoffNearestSh1(j) < payoffNearestSh2(j)
+                    probNearSh1 = shapley / payoffNearestSh1(j);
                     probNearSh2 = 0;
-                elseif payoffNearestSh2(1) < payoffNearestSh1(1)
-                    probNearSh2 = shEngine / payoffNearestSh2(1);
+                elseif payoffNearestSh2(j) < payoffNearestSh1(j)
+                    probNearSh2 = shapley / payoffNearestSh2(j);
                     probNearSh1 = 0;
                 end
             end
             probNearSh1
             probNearSh2
-            shapleyEngineTorque = probNearSh1*strategyEng(idr1) + probNearSh2*strategyEng(idr2)
-            shapleyMotorTorque = probNearSh1*strategyMot(idc1) + probNearSh2*strategyMot(idc2)
-            shapleyEngineTorque + shapleyMotorTorque
+            shapleyEngineTorque = probNearSh1*strategyEng(idr1) + probNearSh2*strategyEng(idr2);
+            shapleyMotorTorque = probNearSh1*strategyMot(idc1) + probNearSh2*strategyMot(idc2);
         else
              [~, ind] = ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true);        
-             ind
              [idr1, idc1] = ind2sub(size(payoffEngine), ind);   
              shapleyEngineTorque = strategyEng(idr1);
              shapleyMotorTorque = strategyMot(idc1);
@@ -295,16 +304,16 @@
         lightpurple = [163 154 255] ./ 255;        
         p10 = plot(payoffStrEng, payoffStrMot, 'o',...
             'MarkerFaceColor', lightpurple, 'MarkerEdgeColor', lightpurple, ...
-            'MarkerSize', 13);
+            'MarkerSize', 14);
               
         limegreen = [194 242 1] ./ 255;
         p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
-            'MarkerFaceColor', 'g', 'MarkerSize', 12);    
+            'MarkerFaceColor', 'g', 'MarkerSize', 13);    
         %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
         %    'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
         %    'MarkerSize', 13);    
         p4 = plot(payoffEngNash, payoffMotNash, 'oy', ...
-            'MarkerFaceColor', 'y', 'MarkerSize', 10);     
+            'MarkerFaceColor', 'y', 'MarkerSize', 11);     
         %p41 = plot(bestPayoffEngNashLH(1), bestPayoffMotNashLH(1), 'oc', ...
         %    'MarkerFaceColor', 'c', 'MarkerSize', 9);      
         %p42 = plot(bestPayoffEngNashLH(2), bestPayoffMotNashLH(2), 'o', ...
@@ -317,7 +326,7 @@
           
         purple = [118 31 133] ./ 255;        
         p7 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
-            'MarkerEdgeColor', purple, 'MarkerSize', 9);
+            'MarkerEdgeColor', purple, 'MarkerSize', 10);
         pink = [254 164 191] ./ 255;       
         p8 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
             'MarkerFaceColor',pink, 'MarkerEdgeColor',pink,...
@@ -359,6 +368,6 @@
         hold off
         
         [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
-            bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot);
-
+            bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot)
+    end
 %end

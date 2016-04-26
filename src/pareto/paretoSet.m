@@ -1,7 +1,7 @@
 function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, payoffMotor)
     coder.extrinsic('legend');
     coder.extrinsic('int2str');
-    coder.extrinsic('ismembertol')
+    coder.extrinsic('ismembertol');
    
     [k,l] = size(payoffEngine);    
     Eng = payoffEngine;
@@ -20,8 +20,7 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     for i=1:k      
         for j=1:l                
             isNotPareto = 0;
-            flag = 0;                        
-             ind = sub2ind(size(payoffMotor),i,j);
+            flag = 0;  
             for m=1:k                  
                 for n=1:l
                     if Eng(i,j) > Eng(m,n) && Mot(i,j) > Mot(m,n)                    
@@ -50,11 +49,9 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     %[pareto,ia,~] = unique(pareto,'rows');   
     %paretoIndex = paretoIndex(ia, :); 
     
-    % remove all rows with zeros
-      
+    % remove all rows with zeros    
 
     paretoIndices( ~any(paretoIndices,2), : ) = [];
-
     paretoStrategies( ~any(paretoStrategies,2), : ) = [];
    
 end

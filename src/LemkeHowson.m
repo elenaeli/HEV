@@ -189,7 +189,7 @@ function [nashEqbm1, nashEqbm2] = LemkeHowson(varargin)
             end
         end
         
-        if player == 1
+        if player == 1           
             nashEqbm1= x/sum(x);
         else
             nashEqbm2= x/sum(x);

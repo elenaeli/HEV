@@ -13,11 +13,9 @@ function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrate
         fuelPareto(1,r) = fuel(paretoIndex(r,1),1);
         noxPareto(1,r) = nox(paretoIndex(r,1),1);
         powerPareto(1,r) = power(paretoIndex(r,1),1);
-    end
-        
-    payoffEngPareto
-    payoffMotPareto        
-    bestTorqDevPareto = min(abs(torqueDeviationPareto))
+    end        
+       
+    bestTorqDevPareto = min(abs(torqueDeviationPareto));
        
     % check if more than 1 points have same torque deviation
     indT = find(abs(torqueDeviationPareto)==bestTorqDevPareto);   

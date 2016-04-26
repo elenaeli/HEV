@@ -8,10 +8,9 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
    
     v = Inf;
     % There is a saddle point in pure strategies
-    min(max(payoff))
-    max(min(payoff,[],2))
+
     if min(max(payoff))==max(min(payoff,[],2))
-        maxP=max(payoff)
+        maxP = max(payoff);
         for i=1:m
             for j=1:n
                 if isequal(maxP(j),payoff(i,j))      
@@ -54,7 +53,8 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
         beq = 1;
 
         X1 = zeros(m+1,1);
-        X1 = linprog(f,A,b,Aeq,beq,lb);       
+        options = optimset('Display', 'off');
+        X1 = linprog(f,A,b,Aeq,beq,lb,[],[],options);       
         v = abs(X1(end,1));
         X1(end,:) = [];
         X2 = [];

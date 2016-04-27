@@ -1,9 +1,9 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 71;        
+        requiredTorque = 64;        
         SOC = 69.9998
         fuelConsumed = 4.969e-05
-        if requiredTorque == 0
+        if requiredTorque < 70
             motorTorque = 0;
             engineTorque = 0;
         else
@@ -20,7 +20,8 @@
         SOC_deviation = abs(70 - SOC)/100;       
         maxEngineTorque = 136;
         maxMotorTorque = 400;
-        minMotorTorque = 0;   
+        minMotorTorque = min(motorTorqueCurve);   
+        minEngineTorque = 82.73;
         m = 8;
         e = 8;
         payoffMotor = zeros(m,e);
@@ -29,12 +30,17 @@
         maxEngineTorqueStrategy = min([requiredTorque maxEngineTorque]);
         maxMotorTorqueStrategy = min([requiredTorque maxMotorTorque]);
        
-        strategyEng = percentage .* maxEngineTorqueStrategy;        
+        %strategyEng = percentage .* maxEngineTorqueStrategy;        
 
         if minMotorTorque > maxMotorTorqueStrategy
             strategyMot = zeros(1,m);
         else
             strategyMot = linspace(minMotorTorque, maxMotorTorqueStrategy, m);
+        end
+        if minEngineTorque > maxEngineTorqueStrategy
+            strategyEng = zeros(1,e);
+        else
+            strategyEng = linspace(minEngineTorque, maxEngineTorqueStrategy,e);
         end
        
         tmpTorque = repmat(strategyEng',1,m);

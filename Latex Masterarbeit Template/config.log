@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  10 FEB 2016 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  7 MAY 2016 16:38
 entering extended mode
 **./config.tex
 (config.tex
@@ -11,14 +11,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8 \usepackage{
+l.9 \usepackage{
                 ifthen}                % Verwenden von bool'schen Variablen
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.9 \newboolean
-               {draft}
+l.10 \newboolean
+                {draft}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -32,8 +32,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9 \newboolean{d
-                 raft}
+l.10 \newboolean{d
+                  raft}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -43,7 +43,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.10 \setboolean
+l.11 \setboolean
                 {draft}{false}          % F�r Finale Version: draft=false !!!
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -62,7 +62,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 9--13
+Overfull \hbox (20.0pt too wide) in paragraph at lines 10--14
 []
  []
 
@@ -73,7 +73,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \usepackage[latin1]{
+l.16 \usepackage{
+                 gensymb}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 \usepackage[latin1]{
                          inputenc}       % Deklaration der Zeichenkodierung ...
 
 \usepackage may only appear in the document preamble, i.e.,
@@ -86,7 +98,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \usepackage[T1]{
+l.18 \usepackage[T1]{
                      fontenc}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -98,7 +110,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \usepackage[english,UKenglish]{
+l.19 \usepackage[english,UKenglish]{
                                     babel}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -110,7 +122,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \usepackage{
+l.26 \usepackage{
                  amssymb}              % F�r mathematische Symbole
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -122,7 +134,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 \usepackage[tbtags]{
+l.27 \usepackage[tbtags]{
                          amsmath}      % F�r mathematische Befehle
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -134,7 +146,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 \usepackage{
+l.28 \usepackage{
                  amsthm}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -146,7 +158,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 \usepackage{
+l.34 \usepackage{
                  helvet}               % Arial bei sffamily
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -158,7 +170,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.33 \usepackage{
+l.35 \usepackage{
                  xspace}               % Setzt Leerzeichen, wenn welche hing...
 
 \usepackage may only appear in the document preamble, i.e.,
@@ -171,7 +183,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 \usepackage{
+l.38 \usepackage{
                  multirow}             % Tabellen
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -183,7 +195,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39 \usepackage{
+l.41 \usepackage{
                  tabularx}             % -''-
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -195,13 +207,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40 \usepackage{
+l.42 \usepackage{
                  array}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.41 \newcolumntype
+l.43 \newcolumntype
                    {C}[1]{>{\centering\arraybackslash}p{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -216,7 +228,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41 \newcolumntype{C
+l.43 \newcolumntype{C
                      }[1]{>{\centering\arraybackslash}p{#1}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -227,7 +239,7 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.41 ...lumntype{C}[1]{>{\centering\arraybackslash
+l.43 ...lumntype{C}[1]{>{\centering\arraybackslash
                                                   }p{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -237,7 +249,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no p in font nullfont!
 ! You can't use `macro parameter character #' in horizontal mode.
-l.41 ...type{C}[1]{>{\centering\arraybackslash}p{#
+l.43 ...type{C}[1]{>{\centering\arraybackslash}p{#
                                                   1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -252,14 +264,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 \usepackage[inline]{
+l.44 \usepackage[inline]{
                          enumitem}     % Erm�glicht inline-lists  \begin{e...
 
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 41--43
+Overfull \hbox (20.0pt too wide) in paragraph at lines 43--45
 []
  []
 
@@ -270,7 +282,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.49 ]{
+l.51 ]{
        nomencl}              % Abk�rzungsverzeichnis
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -278,7 +290,7 @@ between \documentclass and \begin{document}.
 ! Undefined control sequence.
 <argument> \nomitemsep 
                        
-l.50 \setlength{\nomitemsep}{-\parsep}
+l.52 \setlength{\nomitemsep}{-\parsep}
                                        % kein zus�tzlicher Abstand zwische...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -293,7 +305,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 \setlength{\nomitemsep}{-\parsep}
+l.52 \setlength{\nomitemsep}{-\parsep}
                                        % kein zus�tzlicher Abstand zwische...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -303,7 +315,7 @@ Missing character: There is no - in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.50 \setlength{\nomitemsep}{-\parsep}
+l.52 \setlength{\nomitemsep}{-\parsep}
                                        % kein zus�tzlicher Abstand zwische...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -312,7 +324,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.50 \setlength{\nomitemsep}{-\parsep}
+l.52 \setlength{\nomitemsep}{-\parsep}
                                        % kein zus�tzlicher Abstand zwische...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -324,7 +336,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> \nomlabelwidth 
                           
-l.51 \setlength{\nomlabelwidth}{6em}
+l.53 \setlength{\nomlabelwidth}{6em}
                                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -342,7 +354,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.52 \renewcommand{\nomname}
+l.54 \renewcommand{\nomname}
                             {Abk�rzungs- und Zeichenverzeichnis}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -357,13 +369,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54 \renewcommand{\nomgroup}
+l.56 \renewcommand{\nomgroup}
                              [1]{%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.59 \makenomenclature
+l.61 \makenomenclature
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -372,7 +384,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 50--64
+Overfull \hbox (20.0pt too wide) in paragraph at lines 52--66
 []
  []
 
@@ -383,7 +395,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \usepackage[autostyle, german=quotes]{
+l.73 \usepackage[autostyle, german=quotes]{
                                            csquotes}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -395,7 +407,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ]{
+l.80 ]{
        biblatex}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -407,7 +419,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.84 	, font={
+l.87 	, font={
               
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -419,7 +431,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.89 	,
+l.92 	,
         width=.9\textwidth,       % Schmaler als Textbreite
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -436,7 +448,7 @@ Missing character: There is no 9 in font nullfont!
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ,
-l.90 	,
+l.93 	,
         justification=raggedright % Text ist linksb�ndig
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -506,13 +518,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 \usepackage{
+l.96 \usepackage{
                  flafter} % Place floatings after reference
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 89--97
+Overfull \hbox (20.0pt too wide) in paragraph at lines 92--100
 []
  []
 
@@ -523,7 +535,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 \usepackage{
+l.105 \usepackage{
                   graphicx}       % Einbindung von extern erzeugten .png Gra...
 
 \usepackage may only appear in the document preamble, i.e.,
@@ -536,7 +548,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 \usepackage{
+l.106 \usepackage{
                   xcolor}         % Farbige Schrift
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -548,7 +560,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 \usepackage{
+l.108 \usepackage{
                   fancyhdr}       % Kopf- und Fu�zeilen
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -556,7 +568,7 @@ between \documentclass and \begin{document}.
 ! Undefined control sequence.
 <argument> \undefinedpagestyle 
                                
-l.106 \pagestyle{fancy}
+l.109 \pagestyle{fancy}
                                   % Unterkapitelzahl in Kopfzeile links, Kap...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -571,14 +583,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.107 \renewcommand{\chaptermark}
+l.110 \renewcommand{\chaptermark}
                                  [1]{\markboth{\textsc{\chaptertitlename} \t...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.109 \fancyhead
+l.112 \fancyhead
                 [LO]{\leftmark}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -593,7 +605,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.109 \fancyhead[
+l.112 \fancyhead[
                  LO]{\leftmark}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -603,7 +615,7 @@ Missing character: There is no L in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.110 \fancyhead
+l.113 \fancyhead
                 [RO,LE]{\thepage}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -619,7 +631,7 @@ Missing character: There is no L in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.110 \fancyhead[RO,LE]{\thepage
+l.113 \fancyhead[RO,LE]{\thepage
                                 }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -628,7 +640,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.111 \fancyhead
+l.114 \fancyhead
                 [RE]{\rightmark}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -643,7 +655,7 @@ Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 \@gtempa ...iftrue \ifnum \@ne =\@ne \fi \ifdraft 
                                                   \relax \TE@setvaltrue \els...
-l.112 \draftfoot
+l.115 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -654,14 +666,14 @@ and I'll forget about whatever was undefined.
 ! Extra \fi.
 \@gtempa ...E@setvalfalse \fi \TE@negatefalse \fi 
                                                   
-l.112 \draftfoot
+l.115 \draftfoot
                 
 I'm ignoring this; it doesn't match any \if.
 
 ! Undefined control sequence.
 <argument> \fancyfoot 
                       [CO]{Entwurf vom \today }\fancyfoot [CE]{}
-l.112 \draftfoot
+l.115 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -686,7 +698,7 @@ Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
 <argument> \fancyfoot [CO]{Entwurf vom \today 
                                               }\fancyfoot [CE]{}
-l.112 \draftfoot
+l.115 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -697,7 +709,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...[CO]{Entwurf vom \today }\fancyfoot 
                                                   [CE]{}
-l.112 \draftfoot
+l.115 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -710,7 +722,7 @@ Missing character: There is no C in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.113 \fancypagestyle
+l.116 \fancypagestyle
                      {plain}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -724,7 +736,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.114 	\fancyhf
+l.117 	\fancyhf
                {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -739,7 +751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.115 	\renewcommand{\headrulewidth}
+l.118 	\renewcommand{\headrulewidth}
                                     {0pt}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -751,7 +763,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.116 	\renewcommand{\footrulewidth}
+l.119 	\renewcommand{\footrulewidth}
                                     {0pt}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -759,7 +771,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \@gtempa ...iftrue \ifnum \@ne =\@ne \fi \ifdraft 
                                                   \relax \TE@setvaltrue \els...
-l.117 \draftfoot
+l.120 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -770,14 +782,14 @@ and I'll forget about whatever was undefined.
 ! Extra \fi.
 \@gtempa ...E@setvalfalse \fi \TE@negatefalse \fi 
                                                   
-l.117 \draftfoot
+l.120 \draftfoot
                 
 I'm ignoring this; it doesn't match any \if.
 
 ! Undefined control sequence.
 <argument> \fancyfoot 
                       [CO]{Entwurf vom \today }\fancyfoot [CE]{}
-l.117 \draftfoot
+l.120 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -802,7 +814,7 @@ Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
 <argument> \fancyfoot [CO]{Entwurf vom \today 
                                               }\fancyfoot [CE]{}
-l.117 \draftfoot
+l.120 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -813,7 +825,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...[CO]{Entwurf vom \today }\fancyfoot 
                                                   [CE]{}
-l.117 \draftfoot
+l.120 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -826,7 +838,7 @@ Missing character: There is no C in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.119 \fancypagestyle
+l.122 \fancypagestyle
                      {empty}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -840,7 +852,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.120 \fancyhf
+l.123 \fancyhf
               {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -855,7 +867,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.121 \renewcommand{\headrulewidth}
+l.124 \renewcommand{\headrulewidth}
                                    {0pt}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -867,7 +879,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122 \renewcommand{\footrulewidth}
+l.125 \renewcommand{\footrulewidth}
                                    {0pt}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -875,7 +887,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \@gtempa ...iftrue \ifnum \@ne =\@ne \fi \ifdraft 
                                                   \relax \TE@setvaltrue \els...
-l.123 \draftfoot
+l.126 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -886,14 +898,14 @@ and I'll forget about whatever was undefined.
 ! Extra \fi.
 \@gtempa ...E@setvalfalse \fi \TE@negatefalse \fi 
                                                   
-l.123 \draftfoot
+l.126 \draftfoot
                 
 I'm ignoring this; it doesn't match any \if.
 
 ! Undefined control sequence.
 <argument> \fancyfoot 
                       [CO]{Entwurf vom \today }\fancyfoot [CE]{}
-l.123 \draftfoot
+l.126 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -918,7 +930,7 @@ Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
 <argument> \fancyfoot [CO]{Entwurf vom \today 
                                               }\fancyfoot [CE]{}
-l.123 \draftfoot
+l.126 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -929,7 +941,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...[CO]{Entwurf vom \today }\fancyfoot 
                                                   [CE]{}
-l.123 \draftfoot
+l.126 \draftfoot
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -942,7 +954,7 @@ Missing character: There is no C in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 109--125
+Overfull \hbox (20.0pt too wide) in paragraph at lines 112--128
 []
  []
 
@@ -953,7 +965,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.128 \usepackage[onehalfspacing]{
+l.131 \usepackage[onehalfspacing]{
                                   setspace} % 1,5facher Zeilenabstand
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -965,13 +977,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.133 \usepackage{
+l.136 \usepackage{
                   remreset}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.134 \makeatletter\@removefromreset
+l.137 \makeatletter\@removefromreset
                                     {footnote}{chapter}\makeatother
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -986,7 +998,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 \makeatletter\@removefromreset{f
+l.137 \makeatletter\@removefromreset{f
                                       ootnote}{chapter}\makeatother
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1013,13 +1025,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 \usepackage{
+l.154 \usepackage{
                   color, listings}          % Quellcode einbinden
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.152 \definecolor
+l.155 \definecolor
                   {olivegreen}{cmyk}{.25,0,1,.5}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1034,7 +1046,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152 \definecolor{o
+l.155 \definecolor{o
                     livegreen}{cmyk}{.25,0,1,.5}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1064,7 +1076,7 @@ Missing character: There is no , in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 5 in font nullfont!
 ! Undefined control sequence.
-l.153 \definecolor
+l.156 \definecolor
                   {froggreen}{cmyk}{1,0,1,.25}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1095,7 +1107,7 @@ Missing character: There is no . in font nullfont!
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 5 in font nullfont!
 ! Undefined control sequence.
-l.154 \definecolor
+l.157 \definecolor
                   {dark_orange}{cmyk}{0,.5,1,.16}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1110,17 +1122,17 @@ Missing character: There is no k in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.154 \definecolor{dark_
+l.157 \definecolor{dark_
                         orange}{cmyk}{0,.5,1,.16}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 154.
+(Font)              <7> on input line 157.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 154.
+(Font)              <5> on input line 157.
 ! Extra }, or forgotten $.
-l.154 \definecolor{dark_orange}
+l.157 \definecolor{dark_orange}
                                {cmyk}{0,.5,1,.16}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1135,13 +1147,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.155 \usepackage{
+l.158 \usepackage{
                   courier}                  % Courier als tt-Schriftart
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.157 \lstdefinestyle
+l.160 \lstdefinestyle
                      {none}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1156,12 +1168,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.158 	basicstyle=\ttfamily
+l.161 	basicstyle=\ttfamily
                            \scriptsize % Schriftart und -gr��e
 Please use the math alphabet \mathtt instead of the \ttfamily command. 
 
 ! Undefined control sequence.
-l.158 	basicstyle=\ttfamily\scriptsize
+l.161 	basicstyle=\ttfamily\scriptsize
                                        % Schriftart und -gr��e
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1170,7 +1182,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.168 \lstdefinestyle
+l.171 \lstdefinestyle
                      {default}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1179,7 +1191,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.171 	, rulecolor=\color
+l.174 	, rulecolor=\color
                          {black}       % Rahmenfarbe
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1188,7 +1200,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.173 	, numberstyle=\tiny
+l.176 	, numberstyle=\tiny
                                        % Zeilennummernschrift klein
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1197,7 +1209,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.175 	, stringstyle=\color
+l.178 	, stringstyle=\color
                            {orange}    % Farbe der Zeichenketten
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1206,7 +1218,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.176 	, commentstyle=\color
+l.179 	, commentstyle=\color
                             {gray}     % Farbe der Kommentare
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1215,7 +1227,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.179 \lstdefinestyle
+l.182 \lstdefinestyle
                      {c}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1230,7 +1242,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 	, emphstyle=\bfseries
+l.184 	, emphstyle=\bfseries
                             \ttfamily
 Please use the math alphabet \mathbf instead of the \bfseries command. 
 
@@ -1241,14 +1253,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 	, emphstyle=\bfseries\ttfamily
+l.184 	, emphstyle=\bfseries\ttfamily
                                      
 Please use the math alphabet \mathtt instead of the \ttfamily command. 
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 181.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 184.
 ! Undefined control sequence.
-l.183 	, commentstyle=\color
+l.186 	, commentstyle=\color
                             {froggreen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1257,7 +1269,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.184 	, keywordstyle=[1]\color
+l.187 	, keywordstyle=[1]\color
                                {blue}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1268,7 +1280,7 @@ and I'll forget about whatever was undefined.
 ! Missing { inserted.
 <to be read again> 
                    _
-l.185     , morekeywords=[1]{__
+l.188     , morekeywords=[1]{__
                                attribute__, byte, GPS_Pos_t, WPoint_t,  UART...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1278,7 +1290,7 @@ so that I will find a matching right brace soon.
 ! Missing { inserted.
 <to be read again> 
                    _
-l.185     , morekeywords=[1]{__attribute__
+l.188     , morekeywords=[1]{__attribute__
                                           , byte, GPS_Pos_t, WPoint_t,  UART...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1286,7 +1298,7 @@ so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
 ! Undefined control sequence.
-l.188 \lstdefinestyle
+l.191 \lstdefinestyle
                      {line}{basicstyle=\ttfamily\small,breaklines=true,fonta...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1301,13 +1313,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.188 \lstdefinestyle{line}{basicstyle=\ttfamily
+l.191 \lstdefinestyle{line}{basicstyle=\ttfamily
                                                 \small,breaklines=true,fonta...
 
 Please use the math alphabet \mathtt instead of the \ttfamily command. 
 
 ! Undefined control sequence.
-l.188 ...inestyle{line}{basicstyle=\ttfamily\small
+l.191 ...inestyle{line}{basicstyle=\ttfamily\small
                                                   ,breaklines=true,fontadjust}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1318,7 +1330,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.190 
+l.193 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1326,7 +1338,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.190 
+l.193 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1337,7 +1349,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.190 
+l.193 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1346,7 +1358,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (2554.96165pt too wide) in paragraph at lines 152--190
+Overfull \hbox (2554.96165pt too wide) in paragraph at lines 155--193
 $[]\OML/cmm/m/it/10 range[][][][][][]c[]$ 
  []
 
@@ -1357,13 +1369,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.192 \usepackage{
+l.195 \usepackage{
                   titlesec}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.194 \titleformat
+l.197 \titleformat
                   {\chapter}[block]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1372,7 +1384,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.194 \titleformat{\chapter
+l.197 \titleformat{\chapter
                            }[block]
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1387,7 +1399,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.194 \titleformat{\chapter}[
+l.197 \titleformat{\chapter}[
                              block]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1400,7 +1412,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.195 {\Huge
+l.198 {\Huge
             \bf\sffamily}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1409,7 +1421,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.195 {\Huge\bf
+l.198 {\Huge\bf
                \sffamily}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1420,7 +1432,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \color 
                   {gray}\fontsize {60}{60}\usefont {U}{eur}{b}{n}\thechapter...
-l.196 ...eur}{b}{n}\thechapter\hspace{10pt}\vline}
+l.199 ...eur}{b}{n}\thechapter\hspace{10pt}\vline}
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1432,14 +1444,14 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
-LaTeX Font Info:    Try loading font information for U+eur on input line 196.
+LaTeX Font Info:    Try loading font information for U+eur on input line 199.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\ueur.fd"
 File: ueur.fd 2013/01/14 v3.01 Euler Roman
 )
 ! Undefined control sequence.
 <argument> ...}\usefont {U}{eur}{b}{n}\thechapter 
                                                   \hspace {10pt}\vline 
-l.196 ...eur}{b}{n}\thechapter\hspace{10pt}\vline}
+l.199 ...eur}{b}{n}\thechapter\hspace{10pt}\vline}
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1454,7 +1466,7 @@ Missing character: There is no t in font nullfont!
 ! Argument of \formatchaptertitle has an extra }.
 <inserted text> 
                 \par 
-l.198 {\formatchaptertitle}
+l.201 {\formatchaptertitle}
                            
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1467,27 +1479,42 @@ Runaway argument?
 ! Paragraph ended before \formatchaptertitle was complete.
 <to be read again> 
                    \par 
-l.198 {\formatchaptertitle}
+l.201 {\formatchaptertitle}
                            
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-
-! LaTeX Error: \usepackage before \documentclass.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.207 {
-       hyperref}
-\usepackage may only appear in the document preamble, i.e.,
-between \documentclass and \begin{document}.
+! Undefined control sequence.
+l.202 \titleformat
+                  {\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.208 \urlstyle
-               {same}
+l.202 \titleformat{\section
+                           }{\normalfont\Large\bfseries}{\thesection}{1em}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.202 \titleformat{\section}{\normalfont\Large
+                                              \bfseries}{\thesection}{1em}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.202 ...}{\normalfont\Large\bfseries}{\thesection
+                                                  }{1em}{}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1501,10 +1528,73 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.208 \urlstyle{s
-                 ame}
+l.202 ...normalfont\Large\bfseries}{\thesection}{1
+                                                  em}{}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+! Undefined control sequence.
+l.203 \titleformat
+                  {\subsection}{\normalfont\large\bfseries}{\thesubsection}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.203 \titleformat{\subsection
+                              }{\normalfont\large\bfseries}{\thesubsection}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.203 \titleformat{\subsection}{\normalfont\large
+                                                 \bfseries}{\thesubsection}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.203 ...normalfont\large\bfseries}{\thesubsection
+                                                  }{1em}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 {
+       hyperref}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+! Undefined control sequence.
+l.212 \urlstyle
+               {same}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -1517,13 +1607,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.212 ]{
+l.216 ]{
         bookmark}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
 ! Undefined control sequence.
-l.215 \addto
+l.219 \addto
             \extrasngerman{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1532,7 +1622,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.215 \addto\extrasngerman
+l.219 \addto\extrasngerman
                           {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1547,7 +1637,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.220 \usepackage{
+l.224 \usepackage{
                   scrhack}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.

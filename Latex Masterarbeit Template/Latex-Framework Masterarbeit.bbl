@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.5 $
+% $ biblatex bbl format version 2.6 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,12 +18,24 @@
 
 
 \refsection{0}
-  \sortlist{nyt}{nyt}
+  \sortlist[entry]{nyt/global}
     \entry{burch1999advisor}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,hash=b1afb46e9b4f9043fe82b68a096cc9dd}{Burch}{B\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=b218cee1d7dc79604f55a521337acd2c}{Cuddy}{C\bibinitperiod}{Matt}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1bbfff1f1f3cdb003b336ed31b4012f2}{Markel}{M\bibinitperiod}{T}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b1afb46e9b4f9043fe82b68a096cc9dd}{%
+           family={Burch},
+           family_i={B\bibinitperiod},
+           given={Steve},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=b218cee1d7dc79604f55a521337acd2c}{%
+           family={Cuddy},
+           family_i={C\bibinitperiod},
+           given={Matt},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=1bbfff1f1f3cdb003b336ed31b4012f2}{%
+           family={Markel},
+           family_i={M\bibinitperiod},
+           given={T},
+           given_i={T\bibinitperiod}}}%
       }
       \strng{namehash}{debb6f31f67aebf5f5cb928e8d1d3cc2}
       \strng{fullhash}{debb6f31f67aebf5f5cb928e8d1d3cc2}
@@ -39,10 +51,26 @@
     \endentry
     \entry{chen2014game}{inproceedings}{}
       \name{author}{4}{}{%
-        {{uniquename=0,hash=83702ad2b0cc9ef7ee381daa5f80b7f0}{Chen}{C\bibinitperiod}{H}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=cc5e9c2c556fac09b49822965a3e01ff}{Kessels}{K\bibinitperiod}{JTBA}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a9c17924a0226d7b46f421da81f8ac85}{Donkers}{D\bibinitperiod}{MCF}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ec6bdd250bd88f5355d39a988936133}{Weiland}{W\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=83702ad2b0cc9ef7ee381daa5f80b7f0}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={H},
+           given_i={H\bibinitperiod}}}%
+        {{uniquename=0,hash=cc5e9c2c556fac09b49822965a3e01ff}{%
+           family={Kessels},
+           family_i={K\bibinitperiod},
+           given={JTBA},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=a9c17924a0226d7b46f421da81f8ac85}{%
+           family={Donkers},
+           family_i={D\bibinitperiod},
+           given={MCF},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=1ec6bdd250bd88f5355d39a988936133}{%
+           family={Weiland},
+           family_i={W\bibinitperiod},
+           given={S},
+           given_i={S\bibinitperiod}}}%
       }
       \list{organization}{1}{%
         {IEEE}%
@@ -63,8 +91,16 @@
     \endentry
     \entry{chin2010design}{inproceedings}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=f9e8c7e3d83f883b911cb7d2255ffc98}{Chin}{C\bibinitperiod}{Hubert\bibnamedelima H}{H\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=85496921025235a74602a412fdfbcb72}{Jafari}{J\bibinitperiod}{Ayat\bibnamedelima A}{A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f9e8c7e3d83f883b911cb7d2255ffc98}{%
+           family={Chin},
+           family_i={C\bibinitperiod},
+           given={Hubert\bibnamedelima H},
+           given_i={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{uniquename=0,hash=85496921025235a74602a412fdfbcb72}{%
+           family={Jafari},
+           family_i={J\bibinitperiod},
+           given={Ayat\bibnamedelima A},
+           given_i={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \list{organization}{1}{%
         {IEEE}%
@@ -85,8 +121,16 @@
     \endentry
     \entry{dextreit2014game}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=257b40dd3c4f3b9123f301d9d25182a6}{Dextreit}{D\bibinitperiod}{Clement}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4b725fa94ca3b124d9b203690f9ed582}{Kolmanovsky}{K\bibinitperiod}{Ilya\bibnamedelima V}{I\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=257b40dd3c4f3b9123f301d9d25182a6}{%
+           family={Dextreit},
+           family_i={D\bibinitperiod},
+           given={Clement},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=4b725fa94ca3b124d9b203690f9ed582}{%
+           family={Kolmanovsky},
+           family_i={K\bibinitperiod},
+           given={Ilya\bibnamedelima V},
+           given_i={I\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {IEEE}%
@@ -109,8 +153,16 @@
     \endentry
     \entry{gielniak2004power}{inproceedings}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=d0f67a3600eebf17ddb28012a250f80e}{Gielniak}{G\bibinitperiod}{Michael\bibnamedelima J}{M\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=86746437fa54cd171d02d25f501f5486}{Shen}{S\bibinitperiod}{Z\bibnamedelima John}{Z\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d0f67a3600eebf17ddb28012a250f80e}{%
+           family={Gielniak},
+           family_i={G\bibinitperiod},
+           given={Michael\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{uniquename=0,hash=86746437fa54cd171d02d25f501f5486}{%
+           family={Shen},
+           family_i={S\bibinitperiod},
+           given={Z\bibnamedelima John},
+           given_i={Z\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{organization}{1}{%
         {IEEE}%
@@ -132,7 +184,11 @@
     \endentry
     \entry{lemkeHowson2014Matlab}{online}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=cd945204d079e69a0142a7e43b84f7e1}{Katzwer}{K\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=cd945204d079e69a0142a7e43b84f7e1}{%
+           family={Katzwer},
+           family_i={K\bibinitperiod},
+           given={Richard},
+           given_i={R\bibinitperiod}}}%
       }
       \strng{namehash}{cd945204d079e69a0142a7e43b84f7e1}
       \strng{fullhash}{cd945204d079e69a0142a7e43b84f7e1}
@@ -153,8 +209,16 @@
     \endentry
     \entry{lafrance1973electrical}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=2806d1c364ddb059d5b665d5d73f0b33}{LaFrance}{L\bibinitperiod}{RC}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=65ea84767ee572110f19d7dd87691449}{Schult}{S\bibinitperiod}{RW}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=2806d1c364ddb059d5b665d5d73f0b33}{%
+           family={LaFrance},
+           family_i={L\bibinitperiod},
+           given={RC},
+           given_i={R\bibinitperiod}}}%
+        {{uniquename=0,hash=65ea84767ee572110f19d7dd87691449}{%
+           family={Schult},
+           family_i={S\bibinitperiod},
+           given={RW},
+           given_i={R\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {IEEE}%
@@ -177,8 +241,18 @@
     \endentry
     \entry{lemke1964equilibrium}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=52b3f4e2280b39c113b904f3315e504c}{Lemke}{L\bibinitperiod}{Carlton\bibnamedelima E}{C\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e7eafe2c2069c1a28e80f402cabdef11}{Howson}{H\bibinitperiod}{Joseph\bibnamedelima T}{J\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{Jr}{J\bibinitperiod}}%
+        {{uniquename=0,hash=52b3f4e2280b39c113b904f3315e504c}{%
+           family={Lemke},
+           family_i={L\bibinitperiod},
+           given={Carlton\bibnamedelima E},
+           given_i={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{uniquename=0,hash=e7eafe2c2069c1a28e80f402cabdef11}{%
+           family={Howson},
+           family_i={H\bibinitperiod},
+           suffix={Jr},
+           suffix_i={J\bibinitperiod},
+           given={Joseph\bibnamedelima T},
+           given_i={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {SIAM}%
@@ -201,7 +275,11 @@
     \endentry
     \entry{nash1951non}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{Nash}{N\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{%
+           family={Nash},
+           family_i={N\bibinitperiod},
+           given={John},
+           given_i={J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {JSTOR}%
@@ -222,10 +300,26 @@
     \endentry
     \entry{nisan2007algorithmic}{book}{}
       \name{author}{4}{}{%
-        {{uniquename=0,hash=dd03ed102537d5040adaf7ede9bad0ec}{Nisan}{N\bibinitperiod}{Noam}{N\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{Roughgarden}{R\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=b68fe90101326ab15c1bc77e49780304}{Tardos}{T\bibinitperiod}{Eva}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4344f3ab9820abfa99b0160d5d229257}{Vazirani}{V\bibinitperiod}{Vijay\bibnamedelima V}{V\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           family_i={N\bibinitperiod},
+           given={Noam},
+           given_i={N\bibinitperiod}}}%
+        {{uniquename=0,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           family_i={R\bibinitperiod},
+           given={Tim},
+           given_i={T\bibinitperiod}}}%
+        {{uniquename=0,hash=b68fe90101326ab15c1bc77e49780304}{%
+           family={Tardos},
+           family_i={T\bibinitperiod},
+           given={Eva},
+           given_i={E\bibinitperiod}}}%
+        {{uniquename=0,hash=4344f3ab9820abfa99b0160d5d229257}{%
+           family={Vazirani},
+           family_i={V\bibinitperiod},
+           given={Vijay\bibnamedelima V},
+           given_i={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Cambridge University Press Cambridge}%
@@ -244,7 +338,11 @@
     \endentry
     \entry{shapley1974note}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=02050ef6384404264a61641a4606717e}{Shapley}{S\bibinitperiod}{Lloyd\bibnamedelima S}{L\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=02050ef6384404264a61641a4606717e}{%
+           family={Shapley},
+           family_i={S\bibinitperiod},
+           given={Lloyd\bibnamedelima S},
+           given_i={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -262,7 +360,11 @@
     \endentry
     \entry{von1952theory}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=7def203b8ec7da1ce1ecfd50236086c9}{Von\bibnamedelima Stackelberg}{V\bibinitperiod\bibinitdelim S\bibinitperiod}{Heinrich}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=7def203b8ec7da1ce1ecfd50236086c9}{%
+           family={Von\bibnamedelima Stackelberg},
+           family_i={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Heinrich},
+           given_i={H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Oxford University Press}%

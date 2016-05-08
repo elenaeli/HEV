@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {UKenglish}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{v}{chapter*.2}
+\contentsline {chapter}{\nonumberline List of Figures}{vii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -24,11 +24,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Game definition}{6}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Pareto Optimum}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Pareto Efficiency and Pareto Optimality}{8}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.3}Nash Bargaining solution}{8}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}Lemke-Howson Algorithm}{8}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.4}Nash Equilibrium and Lemke-Howson algorithm}{9}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.5}Kalai-Smorodinsky Bargaining Solution}{11}{subsection.2.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.6}Core}{11}{subsection.2.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.7}Shapley Value}{11}{subsection.2.1.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Application}{12}{chapter.3}
 \defcounter {refsection}{0}\relax 

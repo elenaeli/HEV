@@ -5,12 +5,13 @@
 % filename: ./config.tex                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BOOL
+
 \usepackage{ifthen}                % Verwenden von bool'schen Variablen
 \newboolean{draft}
 \setboolean{draft}{false}          % F�r Finale Version: draft=false !!!
 \newcommand{\draftfoot}{\ifthenelse{\boolean{draft}}{\fancyfoot[CO]{Entwurf vom \today}\fancyfoot[CE]{}}{\fancyfoot{}}}
 %% END BOOL
-
+\listfiles 
 %% Schrift
 \usepackage{gensymb}
 \usepackage[latin1]{inputenc}       % Deklaration der Zeichenkodierung (u.a. f�r Umlaute)
@@ -198,7 +199,8 @@ natbib=true,
 {\llap{\color{gray}\fontsize{60}{60}\usefont{U}{eur}{b}{n}\thechapter\hspace{10pt}\vline}}
 {10pt}
 {\formatchaptertitle}
-
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 %% Links und Urls
 \usepackage%
 %[

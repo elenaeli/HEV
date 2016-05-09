@@ -1,8 +1,8 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 64;        
-        SOC = 69.9998
-        fuelConsumed = 4.969e-05
+        requiredTorque = 70;        
+        SOC = 69.9998;
+        fuelConsumed = 4.969e-05;
         if requiredTorque < 70
             motorTorque = 0;
             engineTorque = 0;
@@ -21,9 +21,9 @@
         maxEngineTorque = 136;
         maxMotorTorque = 400;
         minMotorTorque = min(motorTorqueCurve);   
-        minEngineTorque = 82.73;
-        m = 8;
-        e = 8;
+        minEngineTorque = 0;
+        m = 7;
+        e = 7;
         payoffMotor = zeros(m,e);
         payoffEngine = zeros(m,e);
         percentage = 0:(1/(m-1)):1;
@@ -129,11 +129,11 @@
         payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
         payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);
         %bestPayoffEngNashLH(1) = payoffEngine(nashEq1Pl1==1, nashEq1Pl2==1);
-       % bestPayoffEngNashLH(2) = payoffEngine(nashEq12Pl1==1, nashEq12Pl2==1);
-       % bestPayoffEngNashLH(3) = payoffEngine(nashEq34Pl1==1, nashEq34Pl2==1);
+        %bestPayoffEngNashLH(2) = payoffEngine(nashEq12Pl1==1, nashEq12Pl2==1);
+        %bestPayoffEngNashLH(3) = payoffEngine(nashEq34Pl1==1, nashEq34Pl2==1);
         %%bestPayoffMotNashLH(1) = payoffMotor(nashEq1Pl1==1, nashEq1Pl2==1);
         %bestPayoffMotNashLH(2) = payoffMotor(nashEq12Pl1==1, nashEq12Pl2==1);
-       % bestPayoffMotNashLH(3) = payoffMotor(nashEq34Pl1==1, nashEq34Pl2==1);
+        %bestPayoffMotNashLH(3) = payoffMotor(nashEq34Pl1==1, nashEq34Pl2==1);
         [~, indM] = min(payoffEngNash);
         
         nashIndEng = find(nashEqPl1==1);
@@ -175,9 +175,7 @@
             mixedEngineTorque = min(strategyEng(linePareto(1,3)),strategyEng(linePareto(2,3))) + ...
                 probKsMixed(1)*abs(strategyEng(linePareto(1,3))-strategyEng(linePareto(2,3)))
             mixedMotorTorque = min(strategyMot(linePareto(1,4)),strategyMot(linePareto(2,4))) + ...
-                probKsMixed(1)*abs(strategyMot(linePareto(1,4))-strategyMot(linePareto(2,4)))
-        else
-            
+                probKsMixed(1)*abs(strategyMot(linePareto(1,4))-strategyMot(linePareto(2,4)))       
         end
             
         %sum(probKsMixed)
@@ -202,10 +200,10 @@
         imputM = zeros(1,size(undomImpInd,2));
         imputE = zeros(1,size(undomImpInd,2));
         for i = 1 : size(undomImpInd,2)             
-            if undomImp(i,1) <= payoffEngine(m,:)
+            if all(undomImp(i,1) <= payoffEngine(m,:))
                 imputM(1,i) = undomImpInd(i);
             end                
-            if undomImp(i,2) <= payoffMotor(:,e)
+            if all(undomImp(i,2) <= payoffMotor(:,e))
                 imputE(1,i) = undomImpInd(i);
             end
         end
@@ -213,7 +211,7 @@
         imput = undomImpInd;
         imput(imput==0) = [];
     
-        payoffImput = zeros(size(imput,2),3);
+        payoffImput = zeros(size(imput,1),3);
         for i = 1 : size(imput,1)
             payoffImput(i,1) = payoffBoth(imput(i),1);
             payoffImput(i,2) = payoffBoth(imput(i),2);       
@@ -231,8 +229,7 @@
       
         if  ~isempty(A1) && ~isempty(A2) && ~isempty(b1) && ~isempty(b2)
             mixedStrEng = find(abs(Xengine-0)>0.001);
-            mixedStrMot = find(abs(Xmotor-0)>0.001);
-            count = 1;
+            mixedStrMot = find(abs(Xmotor-0)>0.001);           
             payoffProbMixedStrEng = zeros(size(mixedStrEng,1),2);
             payoffProbMixedStrMot = zeros(size(mixedStrMot,1),2);
             payoffStrEng = 0;

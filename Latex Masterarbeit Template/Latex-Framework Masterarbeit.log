@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.7)  8 MAY 2016 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  9 MAY 2016 16:50
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -320,10 +320,10 @@ Package csquotes Info: Enabling multilingual quotes.
 Package csquotes Info: Redefining alias 'german' -> 'german/quotes'.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty"
-Package: biblatex 2016/03/03 v3.3 programmable bibliographies (PK/JW/AB)
+Package: biblatex 2015/12/22 v3.2 programmable bibliographies (PK/JW/AB)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex_.sty"
-Package: biblatex_ 2016/03/03 v3.3 programmable bibliographies (biber) (PK/JW/A
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex2.sty"
+Package: biblatex2 2015/12/22 v3.2 programmable bibliographies (biber) (PK/JW/A
 B)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
@@ -496,13 +496,13 @@ Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def"
-File: blx-compat.def 2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
+File: blx-compat.def 2015/12/22 v3.2 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex_.def' found.
+Package biblatex Info: ... file 'biblatex.def' found.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex_.def"
-File: biblatex_.def 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\biblatex.def"
+File: biblatex.def 
 \c@textcitecount=\count285
 \c@textcitetotal=\count286
 \c@textcitemaxnames=\count287
@@ -515,18 +515,18 @@ Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\blx-natbib.def"
-File: blx-natbib.def 2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
+File: blx-natbib.def 2015/12/22 v3.2 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\bbx\authoryear.bbx"
-File: authoryear.bbx 2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
+File: authoryear.bbx 2015/12/22 v3.2 biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx"
-File: standard.bbx 2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
+File: standard.bbx 2015/12/22 v3.2 biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count292
 \c@bbx:relatedtotal=\count293
 ))
@@ -534,7 +534,7 @@ Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\cbx\authoryear.cbx"
-File: authoryear.cbx 2016/03/03 v3.3 biblatex citation style (PK/JW/AB)
+File: authoryear.cbx 2015/12/22 v3.2 biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -550,11 +550,11 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 )))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+Package: caption 2016/02/02 v3.3-136 Customizing captions (AR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
+Package: caption3 2016/02/02 v1.7-136 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen124
 \captionmargin@=\dimen125
 \captionwidth=\dimen126
@@ -567,7 +567,7 @@ Package caption Info: KOMA-Script document class.
 \c@ContinuedFloat=\count294
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+Package: subcaption 2016/02/02 v1.1-136 Sub-captions (AR)
 \c@subfigure=\count295
 \c@subtable=\count296
 )
@@ -685,7 +685,7 @@ Class scrreprt Warning: Usage of package `titlesec' together
 (scrreprt)              package `titlesec' on input line 196.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
-Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box32
 \beforetitleunit=\skip81
 \aftertitleunit=\skip82
@@ -717,10 +717,12 @@ Package titlesec Warning: Non standard sectioning command detected
 (titlesec)                Using default spacing and no format.
 
 )
-Class scrreprt Info: Deactivating the `titlesec` workaround,
-(scrreprt)           because package is newer than expected on input line 196.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\block.tss"
-File: block.tss 2016/03/15
+
+Package scrreprt Warning: Activating an ugly workaround for a missing
+(scrreprt)                feature of package `titlesec` on input line 196.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\block.tss"
+File: block.tss 2011/12/15
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -855,17 +857,17 @@ Package biblatex Info: Trying to load language 'UKenglish'...
 Package biblatex Info: ... file 'UKenglish.lbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\lbx\UKenglish.lbx"
-File: UKenglish.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
+File: UKenglish.lbx 2015/12/22 v3.2 biblatex localization (PK/JW/AB)
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\lbx\british.lbx"
-File: british.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
+File: british.lbx 2015/12/22 v3.2 biblatex localization (PK/JW/AB)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
-File: english.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
+File: english.lbx 2015/12/22 v3.2 biblatex localization (PK/JW/AB)
 )))
 ("Latex-Framework Masterarbeit.aux" (source/cover.aux) (source/explanation.aux)
 (source/abstract.aux) (source/acknowledgements.aux) (source/lists.aux)
@@ -1163,7 +1165,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 
 
 
-] [7] [8] [9] [10]) [11]
+] [7] [8] [9] [10] [11]) [12]
 \openout2 = `source/content.aux'.
 
  (source/content.tex
@@ -1182,7 +1184,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-[12
+[13
 
 
 
@@ -1202,7 +1204,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 7.
 
-[13
+[14
 
 ]
 chapter 5.
@@ -1220,7 +1222,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 12.
 
-[14
+[15
 
 ]
 chapter 6.
@@ -1238,7 +1240,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 17.
 
-[15
+[16
 
 ]
 chapter 7.
@@ -1256,7 +1258,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 22.
 
-) [16
+) [17
 
 ]
 chapter without number
@@ -1274,10 +1276,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 59.
 
-[17
+[18
 
 
-] [18]
+] [19]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1296,7 +1298,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [19
+) [20
 
 
 ]
@@ -1350,8 +1352,8 @@ csquotes.sty    2016/01/31 v5.1g context-sensitive quotations (JAW)
 etoolbox.sty    2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 csquotes.def    2016/01/31 v5.1g csquotes generic definitions (JAW)
 csquotes.cfg    
-biblatex.sty    2016/03/03 v3.3 programmable bibliographies (PK/JW/AB)
-biblatex_.sty    2016/03/03 v3.3 programmable bibliographies (biber) (PK/JW/AB)
+biblatex.sty    2015/12/22 v3.2 programmable bibliographies (PK/JW/AB)
+biblatex2.sty    2015/12/22 v3.2 programmable bibliographies (biber) (PK/JW/AB)
 
 kvoptions.sty    2011/06/30 v3.11 Key value format for package options (HO)
  ltxcmds.sty    2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
@@ -1365,16 +1367,16 @@ ifluatex.sty    2010/03/01 v1.3 Provides the ifluatex switch (HO)
   blx-dm.def
 authoryear.dbx
 biblatex-dm.cfg
-blx-compat.def    2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
-biblatex_.def    
-blx-natbib.def    2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
-standard.bbx    2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
-authoryear.bbx    2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
-authoryear.cbx    2016/03/03 v3.3 biblatex citation style (PK/JW/AB)
+blx-compat.def    2015/12/22 v3.2 biblatex compatibility (PK/JW/AB)
+biblatex.def    
+blx-natbib.def    2015/12/22 v3.2 biblatex compatibility (PK/JW/AB)
+standard.bbx    2015/12/22 v3.2 biblatex bibliography style (PK/JW/AB)
+authoryear.bbx    2015/12/22 v3.2 biblatex bibliography style (PK/JW/AB)
+authoryear.cbx    2015/12/22 v3.2 biblatex citation style (PK/JW/AB)
 biblatex.cfg    
- caption.sty    2016/02/21 v3.3-144 Customizing captions (AR)
-caption3.sty    2016/02/04 v1.7-139 caption3 kernel (AR)
-subcaption.sty    2016/02/20 v1.1-142 Sub-captions (AR)
+ caption.sty    2016/02/02 v3.3-136 Customizing captions (AR)
+caption3.sty    2016/02/02 v1.7-136 caption3 kernel (AR)
+subcaption.sty    2016/02/02 v1.1-136 Sub-captions (AR)
  flafter.sty    2015/09/05 v1.3a Standard LaTeX floats after reference (FMi)
 graphicx.sty    2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 graphics.sty    2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
@@ -1390,8 +1392,8 @@ listings.sty    2015/06/04 1.6 (Carsten Heinz)
  lstmisc.sty    2015/06/04 1.6 (Carsten Heinz)
 listings.cfg    2015/06/04 1.6 listings configuration
  courier.sty    2005/04/12 PSNFSS-v9.2a (WaS) 
-titlesec.sty    2016/03/21 v2.10.2 Sectioning titles
-   block.tss    2016/03/15
+titlesec.sty    2011/12/15 v2.10.0 Sectioning titles
+   block.tss    2011/12/15
 hyperref.sty    2012/11/06 v6.83m Hypertext links for LaTeX
 hobsub-hyperref.sty    2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 hobsub-generic.sty    2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
@@ -1425,9 +1427,9 @@ listings.hak    2015/10/03 v3.19a KOMA-Script package (hacking package listings
 )
 setspace.hak    2015/10/03 v3.19a KOMA-Script package (hacking package setspace
 )
- english.lbx    2016/03/03 v3.3 biblatex localization (PK/JW/AB)
- british.lbx    2016/03/03 v3.3 biblatex localization (PK/JW/AB)
-UKenglish.lbx    2016/03/03 v3.3 biblatex localization (PK/JW/AB)
+ english.lbx    2015/12/22 v3.2 biblatex localization (PK/JW/AB)
+ british.lbx    2015/12/22 v3.2 biblatex localization (PK/JW/AB)
+UKenglish.lbx    2015/12/22 v3.2 biblatex localization (PK/JW/AB)
 "Latex-Framework Masterarbeit".bbl
 supp-pdf.mkii
  nameref.sty    2012/10/27 v2.43 Cross-referencing by name of section
@@ -1456,13 +1458,13 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18874 strings out of 493634
- 304771 string characters out of 3141315
- 827243 words of memory out of 3000000
- 21835 multiletter control sequences out of 15000+200000
+ 18763 strings out of 493634
+ 301980 string characters out of 3141315
+ 846085 words of memory out of 3000000
+ 21722 multiletter control sequences out of 15000+200000
  29651 words of font info for 64 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,15n,66p,1587b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,15n,66p,1578b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1200.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontna
@@ -1483,9 +1485,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (26 pages, 319619 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (27 pages, 327724 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
+ 671 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
  187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

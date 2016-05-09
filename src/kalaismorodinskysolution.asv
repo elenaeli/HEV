@@ -38,12 +38,12 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         interpolate(j, xCM, yCM, X);
     end
    
-    % if there are repeating X points 
+    
     if size(unique(pareto(:,1)),1) < size(pareto(:,1),1)
         % sort pareto points according to second column (Y vaules)   
         xy = 2;
-        paretoStrInd = sortrows(paretoStrInd,2);
-        pareto = paretoStrInd(:,1:2);
+        paretoStrInd = sortrows(paretoStrInd,2)
+        pareto = paretoStrInd(:,1:2)
     else
         % sort pareto points according to first column (X vaules)   
         xy = 1;

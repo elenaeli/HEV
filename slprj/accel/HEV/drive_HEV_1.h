@@ -10,12 +10,12 @@ extern "C" {
 typedef struct drive_HEV_1_data_table_tag { DriveLine _dline ;
 DriveSimpleGear DriveSimpleGear_table [ 5 ] ; DrivePlanetRing
 DrivePlanetRing_table [ 1 ] ; DrivePlanetPlanet DrivePlanetPlanet_table [ 3 ]
-; DriveStrainGauge DriveStrainGauge_table [ 5 ] ; DriveInertia
+; DriveStrainGauge DriveStrainGauge_table [ 6 ] ; DriveInertia
 DriveInertia_table [ 4 ] ; DriveParameter DriveParameter_table [ 17 ] ;
-DriveWeld DriveWeld_table [ 2 ] ; DriveSignal DriveSignal_table [ 35 ] ;
-DriveTransducer DriveTransducer_table [ 22 ] ; DriveSolver DriveSolver_table
-[ 1 ] ; uint8_T UINT8_table [ 5979 ] ; DriveBlock DriveBlock_table [ 45 ] ;
-int32_T INT32_table [ 61 ] ; DriveCompilerData DriveCompilerData_table [ 1 ]
+DriveWeld DriveWeld_table [ 2 ] ; DriveSignal DriveSignal_table [ 37 ] ;
+DriveTransducer DriveTransducer_table [ 23 ] ; DriveSolver DriveSolver_table
+[ 1 ] ; uint8_T UINT8_table [ 6198 ] ; DriveBlock DriveBlock_table [ 47 ] ;
+int32_T INT32_table [ 64 ] ; DriveCompilerData DriveCompilerData_table [ 1 ]
 ; } drive_HEV_1_data_table ;
 #else
 typedef struct drive_HEV_1_data_table_tag drive_HEV_1_data_table ;

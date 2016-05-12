@@ -28,24 +28,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.3}Nash Bargaining solution}{8}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}Nash Equilibrium and Lemke-Howson algorithm}{9}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.4}Nash Equilibrium and Lemke-Howson algorithm}{10}{subsection.2.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.5}Kalai-Smorodinsky Bargaining Solution}{12}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.5}Kalai-Smorodinsky Bargaining Solution}{13}{subsection.2.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.6}Core}{12}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.6}Core}{13}{subsection.2.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.7}Shapley Value}{12}{subsection.2.1.7}
+\contentsline {subsection}{\numberline {2.1.7}Shapley Value}{13}{subsection.2.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Application}{13}{chapter.3}
+\contentsline {chapter}{\numberline {3}Application}{14}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{14}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}
+\contentsline {chapter}{\numberline {5}Implementation}{16}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Experiments}{16}{chapter.6}
+\contentsline {chapter}{\numberline {6}Experiments}{17}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Discussion}{17}{chapter.7}
+\contentsline {chapter}{\numberline {7}Discussion}{18}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{18}{chapter*.3}
+\contentsline {chapter}{\nonumberline Bibliography}{19}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{20}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{21}{appendix.A}

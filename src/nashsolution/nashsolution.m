@@ -16,4 +16,3 @@ function [ nashSolution, indNP ] = nashsolution( payoffBoth, c )
     [ ~, indNP ] = max(nashProduct);    
     nashSolution = nashProduct(indNP, :);
 end
-

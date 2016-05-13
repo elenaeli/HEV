@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  12 MAY 2016 13:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  13 MAY 2016 15:08
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1161,22 +1161,28 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-[6
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+ [6
 
 
 
-] [7] [8] <figures/nashSolution.png, id=169, 501.37312pt x 440.39531pt>
+] [7] [8]
+<figures/nashSolution.png, id=171, 501.37312pt x 440.39531pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
-Package pdftex.def Info: figures/nashSolution.png used on input line 52.
+Package pdftex.def Info: figures/nashSolution.png used on input line 66.
 (pdftex.def)             Requested size: 250.68594pt x 220.19711pt.
- [9 <./figures/nashSolution.png>] [10] [11]
-[12]
 
-LaTeX Warning: Citation 'npg' on page 13 undefined on input line 112.
 
-) [13]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10 <./figures/nashSolution.png>] [11] [12] [13]) [14]
 \openout2 = `source/content.aux'.
 
  (source/content.tex
@@ -1195,7 +1201,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-[14
+[15
 
 
 
@@ -1215,7 +1221,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 7.
 
-[15
+[16
 
 ]
 chapter 5.
@@ -1233,7 +1239,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 12.
 
-[16
+[17
 
 ]
 chapter 6.
@@ -1251,7 +1257,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 17.
 
-[17
+[18
 
 ]
 chapter 7.
@@ -1269,7 +1275,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 22.
 
-) [18
+) [19
 
 ]
 chapter without number
@@ -1287,10 +1293,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 59.
 
-[19
+[20
 
 
-] [20]
+] [21]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1309,7 +1315,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [21
+) [22
 
 
 ]
@@ -1458,30 +1464,23 @@ source/lists.tex
 source/Introduction.tex
     ueur.fd    2013/01/14 v3.01 Euler Roman
 source/Fundamentals.tex
+  omscmr.fd    2014/09/29 v2.5h Standard LaTeX font definitions
 figures/nashSolution.png
 source/content.tex
 source/appendix.tex
  ***********
 
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 65.
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                "Latex-Framework Masterarbeit"
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18778 strings out of 493634
- 302262 string characters out of 3141315
- 846136 words of memory out of 3000000
- 21732 multiletter control sequences out of 15000+200000
+ 18818 strings out of 493634
+ 302909 string characters out of 3141315
+ 847210 words of memory out of 3000000
+ 21765 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  59i,15n,66p,1578b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1507,9 +1506,9 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (28 pages, 344644 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (29 pages, 351161 bytes).
 PDF statistics:
- 711 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

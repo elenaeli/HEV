@@ -37,6 +37,27 @@
       \field{title}{ADVISOR 2.1 Documentation}
       \field{year}{1999}
     \endentry
+    \entry{npg}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=c3300948b98c30fdb983ff593c8194ff}{Chatterjee}{C\bibinitperiod}{Bapi}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c3300948b98c30fdb983ff593c8194ff}
+      \strng{fullhash}{c3300948b98c30fdb983ff593c8194ff}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{n-person game}
+      \field{urlday}{12}
+      \field{urlmonth}{05}
+      \field{urlyear}{2016}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://www.mathworks.com/matlabcentral/fileexchange/27837-n-person-game/content/npg/npg.m
+      \endverb
+    \endentry
     \entry{chen2014game}{inproceedings}{}
       \name{author}{4}{}{%
         {{uniquename=0,hash=83702ad2b0cc9ef7ee381daa5f80b7f0}{Chen}{C\bibinitperiod}{H}{H\bibinitperiod}{}{}{}{}}%
@@ -149,6 +170,28 @@
       \field{title}{Einführung in die Spieltheorie}
       \field{year}{2006}
     \endentry
+    \entry{kalai1975other}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=8609e5bd00f28c9c709fe68c9ac391c4}{Kalai}{K\bibinitperiod}{Ehud}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=10b9035d502b9daeb5254da415b27449}{Smorodinsky}{S\bibinitperiod}{Meir}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{632f62f28487c70e089f9880c76711a8}
+      \strng{fullhash}{632f62f28487c70e089f9880c76711a8}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{1975}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica: Journal of the Econometric Society}
+      \field{title}{Other solutions to Nash's bargaining problem}
+      \field{year}{1975}
+      \field{pages}{513\bibrangedash 518}
+      \range{pages}{6}
+    \endentry
     \entry{lemkeHowson2014Matlab}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=cd945204d079e69a0142a7e43b84f7e1}{Katzwer}{K\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
@@ -217,6 +260,27 @@
       \field{year}{1964}
       \field{pages}{413\bibrangedash 423}
       \range{pages}{11}
+    \endentry
+    \entry{nash1950bargaining}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{Nash}{N\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{833e110f2d339a9323ef95f850c110d3}
+      \strng{fullhash}{833e110f2d339a9323ef95f850c110d3}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelyear}{1950}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica: Journal of the Econometric Society}
+      \field{title}{The bargaining problem}
+      \field{year}{1950}
+      \field{pages}{155\bibrangedash 162}
+      \range{pages}{8}
     \endentry
     \entry{nash1951non}{article}{}
       \name{author}{1}{}{%

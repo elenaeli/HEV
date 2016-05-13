@@ -27,8 +27,8 @@ localDW ) { if ( mfqvbclekq ) { localB -> forbrjhq11 = gbeq152nyt ; if (
 ssIsMajorTimeStep ( S ) ) { srUpdateBC ( localDW -> hx1jtpaojx ) ; } } } void
 nxnb4xfekz ( SimStruct * const S ) { } static void mdlOutputs ( SimStruct * S
 , int_T tid ) { real_T bf4leg14dv ; real_T iodspovcct ; real_T bqcgob22yd ;
-real_T ddaxqpoc0f ; real_T cf42xbgp3d ; real_T f5sk1kfm13 ; real_T pct03d1l4s
-; real_T eu003c5edr ; real_T i3fummpa1c ; real_T hiyz3mxgea ; boolean_T
+real_T ddaxqpoc0f ; real_T cz11sb51me ; real_T ma5zkm3ak0 ; real_T d0xxkzbvri
+; real_T p5ngqu1lob ; real_T i3fummpa1c ; real_T hiyz3mxgea ; boolean_T
 m11fddtsiw ; int32_T rowIdx ; real_T * lastU ; boolean_T pbnk0frrk0 ; uint8_T
 mjvuadvsvc ; real_T i5nu34w4uj ; real_T dztyrqu4xa ; real_T eskeehll14 ;
 real_T jwhz1ujp3w ; real_T ehtkh2wauy ; real_T mkcfwi2fsi ; real_T ehcygfucdl
@@ -126,23 +126,23 @@ gcc4nmnh41 ) + ld5zvvrfqt ( S ) -> jirogj2213 ; if ( _rtB -> mlk1pjfolt <=
 0.0 ) { _rtB -> floa0n1bxy = 0.0 ; } else { _rtB -> floa0n1bxy = _rtB ->
 mlk1pjfolt ; } _rtB -> opg5ig3e0e = 1.0464 * _rtB -> floa0n1bxy ; { uint32_T
 iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ; HEV_acc_BINARYSEARCH_real_T ( & (
-iLeftU0 ) , & ( iRghtU0 ) , _rtB -> nbjjk53lvu , ni220kbneq . k40cmekmot ,
+iLeftU0 ) , & ( iRghtU0 ) , _rtB -> nbjjk53lvu , ni220kbneq . c4qvyaa1p5 ,
 108U ) ; if ( _rtB -> opg5ig3e0e <= 0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; }
 else if ( _rtB -> opg5ig3e0e >= 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ;
 } else { iLeftU1 = ( uint32_T ) ( ( _rtB -> opg5ig3e0e ) / 60.0 ) ; iRghtU1 =
 iLeftU1 + 1 ; } { real_T yTemp ; real_T u1Lambda ; real_T u0Lambda ; if (
 iLeftU1 != iRghtU1 ) { { real_T num = ( real_T ) ( _rtB -> opg5ig3e0e ) - (
 iLeftU1 * 60.0 ) ; u1Lambda = num / 60.0 ; } } else { u1Lambda = 0.0 ; } if (
-( ni220kbneq . k40cmekmot [ iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0
-] ) ) { real_T num ; real_T den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ]
-) ; den -= ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> nbjjk53lvu
-; num -= ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; }
+( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0
+] ) ) { real_T num ; real_T den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ]
+) ; den -= ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> nbjjk53lvu
+; num -= ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; }
 else { u0Lambda = 0.0 ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast =
-( ni220kbneq . mihbjg1o3z [ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = (
-ni220kbneq . mihbjg1o3z [ ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast +=
+( ni220kbneq . mstlffh4xe [ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = (
+ni220kbneq . mstlffh4xe [ ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast +=
 u1Lambda * ( yRghtCast - yLeftCast ) ; bf4leg14dv = yLeftCast ; } { real_T
-yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mihbjg1o3z [ (
-iRghtU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mihbjg1o3z [ (
+yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mstlffh4xe [ (
+iRghtU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mstlffh4xe [ (
 iRghtU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; yTemp = yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ;
 yLeftCast = bf4leg14dv ; yRghtCast = yTemp ; yLeftCast += u0Lambda * (
@@ -167,23 +167,23 @@ muDoubleScalarAbs ( _rtB -> ijqe34mvfk ) ; _rtB -> auzwrfwf2v = 1.093 * _rtB
 0.0 ) { _rtB -> bfsq0zyecv = 0.0 ; } else { _rtB -> bfsq0zyecv = _rtB ->
 bfhhzbkkye ; } _rtB -> ija0da2eks = 1.0464 * _rtB -> bfsq0zyecv ; { uint32_T
 iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ; HEV_acc_BINARYSEARCH_real_T ( & (
-iLeftU0 ) , & ( iRghtU0 ) , _rtB -> auzwrfwf2v , ni220kbneq . k40cmekmot ,
+iLeftU0 ) , & ( iRghtU0 ) , _rtB -> auzwrfwf2v , ni220kbneq . c4qvyaa1p5 ,
 108U ) ; if ( _rtB -> ija0da2eks <= 0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; }
 else if ( _rtB -> ija0da2eks >= 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ;
 } else { iLeftU1 = ( uint32_T ) ( ( _rtB -> ija0da2eks ) / 60.0 ) ; iRghtU1 =
 iLeftU1 + 1 ; } { real_T yTemp ; real_T u1Lambda ; real_T u0Lambda ; if (
 iLeftU1 != iRghtU1 ) { { real_T num = ( real_T ) ( _rtB -> ija0da2eks ) - (
 iLeftU1 * 60.0 ) ; u1Lambda = num / 60.0 ; } } else { u1Lambda = 0.0 ; } if (
-( ni220kbneq . k40cmekmot [ iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0
-] ) ) { real_T num ; real_T den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ]
-) ; den -= ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> auzwrfwf2v
-; num -= ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; }
+( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0
+] ) ) { real_T num ; real_T den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ]
+) ; den -= ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> auzwrfwf2v
+; num -= ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; }
 else { u0Lambda = 0.0 ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast =
-( ni220kbneq . mihbjg1o3z [ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = (
-ni220kbneq . mihbjg1o3z [ ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast +=
+( ni220kbneq . mstlffh4xe [ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = (
+ni220kbneq . mstlffh4xe [ ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast +=
 u1Lambda * ( yRghtCast - yLeftCast ) ; iodspovcct = yLeftCast ; } { real_T
-yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mihbjg1o3z [ (
-iRghtU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mihbjg1o3z [ (
+yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mstlffh4xe [ (
+iRghtU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mstlffh4xe [ (
 iRghtU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; yTemp = yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ;
 yLeftCast = iodspovcct ; yRghtCast = yTemp ; yLeftCast += u0Lambda * (
@@ -198,11 +198,11 @@ afxvvza3cb * _rtB -> faas3afdpe + 0.175666143629361 * _rtB -> afxvvza3cb ) *
 ) -> echc312qll ) ; if ( _rtB -> nyjtqlivfc [ 8 ] <= 0.0 ) { _rtB ->
 pog4s1u1rz = 0.0 ; } else { _rtB -> pog4s1u1rz = _rtB -> nyjtqlivfc [ 8 ] ; }
 _rtB -> gwin5i00rc = muDoubleScalarAbs ( _rtB -> pog4s1u1rz ) ;
-HEV_acc_LookUp_real_T_real_T ( & ( bqcgob22yd ) , ni220kbneq . ad0xyntnqk ,
-_rtB -> gwin5i00rc , ni220kbneq . ap25v33plp , 6U ) ; ssCallAccelRunBlock ( S
+HEV_acc_LookUp_real_T_real_T ( & ( bqcgob22yd ) , ni220kbneq . eizjdjflni ,
+_rtB -> gwin5i00rc , ni220kbneq . c3doh0dipz , 6U ) ; ssCallAccelRunBlock ( S
 , 14 , 174 , SS_CALL_MDL_OUTPUTS ) ; _rtB -> chplveqgj1 = 0.0 ; _rtB ->
 chplveqgj1 += 125.66370614359172 * _rtX -> ix50zu3rlz ; _rtB -> h3dgin415e =
-_rtB -> bwhspuctns - _rtB -> chplveqgj1 ; _rtB -> jygl0z2gar = 0.02 * _rtB ->
+_rtB -> gtajl4byik - _rtB -> chplveqgj1 ; _rtB -> jygl0z2gar = 0.02 * _rtB ->
 h3dgin415e ; if ( ( ( hgl3elxkcb * ) ssGetContStates ( S ) ) -> f0udlm3lxk >=
 5.0 ) { if ( ( ( hgl3elxkcb * ) ssGetContStates ( S ) ) -> f0udlm3lxk != 5.0
 ) { ( ( hgl3elxkcb * ) ssGetContStates ( S ) ) -> f0udlm3lxk = 5.0 ;
@@ -274,7 +274,7 @@ ssCallAccelRunBlock ( S , 14 , 209 , SS_CALL_MDL_OUTPUTS ) ;
 ssCallAccelRunBlock ( S , 14 , 210 , SS_CALL_MDL_OUTPUTS ) ;
 ssCallAccelRunBlock ( S , 14 , 211 , SS_CALL_MDL_OUTPUTS ) ; _rtB ->
 h0cqr0sona = 9.5492965854826952 * _rtB -> nyjtqlivfc [ 12 ] ; _rtB ->
-ltbmxvblhx = _rtB -> nyjtqlivfc [ 12 ] * _rtB -> p1o0lcfasn [ 1 ] ;
+neiceh2ylu = _rtB -> nyjtqlivfc [ 12 ] * _rtB -> p1o0lcfasn [ 1 ] ;
 ssCallAccelRunBlock ( S , 14 , 214 , SS_CALL_MDL_OUTPUTS ) ; _rtB ->
 h44qns4hga = ! ( mjvuadvsvc != 0 ) ; if ( ssIsSampleHit ( S , 1 , 0 ) ) {
 ssCallAccelRunBlock ( S , 14 , 216 , SS_CALL_MDL_OUTPUTS ) ; }
@@ -344,8 +344,8 @@ mqc0yqbsjn + pzh42py0bn ; } else { _rtB -> p1rlwerq1x = _rtB -> odqkm4cuj3 ;
 ssIsSampleHit ( S , 2 , 0 ) ) { rowIdx = ( int32_T ) ( ( ( ( ( uint32_T ) (
 _rtB -> kduw44qano < ld5zvvrfqt ( S ) -> caecp4mowq ) << 1 ) + ( _rtB ->
 kduw44qano > ld5zvvrfqt ( S ) -> e53dlhb2ic ) ) << 1 ) + _rtDW -> bvad1zjfik
-) ; _rtB -> hcgsj5tdfn [ 0U ] = ni220kbneq . fbvkaqwdtk [ ( uint32_T ) rowIdx
-] ; _rtB -> hcgsj5tdfn [ 1U ] = ni220kbneq . fbvkaqwdtk [ rowIdx + 8U ] ; }
+) ; _rtB -> hcgsj5tdfn [ 0U ] = ni220kbneq . erefcqlbee [ ( uint32_T ) rowIdx
+] ; _rtB -> hcgsj5tdfn [ 1U ] = ni220kbneq . erefcqlbee [ rowIdx + 8U ] ; }
 hiyz3mxgea = _rtB -> hcgsj5tdfn [ 0 ] ; _rtB -> lr43ua3mxu = - 21000.0 *
 hiyz3mxgea ; if ( ( _rtDW -> hfvh40s0je >= ssGetTaskTime ( S , 0 ) ) && (
 _rtDW -> f41a3yqptq >= ssGetTaskTime ( S , 0 ) ) ) { _rtB -> dvszaytgyc =
@@ -379,9 +379,9 @@ p1rlwerq1x ; } else { _rtB -> dl4pg30ojq = _rtB -> pxna03hhfx ; } hiyz3mxgea
 j0bnh13vos = 1.0 ; } else if ( hiyz3mxgea < 0.0 ) { j0bnh13vos = 0.0 ; } else
 { j0bnh13vos = hiyz3mxgea ; } byehzqrbel = _rtB -> p1rlwerq1x * _rtB ->
 dl4pg30ojq * j0bnh13vos * 0.27777777777777779 ; if ( byehzqrbel > awwg3xagjh
-) { _rtB -> ltbmxvblhx = awwg3xagjh ; } else if ( byehzqrbel < - awwg3xagjh )
-{ _rtB -> ltbmxvblhx = - awwg3xagjh ; } else { _rtB -> ltbmxvblhx =
-byehzqrbel ; } hiyz3mxgea = - _rtB -> ltbmxvblhx * ld5zvvrfqt ( S ) ->
+) { _rtB -> neiceh2ylu = awwg3xagjh ; } else if ( byehzqrbel < - awwg3xagjh )
+{ _rtB -> neiceh2ylu = - awwg3xagjh ; } else { _rtB -> neiceh2ylu =
+byehzqrbel ; } hiyz3mxgea = - _rtB -> neiceh2ylu * ld5zvvrfqt ( S ) ->
 clo4igzp0z ; if ( ( _rtDW -> mtptmi2003 == ( rtMinusInf ) ) || ( _rtDW ->
 mtptmi2003 == ssGetTaskTime ( S , 0 ) ) ) { _rtDW -> mtptmi2003 =
 ssGetTaskTime ( S , 0 ) ; _rtB -> cvtrowetv3 = 0.0 ; } else { _rtB ->
@@ -548,7 +548,7 @@ frcacxveue ) * 18.82114106089411 - f4ufgq33gz ) * muDoubleScalarAbs ( _rtB ->
 ku334ei2bl [ 33 ] ) * 0.00064102564102564092 ; _rtB -> ddakpqwpph = 3600.0 *
 eskeehll14 ; } ssCallAccelRunBlock ( S , 14 , 492 , SS_CALL_MDL_OUTPUTS ) ;
 if ( ssIsSampleHit ( S , 2 , 0 ) ) { ssCallAccelRunBlock ( S , 14 , 493 ,
-SS_CALL_MDL_OUTPUTS ) ; } _rtB -> bwhspuctns = 9.5492965855137211 * _rtB ->
+SS_CALL_MDL_OUTPUTS ) ; } _rtB -> gtajl4byik = 9.5492965855137211 * _rtB ->
 pog4s1u1rz ; if ( ssIsSampleHit ( S , 2 , 0 ) && ssIsSampleHit ( S , 3 , 0 )
 ) { _rtB -> ajv02ow5bg = _rtDW -> bv5gvrfela ; } ssCallAccelRunBlock ( S , 14
 , 496 , SS_CALL_MDL_OUTPUTS ) ; if ( ssIsSampleHit ( S , 2 , 0 ) ) {
@@ -559,8 +559,8 @@ ssIsSampleHit ( S , 2 , 0 ) ) { dwqqadjaqz_idx_0 = 0.013480000230266853 *
 _rtDW -> pe31gvq3pv ; j0bnh13vos = 0.013480000230266853 * _rtDW -> bw5cwo255x
 ; rowIdx = ( int32_T ) ( ( ( ( ( uint32_T ) ( dwqqadjaqz_idx_0 > j0bnh13vos )
 << 1 ) + ( dwqqadjaqz_idx_0 < 0.9 * j0bnh13vos ) ) << 1 ) + _rtDW ->
-l2t4rgxmml ) ; _rtB -> kzdnvntv5y [ 0U ] = ni220kbneq . fbvkaqwdtk [ (
-uint32_T ) rowIdx ] ; _rtB -> kzdnvntv5y [ 1U ] = ni220kbneq . fbvkaqwdtk [
+l2t4rgxmml ) ; _rtB -> kzdnvntv5y [ 0U ] = ni220kbneq . erefcqlbee [ (
+uint32_T ) rowIdx ] ; _rtB -> kzdnvntv5y [ 1U ] = ni220kbneq . erefcqlbee [
 rowIdx + 8U ] ; mjvuadvsvc = ( uint8_T ) ( _rtB -> kzdnvntv5y [ 0 ] << 7 ) ;
 _rtB -> hoz3otlxz1 = ( real_T ) mjvuadvsvc * 0.0078125 ; _rtB -> ctex4on1s1 =
 ( real_T ) mjvuadvsvc * 0.0078125 ; _rtB -> nhazmgrm0i = ( real_T )
@@ -593,8 +593,8 @@ jcct4rwla4 = 486.13252277523628 * _rtB -> lfqz0z42je ; _rtB -> jkwkw55ldi =
 jcct4rwla4 - _rtB -> jkwkw55ldi ) - _rtB -> faas3afdpe * _rtB -> dbrflxk5gd *
 0.77682632969980325 ) - 85.397025568738272 * _rtB -> dbrflxk5gd ; hiyz3mxgea
 = muDoubleScalarAbs ( _rtB -> pog4s1u1rz ) ; HEV_acc_LookUp_real_T_real_T ( &
-( ddaxqpoc0f ) , ni220kbneq . ad0xyntnqk , hiyz3mxgea , ni220kbneq .
-ap25v33plp , 6U ) ; if ( _rtB -> kz0iasghfr > ddaxqpoc0f ) { hiyz3mxgea =
+( ddaxqpoc0f ) , ni220kbneq . eizjdjflni , hiyz3mxgea , ni220kbneq .
+c3doh0dipz , 6U ) ; if ( _rtB -> kz0iasghfr > ddaxqpoc0f ) { hiyz3mxgea =
 ddaxqpoc0f ; } else if ( _rtB -> kz0iasghfr < - ddaxqpoc0f ) { hiyz3mxgea = -
 ddaxqpoc0f ; } else { hiyz3mxgea = _rtB -> kz0iasghfr ; } hiyz3mxgea *=
 ld5zvvrfqt ( S ) -> kn51dbjiax ; if ( ( _rtDW -> dlegz3mcx5 == ( rtMinusInf )
@@ -607,18 +607,18 @@ khd5smw31u = - 400.0 ; } else { _rtB -> khd5smw31u = _rtB -> dlw4rgd0xv ; } }
 if ( ssIsSampleHit ( S , 1 , 0 ) && ssIsSampleHit ( S , 3 , 0 ) ) { _rtB ->
 kyhgj4dxjg = ld5zvvrfqt ( S ) -> kn51dbjiax ; } if ( ssIsSampleHit ( S , 3 ,
 0 ) ) { _rtB -> i1p0vb3mlk = _rtB -> khd5smw31u * _rtB -> kyhgj4dxjg ; } _rtB
--> bwhspuctns = 9.5492965855137211 * _rtB -> nyjtqlivfc [ 1 ] ; if (
+-> gtajl4byik = 9.5492965855137211 * _rtB -> nyjtqlivfc [ 1 ] ; if (
 ssIsSampleHit ( S , 1 , 0 ) && ssIsSampleHit ( S , 2 , 0 ) ) { _rtB ->
 fsjrbgb3fj = ld5zvvrfqt ( S ) -> clo4igzp0z ; } if ( ssIsSampleHit ( S , 2 ,
 0 ) ) { _rtB -> mwo1b43ujb = dztyrqu4xa * _rtB -> fsjrbgb3fj ; } _rtB ->
-fkealegsm1 = _rtB -> fdvi4m0ynh * _rtB -> nyjtqlivfc [ 1 ] ;
+de5ms2eask = _rtB -> fdvi4m0ynh * _rtB -> nyjtqlivfc [ 1 ] ;
 ssCallAccelRunBlock ( S , 14 , 646 , SS_CALL_MDL_OUTPUTS ) ; if (
 ssIsSampleHit ( S , 2 , 0 ) ) { dwqqadjaqz_idx_0 = 0.013480000230266853 *
 _rtDW -> dy4ppyw4mo ; j0bnh13vos = 0.013480000230266853 * _rtDW -> hmybg5b1mi
 ; rowIdx = ( int32_T ) ( ( ( ( ( uint32_T ) ( dwqqadjaqz_idx_0 > j0bnh13vos )
 << 1 ) + ( dwqqadjaqz_idx_0 < 0.9 * j0bnh13vos ) ) << 1 ) + _rtDW ->
-gkq12xkctn ) ; _rtB -> lsb4mwefgj [ 0U ] = ni220kbneq . fbvkaqwdtk [ (
-uint32_T ) rowIdx ] ; _rtB -> lsb4mwefgj [ 1U ] = ni220kbneq . fbvkaqwdtk [
+gkq12xkctn ) ; _rtB -> lsb4mwefgj [ 0U ] = ni220kbneq . erefcqlbee [ (
+uint32_T ) rowIdx ] ; _rtB -> lsb4mwefgj [ 1U ] = ni220kbneq . erefcqlbee [
 rowIdx + 8U ] ; mjvuadvsvc = ( uint8_T ) ( _rtB -> lsb4mwefgj [ 0 ] << 7 ) ;
 _rtB -> kotvgixwqz = ( real_T ) mjvuadvsvc * 0.0078125 ; _rtB -> cp1wfklalq =
 ( real_T ) mjvuadvsvc * 0.0078125 ; _rtB -> mmwz0zmiwa = ( real_T )
@@ -674,153 +674,154 @@ SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 14 , 829 ,
 SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 14 , 830 ,
 SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 14 , 831 ,
 SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 14 , 832 ,
-SS_CALL_MDL_OUTPUTS ) ; _rtB -> hq0aomcfh4 = muDoubleScalarAbs ( _rtB ->
+SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 14 , 833 ,
+SS_CALL_MDL_OUTPUTS ) ; _rtB -> gw5zdcazle = muDoubleScalarAbs ( _rtB ->
 pvtml134dd ) ; if ( ( _rtDW -> en15lu4hm1 >= ssGetT ( S ) ) && ( _rtDW ->
-km4yirabra >= ssGetT ( S ) ) ) { _rtB -> egtvydkl0u = 0.0 ; } else {
+km4yirabra >= ssGetT ( S ) ) ) { _rtB -> dwu5gpx54e = 0.0 ; } else {
 pzh42py0bn = _rtDW -> en15lu4hm1 ; lastU = & _rtDW -> aa3vndu55f ; if ( _rtDW
 -> en15lu4hm1 < _rtDW -> km4yirabra ) { if ( _rtDW -> km4yirabra < ssGetT ( S
 ) ) { pzh42py0bn = _rtDW -> km4yirabra ; lastU = & _rtDW -> ke4dqjfdz3 ; } }
 else { if ( _rtDW -> en15lu4hm1 >= ssGetT ( S ) ) { pzh42py0bn = _rtDW ->
-km4yirabra ; lastU = & _rtDW -> ke4dqjfdz3 ; } } _rtB -> egtvydkl0u = ( _rtB
+km4yirabra ; lastU = & _rtDW -> ke4dqjfdz3 ; } } _rtB -> dwu5gpx54e = ( _rtB
 -> bfsq0zyecv - * lastU ) / ( ssGetT ( S ) - pzh42py0bn ) ; } _rtB ->
-c4xvqj4chx = muDoubleScalarAbs ( _rtB -> kvbe2ne4jw ) ; _rtB -> ci4dxz3fsd =
-1.093 * _rtB -> c4xvqj4chx ; _rtB -> dxtzj5mlxh = 1.0464 * _rtB -> bfsq0zyecv
+iuuvkpmj32 = muDoubleScalarAbs ( _rtB -> kvbe2ne4jw ) ; _rtB -> koknwagqbr =
+1.093 * _rtB -> iuuvkpmj32 ; _rtB -> nwptxp0rxu = 1.0464 * _rtB -> bfsq0zyecv
 ; { uint32_T iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ;
 HEV_acc_BINARYSEARCH_real_T ( & ( iLeftU0 ) , & ( iRghtU0 ) , _rtB ->
-ci4dxz3fsd , ni220kbneq . k40cmekmot , 108U ) ; if ( _rtB -> dxtzj5mlxh <=
-0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> dxtzj5mlxh >=
+koknwagqbr , ni220kbneq . c4qvyaa1p5 , 108U ) ; if ( _rtB -> nwptxp0rxu <=
+0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> nwptxp0rxu >=
 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ; } else { iLeftU1 = ( uint32_T )
-( ( _rtB -> dxtzj5mlxh ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
+( ( _rtB -> nwptxp0rxu ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
 ; real_T u1Lambda ; real_T u0Lambda ; if ( iLeftU1 != iRghtU1 ) { { real_T
-num = ( real_T ) ( _rtB -> dxtzj5mlxh ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
-/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . k40cmekmot [
-iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ) { real_T num ; real_T
-den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ] ) ; den -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> ci4dxz3fsd ; num -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . iklhnwfscr
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . iklhnwfscr [
+num = ( real_T ) ( _rtB -> nwptxp0rxu ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
+/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . c4qvyaa1p5 [
+iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ) { real_T num ; real_T
+den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) ; den -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> koknwagqbr ; num -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . kdiaalgsdn
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . kdiaalgsdn [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
-yLeftCast ) ; cf42xbgp3d = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . iklhnwfscr [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . iklhnwfscr [ ( iRghtU0 + 109U *
+yLeftCast ) ; cz11sb51me = yLeftCast ; } { real_T yLeftCast ; real_T
+yRghtCast ; yLeftCast = ( ni220kbneq . kdiaalgsdn [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . kdiaalgsdn [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
-yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = cf42xbgp3d
+yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = cz11sb51me
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
-cf42xbgp3d = yLeftCast ; } } } _rtB -> aiwftq3idj = 1.0351048413332149 *
-cf42xbgp3d ; _rtB -> ef45vmcay1 = 1.933764640184292E-6 * _rtB -> aiwftq3idj ;
-_rtB -> ffjgmsnbkl = muDoubleScalarSign ( _rtB -> kvbe2ne4jw ) ; _rtB ->
-hspwppka5n = muDoubleScalarAbs ( _rtB -> kvbe2ne4jw ) ; _rtB -> bkhy1fzspb =
-1.093 * _rtB -> hspwppka5n ; _rtB -> i1vs445gyl = 1.0464 * _rtB -> bfsq0zyecv
+cz11sb51me = yLeftCast ; } } } _rtB -> lwyaqlsuzl = 1.0351048413332149 *
+cz11sb51me ; _rtB -> g3xb414uz5 = 1.933764640184292E-6 * _rtB -> lwyaqlsuzl ;
+_rtB -> ia5vjxt5rf = muDoubleScalarSign ( _rtB -> kvbe2ne4jw ) ; _rtB ->
+afr2dy2os4 = muDoubleScalarAbs ( _rtB -> kvbe2ne4jw ) ; _rtB -> pgz0aejq10 =
+1.093 * _rtB -> afr2dy2os4 ; _rtB -> d0mjpfpoo5 = 1.0464 * _rtB -> bfsq0zyecv
 ; { uint32_T iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ;
 HEV_acc_BINARYSEARCH_real_T ( & ( iLeftU0 ) , & ( iRghtU0 ) , _rtB ->
-bkhy1fzspb , ni220kbneq . k40cmekmot , 108U ) ; if ( _rtB -> i1vs445gyl <=
-0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> i1vs445gyl >=
+pgz0aejq10 , ni220kbneq . c4qvyaa1p5 , 108U ) ; if ( _rtB -> d0mjpfpoo5 <=
+0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> d0mjpfpoo5 >=
 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ; } else { iLeftU1 = ( uint32_T )
-( ( _rtB -> i1vs445gyl ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
+( ( _rtB -> d0mjpfpoo5 ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
 ; real_T u1Lambda ; real_T u0Lambda ; if ( iLeftU1 != iRghtU1 ) { { real_T
-num = ( real_T ) ( _rtB -> i1vs445gyl ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
-/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . k40cmekmot [
-iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ) { real_T num ; real_T
-den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ] ) ; den -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> bkhy1fzspb ; num -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mbwdj4i12f
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mbwdj4i12f [
+num = ( real_T ) ( _rtB -> d0mjpfpoo5 ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
+/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . c4qvyaa1p5 [
+iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ) { real_T num ; real_T
+den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) ; den -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> pgz0aejq10 ; num -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . g1ttup4hss
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1ttup4hss [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
-yLeftCast ) ; f5sk1kfm13 = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . mbwdj4i12f [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mbwdj4i12f [ ( iRghtU0 + 109U *
+yLeftCast ) ; ma5zkm3ak0 = yLeftCast ; } { real_T yLeftCast ; real_T
+yRghtCast ; yLeftCast = ( ni220kbneq . g1ttup4hss [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1ttup4hss [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
-yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = f5sk1kfm13
+yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ma5zkm3ak0
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
-f5sk1kfm13 = yLeftCast ; } } } _rtB -> ery55fyk5t = 1.0351048413332149 *
-f5sk1kfm13 ; _rtB -> nmslo544wq = _rtB -> ffjgmsnbkl * _rtB -> ery55fyk5t ;
-_rtB -> apnu5au4oe = _rtB -> nmslo544wq * _rtB -> egtvydkl0u ; _rtB ->
-c3mzegcbuw = 1.933764640184292E-6 * _rtB -> apnu5au4oe ; _rtB -> afbf0aiqho =
-_rtB -> hq0aomcfh4 * _rtB -> kvbe2ne4jw ; if ( _rtB -> ef45vmcay1 <= 0.02 ) {
-_rtB -> f4seqgpmdh = 0.02 ; } else { _rtB -> f4seqgpmdh = _rtB -> ef45vmcay1
-; } _rtB -> nw3yony3ob = ( ( 0.0 - _rtB -> c3mzegcbuw ) - _rtB -> hovbh5g5g4
-) - _rtB -> afbf0aiqho ; _rtB -> lqhvqhkzrn = 1.0 / _rtB -> f4seqgpmdh * _rtB
--> nw3yony3ob ; _rtB -> ee0ibjtr1o = _rtB -> fizzwskkmv + _rtB -> povcbqqxqx
-; _rtB -> k0fnvxtox0 = ( _rtB -> ee0ibjtr1o - _rtB -> aycqigbrea ) -
-ld5zvvrfqt ( S ) -> bk0wxmqie1 ; _rtB -> ddc23sd43t = 0.00075471698113207543
-* _rtB -> k0fnvxtox0 ; _rtB -> byxling1sg = muDoubleScalarAbs ( _rtB ->
+ma5zkm3ak0 = yLeftCast ; } } } _rtB -> m2gh0dj0jn = 1.0351048413332149 *
+ma5zkm3ak0 ; _rtB -> giytgfhaso = _rtB -> ia5vjxt5rf * _rtB -> m2gh0dj0jn ;
+_rtB -> gm3ppofav4 = _rtB -> giytgfhaso * _rtB -> dwu5gpx54e ; _rtB ->
+brwsqtpmbu = 1.933764640184292E-6 * _rtB -> gm3ppofav4 ; _rtB -> ekqlsj2klz =
+_rtB -> gw5zdcazle * _rtB -> kvbe2ne4jw ; if ( _rtB -> g3xb414uz5 <= 0.02 ) {
+_rtB -> aa5dfepdin = 0.02 ; } else { _rtB -> aa5dfepdin = _rtB -> g3xb414uz5
+; } _rtB -> ogzdxsu0nx = ( ( 0.0 - _rtB -> brwsqtpmbu ) - _rtB -> hovbh5g5g4
+) - _rtB -> ekqlsj2klz ; _rtB -> kcbn21m0fn = 1.0 / _rtB -> aa5dfepdin * _rtB
+-> ogzdxsu0nx ; _rtB -> o0emm0jrwx = _rtB -> fizzwskkmv + _rtB -> povcbqqxqx
+; _rtB -> f4sgtu5v1v = ( _rtB -> o0emm0jrwx - _rtB -> aycqigbrea ) -
+ld5zvvrfqt ( S ) -> bk0wxmqie1 ; _rtB -> oohtojf2hk = 0.00075471698113207543
+* _rtB -> f4sgtu5v1v ; _rtB -> japm3qsqwj = muDoubleScalarAbs ( _rtB ->
 pvtml134dd ) ; if ( ( _rtDW -> cgi523usaj >= ssGetT ( S ) ) && ( _rtDW ->
-irt5havirw >= ssGetT ( S ) ) ) { _rtB -> ngyo0a1wj5 = 0.0 ; } else {
+irt5havirw >= ssGetT ( S ) ) ) { _rtB -> fabf1bjzrf = 0.0 ; } else {
 pzh42py0bn = _rtDW -> cgi523usaj ; lastU = & _rtDW -> edrzze2flm ; if ( _rtDW
 -> cgi523usaj < _rtDW -> irt5havirw ) { if ( _rtDW -> irt5havirw < ssGetT ( S
 ) ) { pzh42py0bn = _rtDW -> irt5havirw ; lastU = & _rtDW -> gljjadsfzv ; } }
 else { if ( _rtDW -> cgi523usaj >= ssGetT ( S ) ) { pzh42py0bn = _rtDW ->
-irt5havirw ; lastU = & _rtDW -> gljjadsfzv ; } } _rtB -> ngyo0a1wj5 = ( _rtB
+irt5havirw ; lastU = & _rtDW -> gljjadsfzv ; } } _rtB -> fabf1bjzrf = ( _rtB
 -> floa0n1bxy - * lastU ) / ( ssGetT ( S ) - pzh42py0bn ) ; } _rtB ->
-pdylrqqudk = muDoubleScalarAbs ( _rtB -> fd3rap22fd ) ; _rtB -> dat4rplbya =
-1.093 * _rtB -> pdylrqqudk ; _rtB -> mo3ewsygmu = 1.0464 * _rtB -> floa0n1bxy
+peikidc2k1 = muDoubleScalarAbs ( _rtB -> fd3rap22fd ) ; _rtB -> edfkzh1xaq =
+1.093 * _rtB -> peikidc2k1 ; _rtB -> kkzyr2ab14 = 1.0464 * _rtB -> floa0n1bxy
 ; { uint32_T iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ;
 HEV_acc_BINARYSEARCH_real_T ( & ( iLeftU0 ) , & ( iRghtU0 ) , _rtB ->
-dat4rplbya , ni220kbneq . k40cmekmot , 108U ) ; if ( _rtB -> mo3ewsygmu <=
-0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> mo3ewsygmu >=
+edfkzh1xaq , ni220kbneq . c4qvyaa1p5 , 108U ) ; if ( _rtB -> kkzyr2ab14 <=
+0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> kkzyr2ab14 >=
 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ; } else { iLeftU1 = ( uint32_T )
-( ( _rtB -> mo3ewsygmu ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
+( ( _rtB -> kkzyr2ab14 ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
 ; real_T u1Lambda ; real_T u0Lambda ; if ( iLeftU1 != iRghtU1 ) { { real_T
-num = ( real_T ) ( _rtB -> mo3ewsygmu ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
-/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . k40cmekmot [
-iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ) { real_T num ; real_T
-den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ] ) ; den -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> dat4rplbya ; num -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . iklhnwfscr
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . iklhnwfscr [
+num = ( real_T ) ( _rtB -> kkzyr2ab14 ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
+/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . c4qvyaa1p5 [
+iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ) { real_T num ; real_T
+den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) ; den -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> edfkzh1xaq ; num -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . kdiaalgsdn
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . kdiaalgsdn [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
-yLeftCast ) ; pct03d1l4s = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . iklhnwfscr [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . iklhnwfscr [ ( iRghtU0 + 109U *
+yLeftCast ) ; d0xxkzbvri = yLeftCast ; } { real_T yLeftCast ; real_T
+yRghtCast ; yLeftCast = ( ni220kbneq . kdiaalgsdn [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . kdiaalgsdn [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
-yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = pct03d1l4s
+yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = d0xxkzbvri
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
-pct03d1l4s = yLeftCast ; } } } _rtB -> gn3q1hca5q = 1.0351048413332149 *
-pct03d1l4s ; _rtB -> jejustqhsq = 1.933764640184292E-6 * _rtB -> gn3q1hca5q ;
-_rtB -> avkuvyihi3 = muDoubleScalarSign ( _rtB -> fd3rap22fd ) ; _rtB ->
-nr1mqt4cr3 = muDoubleScalarAbs ( _rtB -> fd3rap22fd ) ; _rtB -> jmcjo0pseq =
-1.093 * _rtB -> nr1mqt4cr3 ; _rtB -> azro1geik3 = 1.0464 * _rtB -> floa0n1bxy
+d0xxkzbvri = yLeftCast ; } } } _rtB -> az5zxxrnwy = 1.0351048413332149 *
+d0xxkzbvri ; _rtB -> g0eb1wdsd5 = 1.933764640184292E-6 * _rtB -> az5zxxrnwy ;
+_rtB -> egw2u0wtrh = muDoubleScalarSign ( _rtB -> fd3rap22fd ) ; _rtB ->
+mnsbflybll = muDoubleScalarAbs ( _rtB -> fd3rap22fd ) ; _rtB -> o5qxydn54i =
+1.093 * _rtB -> mnsbflybll ; _rtB -> mv440fgtms = 1.0464 * _rtB -> floa0n1bxy
 ; { uint32_T iLeftU0 , iRghtU0 , iLeftU1 , iRghtU1 ;
 HEV_acc_BINARYSEARCH_real_T ( & ( iLeftU0 ) , & ( iRghtU0 ) , _rtB ->
-jmcjo0pseq , ni220kbneq . k40cmekmot , 108U ) ; if ( _rtB -> azro1geik3 <=
-0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> azro1geik3 >=
+o5qxydn54i , ni220kbneq . c4qvyaa1p5 , 108U ) ; if ( _rtB -> mv440fgtms <=
+0.0 ) { iLeftU1 = 0U ; iRghtU1 = 0U ; } else if ( _rtB -> mv440fgtms >=
 6000.0 ) { iLeftU1 = 100U ; iRghtU1 = 100U ; } else { iLeftU1 = ( uint32_T )
-( ( _rtB -> azro1geik3 ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
+( ( _rtB -> mv440fgtms ) / 60.0 ) ; iRghtU1 = iLeftU1 + 1 ; } { real_T yTemp
 ; real_T u1Lambda ; real_T u0Lambda ; if ( iLeftU1 != iRghtU1 ) { { real_T
-num = ( real_T ) ( _rtB -> azro1geik3 ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
-/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . k40cmekmot [
-iRghtU0 ] ) > ( ni220kbneq . k40cmekmot [ iLeftU0 ] ) ) { real_T num ; real_T
-den ; den = ( ni220kbneq . k40cmekmot [ iRghtU0 ] ) ; den -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; num = _rtB -> jmcjo0pseq ; num -= ( ni220kbneq .
-k40cmekmot [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . mbwdj4i12f
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mbwdj4i12f [
+num = ( real_T ) ( _rtB -> mv440fgtms ) - ( iLeftU1 * 60.0 ) ; u1Lambda = num
+/ 60.0 ; } } else { u1Lambda = 0.0 ; } if ( ( ni220kbneq . c4qvyaa1p5 [
+iRghtU0 ] ) > ( ni220kbneq . c4qvyaa1p5 [ iLeftU0 ] ) ) { real_T num ; real_T
+den ; den = ( ni220kbneq . c4qvyaa1p5 [ iRghtU0 ] ) ; den -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; num = _rtB -> o5qxydn54i ; num -= ( ni220kbneq .
+c4qvyaa1p5 [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . g1ttup4hss
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1ttup4hss [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
-yLeftCast ) ; eu003c5edr = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . mbwdj4i12f [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . mbwdj4i12f [ ( iRghtU0 + 109U *
+yLeftCast ) ; p5ngqu1lob = yLeftCast ; } { real_T yLeftCast ; real_T
+yRghtCast ; yLeftCast = ( ni220kbneq . g1ttup4hss [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1ttup4hss [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
-yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = eu003c5edr
+yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = p5ngqu1lob
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
-eu003c5edr = yLeftCast ; } } } _rtB -> i4rwllcoy3 = 1.0351048413332149 *
-eu003c5edr ; _rtB -> egggnsvmss = _rtB -> avkuvyihi3 * _rtB -> i4rwllcoy3 ;
-_rtB -> b4myh1yeqn = _rtB -> egggnsvmss * _rtB -> ngyo0a1wj5 ; _rtB ->
-ic5t1krj1j = 1.933764640184292E-6 * _rtB -> b4myh1yeqn ; _rtB -> jumffqfx51 =
-_rtB -> byxling1sg * _rtB -> fd3rap22fd ; if ( _rtB -> jejustqhsq <= 0.02 ) {
-_rtB -> pof4rpfcmy = 0.02 ; } else { _rtB -> pof4rpfcmy = _rtB -> jejustqhsq
-; } _rtB -> nnkkv4ya1v = ( ( 0.0 - _rtB -> ic5t1krj1j ) - _rtB -> d2ln0pkwig
-) - _rtB -> jumffqfx51 ; _rtB -> d3tawtzc2g = 1.0 / _rtB -> pof4rpfcmy * _rtB
--> nnkkv4ya1v ; ssCallAccelRunBlock ( S , 14 , 890 , SS_CALL_MDL_OUTPUTS ) ;
-_rtB -> fkealegsm1 = _rtB -> nyjtqlivfc [ 10 ] * _rtB -> p1o0lcfasn [ 2 ] ;
-_rtB -> ltbmxvblhx = _rtB -> p1o0lcfasn [ 3 ] * _rtB -> nyjtqlivfc [ 2 ] ;
-_rtB -> bwhspuctns = _rtB -> nyjtqlivfc [ 9 ] * _rtB -> p1o0lcfasn [ 8 ] ;
-_rtB -> kcdzzojo02 = _rtB -> ltbmxvblhx + _rtB -> bwhspuctns ;
-ssCallAccelRunBlock ( S , 14 , 938 , SS_CALL_MDL_OUTPUTS ) ;
+p5ngqu1lob = yLeftCast ; } } } _rtB -> kowfchovcv = 1.0351048413332149 *
+p5ngqu1lob ; _rtB -> mwepv5ygx3 = _rtB -> egw2u0wtrh * _rtB -> kowfchovcv ;
+_rtB -> lqsbynvw1f = _rtB -> mwepv5ygx3 * _rtB -> fabf1bjzrf ; _rtB ->
+ly3jsfltxq = 1.933764640184292E-6 * _rtB -> lqsbynvw1f ; _rtB -> jy2l4xxaoh =
+_rtB -> japm3qsqwj * _rtB -> fd3rap22fd ; if ( _rtB -> g0eb1wdsd5 <= 0.02 ) {
+_rtB -> clsae4zyud = 0.02 ; } else { _rtB -> clsae4zyud = _rtB -> g0eb1wdsd5
+; } _rtB -> g0pcljpxfy = ( ( 0.0 - _rtB -> ly3jsfltxq ) - _rtB -> d2ln0pkwig
+) - _rtB -> jy2l4xxaoh ; _rtB -> elter1b14u = 1.0 / _rtB -> clsae4zyud * _rtB
+-> g0pcljpxfy ; ssCallAccelRunBlock ( S , 14 , 891 , SS_CALL_MDL_OUTPUTS ) ;
+_rtB -> de5ms2eask = _rtB -> nyjtqlivfc [ 10 ] * _rtB -> p1o0lcfasn [ 2 ] ;
+_rtB -> neiceh2ylu = _rtB -> p1o0lcfasn [ 3 ] * _rtB -> nyjtqlivfc [ 2 ] ;
+_rtB -> gtajl4byik = _rtB -> nyjtqlivfc [ 9 ] * _rtB -> p1o0lcfasn [ 8 ] ;
+_rtB -> mqbg1xujtm = _rtB -> neiceh2ylu + _rtB -> gtajl4byik ;
 ssCallAccelRunBlock ( S , 14 , 939 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 14 , 940 , SS_CALL_MDL_OUTPUTS ) ; UNUSED_PARAMETER
+ssCallAccelRunBlock ( S , 14 , 940 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 14 , 941 , SS_CALL_MDL_OUTPUTS ) ; UNUSED_PARAMETER
 ( tid ) ; }
 #define MDL_UPDATE
 static void mdlUpdate ( SimStruct * S , int_T tid ) { real_T * lastU ;
@@ -922,13 +923,13 @@ static void mdlDerivatives ( SimStruct * S ) { fdj1laa40s * _rtB ; hgl3elxkcb
 _rtX = ( ( hgl3elxkcb * ) ssGetContStates ( S ) ) ; _rtB = ( ( fdj1laa40s * )
 _ssGetBlockIO ( S ) ) ; _rtXdot -> mh2wvbi24o = _rtB -> bjy3ivl32q ;
 ssCallAccelRunBlock ( S , 14 , 30 , SS_CALL_MDL_DERIVATIVES ) ; _rtXdot ->
-nlkba1lokv = _rtB -> m3usbwf51h ; _rtXdot -> eackaa2e5o = _rtB -> d3tawtzc2g
-; _rtXdot -> a3p154yttn = _rtB -> ddc23sd43t ; _rtXdot -> lvhb24m1u3 [ 0 ] =
+nlkba1lokv = _rtB -> m3usbwf51h ; _rtXdot -> eackaa2e5o = _rtB -> elter1b14u
+; _rtXdot -> a3p154yttn = _rtB -> oohtojf2hk ; _rtXdot -> lvhb24m1u3 [ 0 ] =
 0.0 ; _rtXdot -> lvhb24m1u3 [ 1 ] = 0.0 ; _rtXdot -> lvhb24m1u3 [ 0 ] += -
 20.106192982974676 * _rtX -> lvhb24m1u3 [ 0 ] ; _rtXdot -> lvhb24m1u3 [ 0 ]
 += - 157.91367041742973 * _rtX -> lvhb24m1u3 [ 1 ] ; _rtXdot -> lvhb24m1u3 [
 1 ] += _rtX -> lvhb24m1u3 [ 0 ] ; _rtXdot -> lvhb24m1u3 [ 0 ] += _rtB ->
-k0fnvxtox0 ; _rtXdot -> oiuvfykmtf = _rtB -> lqhvqhkzrn ; _rtXdot ->
+f4sgtu5v1v ; _rtXdot -> oiuvfykmtf = _rtB -> kcbn21m0fn ; _rtXdot ->
 ix50zu3rlz = 0.0 ; _rtXdot -> ix50zu3rlz += - 125.66370614359172 * _rtX ->
 ix50zu3rlz ; _rtXdot -> ix50zu3rlz += _rtB -> a5phvrw1br ; { boolean_T lsat ;
 boolean_T usat ; lsat = ( ( ( hgl3elxkcb * ) ssGetContStates ( S ) ) ->
@@ -945,9 +946,9 @@ static void mdlProjection ( SimStruct * S ) { fdj1laa40s * _rtB ; h04hj5x5sk
 * _rtDW ; _rtDW = ( ( h04hj5x5sk * ) ssGetRootDWork ( S ) ) ; _rtB = ( (
 fdj1laa40s * ) _ssGetBlockIO ( S ) ) ; ssCallAccelRunBlock ( S , 14 , 30 ,
 SS_CALL_MDL_PROJECTION ) ; } static void mdlInitializeSizes ( SimStruct * S )
-{ ssSetChecksumVal ( S , 0 , 232302253U ) ; ssSetChecksumVal ( S , 1 ,
-3165333849U ) ; ssSetChecksumVal ( S , 2 , 3646879790U ) ; ssSetChecksumVal (
-S , 3 , 2439198668U ) ; { mxArray * slVerStructMat = NULL ; mxArray *
+{ ssSetChecksumVal ( S , 0 , 2508841860U ) ; ssSetChecksumVal ( S , 1 ,
+2474493925U ) ; ssSetChecksumVal ( S , 2 , 2348041657U ) ; ssSetChecksumVal (
+S , 3 , 4020227832U ) ; { mxArray * slVerStructMat = NULL ; mxArray *
 slStrMat = mxCreateString ( "simulink" ) ; char slVerChar [ 10 ] ; int status
 = mexCallMATLAB ( 1 , & slVerStructMat , 1 , & slStrMat , "ver" ) ; if (
 status == 0 ) { mxArray * slVerMat = mxGetField ( slVerStructMat , 0 ,

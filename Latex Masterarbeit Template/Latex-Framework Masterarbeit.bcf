@@ -2257,14 +2257,18 @@
     <bcf:citekey order="16">chen2014game</bcf:citekey>
     <bcf:citekey order="17">chin2010design</bcf:citekey>
     <bcf:citekey order="18">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="19">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="20">lemke1964equilibrium</bcf:citekey>
-    <bcf:citekey order="21">lemkeHowson2014Matlab</bcf:citekey>
+    <bcf:citekey order="19">nash1950bargaining</bcf:citekey>
+    <bcf:citekey order="20">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="21">holler2006einfuhrung</bcf:citekey>
     <bcf:citekey order="22">lemke1964equilibrium</bcf:citekey>
-    <bcf:citekey order="23">nisan2007algorithmic</bcf:citekey>
-    <bcf:citekey order="24">shapley1974note</bcf:citekey>
-    <bcf:citekey order="25">shapley1974note</bcf:citekey>
-    <bcf:citekey order="26">npg</bcf:citekey>
+    <bcf:citekey order="23">lemkeHowson2014Matlab</bcf:citekey>
+    <bcf:citekey order="24">lemke1964equilibrium</bcf:citekey>
+    <bcf:citekey order="25">nisan2007algorithmic</bcf:citekey>
+    <bcf:citekey order="26">shapley1974note</bcf:citekey>
+    <bcf:citekey order="27">shapley1974note</bcf:citekey>
+    <bcf:citekey order="28">npg</bcf:citekey>
+    <bcf:citekey order="29">kalai1975other</bcf:citekey>
+    <bcf:citekey order="30">kalai1975other</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt" type="entry" sortscheme="nyt">
   <bcf:sorting>

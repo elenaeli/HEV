@@ -7,7 +7,20 @@ This thesis examines a variety of solution approaches for cooperative games whic
 \subsection{Game definition}
 Firstly, the generic game definition is described. Additional definitions for each of the solution approaches are defined in the corresponding subsections of each solution.
 
-A cooperative game is defined by the set of players $N$, in this case two players - $E$ and $M$ for the engine and motor. It is also defined by the set of strategies of both players. Let us denote the number of pure strategies of each player with $n$ and $m$. Therefore, these constitute a bimatrix game, meaning that the payoffs of the game can be represented in two matrices of size $m \times n$. Let the payoff matrices $A$ and $B$ denote the payoffs for the first player, the engine, and the second player, the motor respectively, where $A = (a_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$ and $B = (b_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$. Sometimes player 1, $N$ is called  the row player and player 2, $M$ is called the column player, since their strategies vary along the rows or along the columns of the matrices. The game is a non-zero sum game, since the sum of the two payoff matrices is not 0, $A + B \neq 0$.
+According to \citet{holler2006einfuhrung} a game $G = (N,S,u)$ is defined by:
+\begin{itemize}
+\item
+set of players $N = \{1,2\}$, in this case two players, where player 1 is the Engine and player 2 is the Motor.
+\item
+strategy space $S$, which is the set of all possible strategy combinations $s=(s_1,s_2)$ for each player, where $s\in S$. The strategy space contains two sets with all strategy combinations of that player.
+\item
+utility function $u = (u_1,u_2)$, where $u_i(s)$ for $i=1,2$ gives the utility (or also called payoff) for that player when the strategy combination $s$ is played.
+\item
+utility space (payoff space) which is the set of all possible utility combinations:
+$P = \{u(s)|s \in S\} = \{u_1(s),u_2(s)\} \forall s \in S$
+\end{itemize} 
+
+Let us denote the number of pure strategies of each player with $n$ and $m$. Therefore, these constitute a bimatrix game, meaning that the payoffs of the game can be represented in two matrices of size $m \times n$. Let the payoff matrices $A$ and $B$ denote the payoffs for the first player, the engine, and the second player, the motor respectively, where $A = (a_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$ and $B = (b_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$. Sometimes player 1 is called the row player and player 2 is called the column player, since their strategies vary along the rows or along the columns of the matrices. The game is a non-zero sum game, since the sum of the two payoff matrices is not 0, $A + B \neq 0$.
 As opposed to a non-cooperative game, in cooperative games the players are allowed to make binding agreements among themselves in order to achieve a better payoff, that is, they can form coalitions. We distinguish between the grand coalition of all players $N$ or $\{1,2\}$, where they all cooperate, and the individual coalitions $\{i\}, \forall i \in N$ which are $\{1\}$ and $\{2\}$. There is also the empty coalition, where neither cooperates, but it is not relevant. Each coalition has a value associated with it. The grand coalition forms its value as a sum of the payoffs of the engine and motor multiplied element-wise by a matrix with weights. The weights are distributed according to the torque deviation which the engine and motor achieve. The torque deviation is defined as the difference between the required and the actual torque at this time step. When the deviation is 0, the payoffs are weighted by 0.9, when it is between 0-10\% of the required torque it is weighted by 0.91, when between 10-20\% weight is 0.92 and so on up to 1.0 (the full sum of engine and motor torque).
 
 
@@ -39,13 +52,14 @@ All in all, the game defined is a non-cooperative bimatrix non-zero-sum game wit
 In the literature two terms often used to refer to the same concept - Pareto Efficiency and Pareto Optimality. However, they are used with distinct meanings throughout this thesis. Pareto Efficiency denotes an allocation of resources such that no player can improve their outcome without impairing another player. In the strategy space of the game there can exist more than one Pareto efficient outcome. Therefore, we define a Pareto Optimal outcome, or Pareto Optimality, as the single best outcome from the set of all Pareto efficient outcomes. The criteria for determining the best outcome is as follows. All Pareto efficient points are compared by their torque deviation and the point with the least torque deviation is taken as the Pareto Optimal point. Torque deviation is defined as the absolute difference between the required and the actual torque at this stage of the game. If more than one outcomes have the same torque deviation the outcome with the smallest fuel consumption rate is taken as a second criterion. Similarly, if more than one outcome have the same fuel consumption rate the one with the smallest engine payoff is taken. This is the third and last criterion.
 
 \subsection{Nash Bargaining solution}
-Let us further define the game as a bargaining game. A bargaining game $G$ is defined by specifying a conflict point $c$ in addition to the set of the two payoff vectors $P$ of both players. The pair is denoted as $(P,c)$ as in \citet{holler2006einfuhrung}. The conflict point is the point where both players disagree. There exists a common misinterpretation because the word "conflict" point itself implies a point where both players face a disagreement and hence their situations are the worst. A Nash Equilibrium does not present such a worst case and therefore the term conflict point may seem misleading, but for the sake of consistency in the literature, the term will be kept as it is. Since the conflict point in the literature is often taken to be the Nash Equilibrium of the corresponding non-cooperative game, the next subsection deals with an algorithm to find a Nash Equilibrium.
+The Nash Bargaining solution or shortly the Nash solution was defined by \citet{nash1950bargaining} and it considers the game as a bargaining game where each player requests some portion of the existing good, in this case torque.
+Let us a bargaining game. A bargaining game $G$ is defined by specifying a conflict point $c$ in addition to the set of the two payoff vectors $P$ of both players. The pair is denoted as $(P,c)$ as in \citet{holler2006einfuhrung}. The conflict point is the point where both players do not cooperate with each other. There exists a common misinterpretation because the word "conflict" point itself implies a point where both players face a disagreement and hence their situations are the worst. A Nash Equilibrium does not present such a worst case and therefore the term conflict point may seem misleading, but for the sake of consistency in the literature, the term will be kept as it is. Since the conflict point in the literature is often taken to be the Nash Equilibrium of the corresponding non-cooperative game, the next subsection deals with an algorithm to find a Nash Equilibrium.
 
 Taking these into account, a Nash Bargaining solution is the vector $u^*$ from the set $P$:
 \[
 NP^* = max(c_1 - u_1^* )(c_2 - u_2^*)
 \]
-so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning that the Nash solution point $u^*$ payoff is less than the conflict point payoff. The main idea of the Nash Solution expressed graphically is to maximize the product of the differences between the conflict point and the Nash Solution point coordinates in 2D.
+so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning that the Nash solution point $u^*$ payoff is less than the conflict point payoff. The main idea of the Nash solution expressed graphically is to maximize the product of the differences between the conflict point and the Nash solution point coordinates in 2D.
 
 \begin{figure}[h]
 \centering
@@ -54,13 +68,13 @@ so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning tha
 \label{fig:nashSol}
 \end{figure}
 
-The Nash Solution is characterized by four axioms as defined in \citet{holler2006einfuhrung}. 
+The Nash solution is characterized by four axioms as defined in \citet{holler2006einfuhrung}. 
 
-The first axiom is called Independence to Equivalent Payoff Transformations. Given a bargaining game $(P,c)$ and two random real numbers $a_i > 0$ and $b_i$, where $i = 1,2$ for both players, it is true that $f_i(P',c') = a_i f_i(P,c) + b_i$. This holds if $(P',c')$ is a game resulting from a linear transformation which preserves the order of all points $u$ and $c$ from $P$ so that $y_i = a_i x_i + b_i$ and $c_i' = a_i c_i + b_i$, where $y \in P'$ and $c' \in P$. In other words such a linear transformation of the game space does not affect the solution of the bargaining game.
+The first axiom is called Invariance with Respect to Affine Transformations of Utility. Given a bargaining game $(P,c)$ and two random real numbers $a_i > 0$ and $b_i$, where $i = 1,2$ for both players, it is true that $f_i(P',c') = a_i f_i(P,c) + b_i$. This holds if $(P',c')$ is a game resulting from a linear transformation which preserves the order of all points $u$ and $c$ from $P$ so that $y_i = a_i x_i + b_i$ and $c_i' = a_i c_i + b_i$, where $y \in P'$ and $c' \in P$. In other words such a linear transformation of the game space does not affect the solution of the bargaining game.
 
 The second axiom is Symmetry. If $(P,c)$ is a symmetric bargaining game then $f_1(P,c) = f_2(P,c)$. A game is symmetric if $c_1 = c_2$ and if $(u_1, u_2)$ and $(u_2, u_1)$ are both in the payoff vector $P$. This results in a conflict point lying on the 45\textdegree  line from the origin of the coordinate system. $P$ is symmetric with regard to this line. This axiom tells that if the payoffs of the two players can be interchanged and the game does not change as a consequence of that, then its solution should also not distinguish between the two players.
 
-The third axiom is Independence of Irrelevant Alternatives. It states that $f(P,c) = f(Q,c)$ if two games $(P,c)$ and $(Q,c)$ have the same conflict point $c$, $P \subset Q$ and $f(Q,c) \in P$. Therefore, only the conflict point is relevant, because if the payoff space of the game is extended to a superset or it is shrunk to a subset, then the solution itself does not change.
+The third axiom is Independence of Irrelevant Alternatives. It states that $f(P,c) = f(Q,c)$ if two games $(P,c)$ and $(Q,c)$ have the same conflict point $c$, $P \subseteq Q$ and $f(Q,c) \in P$. Therefore, only the conflict point is relevant, because if the payoff space of the game is extended to a superset or it is shrunk to a subset, then the solution itself does not change.
 
 The last axiom is the Pareto Optimality. For a bargaining game $(P,c)$ there is no $x \neq f(P,c) \in P$ such that $x_1 \leq f_1(P,c)$ and $x_2 \leq f_2(P,c)$, which is an example of group rationality.
 
@@ -71,7 +85,7 @@ There a number of reasons for the different Nash Equilibrium solutions that the 
 
 As discussed in \citet{shapley1974note} the Lemke-Howson algorithm possesses a significant weakness, namely that it is neither guaranteed that the algorithm will find all possible solutions, nor that it will tell if there are any unfound solutions.
 
-The fundamentals of the Lemke-Howson algorithm are described next. Let us assume a scenario of a 2-player bimatrix game as the one used throughout this thesis, where the players $E$ and $M$ each have $n$ and $m$ number of pure strategies and their payoffs are in the matrices $A = (a_{ij}: i \in \{1,...,n\}, j \in \{ n+1,...,n+m\})$ and $B = (b_{ij}: i \in \{1,...,n\}, j \in \{n+1,...,n+m\})$ respectively. The mixed strategies are the vectors $s=(s_1,s_2...,s_n)$ and $t=(t_{n+1},t_{n+2},...,t_{n+m})$ where $S = \{s \geq 0; \sum_{i=1}^{n}s_i = 1\}$ and $T = \{t \geq 0; \sum_{j=n+1}^{n+m}t_i = 1\}$ are the sets for the mixed strategies spaces. Then, the payoff for player 1 is $\sum_{i=1}^{n}\sum_{j=n+1}^{n+m} a_{ij} s_i t_j$ and the payoff for player 2 is $\sum_{i=1}^{n} \sum_{j=n+1}^{n+m} b_{ij} s_i t_j$. An equilibrium is a pair of strategies $(s^*,t^*)$ satisfying:
+The fundamentals of the Lemke-Howson algorithm are described next. Let us assume a scenario of a 2-player bimatrix game as the one used throughout this thesis, where the players $1$ and $2$ each have $n$ and $m$ number of pure strategies and their payoffs are in the matrices $A = (a_{ij}: i \in \{1,...,n\}, j \in \{ n+1,...,n+m\})$ and $B = (b_{ij}: i \in \{1,...,n\}, j \in \{n+1,...,n+m\})$ respectively. The mixed strategies are the vectors $s=(s_1,s_2...,s_n)$ and $t=(t_{n+1},t_{n+2},...,t_{n+m})$ where $S = \{s \geq 0; \sum_{i=1}^{n}s_i = 1\}$ and $T = \{t \geq 0; \sum_{j=n+1}^{n+m}t_i = 1\}$ are the sets for the mixed strategies spaces. Then, the payoff for player 1 is $\sum_{i=1}^{n}\sum_{j=n+1}^{n+m} a_{ij} s_i t_j$ and the payoff for player 2 is $\sum_{i=1}^{n} \sum_{j=n+1}^{n+m} b_{ij} s_i t_j$. An equilibrium is a pair of strategies $(s^*,t^*)$ satisfying:
 \[
 \sum_{i=1}^{n} \sum_{j=n+1}^{n+m} a_{ij}s_i^*t_j^* = \max_{s \in S} \sum_{i=1}^{n} \sum_{j=n+1}^{n+m} a_{ij}s_i t_j^*
 \]
@@ -112,6 +126,22 @@ Then, as in \citet{shapley1974note} a node pair $(s,t) \in S \times T$ is an equ
 The algorithm works by starting at $(s,t) = (0,0) \in G' \times G'' $. Then a label $k$, which is to be dropped from $(s,t)$, is chosen (initial pivot). This $k$ can belong to either $n$ or $m$. Let this node be $(s,t)$ and its new label (after dropping $k$) be $l$. Then, if $l=k$ a Nash Equilibrium is reached. If $l\neq k$, then the algorithm continues by dropping another label and continuing until a completely labelled node has been reached, which is an equilibrium point. The starting label to drop is the pivot parameter as in the Matlab implementation. Since there are $n+m$ labels (strategies) which can be dropped first and they can end up in a different Nash Equilibrium node in the graph, it is inefficient to experiment with all different starting strategies. Experiments were done with $1$, $\frac{n+m}{4}$, $\frac{n+m}{2}$, $\frac{3(n+m)}{4}$ and $n+m$ as the first strategy to be dropped. In order to choose which point to use, the Matlab implementation NPG from \citet{npg} was used the Lemke-Howson solution with the $k$ strategy, which was closest to the NPG solution was chosen. This $k$ was $\frac{n+m}{2}$, which was passed to the Lemke-Howson algorithm as an input.
 
 \subsection{Kalai-Smorodinsky Bargaining Solution}
+The Nash Bargaining solution has the significant disadvantage that it is not monotonic. The third of the four axioms defined above Independence of Irrelevant Alternatives was criticized as in \citet{kalai1975other}. Therefore, \citet{kalai1975other} propose another unique bargaining solution called the Kalai-Smorodinsky solution. They replace the third axiom with another axiom for Individual Monotonicity, which the Nash solution does not conform to. 
+
+The axiom states that if for two bargaining games $(P,c)$ and $(R,c)$ such that $P \subset R$ the equation $m_i(P) = m_i(R)$ holds for player $i$, then for player $j \neq i$ it is true that $f(R,c) \geq f_j(P,c)$.
+
+$m_i(P,c)$ and $m_i(R,c)$ denote the minimum payoffs for players $i = 1,2$. They are defined as $m_i(P) = min(u_i | (u_1,u_2) \in P$. The point $m(P) = (m_1(P),m_2(P))$ is called the ideal point of the game, because that is where both players achieve minimum payoffs; hence, the ideal outcome of the game. However, often this point is not feasible. As in the Nash solution, the conflict point is also crucial in the Kalai-Smorodinsky solution. A further term is required and this is the Utility Boundary of the utility space $P$ of a game:
+
+
+Consequently, the Kalai-Smorodinsky solution is defined as follows:
+\[
+\frac{c_2 - u_2}{c_1 - u_1} = \frac{c_2 - m_2}{c_1 - m_1}
+\]
+so that
+\[
+u_i \leq v_i, \frac{c_2 - v_2}{c_1 - v_1} = \frac{c_2 - m_2}{c_1 - m_1} 
+\]
+
 
 \subsection{Core}
 

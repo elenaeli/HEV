@@ -1,18 +1,24 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-        requiredTorque = 85;        
-        SOC = 69.9998;
-        fuelConsumed = 4.969e-05;
+    requiredTorque = -23;        
+    SOC = 0.01;
+    fuelConsumed = 1;
+            
+    requiredTorque = roundn(requiredTorque,0);     
         
-        if requiredTorque < 70 && requiredTorque > 0
-           requiredTorque = 70;
-           engineTorque = 0;
-           motorTorque = 70;
+    if previousReqTorque == requiredTorque
+        engineTorque = previousEngTorque
+        motorTorque = previousMotTorque
+    else
+        if requiredTorque > 0 && requiredTorque < 70 
+        	requiredTorque = 70;
+            engineTorque = 0
+            motorTorque = 70
         elseif requiredTorque == 0          
-            engineTorque = 0;
-            motorTorque = 0;
+            engineTorque = 0
+            motorTorque = 0
         else
-            close all     
+            close all    
 
             %engineMaxPower = 57000;
             %motorMaxPower = 50000;
@@ -28,7 +34,7 @@
             minMotorTorque = -400;  
             minMotorTorqueRef = 0;
             minEngineTorqueRef = 83;
-            minEngineTorque = -136;
+            minEngineTorque = 83;
             m = 7;
             e = 7;
             payoffMotor = zeros(m,e);
@@ -57,10 +63,8 @@
                 else
                     strategyEng = linspace(minEngineTorqueRef, maxEngineTorqueStrategy,e);
                 end
-            end          
-            
-         
-
+            end   
+        
             tmpTorque = repmat(strategyEng',1,m);
             totalTorque = zeros(m, e);
             for i = 1:m
@@ -390,5 +394,10 @@
 
             [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
                 bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot)
+            previousReqTorque = requiredTorque;
+            previousEngTorque = engineTorque;
+            previousMotTorque = motorTorque;
+       
+        end
     end
 %end

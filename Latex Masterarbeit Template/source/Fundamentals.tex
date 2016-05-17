@@ -2,7 +2,7 @@
 \label{chp:basics}
 
 \section{Game-theoretical solution approaches}
-This thesis examines a variety of solution approaches for cooperative games which are later applied as described and simulated. These include Pareto Optimum, Nash Equilibrium, Nash bargaining solution, Kalai-Smorodinsky bargaining solution, the Core and the Shapley value.
+This thesis examines a variety of solution approaches for cooperative games which are later applied and simulated as described. These include Pareto Optimality, Nash Equilibrium, Nash bargaining solution, Kalai-Smorodinsky bargaining solution, the Core and the Shapley value.
 
 \subsection{Game definition}
 Firstly, the generic game definition is described. Additional definitions for each of the solution approaches are defined in the corresponding subsections of each solution.
@@ -17,14 +17,15 @@ strategy space $S$, which is the set of all possible strategy combinations $s=(s
 utility function $u = (u_1,u_2)$, where $u_i(s)$ for $i=1,2$ gives the utility (or also called payoff) for that player when the strategy combination $s$ is played.
 \item
 utility space (payoff space) which is the set of all possible utility combinations:
-$P = \{u(s)|s \in S\} = \{u_1(s),u_2(s)\} \forall s \in S$
+$P = \{u(s)|s \in S\} = \{(u_1(s),u_2(s),  \forall s \in S\}$
 \end{itemize} 
 
 Let us denote the number of pure strategies of each player with $n$ and $m$. Therefore, these constitute a bimatrix game, meaning that the payoffs of the game can be represented in two matrices of size $m \times n$. Let the payoff matrices $A$ and $B$ denote the payoffs for the first player, the engine, and the second player, the motor respectively, where $A = (a_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$ and $B = (b_{ij}: i \in \{1,...,n\}, j \in \{ 1,...,m\})$. Sometimes player 1 is called the row player and player 2 is called the column player, since their strategies vary along the rows or along the columns of the matrices. The game is a non-zero sum game, since the sum of the two payoff matrices is not 0, $A + B \neq 0$.
-As opposed to a non-cooperative game, in cooperative games the players are allowed to make binding agreements among themselves in order to achieve a better payoff, that is, they can form coalitions. We distinguish between the grand coalition of all players $N$ or $\{1,2\}$, where they all cooperate, and the individual coalitions $\{i\}, \forall i \in N$ which are $\{1\}$ and $\{2\}$. There is also the empty coalition, where neither cooperates, but it is not relevant. Each coalition has a value associated with it. The grand coalition forms its value as a sum of the payoffs of the engine and motor multiplied element-wise by a matrix with weights. The weights are distributed according to the torque deviation which the engine and motor achieve. The torque deviation is defined as the difference between the required and the actual torque at this time step. When the deviation is 0, the payoffs are weighted by 0.9, when it is between 0-10\% of the required torque it is weighted by 0.91, when between 10-20\% weight is 0.92 and so on up to 1.0 (the full sum of engine and motor torque).
+
+As opposed to a non-cooperative game, in cooperative games the players are allowed to make binding agreements among themselves in order to achieve a better payoff, that is, they can form coalitions. We distinguish between the grand coalition of all players $N$ or $\{1,2\}$, where they all cooperate, and the individual coalitions $\{i\}, \forall i \in N$ which are $\{1\}$ and $\{2\}$. There is also the empty coalition, where neither cooperates, but this coalition is irrelevant to our purposes. Each coalition has a value associated with it. The grand coalition forms its value as a sum of the payoffs of the engine and motor multiplied element-wise by a matrix with weights. The weights are distributed according to the torque deviation which the engine and motor produce. The torque deviation is defined as the difference between the required and the actual torque at this time step. When the deviation is 0, the payoffs are weighted by 0.99, when it is between 0-10\% of the required torque it is weighted by 0.991, when between 10-20\% weight is 0.992 and so on up to 1.0 (the full sum of engine and motor torque).
 
 
-The goal of the game is to save fuel and to maintain low gas emissions while achieving the required torque at any moment in time. Therefore, the payoffs are penalties as opposed to benefits and they have to be minimized. All of the solutions have been defined by taking this minimization into account. Most of the solutions applied in the literature work with maximizing payoffs, but for the purpose of this thesis their definitions and implementations have been modified to minimize the payoff function instead. 
+The goal of the game is to save fuel and to maintain low gas emissions while achieving the required torque at any moment in time. Therefore, the payoffs are penalties as opposed to benefits and they have to be minimized. All of the solutions have been defined by taking into account that this is a minimization problem. Most of the solutions applied in the literature work with maximizing payoffs, but for the purpose of this thesis their definitions and implementations have been modified to minimize the payoff function instead. 
 
 
 There exist two types of cooperative games - with transferable and with non-transferable utility. In transferable utility (TU) games the payoff of one player can be transferred to another player without any loss. In contrast, in non-transferable utility (NTU) games the payoffs of each player cannot be redistributed among the other players. In this thesis the payoffs of the engine and the motor are not interchangeable, since decreasing the payoff of one player does not mean increasing the payoff of another at the same time. Their payoff functions are thought to be independent from each other.
@@ -33,7 +34,7 @@ The payoff functions are constructed in the following way. The engine payoff is:
 \begin{equation}
 \begin{split}
 a_{ij} = w_1 \times fuelConsumptionRate + w_2 \times | requiredTorque - actualTorque | + \\
-w_3 \times HC-emissions + w_4 \times CO-emissions + w_4 \times NOX-emissions + \\
+w_3 \times HCemissions + w_4 \times COemissions + w_5 \times NOXemissions + \\
 w_6 \times fuelConsumed
 \end{split}
 \end{equation}
@@ -41,25 +42,24 @@ Where the fuel consumption rate is in grams per second (\textit{gps}), the diffe
 \begin{equation}
 \begin{split}
 b_{ij} = w_2 \times | requiredTorque - actualTorque | + w_7 \times powerConsumed\\
-w_8 \times SOC-deviation
+w_8 \times SOCdeviation
 \end{split}
 \end{equation}
 Where the consumed power is in \textit{kW} from the beginning of the simulation and SOC deviation is the difference between the target SOC of 70\% and the current SOC of the battery.
 
-All in all, the game defined is a non-cooperative bimatrix non-zero-sum game with non-transferable utility.
+To summarize, the game defined is a non-cooperative bimatrix non-zero-sum game with non-transferable utility.
 
 \subsection{Pareto Efficiency and Pareto Optimality}
-In the literature two terms often used to refer to the same concept - Pareto Efficiency and Pareto Optimality. However, they are used with distinct meanings throughout this thesis. Pareto Efficiency denotes an allocation of resources such that no player can improve their outcome without impairing another player. In the strategy space of the game there can exist more than one Pareto efficient outcome. Therefore, we define a Pareto Optimal outcome, or Pareto Optimality, as the single best outcome from the set of all Pareto efficient outcomes. The criteria for determining the best outcome is as follows. All Pareto efficient points are compared by their torque deviation and the point with the least torque deviation is taken as the Pareto Optimal point. Torque deviation is defined as the absolute difference between the required and the actual torque at this stage of the game. If more than one outcomes have the same torque deviation the outcome with the smallest fuel consumption rate is taken as a second criterion. Similarly, if more than one outcome have the same fuel consumption rate the one with the smallest engine payoff is taken. This is the third and last criterion.
+In the literature two terms are often used to refer to the same concept - Pareto Efficiency and Pareto Optimality. However, they are used with distinct meanings throughout this thesis. Pareto Efficiency denotes an allocation of resources such that no player can improve their outcome without impairing another player. In the strategy space of the game there can exist more than one Pareto efficient outcome. Therefore, we define a Pareto optimal outcome, or Pareto Optimality, as the single best outcome from the set of all Pareto efficient outcomes. The criteria for determining the best outcome is as follows. All Pareto efficient points are compared by their torque deviation and the point with the least torque deviation is taken as the Pareto Optimal point. Torque deviation is defined as the absolute difference between the required and the actual torque at this stage of the game. If more than one outcomes have the same torque deviation the outcome with the smallest fuel consumption rate is taken as a second criterion. Similarly, if more than one outcome have the same fuel consumption rate the one with the smallest engine payoff is taken. This is the third and last criterion.
 
 \subsection{Nash Bargaining solution}
-The Nash Bargaining solution or shortly the Nash solution was defined by \citet{nash1950bargaining} and it considers the game as a bargaining game where each player requests some portion of the existing good, in this case torque.
-Let us a bargaining game. A bargaining game $G$ is defined by specifying a conflict point $c$ in addition to the set of the two payoff vectors $P$ of both players. The pair is denoted as $(P,c)$ as in \citet{holler2006einfuhrung}. The conflict point is the point where both players do not cooperate with each other. There exists a common misinterpretation because the word "conflict" point itself implies a point where both players face a disagreement and hence their situations are the worst. A Nash Equilibrium does not present such a worst case and therefore the term conflict point may seem misleading, but for the sake of consistency in the literature, the term will be kept as it is. Since the conflict point in the literature is often taken to be the Nash Equilibrium of the corresponding non-cooperative game, the next subsection deals with an algorithm to find a Nash Equilibrium.
+The Nash Bargaining solution or shortly the Nash solution was defined by \citet{nash1950bargaining}. It considers the game as a bargaining game where each player requests some portion of the existing good, in this case torque. A bargaining game $G$ is defined by specifying a conflict point $c = (c_1,c_2)$ in addition to the payoff space $P$, comprising of the two payoff vectors as defined above $u = (u_1,u_2)$. The pair is denoted as $(P,c)$ as in \citet{holler2006einfuhrung}. The conflict point is the point where both players do not cooperate with each other. There exists a common misinterpretation because the word "conflict" point itself implies a point where both players face a disagreement and hence their payoffs are the worst. A Nash Equilibrium does not present such a worst case and therefore the term conflict point may seem misleading, but for the sake of consistency in the literature, the term will be kept as it is. Since the conflict point in the literature is often taken to be the Nash Equilibrium of the corresponding non-cooperative game, the next subsection deals with an algorithm to find a Nash Equilibrium.
 
 Taking these into account, a Nash Bargaining solution is the vector $u^*$ from the set $P$:
 \[
 NP^* = max(c_1 - u_1^* )(c_2 - u_2^*)
 \]
-so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning that the Nash solution point $u^*$ payoff is less than the conflict point payoff. The main idea of the Nash solution expressed graphically is to maximize the product of the differences between the conflict point and the Nash solution point coordinates in 2D.
+so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning that the Nash solution point $u^*$ payoff is less than the conflict point payoff. The main idea of the Nash solution expressed graphically as in \ref{fig:nashSol} is to maximize the product of the differences between the conflict point and the Nash solution point coordinates in 2D.
 
 \begin{figure}[h]
 \centering
@@ -72,7 +72,7 @@ The Nash solution is characterized by four axioms as defined in \citet{holler200
 
 The first axiom is called Invariance with Respect to Affine Transformations of Utility. Given a bargaining game $(P,c)$ and two random real numbers $a_i > 0$ and $b_i$, where $i = 1,2$ for both players, it is true that $f_i(P',c') = a_i f_i(P,c) + b_i$. This holds if $(P',c')$ is a game resulting from a linear transformation which preserves the order of all points $u$ and $c$ from $P$ so that $y_i = a_i x_i + b_i$ and $c_i' = a_i c_i + b_i$, where $y \in P'$ and $c' \in P$. In other words such a linear transformation of the game space does not affect the solution of the bargaining game.
 
-The second axiom is Symmetry. If $(P,c)$ is a symmetric bargaining game then $f_1(P,c) = f_2(P,c)$. A game is symmetric if $c_1 = c_2$ and if $(u_1, u_2)$ and $(u_2, u_1)$ are both in the payoff vector $P$. This results in a conflict point lying on the 45\textdegree  line from the origin of the coordinate system. $P$ is symmetric with regard to this line. This axiom tells that if the payoffs of the two players can be interchanged and the game does not change as a consequence of that, then its solution should also not distinguish between the two players.
+The second axiom is Symmetry. If $(P,c)$ is a symmetric bargaining game then $f_1(P,c) = f_2(P,c)$. A game is symmetric if $c_1 = c_2$ and if $(u_1, u_2)$ and $(u_2, u_1)$ are both in the payoff space $P$. This results in a conflict point lying on the 45\textdegree  line from the origin of the coordinate system. $P$ is symmetric with regard to this line. This axiom tells that if the payoffs of the two players can be interchanged and the game does not change as a consequence of that, then its solution should also not distinguish between the two players.
 
 The third axiom is Independence of Irrelevant Alternatives. It states that $f(P,c) = f(Q,c)$ if two games $(P,c)$ and $(Q,c)$ have the same conflict point $c$, $P \subseteq Q$ and $f(Q,c) \in P$. Therefore, only the conflict point is relevant, because if the payoff space of the game is extended to a superset or it is shrunk to a subset, then the solution itself does not change.
 
@@ -141,7 +141,8 @@ so that
 \[
 u_i \leq v_i, \frac{c_2 - v_2}{c_1 - v_1} = \frac{c_2 - m_2}{c_1 - m_1} 
 \]
-
+where $(v_1,v_2) \in P$. The pair $(u_1,u_2)$ is the Kalai-Smorodinsky solution. As \citet{kalai1975other} point out, this solution is graphically represented as the intersection point of the line $L(c,m)$ and the utility (payoff) boundary $H(P)$. $L(c,m)$ is the line connecting the conflict point $c$ and the ideal point $m$. The utility boundary $H(P)$ or also called the Pareto frontier is defined as the set of all Pareto efficient points. The boundary gives for all random payoffs of one player the minimal possible payoff of the other player.
+If the Pareto frontier only contains one Pareto efficient point then the Kalai-Smorodinsky solution is the ideal point itself $u* = m(P)$.
 
 \subsection{Core}
 

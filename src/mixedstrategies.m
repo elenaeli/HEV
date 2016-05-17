@@ -8,7 +8,6 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
    
     v = Inf;
     % There is a saddle point in pure strategies
-
     if min(max(payoff))==max(min(payoff,[],2))
         maxP = max(payoff);
         for i=1:m

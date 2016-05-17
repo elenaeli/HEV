@@ -27,8 +27,7 @@ function [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoff
                     coeffCoal(i,j) = 0.999;   
                 elseif absTorqDev < -percentReqTorque(9) || percentReqTorque(9) < absTorqDev;    
                     coeffCoal(i,j) = 1.0;   
-                end
-            
+                end            
         end
     end   
     payoffWholeCoalBefore = payoffEngine + payoffMotor;

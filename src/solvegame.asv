@@ -1,8 +1,8 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = -23;        
-    SOC = 0.01;
-    fuelConsumed = 1;
+    requiredTorque = 120;        
+    SOC = 35;
+    fuelConsumed = 0.05;
             
     requiredTorque = roundn(requiredTorque,0);     
         
@@ -29,14 +29,14 @@
             engineTorqueCurve = [109, 117, 125, 131, 134, 136, 136, 133, 129, 123, 114, 104, 91, 83];      
 
             SOC_deviation = abs(70 - SOC)/100;       
-            maxEngineTorque = 272;
+            maxEngineTorque = 136;
             maxMotorTorque = 400;
             minMotorTorque = -400;  
             minMotorTorqueRef = 0;
-            minEngineTorqueRef = 83;
-            minEngineTorque = 83;
-            m = 7;
-            e = 7;
+            minEngineTorqueRef = 0;
+            minEngineTorque = 0;
+            m = 15;
+            e = 15;
             payoffMotor = zeros(m,e);
             payoffEngine = zeros(m,e);
             percentage = 0:(1/(m-1)):1;

@@ -1,8 +1,8 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = -23;        
-    SOC = 0.01;
-    fuelConsumed = 1;
+    requiredTorque = -320;        
+    SOC = 35;
+    fuelConsumed =8;
             
     requiredTorque = roundn(requiredTorque,0);     
         
@@ -89,8 +89,8 @@
                     idxT = 0;                    
                     % Power(W) = Torque (N.m) x Speed (RPM) / 9.5488
                     % divide by 1000 for kW               
-                    motorSpeedRef(j) = interp1(motorTorqueCurve, motorSpeedCurve, strategyMot(j),'linear','extrap');
-                    powerMotorKW(j) = strategyMot(j) * motorSpeedRef(j) / 9.5488 / 1000;       
+                    motorSpeedRef(j) = interp1(motorTorqueCurve, motorSpeedCurve, abs(strategyMot(j)),'linear','extrap');
+                    powerMotorKW(j) = abs(strategyMot(j)) * motorSpeedRef(j) / 9.5488 / 1000;       
                     tmpS = abs(FuelConsTable.speed - motorSpeedRef(j));
                     idxS = 0;
                     [~, idxS] = min(tmpS);
@@ -182,8 +182,8 @@
                     probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
                     probKsMixed(1) = 1 - probKsMixed(2);
                 elseif linePareto(1,2) - linePareto(2,2) == 0
-                     probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
-                     probKsMixed(2) = 1 - probKsMixed(1);
+                    probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
+                    probKsMixed(2) = 1 - probKsMixed(1);
                 end
                 probKsMixed
                 %probKsMixed(1) = ks(1,1) / linePareto(2,1);

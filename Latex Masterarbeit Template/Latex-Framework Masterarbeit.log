@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  13 MAY 2016 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  17 MAY 2016 16:47
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1172,7 +1172,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 
 ] [7] [8]
-<figures/nashSolution.png, id=171, 501.37312pt x 440.39531pt>
+<figures/nashSolution.png, id=172, 501.37312pt x 440.39531pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
@@ -1471,6 +1471,10 @@ source/appendix.tex
  ***********
 
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 65.
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
@@ -1506,9 +1510,9 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (29 pages, 351161 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (29 pages, 353192 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
+ 731 PDF objects out of 1000 (max. 8388607)
  72 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

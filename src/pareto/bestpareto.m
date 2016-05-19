@@ -26,7 +26,7 @@ function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrate
         indF = find(fuelPareto==bestFuelPareto);
         bestPayoffFuelPareto = paretoStrategies(indF,:);
         if size(indF,2) > 1
-            % take the point with the minimum engine payoff
+            % take the point with the minimum motor power consumed
             [~,indE] = min(powerPareto(indF));
             bestPayoffEngPareto = bestPayoffFuelPareto(indE,1); 
             bestPayoffMotPareto = bestPayoffFuelPareto(indE,2);

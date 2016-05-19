@@ -52,42 +52,42 @@ LegendText = u*
 [Label1]
 Placement = 0
 Pos = 3.16216216216216;3.19316239316239
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs32 u*\\par\n}\n
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 u*\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label2]
 Placement = 0
 Pos = 5.19369369369369;5.20512820512821
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs32 c\\par\n}\n
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 c\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label3]
 Placement = 0
-Pos = -0.375375375375375;5.14017094017094
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 c\\sub 2\\nosupersub\\par\n}\n
+Pos = -0.364764267990074;5.13953488372093
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 c\\sub 2\\nosupersub\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label4]
 Placement = 0
-Pos = 4.8963963963964;-0.135042735042735
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 c\\sub 1\\nosupersub\\par\n}\n
+Pos = 4.90570719602978;-0.0581395348837209
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 c\\sub 1\\nosupersub\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label5]
 Placement = 0
-Pos = -0.411411411411411;3.17094017094017
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 u\\sub 2\\nosupersub\\par\n}\n
+Pos = -0.384615384615385;3.17441860465116
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 u*\\sub 2\\nosupersub\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 
 [Label6]
 Placement = 0
-Pos = 2.8978978978979;-0.116239316239317
-Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs28 u\\sub 1\\nosupersub\\par\n}\n
+Pos = 2.89081885856079;-0.104651162790698
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs36 u*\\sub 1\\nosupersub\\par\n}\n
 BackgroundColor = clNone
 ShowInLegend = 0
 

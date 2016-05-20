@@ -325,6 +325,25 @@
       \field{volume}{1}
       \field{year}{2007}
     \endentry
+    \entry{shapley1952value}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=02050ef6384404264a61641a4606717e}{Shapley}{S\bibinitperiod}{Lloyd\bibnamedelima S}{L\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {DTIC Document}%
+      }
+      \strng{namehash}{02050ef6384404264a61641a4606717e}
+      \strng{fullhash}{02050ef6384404264a61641a4606717e}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1952}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A value for n-person games}
+      \field{type}{techreport}
+      \field{year}{1952}
+    \endentry
     \entry{shapley1974note}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=02050ef6384404264a61641a4606717e}{Shapley}{S\bibinitperiod}{Lloyd\bibnamedelima S}{L\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%

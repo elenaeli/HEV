@@ -85,7 +85,7 @@ S_FUNCTIONS_LIB    =
 SOLVER             = 
 NUMST              = 4
 TID01EQ            = 0
-NCSTATES           = 15
+NCSTATES           = 14
 MEM_ALLOC          = RT_STATIC
 BUILDARGS          =  ISPROTECTINGMODEL=NOTPROTECTING
 MEXEXT             = mexw32

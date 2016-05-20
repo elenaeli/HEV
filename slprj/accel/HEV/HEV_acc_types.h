@@ -3,10 +3,10 @@
 #define RTW_HEADER_HEV_acc_types_h_
 #include "rtwtypes.h"
 #include "multiword_types.h"
-#ifndef _DEFINED_TYPEDEF_FOR_struct_2trcJdCVSmIuZmyBZjrgh_
-#define _DEFINED_TYPEDEF_FOR_struct_2trcJdCVSmIuZmyBZjrgh_
-typedef struct { real_T seconds [ 147 ] ; real_T kph [ 147 ] ; real_T time [
-147 ] ; } struct_2trcJdCVSmIuZmyBZjrgh ;
+#ifndef _DEFINED_TYPEDEF_FOR_struct_0Sakl0C0DKzNfgfjGNcDtE_
+#define _DEFINED_TYPEDEF_FOR_struct_0Sakl0C0DKzNfgfjGNcDtE_
+typedef struct { real_T seconds [ 148 ] ; real_T kph [ 148 ] ; real_T time [
+148 ] ; } struct_0Sakl0C0DKzNfgfjGNcDtE ;
 #endif
 #ifndef _DEFINED_TYPEDEF_FOR_struct_DlOm7jJezTz7qlIM0jVaZB_
 #define _DEFINED_TYPEDEF_FOR_struct_DlOm7jJezTz7qlIM0jVaZB_
@@ -26,10 +26,10 @@ typedef struct { real_T speed [ 10 ] ; real_T torque [ 10 ] ; real_T fuel [
 10 ] ; real_T power [ 10 ] ; real_T lookupTableFuel [ 100 ] ; real_T
 lookupTablePower [ 100 ] ; } struct_YlEyT9qojLzO8y7BfHmLTF ;
 #endif
-#ifndef _DEFINED_TYPEDEF_FOR_struct_kuTiDEpZBpYIaKBcvOHvVD_
-#define _DEFINED_TYPEDEF_FOR_struct_kuTiDEpZBpYIaKBcvOHvVD_
-typedef struct { real_T speed [ 84 ] ; real_T power [ 84 ] ; }
-struct_kuTiDEpZBpYIaKBcvOHvVD ;
+#ifndef _DEFINED_TYPEDEF_FOR_struct_O2WQmDKdsj2xwNHJeaih1E_
+#define _DEFINED_TYPEDEF_FOR_struct_O2WQmDKdsj2xwNHJeaih1E_
+typedef struct { real_T speed [ 84 ] ; real_T power [ 84 ] ; real_T torque [
+101 ] ; } struct_O2WQmDKdsj2xwNHJeaih1E ;
 #endif
 typedef struct baqezl5ja5_ baqezl5ja5 ;
 #endif

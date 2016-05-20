@@ -1,6 +1,6 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 0.1547;        
+    requiredTorque = 85.46;        
     SOC = 100;
     fuelConsumed =8 ;
             

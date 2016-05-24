@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  20 MAY 2016 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  24 MAY 2016 16:32
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1182,15 +1182,15 @@ Package pdftex.def Info: figures/nashSolution.png used on input line 68.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10 <./figures/nashSolution.png>] [11] [12] [13] [14]
-<figures/kalaiSmorodinskySolution.png, id=234, 590.205pt x 518.6878pt>
+[9] [10 <./figures/nashSolution.png>] [11] [12] [13] [14] [15]
+<figures/kalaiSmorodinskySolution.png, id=245, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
 Package pdftex.def Info: figures/kalaiSmorodinskySolution.png used on input lin
-e 156.
+e 166.
 (pdftex.def)             Requested size: 295.10178pt x 259.34326pt.
- [15 <./figures/kalaiSmorodinskySolution.png>] [16]) [17]
+ [16 <./figures/kalaiSmorodinskySolution.png>] [17]) [18]
 \openout2 = `source/content.aux'.
 
  (source/content.tex
@@ -1209,7 +1209,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-[18
+[19
 
 
 
@@ -1229,7 +1229,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 7.
 
-[19
+[20
 
 ]
 chapter 5.
@@ -1247,7 +1247,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 12.
 
-[20
+[21
 
 ]
 chapter 6.
@@ -1265,7 +1265,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 17.
 
-[21
+[22
 
 ]
 chapter 7.
@@ -1283,7 +1283,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 22.
 
-) [22
+) [23
 
 ]
 chapter without number
@@ -1301,10 +1301,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 59.
 
-[23
+[24
 
 
-] [24]
+] [25]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1323,7 +1323,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [25
+) [26
 
 
 ]
@@ -1486,13 +1486,13 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18854 strings out of 493634
- 303547 string characters out of 3141315
- 847364 words of memory out of 3000000
- 21781 multiletter control sequences out of 15000+200000
+ 18864 strings out of 493634
+ 303695 string characters out of 3141315
+ 847415 words of memory out of 3000000
+ 21788 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,15n,66p,1578b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,15n,66p,1603b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbi1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -1516,9 +1516,9 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (32 pages, 381600 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (33 pages, 387778 bytes).
 PDF statistics:
- 785 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

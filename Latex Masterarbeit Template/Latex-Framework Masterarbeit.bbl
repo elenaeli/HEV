@@ -261,17 +261,41 @@
       \field{pages}{413\bibrangedash 423}
       \range{pages}{11}
     \endentry
+    \entry{nash1950equilibrium}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=4af92f2a7d1f65fedb682523fb4a6cdc}{Nash}{N\bibinitperiod}{John\bibnamedelima F}{J\bibinitperiod\bibinitdelim F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {National Academy of Sciences}%
+      }
+      \strng{namehash}{4af92f2a7d1f65fedb682523fb4a6cdc}
+      \strng{fullhash}{4af92f2a7d1f65fedb682523fb4a6cdc}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{extrayear}{1}
+      \field{labelyear}{1950}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences of the United States of America}
+      \field{title}{Equilibrium points in n-person games}
+      \field{volume}{36}
+      \field{year}{1950}
+      \field{pages}{48\bibrangedash 49}
+      \range{pages}{2}
+    \endentry
     \entry{nash1950bargaining}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{Nash}{N\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4af92f2a7d1f65fedb682523fb4a6cdc}{Nash}{N\bibinitperiod}{John\bibnamedelima F}{J\bibinitperiod\bibinitdelim F\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
         {JSTOR}%
       }
-      \strng{namehash}{833e110f2d339a9323ef95f850c110d3}
-      \strng{fullhash}{833e110f2d339a9323ef95f850c110d3}
+      \strng{namehash}{4af92f2a7d1f65fedb682523fb4a6cdc}
+      \strng{fullhash}{4af92f2a7d1f65fedb682523fb4a6cdc}
       \field{sortinit}{N}
       \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{extrayear}{2}
       \field{labelyear}{1950}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -284,13 +308,13 @@
     \endentry
     \entry{nash1951non}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=833e110f2d339a9323ef95f850c110d3}{Nash}{N\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4af92f2a7d1f65fedb682523fb4a6cdc}{Nash}{N\bibinitperiod}{John\bibnamedelima F}{J\bibinitperiod\bibinitdelim F\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
         {JSTOR}%
       }
-      \strng{namehash}{833e110f2d339a9323ef95f850c110d3}
-      \strng{fullhash}{833e110f2d339a9323ef95f850c110d3}
+      \strng{namehash}{4af92f2a7d1f65fedb682523fb4a6cdc}
+      \strng{fullhash}{4af92f2a7d1f65fedb682523fb4a6cdc}
       \field{sortinit}{N}
       \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
       \field{labelyear}{1951}

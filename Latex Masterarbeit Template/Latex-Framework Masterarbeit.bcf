@@ -2260,20 +2260,25 @@
     <bcf:citekey order="19">nash1950bargaining</bcf:citekey>
     <bcf:citekey order="20">holler2006einfuhrung</bcf:citekey>
     <bcf:citekey order="21">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="22">lemke1964equilibrium</bcf:citekey>
-    <bcf:citekey order="23">lemkeHowson2014Matlab</bcf:citekey>
-    <bcf:citekey order="24">lemke1964equilibrium</bcf:citekey>
-    <bcf:citekey order="25">nisan2007algorithmic</bcf:citekey>
-    <bcf:citekey order="26">shapley1974note</bcf:citekey>
-    <bcf:citekey order="27">shapley1974note</bcf:citekey>
-    <bcf:citekey order="28">npg</bcf:citekey>
-    <bcf:citekey order="29">kalai1975other</bcf:citekey>
-    <bcf:citekey order="30">kalai1975other</bcf:citekey>
-    <bcf:citekey order="31">kalai1975other</bcf:citekey>
-    <bcf:citekey order="32">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="33">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="34">holler2006einfuhrung</bcf:citekey>
-    <bcf:citekey order="35">shapley1952value</bcf:citekey>
+    <bcf:citekey order="22">nash1950equilibrium</bcf:citekey>
+    <bcf:citekey order="23">nash1950equilibrium</bcf:citekey>
+    <bcf:citekey order="24">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="25">nash1950equilibrium</bcf:citekey>
+    <bcf:citekey order="26">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="27">lemke1964equilibrium</bcf:citekey>
+    <bcf:citekey order="28">lemkeHowson2014Matlab</bcf:citekey>
+    <bcf:citekey order="29">lemke1964equilibrium</bcf:citekey>
+    <bcf:citekey order="30">nisan2007algorithmic</bcf:citekey>
+    <bcf:citekey order="31">shapley1974note</bcf:citekey>
+    <bcf:citekey order="32">shapley1974note</bcf:citekey>
+    <bcf:citekey order="33">npg</bcf:citekey>
+    <bcf:citekey order="34">kalai1975other</bcf:citekey>
+    <bcf:citekey order="35">kalai1975other</bcf:citekey>
+    <bcf:citekey order="36">kalai1975other</bcf:citekey>
+    <bcf:citekey order="37">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="38">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="39">holler2006einfuhrung</bcf:citekey>
+    <bcf:citekey order="40">shapley1952value</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt" type="entry" sortscheme="nyt">
   <bcf:sorting>

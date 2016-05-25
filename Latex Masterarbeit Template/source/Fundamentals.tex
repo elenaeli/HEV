@@ -1,5 +1,5 @@
 \chapter{Fundamentals}
-\label{chp:basics}
+\label{chp:fundamentals}
 This chapter firstly describes the cooperative game and specifically explains all required mathematical definitions. It then presents six different game-theoretical solution approaches and how they are applied to solve the game.
 
 \section{Game definition}
@@ -102,17 +102,17 @@ The fundamentals of the Lemke-Howson algorithm are described next. Let us assume
 \sum_{i=1}^{m} \sum_{j=m+1}^{m+n} a_{ij}s_i^*t_j^* = \max_{s \in S} \sum_{i=1}^{m} \sum_{j=m+1}^{m+n} a_{ij}s_i t_j^*
 \end{equation}
 \begin{equation}
-\sum_{i=1}^{n} \sum_{j=m+1}^{m+n} b_{ij}s_i^*t_j^* = \max_{t \in T} \sum_{i=1}^{n} \sum_{j=m+1}^{m+n} b_{ij}s_i^* t_j
+\sum_{i=1}^{m} \sum_{j=m+1}^{m+n} b_{ij}s_i^*t_j^* = \max_{t \in T} \sum_{i=1}^{m} \sum_{j=m+1}^{m+n} b_{ij}s_i^* t_j
 \end{equation}
 
 
 If we also define the sets:
 \begin{equation}
-\tilde{S} =  S \cup \{ s \geq 0: \sum_{i=1}^{n} s_i \leq 1 \text{ and } \prod_{i=1}^{m} s_i = 0 \}
+\tilde{S} =  S \cup \{ s \geq 0: \sum_{i=1}^{m} s_i \leq 1 \text{ and } \prod_{i=1}^{m} s_i = 0 \}
 \end{equation}
 
 \begin{equation}
-\tilde{T} = T \cup \{t \geq 0: \sum_{j=m}^{m+n} t_i \leq 1 \text{ and } \prod_{j=n}^{m+n} t_i = 0 \}
+\tilde{T} = T \cup \{t \geq 0: \sum_{j=m+1}^{m+n} t_i \leq 1 \text{ and } \prod_{j=m+1}^{m+n} t_i = 0 \}
 \end{equation}
 this allows us to define closed convex polyhedral regions $S^i$ and $S^j$ which together form $S^k \in \tilde{S}$:
 \begin{equation}
@@ -121,13 +121,13 @@ S^i = \{ s \in \tilde{S}: s_i = 0 \} \text{ for } i \in \{1,...,m\}
 
 
 \begin{equation}
-S^j = \{ s \in S: \sum_{i=1}^{m} b_{ij} s_i = \max_{l \in \{m+1,...,m+n\}} \sum_{i=1}^{m} b_{il} s_i \} \text{ for } j \in \{m+1,m+2,...,m+n\}
+S^j = \Big\{ s \in S: \sum_{i=1}^{m} b_{ij} s_i = \max_{l \in \{m+1,...,m+n\}} \sum_{i=1}^{m} b_{il} s_i \Big\} \text{ for } j \in \{m+1,...,m+n\}
 \end{equation}
 
 
 $S^i$ contains all $\tilde{S}-S$ and $S^j$ contains the mixed strategies for player 1 and the pure strategy $j$ of player 2 which is his best outcome. $S^i$ and $S^j$ both make $S^k$ and cover the whole set $\tilde{S}$. The same can be applied to define the regions $T^k \in \tilde{T}$:
 \begin{equation} 
-T^i = \{ t \in T: \sum_{j=m+1}^{m+n} a_{ij} t_j = \max_{l \in \{1,...,m\}} \sum_{j=m+1}^{m+n} a_{lj} t_j \} \text{ for } i \in \{1,...,m\} 
+T^i = \Big\{ t \in T: \sum_{j=m+1}^{m+n} a_{ij} t_j = \max_{l \in \{1,...,m\}} \sum_{j=m+1}^{m+n} a_{lj} t_j \Big\} \text{ for } i \in \{1,...,m\} 
 \end{equation}
 
 \begin{equation}
@@ -159,7 +159,7 @@ so that
 u_i \leq v_i, \frac{c_2 - v_2}{c_1 - v_1} = \frac{c_2 - m_2}{c_1 - m_1} 
 \end{equation}
 
-where $(v_1,v_2) \in P$. The pair $(u_1,u_2)$ is the Kalai-Smorodinsky solution. As \citet{kalai1975other} point out, this solution is graphically represented as the intersection point of the line $L(c,m)$ and the utility (payoff) boundary $H(P)$ as shown in Figure \ref{fig:ksSol}. $L(c,m)$ is the line connecting the conflict point $c$ and the ideal point $m$. The utility boundary $H(P)$ or also called the Pareto frontier is defined as the set of all Pareto efficient points. For all random payoffs of one player the boundary gives the minimal possible payoff of the other player. If the Pareto frontier only contains one Pareto efficient point then the Kalai-Smorodinsky solution is the ideal point itself $u* = m(P)$.
+where $(v_1,v_2) \in P$. The pair $(u_1,u_2)$ is the Kalai-Smorodinsky solution. As \citet{kalai1975other} point out, this solution is graphically represented as the intersection point of the line $L(c,m)$ and the utility (payoff) boundary $H(P)$ as shown in Figure \ref{fig:ksSol}. $L(c,m)$ is the line connecting the conflict point $c$ and the ideal point $m$. The utility boundary $H(P)$ or also called the Pareto frontier is defined as the set of all Pareto efficient points. For all random payoffs of one player the boundary gives the minimal possible payoff of the other player. If the Pareto frontier only contains one Pareto efficient point then the Kalai-Smorodinsky solution is the ideal point itself $u = m(P)$.
 
 \begin{figure}[h]
 \centering
@@ -195,9 +195,9 @@ The Shapley value of a game with transferable utility according to \citet{holler
 \end{equation}
 $k$ denotes the number of players in coalition $K$ and $n$ is the total number of players. $v(K)$ is the value of coalition $K$, whereas $v(K - \{i\})$ is the value of coalition $K$ without the player $i$. The sum of the Shapley values of all players must equal the total value of the game, which is also the value of the grand coalition $N$.
 
-The Shapley value was introduced by \citet{shapley1952value} where it is described that the game must be represented by its characteristic function $v: 2^N	\rightarrow \mathbb{R}$. In addition, the Shapley value is the single point which satisfies the following three axioms.
+The Shapley value was introduced by \citet{shapley1952value} where it is described that the game must be represented by its characteristic function $v: 2^N	\rightarrow \mathbb{R}$. Therefore, to apply the Shapley value in our game which is defined only in its strategic form, the game has to be transformed into its coalitional form in order to get the characteristic function. The procedure is as follows. For each of the three relevant coalitions $\{1\}$, $\{2\}$, $\{1,2\}$ a value needs to be assigned. $v(N)$ or $v(1,2)$ is easy to find, because it is the minimum sum of the two payoff matrices $A$ and $B$. The values of each individual coalition $v(1)$ and $v(2)$ can be found by taking the Saddle point of the corresponding payoff matrix. A Saddle point of a two-player matrix game is both a column maximum and a row minimum. There can be more than one Saddle points in a matrix and they all have the same value. However, if no Saddle point exists in pure strategies, the game can be extended to mixed strategies in order to find a combination of pure strategies which give the value (the Saddle point) of the game. The exact implementation details are explained in \ref{subsec:shapleyvalue}.
 
-The first axiom is Group Rationality or Efficiency, which is equivalent to Pareto efficiency. This axiom was already described in the subsection of Nash bargaining solution. The second axiom is Symmetry and it states that if the players change their order then the values of the players change accordingly. Therefore, the number, or the $i$, of the player does not have an influence on the value which that player receives. The third axiom is based on the assumption $\Phi_i(v+w) = \Phi_i(v) + \Phi_i(w)$ where $v+w$ is the combination of two games $v$ and $w$.
+In addition, the Shapley value is the single point which satisfies the following three axioms. The first axiom is Group Rationality or Efficiency, which is equivalent to Pareto efficiency. This axiom was already described in the subsection of Nash bargaining solution. The second axiom is Symmetry and it states that if the players change their order then the values of the players change accordingly. Therefore, the number, or the $i$, of the player does not have an influence on the value which that player receives. The third axiom is based on the assumption $\Phi_i(v+w) = \Phi_i(v) + \Phi_i(w)$ where $v+w$ is the combination of two games $v$ and $w$.
 
-In general the Shapley value is about permutations of the players and especially which player arrives first, meaning which player is able to make the decision first. The order of the players is irrelevant and all of the various orders have the same probability. Since there are $n!$ permutations of the players, the probability of each of them is $\frac{1}{n!}$ as shown in Equation \ref{eq:shapley}. Additionally, the probability of player $i$ being at the $k$-th place is $\frac{(k-1)!(n-k)!}{n!}$.
-On the one hand, a player who has an influence on the value of the coalition is called a crucial or pivot player. A player $i$ is a pivot player whenever $K$ is a winning coalition and without him the coalition $K-\{i\}$ is a losing coalition. On the other hand, a player is called a dummy player when a coalition $K$ has the same value regardless whether $i$ is participating in it or not - $[v(K) - v(K-\{i\})]=0$.
+The general idea of the Shapley value is about permutations of the players and especially which player arrives first, meaning which player is able to make the decision first. The order of the players is irrelevant and all of the various orders have the same probability. Since there are $n!$ permutations of the players, the probability of each of them is $\frac{1}{n!}$ as shown in Equation \ref{eq:shapley}. Additionally, the probability of player $i$ being at the $k$-th place is $\frac{(k-1)!(n-k)!}{n!}$.
+On the one hand, a player who has an influence on the value of the coalition is called a crucial or pivot player. A player $i$ is a pivot player whenever $K$ is a winning coalition and without him the coalition $K-\{i\}$ is a losing coalition. On the other hand, a player is called a dummy player when a coalition $K$ has the same value regardless whether $i$ is participating in it or not, $[v(K) - v(K-\{i\})]=0$.

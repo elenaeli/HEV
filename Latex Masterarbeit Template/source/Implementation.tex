@@ -1,0 +1,29 @@
+\chapter{Implementation}
+\label{chp:implementation}
+
+\section{Hybrid Vehicle Model}
+This chapter explains how the hybrid vehicle, which is similar to the Toyota Prius, was modelled in Simulink. It describes the input from the Drive Cycle Controller, the Power Controller, the Gasoline Engine Controller, the Electric Motor Controller, the Gearbox and the Vehicle dynamics. The game-theoretical logic is included in the Power Controller, which is shown in the next section.
+
+\subsection{Drive Cycles Controller}
+This subsection deals with the demand of speed which comes from the Drive Cycle and how it is transformed to acceleration demand, which corresponds to the acceleration pedal in a vehicle.
+
+Two different drive cycles were simulated. The FTP-75 drive cycle is intended to test light-duty vehicles in the U.S. and measure their gas emissions and fuel economy. It lasts for 1874s, the distance is 17.77km and the average speed is 34.1 km/h. The drive cycle contains three phrases - cold start from 0-504s, transient phase from 505-1369s and hot start from 1370-1874. The last phase is exactly the same as the first phase.
+
+The NEDC drive cycle was invented to test light-duty cars in Europe. Its duration is 1180s, the distance is 11.02km and  the average speed 33.6km/h. It contains four equivalent urban driving phases called ECE-15, which last from 0-780s and a fourth highway driving phase called EUDC from 781-1180s.
+
+The Speed Control block takes as input the demanded speed from the drive cycle and the actual speed of the vehicle both in \textit{km/h} and calculates as output the acceleration which is between -1 and 1 where a negative value means braking and a positive value means acceleration. The calculation is done by taking the difference between the demanded and actual speeds.
+
+\subsection{Power Controller}
+The Power Controller takes as input the acceleration demand and the state of the battery which comes from the Electric Motor Controller. In order to transform the acceleration demand into torque demand, the acceleration is scaled by the maximum torque of 400 \textit{Nm} which can be demanded. This value was chosen since this is the maximum output torque of the Toyota Prius electric motor. The minimum demanded torque is -400 which corresponds to deceleration. The current motor speed in \textit{rad/s} is mapped to the torque of the motor which the motor is capable to produce at this moment. This value is taken as upper limit and its negated value is taken as an lower limit of the torque. 
+
+The outputted required torque in \textit{Nm} is fed into the Game Theory Controller block. In addition, the other inputs of this block are required power, which is:
+\begin{equation}
+P = \tau \times \omega
+\end{equation}
+where Power is in \textit{W}, torque is in \textit{Nm} and the velocity is angular \textit{rad/s}.
+The Game Theory Controller also receives the battery SOS in \%, the generator, engine, motor speeds all in \textit{rad/s}, the fuel consumed up to this moment from the beginning of the drive cycle in \textit{liters}, the battery limit and the required battery recharge power. The required battery power is 0 if the SOC is larger than the target 70\%. The battery is forced to be reloaded only if the SOC is less than 30\%.
+
+The Game Theory Controller block contains the game-theoretical logic embedded as an Matlab function. Apart from it, it also regulates the speed of the engine by taking the difference between the required power and the recharge power for the battery. The resulting power is given as an input to a lookup table to find the needed engine speed in \textit{rpm}. 
+
+\section{Game-theoretical algorithms}
+This chapter describes the implementation of all six game-theoretical approaches in Matlab.

@@ -1,8 +1,9 @@
 \chapter{Implementation}
 \label{chp:implementation}
+This chapter explains how the hybrid vehicle, which is similar to the Toyota Prius, was modelled in Simulink. Then the implementation details in Matlab of each of the six game-theoretical approaches are described.
 
 \section{Hybrid Vehicle Model}
-This chapter explains how the hybrid vehicle, which is similar to the Toyota Prius, was modelled in Simulink. It describes the input from the Drive Cycle Controller, the Power Controller, the Gasoline Engine Controller, the Electric Motor Controller, the Gearbox and the Vehicle dynamics. The game-theoretical logic is included in the Power Controller, which is shown in the next section.
+The model of the hybrid vehicle is split into different controllers and each of them is responsible for controlling the corresponding part of the hybrid. The chapter describes the Drive Cycle Controller, the Power Controller, the Gasoline Engine Controller, the Electric Motor Controller, the Gearbox and the Vehicle dynamics. The game-theoretical logic is included in the Power Controller, which is shown in the next section.
 
 \subsection{Drive Cycles Controller}
 This subsection deals with the demand of speed which comes from the Drive Cycle and how it is transformed to acceleration demand, which corresponds to the acceleration pedal in a vehicle.

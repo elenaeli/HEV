@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  25 MAY 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  31 MAY 2016 15:22
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1162,41 +1162,42 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
- [6
+[6
 
 
 
 ] [7] [8]
-<figures/nashSolution.png, id=180, 606.76688pt x 517.935pt>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+
+[9] [10] [11] <figures/nashSolution.png, id=206, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
-Package pdftex.def Info: figures/nashSolution.png used on input line 68.
+Package pdftex.def Info: figures/nashSolution.png used on input line 93.
 (pdftex.def)             Requested size: 303.38269pt x 258.96686pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10 <./figures/nashSolution.png>] [11] [12] [13] [14] [15]
-<figures/kalaiSmorodinskySolution.png, id=251, 590.205pt x 518.6878pt>
+[12] [13 <./figures/nashSolution.png>] [14] [15] [16] [17] [18]
+<figures/kalaiSmorodinskySolution.png, id=278, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
 Package pdftex.def Info: figures/kalaiSmorodinskySolution.png used on input lin
-e 166.
+e 191.
 (pdftex.def)             Requested size: 295.10178pt x 259.34326pt.
- [16 <./figures/kalaiSmorodinskySolution.png>] [17]
+ [19 <./figures/kalaiSmorodinskySolution.png>] [20]
 
-LaTeX Warning: Reference `subsec:shapleyvalue' on page 18 undefined on input li
-ne 198.
+LaTeX Warning: Reference `subsec:shapleyvalue' on page 21 undefined on input li
+ne 223.
 
-[18]) [19]
+[21]) [22]
 \openout2 = `source/Implementation.aux'.
 
  (source/Implementation.tex
@@ -1215,11 +1216,11 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-[20
+[23
 
 
 
-]) [21] [22]
+]) [24] [25]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1238,7 +1239,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [23
+) [26
 
 
 
@@ -1261,7 +1262,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [24
+) [27
 
 
 
@@ -1284,7 +1285,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [25
+) [28
 
 
 
@@ -1302,12 +1303,12 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 62.
+(scrreprt)              by `\normalfont \bfseries ' on input line 63.
 
-[26
+[29
 
 
-] [27]
+] [30]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1326,18 +1327,18 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [28
+) [31
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 68.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 68.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
  ("Latex-Framework Masterarbeit.aux" (source/cover.aux)
 (source/explanation.aux) (source/abstract.aux) (source/acknowledgements.aux)
 (source/lists.aux) (source/Introduction.aux) (source/Fundamentals.aux)
 (source/Implementation.aux) (source/Simulation.aux) (source/Results.aux)
 (source/Discussion.aux) (source/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 68.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
 
 
  *File List*
@@ -1486,9 +1487,16 @@ source/Discussion.tex
 source/appendix.tex
  ***********
 
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 68.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 69.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
@@ -1496,18 +1504,18 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18909 strings out of 493634
- 304624 string characters out of 3141315
- 854450 words of memory out of 3000000
- 21806 multiletter control sequences out of 15000+200000
+ 18926 strings out of 493634
+ 304789 string characters out of 3141315
+ 854452 words of memory out of 3000000
+ 21813 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  59i,15n,66p,1603b,1871s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbi1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk>{C:/Program Files (x86)/MiKTeX 2.9/fo
+\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk>{C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/enc/dvips/fontname/8r.enc} <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Elena\AppData\Loca
@@ -1526,9 +1534,9 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (35 pages, 398632 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (38 pages, 411795 bytes).
 PDF statistics:
- 828 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
+ 277 words of extra memory for PDF output out of 10000 (max. 10000000)
 

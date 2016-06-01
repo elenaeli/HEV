@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  31 MAY 2016 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  1 JUN 2016 17:36
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1174,18 +1174,15 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
 
-[9] [10] [11] <figures/nashSolution.png, id=206, 606.76688pt x 517.935pt>
+[9] [10] [11] [12] <figures/nashSolution.png, id=217, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
 Package pdftex.def Info: figures/nashSolution.png used on input line 93.
 (pdftex.def)             Requested size: 303.38269pt x 258.96686pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12] [13 <./figures/nashSolution.png>] [14] [15] [16] [17] [18]
-<figures/kalaiSmorodinskySolution.png, id=278, 590.205pt x 518.6878pt>
+ [13 <./figures/nashSolution.png>] [14] [15]
+[16] [17] [18]
+<figures/kalaiSmorodinskySolution.png, id=282, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
@@ -1216,11 +1213,39 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
+<figures/FTP75.png, id=311, 907.89188pt x 642.90187pt>
+File: figures/FTP75.png Graphic file (type png)
+ <use figures/FTP75.png>
+Package pdftex.def Info: figures/FTP75.png used on input line 16.
+(pdftex.def)             Requested size: 408.54758pt x 289.30316pt.
+
+Overfull \hbox (2.24216pt too wide) in paragraph at lines 16--17
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [23
 
 
 
-]) [24] [25]
+] <figures/NEDC.png, id=317, 908.64468pt x 634.62094pt>
+File: figures/NEDC.png Graphic file (type png)
+
+<use figures/NEDC.png>
+Package pdftex.def Info: figures/NEDC.png used on input line 25.
+(pdftex.def)             Requested size: 408.88634pt x 285.57678pt.
+
+Overfull \hbox (2.58092pt too wide) in paragraph at lines 25--26
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./figures/FTP75.png (PNG copy)>] [25 <./figures/NEDC.png (PNG copy)>])
+[26] [27]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1239,7 +1264,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [26
+) [28
 
 
 
@@ -1262,7 +1287,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [27
+) [29
 
 
 
@@ -1285,7 +1310,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [28
+) [30
 
 
 
@@ -1305,10 +1330,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 63.
 
-[29
+[31
 
 
-] [30]
+] [32]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1327,7 +1352,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [31
+) [33
 
 
 ]
@@ -1481,6 +1506,8 @@ source/Fundamentals.tex
 figures/nashSolution.png
 figures/kalaiSmorodinskySolution.png
 source/Implementation.tex
+figures/FTP75.png
+figures/NEDC.png
 source/Simulation.tex
 source/Results.tex
 source/Discussion.tex
@@ -1491,23 +1518,16 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 69.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18926 strings out of 493634
- 304789 string characters out of 3141315
- 854452 words of memory out of 3000000
- 21813 multiletter control sequences out of 15000+200000
+ 18944 strings out of 493634
+ 305068 string characters out of 3141315
+ 854551 words of memory out of 3000000
+ 21825 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  59i,15n,66p,1603b,1871s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1534,9 +1554,9 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (38 pages, 411795 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (40 pages, 492444 bytes).
 PDF statistics:
- 884 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 287 words of extra memory for PDF output out of 10000 (max. 10000000)
 

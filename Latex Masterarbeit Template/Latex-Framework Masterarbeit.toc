@@ -22,23 +22,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Hybrid vehicles}{6}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Classification}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Classification}{7}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Driving behaviour}{7}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Toyota Prius}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Internal Combustion Engine}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Internal Combustion Engine}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Electric Motor}{8}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Battery}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Battery}{9}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Game definition}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Game-theoretical solution approaches}{11}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency and Pareto Optimality}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency and Pareto Optimality}{12}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Nash Bargaining solution}{12}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
@@ -56,16 +56,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Drive Cycles Controller}{23}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Power Controller}{24}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Power Controller}{25}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{25}{section.3.2}
+\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{27}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{26}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation}{28}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{27}{chapter.5}
+\contentsline {chapter}{\numberline {5}Results}{29}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{28}{chapter.6}
+\contentsline {chapter}{\numberline {6}Discussion}{30}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.5}
+\contentsline {chapter}{\nonumberline Bibliography}{31}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{31}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{33}{appendix.A}

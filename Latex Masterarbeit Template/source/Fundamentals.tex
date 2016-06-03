@@ -27,6 +27,16 @@ A synchronous electric AC motor runs with Alternating Current (AC) as opposed to
 \subsection{Battery}
 The battery is a 201.6V Nickel-metal hydride containing 28 modules, which can produce 1310 kWh in total. Each module consists of six 1.2V cells which are connected in series to generate in total 7.2V 6.5Ah. The weight of the whole battery pack is 53.3 kg. It consists of two battery packs, a high voltage (traction) and a low voltage. The low voltage battery pack is crucial when the vehicle starts because it provides initial power and the engine can remain shut down. The ultimate aim of the battery is to keep its SOC between 40-80\%. The advantage of Nickel metal hydride batteries over other types of batteries is that they have long lives. However, a significant disadvantage is their poor performance in cold temperatures. 
 
+\subsection{Power Split Device}
+Toyota patented the Hybrid Synergy Drive (HSD) which is a hybrid drive technology not only used in the Toyota Prius, but also in other models like Toyota Yaris and other car makers like Lexus and Nissan. The most crucial part is the gear set, called Power Split Device (PSD). It is a Continuously Variable Transmission (CVT) but it has a fixed gear ratio. Its main function is the combination of the power of the engine, the electric motor and the generator which all rotate with different speeds. The PSD is in itself a planetary (epicyclic) gear train such as the one shown in Figure \ref{fig:planGear}. It consists of four parts. In the middle there is a sun gear (yellow) and planet gears (blue) are revolving around the sun gear. The carrier is green and the annular gear is pink. The carrier is the part which connects the centres of the planet and the sun gears so that the planet gear can rotate around the sun gear. These three components are inside the annular gear which is a fixed outer circle.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.15]{figures/planetaryGear}
+\caption{Planetary (epicyclic) gear train \citep{planetaryGear}}
+\label{fig:planGear}
+\end{figure}
+
 \section{Game definition}
 This section handles the formal definition of the game and the applied game-theoretical solution approaches. Firstly, the generic game definition is given. Additional definitions for each of the solution approaches are defined in the corresponding subsections of each solution.
 

@@ -1,15 +1,11 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 85.46;        
-    SOC = 100;
-    fuelConsumed =8 ;
+    requiredTorque = 86.81;        
+    SOC = 50;
+    fuelConsumed = 0.5264;
             
-    requiredTorque = roundn(requiredTorque,0);     
-        
-    if previousReqTorque == requiredTorque
-        engineTorque = previousEngTorque
-        motorTorque = previousMotTorque
-    else
+    requiredTorque = roundn(requiredTorque,0);   
+
         if requiredTorque > 0 && requiredTorque < 70 
         	requiredTorque = 70;
             engineTorque = 0
@@ -399,5 +395,5 @@
             previousMotTorque = motorTorque;
        
         end
-    end
+    
 %end

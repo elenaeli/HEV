@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  1 JUN 2016 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  3 JUN 2016 15:19
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1166,35 +1166,48 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 
 
 
-] [7] [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+] [7] [8] <figures/planetaryGear.png, id=201, 1915.155pt x 1029.8475pt>
+File: figures/planetaryGear.png Graphic file (type png)
+
+<use figures/planetaryGear.png>
+Package pdftex.def Info: figures/planetaryGear.png used on input line 35.
+(pdftex.def)             Requested size: 287.26085pt x 154.47046pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
-
-[9] [10] [11] [12] <figures/nashSolution.png, id=217, 606.76688pt x 517.935pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+ [10 <./figures/planetaryGear.png (PNG copy)>] [11] [12]
+<figures/nashSolution.png, id=231, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
-Package pdftex.def Info: figures/nashSolution.png used on input line 93.
+Package pdftex.def Info: figures/nashSolution.png used on input line 103.
 (pdftex.def)             Requested size: 303.38269pt x 258.96686pt.
- [13 <./figures/nashSolution.png>] [14] [15]
-[16] [17] [18]
-<figures/kalaiSmorodinskySolution.png, id=282, 590.205pt x 518.6878pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14 <./figures/nashSolution.png>] [15] [16] [17] [18] [19]
+<figures/kalaiSmorodinskySolution.png, id=300, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
 Package pdftex.def Info: figures/kalaiSmorodinskySolution.png used on input lin
-e 191.
+e 201.
 (pdftex.def)             Requested size: 295.10178pt x 259.34326pt.
- [19 <./figures/kalaiSmorodinskySolution.png>] [20]
+ [20 <./figures/kalaiSmorodinskySolution.png>] [21]
 
-LaTeX Warning: Reference `subsec:shapleyvalue' on page 21 undefined on input li
-ne 223.
+LaTeX Warning: Reference `subsec:shapleyvalue' on page 22 undefined on input li
+ne 233.
 
-[21]) [22]
+[22]) [23]
 \openout2 = `source/Implementation.aux'.
 
  (source/Implementation.tex
@@ -1213,7 +1226,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-<figures/FTP75.png, id=311, 907.89188pt x 642.90187pt>
+<figures/FTP75.png, id=329, 907.89188pt x 642.90187pt>
 File: figures/FTP75.png Graphic file (type png)
  <use figures/FTP75.png>
 Package pdftex.def Info: figures/FTP75.png used on input line 16.
@@ -1226,11 +1239,11 @@ Overfull \hbox (2.24216pt too wide) in paragraph at lines 16--17
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23
+[24
 
 
 
-] <figures/NEDC.png, id=317, 908.64468pt x 634.62094pt>
+] <figures/NEDC.png, id=336, 908.64468pt x 634.62094pt>
 File: figures/NEDC.png Graphic file (type png)
 
 <use figures/NEDC.png>
@@ -1244,8 +1257,23 @@ Overfull \hbox (2.58092pt too wide) in paragraph at lines 25--26
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./figures/FTP75.png (PNG copy)>] [25 <./figures/NEDC.png (PNG copy)>])
-[26] [27]
+[25 <./figures/FTP75.png (PNG copy)>] [26 <./figures/NEDC.png (PNG copy)>]
+[27]
+
+LaTeX Warning: Reference `fig:engineTorqueSpeed' on page 28 undefined on input 
+line 50.
+
+[28]
+
+LaTeX Warning: Reference `fig:batteryDischarge' on page 29 undefined on input l
+ine 59.
+
+
+Overfull \hbox (14.47696pt too wide) in paragraph at lines 71--71
+[] 
+ []
+
+) [29]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1264,7 +1292,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [28
+) [30
 
 
 
@@ -1287,7 +1315,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [29
+) [31
 
 
 
@@ -1310,7 +1338,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [30
+) [32
 
 
 
@@ -1330,10 +1358,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 63.
 
-[31
+[33
 
 
-] [32]
+] [34]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1352,7 +1380,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [33
+) [35
 
 
 ]
@@ -1502,6 +1530,7 @@ source/lists.tex
 source/Introduction.tex
     ueur.fd    2013/01/14 v3.01 Euler Roman
 source/Fundamentals.tex
+figures/planetaryGear.png
   omscmr.fd    2014/09/29 v2.5h Standard LaTeX font definitions
 figures/nashSolution.png
 figures/kalaiSmorodinskySolution.png
@@ -1518,23 +1547,27 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 69.
 
 LaTeX Warning: There were undefined references.
 
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18944 strings out of 493634
- 305068 string characters out of 3141315
- 854551 words of memory out of 3000000
- 21825 multiletter control sequences out of 15000+200000
+ 18969 strings out of 493634
+ 305514 string characters out of 3141315
+ 854668 words of memory out of 3000000
+ 21839 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,15n,66p,1603b,1871s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,19n,66p,1603b,2483s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecbi1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts
+ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\ecbi1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts
 \pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk>{C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/enc/dvips/fontname/8r.enc} <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2
@@ -1554,9 +1587,10 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (40 pages, 492444 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (42 pages, 1289064 bytes).
+
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 114 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 961 PDF objects out of 1000 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
+ 316 words of extra memory for PDF output out of 10000 (max. 10000000)
 

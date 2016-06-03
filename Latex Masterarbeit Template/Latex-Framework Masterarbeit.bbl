@@ -167,7 +167,7 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Einführung in die Spieltheorie}
+      \field{title}{Einfuehrung in die Spieltheorie}
       \field{year}{2006}
     \endentry
     \entry{kalai1975other}{article}{}
@@ -260,6 +260,27 @@
       \field{year}{1964}
       \field{pages}{413\bibrangedash 423}
       \range{pages}{11}
+    \endentry
+    \entry{batteryMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Battery, Implement generic battery model}
+      \field{urlday}{03}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/battery.html
+      \endverb
     \endentry
     \entry{nash1950equilibrium}{article}{}
       \name{author}{1}{}{%
@@ -403,6 +424,27 @@
       \field{labeltitlesource}{title}
       \field{title}{The theory of the market economy}
       \field{year}{1952}
+    \endentry
+    \entry{planetaryGear}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=9c677286866aad38f8e9b660f5411814}{Wikipedia}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2006}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Epicyclic gearing}
+      \field{urlday}{03}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2006}
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/d/d5/Epicyclic_gear_ratios.png
+      \endverb
     \endentry
   \endsortlist
 \endrefsection

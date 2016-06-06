@@ -44,8 +44,10 @@
 #endif
 void HEV_acc_BINARYSEARCH_real_T ( uint32_T * piLeft , uint32_T * piRght ,
 real_T u , const real_T * pData , uint32_T iHi ) ; void
-HEV_acc_LookUp_real_T_real_T ( real_T * pY , const real_T * pYData , real_T u
-, const real_T * pUData , uint32_T iHi ) ; void keyxmz53xi ( SimStruct *
-const S , boolean_T mfqvbclekq , boolean_T gbeq152nyt , h1kbqu5vwm * localB ,
-his5kfh0i3 * localDW ) ;
+HEV_acc_Look2D_real_T_real_T_real_T ( real_T * pY , const real_T * pYData ,
+real_T u0 , const real_T * pU0Data , uint32_T iHiU0 , real_T u1 , const
+real_T * pU1Data , uint32_T iHiU1 ) ; void HEV_acc_LookUp_real_T_real_T (
+real_T * pY , const real_T * pYData , real_T u , const real_T * pUData ,
+uint32_T iHi ) ; void keyxmz53xi ( SimStruct * const S , boolean_T mfqvbclekq
+, boolean_T gbeq152nyt , h1kbqu5vwm * localB , his5kfh0i3 * localDW ) ;
 #endif

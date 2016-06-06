@@ -1,20 +1,21 @@
 function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
-    strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuel, nox, power)
+    strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuel, nox, power, m, e)
     try
-            paretoStrategies = [];
-            paretoIndex = [];
-            
-            [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);       
+        paretoStrategies = [];
+        paretoIndex = [];
+        engineTorque = 0;
+        motorTorque = 0;
+        
+        [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);       
 
-            payoffE = reshape(payoffEngine,(m)*(e),1);
-            payoffM = reshape(payoffMotor,(m)*(e),1);        
-            payoffBoth = horzcat(payoffE, payoffM);   
+        payoffE = reshape(payoffEngine,(m)*(e),1);
+        payoffM = reshape(payoffMotor,(m)*(e),1);        
+        payoffBoth = horzcat(payoffE, payoffM);   
+        engineTorquePareto = strategyEng(paretoIndex(:,1));
+        motorTorquePareto = strategyMot(paretoIndex(:,2));        
+        stringRequiredTorque = int2str(requiredTorqueR);   
 
-            engineTorquePareto = strategyEng(paretoIndex(:,1));
-            motorTorquePareto = strategyMot(paretoIndex(:,2));        
-            stringRequiredTorque = int2str(requiredTorqueR);   
-
-            [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
+        [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
             torqueDeviation, fuel, nox, power );
 
 
@@ -260,10 +261,9 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
             %previousMotTorque = motorTorque;
        
             %end
-            
     catch
-         engineTorque = 0;
-         motorTorque = requiredTorqueR;
-    end   
+    	motorTorque = requiredTorqueR;
+        engineTorque = 0;
+    end           
 end
 

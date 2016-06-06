@@ -72,7 +72,7 @@ MAKEFILE_FILESEP = /
 #                    command
 
 MODEL              = HEV
-MODULES            = HEV_acc_data.c rtGetInf.c rtGetNaN.c rt_look.c rt_look1d.c rt_look2d_normal.c rt_nonfinite.c rt_zcfcn.c 
+MODULES            = HEV_acc_data.c rtGetInf.c rtGetNaN.c rt_look.c rt_look1d.c rt_nonfinite.c rt_zcfcn.c 
 MAKEFILE           = HEV.mk
 MATLAB_ROOT        = C:/Program Files (x86)/MATLAB/R2015a
 ALT_MATLAB_ROOT    = C:/PROGRA~2/MATLAB/R2015a
@@ -83,9 +83,9 @@ ALT_MATLAB_BIN     = C:/PROGRA~2/MATLAB/R2015a/bin
 S_FUNCTIONS        = sf_sfun.c drive_engine.c sfun_spssw_discc.c
 S_FUNCTIONS_LIB    = 
 SOLVER             = 
-NUMST              = 4
+NUMST              = 5
 TID01EQ            = 0
-NCSTATES           = 14
+NCSTATES           = 18
 MEM_ALLOC          = RT_STATIC
 BUILDARGS          =  ISPROTECTINGMODEL=NOTPROTECTING
 MEXEXT             = mexw32

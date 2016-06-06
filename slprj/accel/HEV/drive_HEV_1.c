@@ -15,10 +15,9 @@ strcpy ( _dline -> compilerData -> block [ 0 ] . visibleName ,
 -> block [ 0 ] . type = DRIVESOLVER ; _dline -> compilerData -> block [ 0 ] .
 flange = _table -> INT32_table ; _dline -> compilerData -> block [ 0 ] .
 solver = _table -> DriveSolver_table ; _dline -> compilerData -> block [ 0 ]
-. solver [ 0 ] . implementModeIteration = TRUE ; _dline -> compilerData ->
-block [ 0 ] . solver [ 0 ] . defaultClutchVelocityTolerance = 0.001 ; _dline
--> compilerData -> block [ 1 ] . name = ( char * ) ( _table -> UINT8_table +
-88 ) ; strcpy ( _dline -> compilerData -> block [ 1 ] . name ,
+. solver [ 0 ] . defaultClutchVelocityTolerance = 0.001 ; _dline ->
+compilerData -> block [ 1 ] . name = ( char * ) ( _table -> UINT8_table + 88
+) ; strcpy ( _dline -> compilerData -> block [ 1 ] . name ,
  "HEV/Engine Controller/Torsional \\\\nSpring-Damper/Free/Shared\\\\nEnvironment\\\\nInternal"
 ) ; _dline -> compilerData -> block [ 1 ] . visibleName = ( char * ) ( _table
 -> UINT8_table + 168 ) ; strcpy ( _dline -> compilerData -> block [ 1 ] .

@@ -1,0 +1,6 @@
+function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
+   torqueDeviation, fuelConsRate, fuelConsumed, emissions,  m, e);
+   F = fuelConsumed & fuelConsRate;
+   TEM = 
+   
+end

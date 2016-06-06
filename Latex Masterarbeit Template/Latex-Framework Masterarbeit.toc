@@ -64,14 +64,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.4}Electric Motor Controller}{29}{subsection.3.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{29}{section.3.2}
+\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{30}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{30}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation}{31}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
+\contentsline {chapter}{\numberline {5}Results}{32}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{32}{chapter.6}
+\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{33}{chapter*.8}
+\contentsline {chapter}{\nonumberline Bibliography}{34}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{35}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{36}{appendix.A}

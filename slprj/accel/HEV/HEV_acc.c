@@ -397,7 +397,7 @@ iiis24gb3o ) { _rtB -> fr5a2e2puy = lebvfutt11 + iiis24gb3o ; } else { _rtB
 _rtB -> deyer4xufx [ 5 ] < 0.0 ) { _rtB -> cgf1ndpvv5 = 0.0 ; } else { _rtB
 -> cgf1ndpvv5 = _rtB -> deyer4xufx [ 5 ] ; } jpmexbyjov = muDoubleScalarAbs (
 _rtB -> cgf1ndpvv5 ) ; HEV_acc_LookUp_real_T_real_T ( & ( or4xk0d2hg ) ,
-ni220kbneq . kra3wm5gfy , jpmexbyjov , ni220kbneq . elvuv43juu , 6U ) ; if (
+ni220kbneq . kpxlajclav , jpmexbyjov , ni220kbneq . cdv3azdzhd , 6U ) ; if (
 ( _rtDW -> cwivfg5ijd >= ssGetTaskTime ( S , 0 ) ) && ( _rtDW -> m1iuzueluk
 >= ssGetTaskTime ( S , 0 ) ) ) { _rtB -> l5gtfbbgdv = _rtB -> i5flvigm1f ; }
 else { if ( ( ( _rtDW -> cwivfg5ijd < _rtDW -> m1iuzueluk ) && ( _rtDW ->
@@ -419,8 +419,8 @@ ssIsSampleHit ( S , 2 , 0 ) ) { _rtB -> igyrajdzpr = ( 1.0 - eskeehll14 / 7.0
 ) * 100.0 ; rowIdx = ( int32_T ) ( ( ( ( ( uint32_T ) ( _rtB -> igyrajdzpr <
 ld5zvvrfqt ( S ) -> pdrubkuuvu ) << 1 ) + ( _rtB -> igyrajdzpr > ld5zvvrfqt (
 S ) -> adu01xsk2c ) ) << 1 ) + _rtDW -> bvad1zjfik ) ; _rtB -> ew213nrs0e [
-0U ] = ni220kbneq . i1nwoqgijo [ ( uint32_T ) rowIdx ] ; _rtB -> ew213nrs0e [
-1U ] = ni220kbneq . i1nwoqgijo [ rowIdx + 8U ] ; } jpmexbyjov = _rtB ->
+0U ] = ni220kbneq . dteehpuvba [ ( uint32_T ) rowIdx ] ; _rtB -> ew213nrs0e [
+1U ] = ni220kbneq . dteehpuvba [ rowIdx + 8U ] ; } jpmexbyjov = _rtB ->
 ew213nrs0e [ 0 ] ; _rtB -> prfsgkkwqv = - 21000.0 * jpmexbyjov ; if ( ( _rtDW
 -> hfvh40s0je >= ssGetTaskTime ( S , 0 ) ) && ( _rtDW -> f41a3yqptq >=
 ssGetTaskTime ( S , 0 ) ) ) { _rtB -> phabbozbp4 = _rtB -> prfsgkkwqv ; }
@@ -680,8 +680,8 @@ ssIsSampleHit ( S , 2 , 0 ) ) { lfv3m5pb5c = 0.013480000230266853 * _rtDW ->
 pe31gvq3pv ; h0cg4jnrg5 = 0.013480000230266853 * _rtDW -> bw5cwo255x ; rowIdx
 = ( int32_T ) ( ( ( ( ( uint32_T ) ( lfv3m5pb5c > h0cg4jnrg5 ) << 1 ) + (
 lfv3m5pb5c < 0.9 * h0cg4jnrg5 ) ) << 1 ) + _rtDW -> l2t4rgxmml ) ; _rtB ->
-lsjmvd53ha [ 0U ] = ni220kbneq . i1nwoqgijo [ ( uint32_T ) rowIdx ] ; _rtB ->
-lsjmvd53ha [ 1U ] = ni220kbneq . i1nwoqgijo [ rowIdx + 8U ] ; h100jbae3x = (
+lsjmvd53ha [ 0U ] = ni220kbneq . dteehpuvba [ ( uint32_T ) rowIdx ] ; _rtB ->
+lsjmvd53ha [ 1U ] = ni220kbneq . dteehpuvba [ rowIdx + 8U ] ; h100jbae3x = (
 uint8_T ) ( _rtB -> lsjmvd53ha [ 0 ] << 7 ) ; _rtB -> b3dcnn13ix = ( real_T )
 h100jbae3x * 0.0078125 ; _rtB -> f03cmnom4l = ( real_T ) h100jbae3x *
 0.0078125 ; _rtB -> ns4dlzmexp = ( real_T ) h100jbae3x * 0.0078125 ;
@@ -714,8 +714,8 @@ pjhwtgkqwl = 486.13252277523628 * _rtB -> jqaligr4kv ; _rtB -> i2xgt4nij4 =
 pjhwtgkqwl - _rtB -> i2xgt4nij4 ) - _rtB -> iwocvn0p4u * _rtB -> ogrvzfntu3 *
 0.77682632969980325 ) - 85.397025568738272 * _rtB -> ogrvzfntu3 ; jgewyk5b21
 = muDoubleScalarAbs ( _rtB -> cgf1ndpvv5 ) ; HEV_acc_LookUp_real_T_real_T ( &
-( jk5r3ummcw ) , ni220kbneq . kra3wm5gfy , jgewyk5b21 , ni220kbneq .
-elvuv43juu , 6U ) ; if ( _rtB -> pxu1svzzij > jk5r3ummcw ) { jgewyk5b21 =
+( jk5r3ummcw ) , ni220kbneq . kpxlajclav , jgewyk5b21 , ni220kbneq .
+cdv3azdzhd , 6U ) ; if ( _rtB -> pxu1svzzij > jk5r3ummcw ) { jgewyk5b21 =
 jk5r3ummcw ; } else if ( _rtB -> pxu1svzzij < - jk5r3ummcw ) { jgewyk5b21 = -
 jk5r3ummcw ; } else { jgewyk5b21 = _rtB -> pxu1svzzij ; } jgewyk5b21 *=
 ld5zvvrfqt ( S ) -> atmyqjofcf ; if ( ( _rtDW -> dlegz3mcx5 == ( rtMinusInf )
@@ -740,8 +740,8 @@ ssIsSampleHit ( S , 2 , 0 ) ) { lfv3m5pb5c = 0.013480000230266853 * _rtDW ->
 dy4ppyw4mo ; h0cg4jnrg5 = 0.013480000230266853 * _rtDW -> hmybg5b1mi ; rowIdx
 = ( int32_T ) ( ( ( ( ( uint32_T ) ( lfv3m5pb5c > h0cg4jnrg5 ) << 1 ) + (
 lfv3m5pb5c < 0.9 * h0cg4jnrg5 ) ) << 1 ) + _rtDW -> gkq12xkctn ) ; _rtB ->
-g31w3nr4hv [ 0U ] = ni220kbneq . i1nwoqgijo [ ( uint32_T ) rowIdx ] ; _rtB ->
-g31w3nr4hv [ 1U ] = ni220kbneq . i1nwoqgijo [ rowIdx + 8U ] ; h100jbae3x = (
+g31w3nr4hv [ 0U ] = ni220kbneq . dteehpuvba [ ( uint32_T ) rowIdx ] ; _rtB ->
+g31w3nr4hv [ 1U ] = ni220kbneq . dteehpuvba [ rowIdx + 8U ] ; h100jbae3x = (
 uint8_T ) ( _rtB -> g31w3nr4hv [ 0 ] << 7 ) ; _rtB -> iroibsu4le = ( real_T )
 h100jbae3x * 0.0078125 ; _rtB -> hwses4osjk = ( real_T ) h100jbae3x *
 0.0078125 ; _rtB -> pme5i13tqx = ( real_T ) h100jbae3x * 0.0078125 ;
@@ -860,12 +860,12 @@ iRghtU0 ] ) > ( ni220kbneq . hlsjpbjuty [ iLeftU0 ] ) ) { real_T num ; real_T
 den ; den = ( ni220kbneq . hlsjpbjuty [ iRghtU0 ] ) ; den -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; num = _rtB -> dxnoxgjhb1 ; num -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . lj0gbaycmo
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . lj0gbaycmo [
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . g1nnmtzxxc
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1nnmtzxxc [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; k0ayfyp2ys = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . lj0gbaycmo [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . lj0gbaycmo [ ( iRghtU0 + 109U *
+yRghtCast ; yLeftCast = ( ni220kbneq . g1nnmtzxxc [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1nnmtzxxc [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
 yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = k0ayfyp2ys
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
@@ -887,12 +887,12 @@ iRghtU0 ] ) > ( ni220kbneq . hlsjpbjuty [ iLeftU0 ] ) ) { real_T num ; real_T
 den ; den = ( ni220kbneq . hlsjpbjuty [ iRghtU0 ] ) ; den -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; num = _rtB -> gfupnoowen ; num -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . fiqfpbio0e
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . fiqfpbio0e [
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . bh3mrrnwgy
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . bh3mrrnwgy [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; kfa2w4tlhe = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . fiqfpbio0e [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . fiqfpbio0e [ ( iRghtU0 + 109U *
+yRghtCast ; yLeftCast = ( ni220kbneq . bh3mrrnwgy [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . bh3mrrnwgy [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
 yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = kfa2w4tlhe
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
@@ -931,12 +931,12 @@ iRghtU0 ] ) > ( ni220kbneq . hlsjpbjuty [ iLeftU0 ] ) ) { real_T num ; real_T
 den ; den = ( ni220kbneq . hlsjpbjuty [ iRghtU0 ] ) ; den -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; num = _rtB -> puamkrvbee ; num -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . lj0gbaycmo
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . lj0gbaycmo [
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . g1nnmtzxxc
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1nnmtzxxc [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; avmmym1aoe = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . lj0gbaycmo [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . lj0gbaycmo [ ( iRghtU0 + 109U *
+yRghtCast ; yLeftCast = ( ni220kbneq . g1nnmtzxxc [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . g1nnmtzxxc [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
 yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = avmmym1aoe
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
@@ -958,12 +958,12 @@ iRghtU0 ] ) > ( ni220kbneq . hlsjpbjuty [ iLeftU0 ] ) ) { real_T num ; real_T
 den ; den = ( ni220kbneq . hlsjpbjuty [ iRghtU0 ] ) ; den -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; num = _rtB -> jmwdezamd5 ; num -= ( ni220kbneq .
 hlsjpbjuty [ iLeftU0 ] ) ; u0Lambda = num / den ; } else { u0Lambda = 0.0 ; }
-{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . fiqfpbio0e
-[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . fiqfpbio0e [
+{ real_T yLeftCast ; real_T yRghtCast ; yLeftCast = ( ni220kbneq . bh3mrrnwgy
+[ ( iLeftU0 + 109U * iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . bh3mrrnwgy [
 ( iLeftU0 + 109U * iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast -
 yLeftCast ) ; eso44m1g0y = yLeftCast ; } { real_T yLeftCast ; real_T
-yRghtCast ; yLeftCast = ( ni220kbneq . fiqfpbio0e [ ( iRghtU0 + 109U *
-iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . fiqfpbio0e [ ( iRghtU0 + 109U *
+yRghtCast ; yLeftCast = ( ni220kbneq . bh3mrrnwgy [ ( iRghtU0 + 109U *
+iLeftU1 ) ] ) ; yRghtCast = ( ni220kbneq . bh3mrrnwgy [ ( iRghtU0 + 109U *
 iRghtU1 ) ] ) ; yLeftCast += u1Lambda * ( yRghtCast - yLeftCast ) ; yTemp =
 yLeftCast ; } { real_T yLeftCast ; real_T yRghtCast ; yLeftCast = eso44m1g0y
 ; yRghtCast = yTemp ; yLeftCast += u0Lambda * ( yRghtCast - yLeftCast ) ;
@@ -1135,9 +1135,9 @@ static void mdlProjection ( SimStruct * S ) { fdj1laa40s * _rtB ; h04hj5x5sk
 * _rtDW ; _rtDW = ( ( h04hj5x5sk * ) ssGetRootDWork ( S ) ) ; _rtB = ( (
 fdj1laa40s * ) _ssGetBlockIO ( S ) ) ; ssCallAccelRunBlock ( S , 15 , 30 ,
 SS_CALL_MDL_PROJECTION ) ; } static void mdlInitializeSizes ( SimStruct * S )
-{ ssSetChecksumVal ( S , 0 , 61714536U ) ; ssSetChecksumVal ( S , 1 ,
-3823973139U ) ; ssSetChecksumVal ( S , 2 , 3850828190U ) ; ssSetChecksumVal (
-S , 3 , 3333718374U ) ; { mxArray * slVerStructMat = NULL ; mxArray *
+{ ssSetChecksumVal ( S , 0 , 840524413U ) ; ssSetChecksumVal ( S , 1 ,
+3735709048U ) ; ssSetChecksumVal ( S , 2 , 3507070448U ) ; ssSetChecksumVal (
+S , 3 , 3016822958U ) ; { mxArray * slVerStructMat = NULL ; mxArray *
 slStrMat = mxCreateString ( "simulink" ) ; char slVerChar [ 10 ] ; int status
 = mexCallMATLAB ( 1 , & slVerStructMat , 1 , & slStrMat , "ver" ) ; if (
 status == 0 ) { mxArray * slVerMat = mxGetField ( slVerStructMat , 0 ,

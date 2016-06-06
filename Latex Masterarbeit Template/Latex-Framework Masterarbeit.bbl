@@ -261,6 +261,28 @@
       \field{pages}{413\bibrangedash 423}
       \range{pages}{11}
     \endentry
+    \entry{ac6Matlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{1}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AC6 - 100 kW Interior Permanent Magnet Synchronous Motor Drive}
+      \field{urlday}{06}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sps/examples/ac6-100-kw-interior-permanent-magnet-synchronous-motor-drive.html
+      \endverb
+    \endentry
     \entry{batteryMatlab}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
@@ -269,6 +291,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{2}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -280,6 +303,28 @@
       \field{year}{2016}
       \verb{url}
       \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/battery.html
+      \endverb
+    \endentry
+    \entry{pmsmMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{3}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Permanent Magnet Synchronous Machine}
+      \field{urlday}{06}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/permanentmagnetsynchronousmachine.html
       \endverb
     \endentry
     \entry{nash1950equilibrium}{article}{}

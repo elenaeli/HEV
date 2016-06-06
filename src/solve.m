@@ -1,24 +1,29 @@
 function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
-    strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuel, nox, power, m, e)
-    try
+     strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuelConsRate, fuelConsumed, emissions, power, m, e);
+    try        
         paretoStrategies = [];
         paretoIndex = [];
         engineTorque = 0;
         motorTorque = 0;
         
-        [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);       
+        [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);    
 
         payoffE = reshape(payoffEngine,(m)*(e),1);
         payoffM = reshape(payoffMotor,(m)*(e),1);        
-        payoffBoth = horzcat(payoffE, payoffM);   
+        payoffBoth = horzcat(payoffE, payoffM);
         engineTorquePareto = strategyEng(paretoIndex(:,1));
         motorTorquePareto = strategyMot(paretoIndex(:,2));        
-        stringRequiredTorque = int2str(requiredTorqueR);   
+        stringRequiredTorque = int2str(requiredTorqueR);
 
         [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
-            torqueDeviation, fuel, nox, power );
-
-
+            torqueDeviation, fuelConsRate, power );
+    %   [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
+    %       torqueDeviation, fuelConsRate, fuelConsumed, emissions)
+    %       figure
+    %       p1 = plot(x,y,'ob');
+    %       title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
+    %       hold on
+    %         
     %         numStratBoth = m+e;  
     %        
     %         [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
@@ -186,6 +191,7 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
     %              shapleyMotorTorque = strategyMot(idc1);    
     %         end
 
+           
             %lightpurple = [163 154 255] ./ 255;        
             %p10 = plot(payoffStrEng, payoffStrMot, 'o',...
             %    'MarkerFaceColor', lightpurple, 'MarkerEdgeColor', lightpurple, ...
@@ -233,15 +239,16 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
             %'MarkerEdgeColor', darkred);
 
 
-            %legend([p1 p2 p3 p4 p7 p8 p9 p10], 'Payoff', ...         
+            %legend([p1 p2 p3], 'Payoff', ...         
             %'Pareto optimal payoff', ...  
             %'Best Pareto payoff', ... 
+            %'Location', 'northwest');       
             %'Nash Equilibrium Lemke-Howson (conflict point)', ... 
             %'Kalai-Smorodinsky Solution', ...
             %'Core', ...        
             %'Shapley value', ...
             %'Mixed Strategies', ...
-            %'Location', 'northwest');       
+          
 
             %'Ideal point', ...       
             %'Nash Equilibrium Lemke-Howson k0=1', ...
@@ -256,9 +263,6 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
        
             [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
                 bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot);
-            %previousReqTorque = requiredTorqueR;
-            %previousEngTorque = engineTorque;
-            %previousMotTorque = motorTorque;
        
             %end
     catch

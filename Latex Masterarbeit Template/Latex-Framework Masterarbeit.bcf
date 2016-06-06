@@ -2282,6 +2282,8 @@
     <bcf:citekey order="42">holler2006einfuhrung</bcf:citekey>
     <bcf:citekey order="43">shapley1952value</bcf:citekey>
     <bcf:citekey order="44">batteryMatlab</bcf:citekey>
+    <bcf:citekey order="45">ac6Matlab</bcf:citekey>
+    <bcf:citekey order="46">pmsmMatlab</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt" type="entry" sortscheme="nyt">
   <bcf:sorting>

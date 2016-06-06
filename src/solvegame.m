@@ -1,10 +1,10 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 86.81;        
+    requiredTorque = 177;        
     SOC = 50;
     fuelConsumed = 0.5264;
             
-      requiredTorqueR = 0;
+    requiredTorqueR = 0;
     requiredTorqueR = roundn(requiredTorque,0);     
         
     
@@ -22,7 +22,7 @@
             engineTorque = 0;
             motorTorque = 0;
         else  
-             close all   
+            close all   
             motorSpeedCurve = [0, 1200, 2000, 3000, 4000, 5000, 6000];
             motorTorqueCurve = [400 399 225 150 100 80 70];
 
@@ -82,8 +82,8 @@
             motorSpeedRef = zeros(1,e);
             powerMotorKW = zeros(1,e);
             torqueDeviation = zeros(m,e);
-            fuel = zeros(e,1);
-            nox = zeros(e,1);
+            fuelConsRate = zeros(e,1);       
+            emissions = zeros(e,1);
             power = zeros(e,1);
 
             for i = 1:m
@@ -110,15 +110,16 @@
                         wTank*fuelConsumed;
                     payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotorKW(j) + ...
                         wSOC*SOC_deviation;              
-                    fuel(j,1) = fuelConsumedGPS;
-                    nox(j,1) = NOXEmissions;
+                    fuelConsRate(j,1) = fuelConsumedGPS;                  
                     power(j,1) = powerMotorKW(j);                                
                 end
             end
 
              [engineTorque, motorTorque] = solve(payoffEngine, payoffMotor, ...
-                 strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuel, nox, power)
-        end
+                strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
+                fuelConsRate, fuelConsumed, emissions, power, m, e);
+            
+        
 %             %figure
 %             %[A,b] = prtp(payoffBoth)     
 %             %payoffEngPareto
@@ -337,8 +338,8 @@
 %                 'MarkerSize', 14);
 % 
 %             limegreen = [194 242 1] ./ 255;
-%             p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
-%                 'MarkerFaceColor', 'g', 'MarkerSize', 13);    
+%              p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
+%                  'MarkerFaceColor', 'g', 'MarkerSize', 13);    
 %             %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
 %             %    'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
 %             %    'MarkerSize', 13);    
@@ -365,12 +366,12 @@
 %             p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', limegreen, ...
 %                 'MarkerEdgeColor', limegreen, 'MarkerSize', 7);
 % 
-%             for r = 1 : size(paretoIndex,1)
-%                 linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
-%                 p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
-%                     'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
-%                     'MarkerSize',6);
-%             end
+%              for r = 1 : size(paretoIndex,1)
+%                  linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
+%                  p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
+%                      'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
+%                      'MarkerSize',6);
+%              end
 % 
 %             darkred = [185 16 20] ./ 255;
 %             %pi = plot(m1, m2, 'o', 'MarkerSize', 4, 'MarkerFaceColor',darkred ,...
@@ -398,11 +399,11 @@
 %             hold off
 % 
 %             [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
-%                 bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot)
+%             bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot)
 %             previousReqTorque = requiredTorque;
 %             previousEngTorque = engineTorque;
 %             previousMotTorque = motorTorque;
 %        
-%         end
+         end
     
 %end

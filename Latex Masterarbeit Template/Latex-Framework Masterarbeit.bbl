@@ -296,7 +296,7 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Battery, Implement generic battery model}
+      \field{title}{Battery}
       \field{urlday}{03}
       \field{urlmonth}{06}
       \field{urlyear}{2016}
@@ -305,7 +305,7 @@
       \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/battery.html
       \endverb
     \endentry
-    \entry{pmsmMatlab}{online}{}
+    \entry{differentialMatlab}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
       }
@@ -318,6 +318,50 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{title}{Differential}
+      \field{urlday}{08}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/differential.html
+      \endverb
+    \endentry
+    \entry{vehicleDynMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{4}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Longitudinal Vehicle Dynamics}
+      \field{urlday}{08}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/longitudinalvehicledynamics.html
+      \endverb
+    \endentry
+    \entry{pmsmMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{5}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{title}{Permanent Magnet Synchronous Machine}
       \field{urlday}{06}
       \field{urlmonth}{06}
@@ -325,6 +369,94 @@
       \field{year}{2016}
       \verb{url}
       \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/permanentmagnetsynchronousmachine.html
+      \endverb
+    \endentry
+    \entry{planetMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{6}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Planetary Gear}
+      \field{urlday}{07}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/planetarygear.html
+      \endverb
+    \endentry
+    \entry{simpleGearMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{7}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simple Gear}
+      \field{urlday}{08}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/simplegear.html
+      \endverb
+    \endentry
+    \entry{tireMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{8}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tire}
+      \field{urlday}{08}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/tire.html
+      \endverb
+    \endentry
+    \entry{tsdMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{9}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Torsional Spring-Damper}
+      \field{urlday}{08}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/torsionalspringdamper.html
       \endverb
     \endentry
     \entry{nash1950equilibrium}{article}{}

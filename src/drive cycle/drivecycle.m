@@ -2,8 +2,8 @@ ftp75M = dlmread('data/ftp75_s_mph_reduced.txt','\t');
 ftp75 = struct('seconds', ftp75M(:,1), 'kph', ftp75M(:,2)* 1.60934);
 ftp75_1 = struct('seconds', ftp75M(1:32,1), 'kph', ftp75M(1:32,2)* 1.60934);
 ftp75_2 = struct('seconds', ftp75M(32:62,1)-340, 'kph', ftp75M(32:62,2)* 1.60934);
-ftp75_3 = struct('seconds', ftp75M(62:93,1)-680, 'kph', ftp75M(62:93,2)* 1.60934);
-ftp75_4 = struct('seconds', ftp75M(93:123,1), 'kph', ftp75M(93:123,2)* 1.60934);
+ftp75_3 = struct('seconds', ftp75M(62:90,1)-680, 'kph', ftp75M(62:90,2)* 1.60934);
+ftp75_4 = struct('seconds', ftp75M(90:123,1), 'kph', ftp75M(90:123,2)* 1.60934);
 ftp75_5 = struct('seconds', ftp75M(123:end,1), 'kph', ftp75M(123:end,2)* 1.60934);
 
 % mph to kph

@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Driving behaviour}{7}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Toyota Prius}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Vehicle configuration in Toyota Prius}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Internal Combustion Engine}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
@@ -36,21 +36,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.4}Power Split Device}{9}{subsection.2.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Game definition}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.2.5}Differential}{10}{subsection.2.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Game-theoretical solution approaches}{12}{section.2.4}
+\contentsline {section}{\numberline {2.3}Game definition}{10}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency and Pareto Optimality}{12}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Game-theoretical solution approaches}{13}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency and Pareto Optimality}{13}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Nash Bargaining solution}{13}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Nash Equilibrium and Lemke-Howson algorithm}{15}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Nash Equilibrium}{15}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Kalai-Smorodinsky Bargaining Solution}{19}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.4}Lemke-Howson algorithm}{16}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.5}Core}{20}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.5}Kalai-Smorodinsky Bargaining Solution}{19}{subsection.2.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.6}Shapley Value}{22}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.6}Core}{20}{subsection.2.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.7}Shapley Value}{22}{subsection.2.4.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Implementation}{24}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -64,14 +68,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.4}Electric Motor Controller}{29}{subsection.3.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.1.5}Transmission}{31}{subsection.3.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{31}{chapter.4}
+\contentsline {subsection}{\numberline {3.1.6}Vehicle dynamics}{32}{subsection.3.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{32}{chapter.5}
+\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{33}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}
+\contentsline {chapter}{\numberline {4}Simulation}{34}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{34}{chapter*.8}
+\contentsline {chapter}{\numberline {5}Results}{35}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{36}{appendix.A}
+\contentsline {chapter}{\numberline {6}Discussion}{36}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{37}{chapter*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{39}{appendix.A}

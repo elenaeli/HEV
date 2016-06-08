@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  6 JUN 2016 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  8 JUN 2016 17:32
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1166,46 +1166,43 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 
 
 
-] [7] [8] <figures/planetaryGear.png, id=201, 1915.155pt x 1029.8475pt>
+] [7] [8] [9] <figures/planetaryGear.png, id=217, 1915.155pt x 1029.8475pt>
 File: figures/planetaryGear.png Graphic file (type png)
 
 <use figures/planetaryGear.png>
-Package pdftex.def Info: figures/planetaryGear.png used on input line 35.
+Package pdftex.def Info: figures/planetaryGear.png used on input line 38.
 (pdftex.def)             Requested size: 287.26085pt x 154.47046pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
- [10 <./figures/planetaryGear.png (PNG copy)>] [11] [12]
-<figures/nashSolution.png, id=231, 606.76688pt x 517.935pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+ [10 <./figures/planetaryGear.png (PNG copy)>] [11] [12] [13]
+<figures/nashSolution.png, id=248, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
-Package pdftex.def Info: figures/nashSolution.png used on input line 103.
+Package pdftex.def Info: figures/nashSolution.png used on input line 106.
 (pdftex.def)             Requested size: 303.38269pt x 258.96686pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13] [14 <./figures/nashSolution.png>] [15] [16] [17] [18] [19]
-<figures/kalaiSmorodinskySolution.png, id=300, 590.205pt x 518.6878pt>
+ [14 <./figures/nashSolution.png>] [15] [16]
+[17] [18] [19]
+<figures/kalaiSmorodinskySolution.png, id=310, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
 Package pdftex.def Info: figures/kalaiSmorodinskySolution.png used on input lin
-e 201.
+e 205.
 (pdftex.def)             Requested size: 295.10178pt x 259.34326pt.
- [20 <./figures/kalaiSmorodinskySolution.png>] [21]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20] [21 <./figures/kalaiSmorodinskySolution.png>]
 
 LaTeX Warning: Reference `subsec:shapleyvalue' on page 22 undefined on input li
-ne 233.
+ne 237.
 
 [22]) [23]
 \openout2 = `source/Implementation.aux'.
@@ -1226,7 +1223,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-<figures/FTP75.png, id=329, 907.89188pt x 642.90187pt>
+<figures/FTP75.png, id=341, 907.89188pt x 642.90187pt>
 File: figures/FTP75.png Graphic file (type png)
  <use figures/FTP75.png>
 Package pdftex.def Info: figures/FTP75.png used on input line 16.
@@ -1243,7 +1240,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-] <figures/NEDC.png, id=336, 908.64468pt x 634.62094pt>
+] <figures/NEDC.png, id=348, 908.64468pt x 634.62094pt>
 File: figures/NEDC.png Graphic file (type png)
 
 <use figures/NEDC.png>
@@ -1273,7 +1270,13 @@ Overfull \hbox (14.47696pt too wide) in paragraph at lines 71--71
 [] 
  []
 
-[29]) [30]
+[29] [30] [31] [32] <figures/tire.png, id=402, 163.3603pt x 211.54031pt>
+File: figures/tire.png Graphic file (type png)
+
+<use figures/tire.png>
+Package pdftex.def Info: figures/tire.png used on input line 102.
+(pdftex.def)             Requested size: 130.6884pt x 169.23247pt.
+) [33 <./figures/tire.png>]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1292,7 +1295,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [31
+) [34
 
 
 
@@ -1315,7 +1318,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [32
+) [35
 
 
 
@@ -1338,7 +1341,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [33
+) [36
 
 
 
@@ -1358,10 +1361,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 63.
 
-[34
+[37
 
 
-] [35]
+] [38]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1380,7 +1383,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [36
+) [39
 
 
 ]
@@ -1537,6 +1540,7 @@ figures/kalaiSmorodinskySolution.png
 source/Implementation.tex
 figures/FTP75.png
 figures/NEDC.png
+figures/tire.png
 source/Simulation.tex
 source/Results.tex
 source/Discussion.tex
@@ -1547,19 +1551,23 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 69.
 
 LaTeX Warning: There were undefined references.
 
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18980 strings out of 493634
- 305669 string characters out of 3141315
- 854719 words of memory out of 3000000
- 21847 multiletter control sequences out of 15000+200000
+ 19022 strings out of 493634
+ 306323 string characters out of 3141315
+ 856934 words of memory out of 3000000
+ 21874 multiletter control sequences out of 15000+200000
  31038 words of font info for 66 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,19n,66p,1603b,2483s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,19n,66p,1603b,2485s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -1583,10 +1591,10 @@ r8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on "Latex-Framework Masterarbeit.pdf" (43 pages, 1294106 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (46 pages, 1349087 bytes).
 
 PDF statistics:
- 976 PDF objects out of 1000 (max. 8388607)
- 127 named destinations out of 1000 (max. 500000)
- 316 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1049 PDF objects out of 1200 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
+ 353 words of extra memory for PDF output out of 10000 (max. 10000000)
 

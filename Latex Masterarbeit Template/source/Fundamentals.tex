@@ -13,7 +13,7 @@ Hybrid vehicles can be classified into three distinct types - series, parallel a
 \subsection{Driving behaviour}
 A typical driving cycle begins by starting up. In the beginning it is efficient to use the motor for the low speed range up to the middle speed range and the engine can remain shut down. While maintaining a constant speed during cruising, power is distributed between the motor and engine so that both of them provide torque. In acceleration mode power is taken also from the battery, while both the engine and motor drive the vehicle again. During deceleration, the power from braking is recovered instead of lost and used to recharge the battery. The motor acts as a generator to convert the energy. This process is called regenerative braking. If the state of the charge of the battery falls below a certain percentage, it needs to be recharged by the engine which acts as a generator.
 
-\section{Vehicle configuration in Toyota Prius}
+\section{Vehicle configuration of Toyota Prius}
 This section gives an overview of the main components which every conventional car nowadays, not only hybrid cars, possess. Furthermore, it describes the special hybrid components while specifically adhering to one particular model of a hybrid car, namely the Toyota Prius, which was the first mass-produced hybrid car in 1997. The vehicle, whose parameters are used throughout this thesis for the Simulink vehicle model and for the simulation, is the Toyota Prius second generation, manufactured from 2003 to 2009.
 
 \subsection{Internal Combustion Engine}
@@ -68,14 +68,17 @@ There exist two types of cooperative games - with transferable and with non-tran
 
 The payoff functions are constructed in the following way. The engine payoff is:
 \begin{equation}
+\label{eq:payoffEngine}
 \begin{split}
 a_{ij} = w_1 \times fuelConsumptionRate + w_2 \times | requiredTorque - actualTorque | + \\
 w_3 \times HCemissions + w_4 \times COemissions + w_5 \times NOXemissions + \\
 w_6 \times fuelConsumed
 \end{split}
 \end{equation}
-Where the fuel consumption rate is in grams per second (\textit{gps}), the difference between required and actual torque is in Newton meters (\textit{Nm}), the gas emissions are all in \textit{gps} and the consumed fuel from the beginning of the simulation up to this time step is in liters. The motor payoff is:
+
+Where the fuel consumption rate is in grams per second (\textit{gps}), the difference between required and actual torque is in Newton meters (\textit{Nm}), the gas emissions are all in \textit{gps} and the consumed fuel from the beginning of the simulation up to this time step is in litres. The motor payoff is:
 \begin{equation}
+\label{eq:payoffMotor}
 \begin{split}
 b_{ij} = w_2 \times | requiredTorque - actualTorque | + w_7 \times powerConsumed\\
 w_8 \times SOCdeviation

@@ -49,8 +49,7 @@ function  [paretoStrategies, paretoIndices, x, y]  = paretoset( payoffEngine, pa
     %[pareto,ia,~] = unique(pareto,'rows');   
     %paretoIndex = paretoIndex(ia, :); 
     
-    % remove all rows with zeros    
-
+    % remove all rows with zeros
     paretoIndices( ~any(paretoIndices,2), : ) = [];
     paretoStrategies( ~any(paretoStrategies,2), : ) = [];
    

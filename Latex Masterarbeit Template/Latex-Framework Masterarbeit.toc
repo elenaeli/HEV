@@ -26,7 +26,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Driving behaviour}{7}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Vehicle configuration in Toyota Prius}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Vehicle configuration of Toyota Prius}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Internal Combustion Engine}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
@@ -60,7 +60,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Hybrid Vehicle Model}{24}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Drive Cycles Controller}{24}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Drive Cycle Controller}{24}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}Power Controller}{26}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
@@ -74,12 +74,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{33}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{34}{chapter.4}
+\contentsline {subsection}{\numberline {3.2.1}Initialization functions}{34}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{35}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.2}Embedded Matlab function in Simulink}{34}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{36}{chapter.6}
+\contentsline {subsubsection}{Strategies computation}{34}{subsubsection*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{37}{chapter*.9}
+\contentsline {subsubsection}{Payoff computation}{35}{subsubsection*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{39}{appendix.A}
+\contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{36}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.4}Pareto Optimality}{37}{subsection.3.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Simulation}{38}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Results}{39}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Discussion}{40}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{41}{chapter*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{43}{appendix.A}

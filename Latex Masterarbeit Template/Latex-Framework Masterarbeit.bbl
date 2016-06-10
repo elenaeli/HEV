@@ -19,6 +19,27 @@
 
 \refsection{0}
   \sortlist{nyt}{nyt}
+    \entry{argonne1999}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7d99f0d336bd521f302d667316b79e5e}{{Argonne\bibnamedelimb National\bibnamedelimb Laboratory}}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{7d99f0d336bd521f302d667316b79e5e}
+      \strng{fullhash}{7d99f0d336bd521f302d667316b79e5e}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelyear}{1999}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Performance and Emissions of The Toyota Prius}
+      \field{urlday}{10}
+      \field{urlmonth}{06}
+      \field{urlyear}{2016}
+      \field{year}{1999}
+      \verb{url}
+      \verb http://www.selidori.com/tech/00000-04999/472-9tdlU.pdf
+      \endverb
+    \endentry
     \entry{burch1999advisor}{article}{}
       \name{author}{3}{}{%
         {{uniquename=0,hash=b1afb46e9b4f9043fe82b68a096cc9dd}{Burch}{B\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%

@@ -8,11 +8,7 @@
     requiredTorqueR = roundn(requiredTorque,0);     
         
     
-        if requiredTorqueR > 0 && requiredTorqueR <= 70 
-           requiredTorqueR = 70;
-           engineTorque = 0;
-           motorTorque = requiredTorqueR;
-        elseif requiredTorqueR > 70 && requiredTorqueR < 83
+        if requiredTorqueR > 0 && requiredTorqueR < 83          
            engineTorque = 0;
            motorTorque = requiredTorqueR;
         elseif requiredTorqueR < 0          
@@ -80,6 +76,7 @@
             wCO = 25;
             wHC = 45;
             motorSpeedRef = zeros(1,e);
+
             powerMotorKW = zeros(1,e);
             torqueDeviation = zeros(m,e);
             fuelConsRate = zeros(e,1);       

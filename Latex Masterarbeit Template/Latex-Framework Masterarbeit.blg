@@ -1,46 +1,47 @@
 [0] Config.pm:327> INFO - This is Biber 2.3
 [0] Config.pm:330> INFO - Logfile is 'Latex-Framework Masterarbeit.blg'
-[76] biber-MSWIN:284> INFO - === 
-[219] Biber.pm:346> INFO - Reading 'Latex-Framework Masterarbeit.bcf'
-[430] Biber.pm:689> INFO - Found 29 citekeys in bib section 0
-[441] Biber.pm:3066> INFO - Processing section 0
-[542] Biber.pm:3206> INFO - Looking for bibtex format file 'literature.bib' for section 0
-[548] bibtex.pm:1062> INFO - Decoding LaTeX character macros into UTF-8
-[551] bibtex.pm:923> INFO - Found BibTeX data source 'literature.bib'
-[624] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 9, warning: 1 characters of junk seen at toplevel
-[624] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 17, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 26, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 32, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 38, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 48, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 57, warning: 1 characters of junk seen at toplevel
-[625] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 67, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 73, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 81, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 87, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 103, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 109, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 116, warning: 1 characters of junk seen at toplevel
-[626] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 124, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 132, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 139, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 149, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 157, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 164, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 172, warning: 1 characters of junk seen at toplevel
-[627] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 179, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 186, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 193, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 200, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 207, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 214, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 221, warning: 1 characters of junk seen at toplevel
-[628] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 228, warning: 1 characters of junk seen at toplevel
-[629] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\YoQiTTRYvS\literature.bib_3464.utf8, line 235, warning: 1 characters of junk seen at toplevel
-[1350] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1351] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1351] Biber.pm:2943> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[1351] Biber.pm:2947> INFO - No sort tailoring available for locale 'en-UK'
-[1488] bbl.pm:505> INFO - Writing 'Latex-Framework Masterarbeit.bbl' with encoding 'latin1'
-[1498] bbl.pm:596> INFO - Output to Latex-Framework Masterarbeit.bbl
-[1499] Biber.pm:107> INFO - WARNINGS: 30
+[75] biber-MSWIN:284> INFO - === 
+[307] Biber.pm:346> INFO - Reading 'Latex-Framework Masterarbeit.bcf'
+[569] Biber.pm:689> INFO - Found 30 citekeys in bib section 0
+[581] Biber.pm:3066> INFO - Processing section 0
+[655] Biber.pm:3206> INFO - Looking for bibtex format file 'literature.bib' for section 0
+[707] bibtex.pm:1062> INFO - Decoding LaTeX character macros into UTF-8
+[710] bibtex.pm:923> INFO - Found BibTeX data source 'literature.bib'
+[778] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 9, warning: 1 characters of junk seen at toplevel
+[778] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 17, warning: 1 characters of junk seen at toplevel
+[778] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 26, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 32, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 38, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 48, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 57, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 67, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 73, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 81, warning: 1 characters of junk seen at toplevel
+[779] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 87, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 103, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 109, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 116, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 124, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 132, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 139, warning: 1 characters of junk seen at toplevel
+[780] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 147, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 157, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 166, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 173, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 181, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 188, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 195, warning: 1 characters of junk seen at toplevel
+[781] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 202, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 209, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 216, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 223, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 230, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 237, warning: 1 characters of junk seen at toplevel
+[782] Utils.pm:147> WARN - BibTeX subsystem: C:\Users\Elena\AppData\Local\Temp\EmK5eyzSnn\literature.bib_6960.utf8, line 244, warning: 1 characters of junk seen at toplevel
+[1692] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1693] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1693] Biber.pm:2943> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[1693] Biber.pm:2947> INFO - No sort tailoring available for locale 'en-UK'
+[1936] bbl.pm:505> INFO - Writing 'Latex-Framework Masterarbeit.bbl' with encoding 'latin1'
+[1947] bbl.pm:596> INFO - Output to Latex-Framework Masterarbeit.bbl
+[1988] Biber.pm:107> INFO - WARNINGS: 31

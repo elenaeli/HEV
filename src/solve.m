@@ -1,22 +1,21 @@
 function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
      strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuelConsRate, fuelConsumed, emissions, power, m, e);
     try        
-        paretoStrategies = [];
-        paretoIndex = [];
-        engineTorque = 0;
-        motorTorque = 0;
+    %    paretoStrategies = [];
+    %    paretoIndex = [];
+    %    engineTorque = 0;
+    %    motorTorque = 0;
         
-        [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);    
+    %   [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);    
 
         payoffE = reshape(payoffEngine,(m)*(e),1);
         payoffM = reshape(payoffMotor,(m)*(e),1);        
         payoffBoth = horzcat(payoffE, payoffM);
-        engineTorquePareto = strategyEng(paretoIndex(:,1));
-        motorTorquePareto = strategyMot(paretoIndex(:,2));        
-        stringRequiredTorque = int2str(requiredTorqueR);
+               
+    %    stringRequiredTorque = int2str(requiredTorqueR);
 
-        [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
-            torqueDeviation, fuelConsRate, power );
+    %    [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
+    %        torqueDeviation, fuelConsRate, power );
     %   [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
     %       torqueDeviation, fuelConsRate, fuelConsumed, emissions)
     %       figure
@@ -24,11 +23,12 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
     %       title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
     %       hold on
     %         
-    %         numStratBoth = m+e;  
-    %        
-    %         [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
-    %         payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
-    %         payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
+             numStratBoth = m+e;  
+            
+             [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
+             payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
+             payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
+             
     %         %[~, indM] = min(payoffEngNash);        
     %               
     %         conflictPoint = sub2ind([m e], find(nashEqPl1==1), find(nashEqPl2==1));
@@ -43,12 +43,15 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
     %         probKsMixed = zeros(1,2);
     %         ksMixed = zeros(1,2);
     %         if ~isempty(linePareto)
+                  % if x and y of the two Pareto points are different
     %             if linePareto(2,1) - linePareto(1,1) ~=0 && linePareto(1,2) - linePareto(2,2) ~= 0
     %                 probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
     %                 probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
+                  % if x are the same
     %             elseif linePareto(2,1) - linePareto(1,1) == 0
     %                 probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
     %                 probKsMixed(1) = 1 - probKsMixed(2);
+                  % if y are the same
     %             elseif linePareto(1,2) - linePareto(2,2) == 0
     %                  probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
     %                  probKsMixed(2) = 1 - probKsMixed(1);
@@ -261,8 +264,8 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
             %ylabel('Payoff Motor');
             %hold off
        
-            [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
-                bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot);
+            [ engineTorque, motorTorque ] = payofftotorque(payoffEngNash, ...
+                payoffMotNash, payoffBoth, strategyEng, strategyMot);
        
             %end
     catch

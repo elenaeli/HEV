@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  15 JUN 2016 01:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  15 JUN 2016 16:55
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1112,9 +1112,30 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 \tf@lof=\write6
 \openout6 = `"Latex-Framework Masterarbeit.lof"'.
 
+ [7
+
+]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 3.
+
+("Latex-Framework Masterarbeit.lot")
+\tf@lot=\write7
+\openout7 = `"Latex-Framework Masterarbeit.lot"'.
+
 )
 No file "Latex-Framework Masterarbeit".nls.
-[7
+[8
 
 ]
 \openout2 = `source/Introduction.aux'.
@@ -1166,7 +1187,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 
 
 
-] [7] [8] [9] <figures/planetaryGear.png, id=235, 1915.155pt x 1029.8475pt>
+] [7] [8] [9] <figures/planetaryGear.png, id=249, 1915.155pt x 1029.8475pt>
 File: figures/planetaryGear.png Graphic file (type png)
 
 <use figures/planetaryGear.png>
@@ -1184,7 +1205,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11] [12] [13] [14]
-<figures/nashSolution.png, id=277, 606.76688pt x 517.935pt>
+<figures/nashSolution.png, id=289, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
@@ -1192,7 +1213,7 @@ Package pdftex.def Info: figures/nashSolution.png used on input line 146.
 (pdftex.def)             Requested size: 303.38269pt x 258.96686pt.
  [15 <./figures/nashSolution.png>] [16] [17]
 [18] [19] [20]
-<figures/kalaiSmorodinskySolution.png, id=338, 590.205pt x 518.6878pt>
+<figures/kalaiSmorodinskySolution.png, id=350, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
@@ -1218,7 +1239,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-<figures/FTP75.png, id=369, 907.89188pt x 642.90187pt>
+<figures/FTP75.png, id=381, 907.89188pt x 642.90187pt>
 File: figures/FTP75.png Graphic file (type png)
  <use figures/FTP75.png>
 Package pdftex.def Info: figures/FTP75.png used on input line 16.
@@ -1235,7 +1256,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-] <figures/NEDC.png, id=375, 908.64468pt x 634.62094pt>
+] <figures/NEDC.png, id=387, 908.64468pt x 634.62094pt>
 File: figures/NEDC.png Graphic file (type png)
 
 <use figures/NEDC.png>
@@ -1265,7 +1286,7 @@ Overfull \hbox (14.47696pt too wide) in paragraph at lines 71--71
 [] 
  []
 
-[30] [31] [32] [33] <figures/tire.png, id=429, 163.3603pt x 211.54031pt>
+[30] [31] [32] [33] <figures/tire.png, id=441, 163.3603pt x 211.54031pt>
 File: figures/tire.png Graphic file (type png)
 
 <use figures/tire.png>
@@ -1288,7 +1309,255 @@ LaTeX Warning: Reference `fig:hcFit' on page 35 undefined on input line 121.
 
 LaTeX Warning: Reference `fig:noxFit' on page 35 undefined on input line 121.
 
-[35] [36] [37] [38] [39] [40] [41] [42] [43]) [44]
+[35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 242--242
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 243--243
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 244--244
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 245--245
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 246--246
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+Overfull \hbox (2.92296pt too wide) in paragraph at lines 247--247
+[]|$\OML/cmm/m/it/10.95 a[]$| 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45]) [46]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1307,7 +1576,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [45
+) [47
 
 
 
@@ -1330,7 +1599,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [46
+) [48
 
 
 
@@ -1353,7 +1622,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [47
+) [49
 
 
 
@@ -1373,10 +1642,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 63.
 
-[48
+[50
 
 
-] [49] [50]
+] [51] [52]
 \openout2 = `source/appendix.aux'.
 
  (source/appendix.tex
@@ -1395,7 +1664,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
-) [51
+) [53
 
 
 ]
@@ -1573,13 +1842,13 @@ l'.
 ### simple group (level 1) entered at line 61 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19115 strings out of 493634
- 307515 string characters out of 3141315
- 863555 words of memory out of 3000000
- 21924 multiletter control sequences out of 15000+200000
- 33808 words of font info for 75 fonts, out of 3000000 for 9000
+ 19139 strings out of 493634
+ 307901 string characters out of 3141315
+ 863644 words of memory out of 3000000
+ 21937 multiletter control sequences out of 15000+200000
+ 34453 words of font info for 78 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 59i,19n,66p,2144b,2623s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 59i,19n,66p,2144b,2624s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecti1095.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\fonts\pk\lj
 four\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Elena\AppData\Local\MiKTeX\2.9\f
@@ -1607,10 +1876,10 @@ y8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eur
 b10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.p
 fb>
-Output written on "Latex-Framework Masterarbeit.pdf" (58 pages, 1429480 bytes).
+Output written on "Latex-Framework Masterarbeit.pdf" (61 pages, 1442695 bytes).
 
 PDF statistics:
- 1208 PDF objects out of 1440 (max. 8388607)
- 175 named destinations out of 1000 (max. 500000)
- 425 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1241 PDF objects out of 1440 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

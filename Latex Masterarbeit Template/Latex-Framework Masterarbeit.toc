@@ -8,6 +8,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline List of Figures}{vii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{viii}{chapter*.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
@@ -78,9 +80,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Embedded Matlab function in Simulink}{36}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Strategies computation}{37}{subsubsection*.12}
+\contentsline {subsubsection}{Strategies computation}{37}{subsubsection*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Payoff computation}{37}{subsubsection*.13}
+\contentsline {subsubsection}{Payoff computation}{37}{subsubsection*.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{39}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
@@ -96,12 +98,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.9}Shapley Value}{44}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{45}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation}{47}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{46}{chapter.5}
+\contentsline {chapter}{\numberline {5}Results}{48}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{47}{chapter.6}
+\contentsline {chapter}{\numberline {6}Discussion}{49}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{48}{chapter*.14}
+\contentsline {chapter}{\nonumberline Bibliography}{50}{chapter*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{51}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{53}{appendix.A}

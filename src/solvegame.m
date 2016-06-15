@@ -1,6 +1,6 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 177;        
+    requiredTorque = 250;        
     SOC = 50;
     fuelConsumed = 0.5264;
             
@@ -107,12 +107,13 @@
                         wTank*fuelConsumed;
                     payoffMotor(i,j) = wDrDem*abs(torqueDeviation(i,j)) + wPower*powerMotorKW(j) + ...
                         wSOC*SOC_deviation;              
-                    fuelConsRate(j,1) = fuelConsumedGPS;                  
+                    fuelConsRate(j,1) = fuelConsumedGPS; 
+                    emissions(j,1) = HCEmissions + COEmissions + NOXEmissions;
                     power(j,1) = powerMotorKW(j);                                
                 end
             end
 
-             [engineTorque, motorTorque] = solve(payoffEngine, payoffMotor, ...
+             [engineTorque, motorTorque] = solveG(payoffEngine, payoffMotor, ...
                 strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
                 fuelConsRate, fuelConsumed, emissions, power, m, e);
             

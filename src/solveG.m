@@ -1,4 +1,4 @@
-function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
+function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
      strategyEng, strategyMot, requiredTorqueR, torqueDeviation, fuelConsRate, fuelConsumed, emissions, power, m, e);
     try        
     %    paretoStrategies = [];
@@ -6,28 +6,32 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
     %    engineTorque = 0;
     %    motorTorque = 0;
         
-    %   [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor);    
+       [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor)   
 
         payoffE = reshape(payoffEngine,(m)*(e),1);
         payoffM = reshape(payoffMotor,(m)*(e),1);        
         payoffBoth = horzcat(payoffE, payoffM);
                
-    %    stringRequiredTorque = int2str(requiredTorqueR);
+       stringRequiredTorque = int2str(requiredTorqueR);
 
     %    [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
     %        torqueDeviation, fuelConsRate, power );
-    %   [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
-    %       torqueDeviation, requiredTorqueR, fuelConsRate, fuelConsumed, emissions)
+    
+    % if there are more than one Pareto efficient points
+    if(size(paretoStrategies,1) > 1)
+       [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
+           torqueDeviation, fuelConsRate, fuelConsumed, emissions);
+    end
     %       figure
     %       p1 = plot(x,y,'ob');
     %       title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
     %       hold on
     %         
-             numStratBoth = m+e;  
+             %numStratBoth = m+e;  
             
-             [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
-             payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
-             payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
+             %[nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
+             %payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
+             %payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
              
     %         %[~, indM] = min(payoffEngNash);        
     %               

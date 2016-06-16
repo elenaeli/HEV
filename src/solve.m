@@ -29,15 +29,15 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
              payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
              payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
              
-    %         %[~, indM] = min(payoffEngNash);        
-    %               
-    %         conflictPoint = sub2ind([m e], find(nashEqPl1==1), find(nashEqPl2==1));
-    %         
-    %         [~, indNP] = nashsolution(payoffBoth, conflictPoint);
-    %         payoffEngNashSol = payoffBoth(indNP,1);
-    %         payoffMotNashSol = payoffBoth(indNP,2);
+             %[~, indM] = min(payoffEngNash);        
+                   
+             conflictPoint = sub2ind([m e], find(nashEqPl1==1), find(nashEqPl2==1));
+             
+             [~, indNP] = nashsolution(payoffBoth, conflictPoint);
+             payoffEngNashSol = payoffBoth(indNP,1);
+             payoffMotNashSol = payoffBoth(indNP,2);
+             
     %         paretoStrInd = horzcat(paretoStrategies, paretoIndex);        
-    % 
     %         [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd);
     %         percentReqTorq = linspace(0, requiredTorqueR, 10);
     %         probKsMixed = zeros(1,2);
@@ -264,8 +264,8 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
             %ylabel('Payoff Motor');
             %hold off
        
-            [ engineTorque, motorTorque ] = payofftotorque(payoffEngNash, ...
-                payoffMotNash, payoffBoth, strategyEng, strategyMot);
+            [ engineTorque, motorTorque ] = payofftotorque(payoffEngNashSol, ...
+                payoffMotNashSol, payoffBoth, strategyEng, strategyMot);
        
             %end
     catch

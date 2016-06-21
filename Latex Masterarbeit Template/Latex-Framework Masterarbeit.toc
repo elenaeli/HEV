@@ -98,12 +98,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.9}Shapley Value}{46}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation}{50}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{50}{chapter.5}
+\contentsline {section}{\numberline {4.1}FTP75 drive cycle}{50}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{51}{chapter.6}
+\contentsline {chapter}{\numberline {5}Results}{53}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{52}{chapter*.16}
+\contentsline {chapter}{\numberline {6}Discussion}{54}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{55}{appendix.A}
+\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{58}{appendix.A}

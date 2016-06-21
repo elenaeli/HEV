@@ -1,3 +1,49 @@
 \chapter{Simulation}
 \label{chp:simulation}
+The following chapter extends the description of the Implementation chapter by providing the specific parameters for the simulation. Firstly, the behaviour during the FTP75 drive cycle is described.
+
+
+\section{FTP75 drive cycle}
+As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is divided into 5 parts with similar duration and with start and end speed demand of 0 \textit{km/h}. A certain number of parameters need to explained, which are utilized in the Simulink model and need to be tuned so that no errors occur. 
+
+Table \ref{tab:powergui} shows the parameters about time which concern the simulation. The block is called  Environment block for Simscape Power Systems Specialized Technology as in \citep{powerguiMatlab} and offers a choice of Discrete or a Continuous solver. The first one solves the circuit with a variable-time solver and the second with a fixed-time solver. It is advisable that the powergui block is placed at the top of the Simulink model. For the solver type there are three options, Tustin, Backward Euler (TBE) or a combination of both. They are used for the discretization of the model.
+
+\begin{table}
+\centering
+\begin{tabular}{ |c|c| } 
+ \hline
+ Name(s) & Value(s) \\
+ \hline\hline
+ Simulation type & Discrete  \\ 
+ Solver type & Tustin \\ 
+ Sample time (s) & 6e-05 \\ 
+ \hline
+\end{tabular}
+\caption{powergui simulation parameters }
+\label{tab:powergui}
+\end{table}
+
+Table \ref{tab:config} shows the configuration parameters for the Solver. The first one is Type, which can be either Variable-step or Fixed-step. On the one hand, a variable-sized solver slows down the simulation by decreasing the step size when a lot of changes happen in the model for a short period of time; thus, keeping the accuracy. On the other hand, it increase the step size when less alterations in the model occur; hence, preventing redundant steps. If the solver is of fixed-step size the step size is not changed during the simulation. However, the advantage of variable-size solvers is that it is capable of achieving similar accuracy  by reducing the total computation time because it adapts to the changes in the model over time.
+
+Another essential topic is the choice of the Solver for the ordinary differential equation (ODE). A specific issue in ODEs is that they can have one or more derivatives of a variable which is dependent on time. Time is independent $t$ and the dependent variable is $y$. In this case the solver is ode23tb and it is appropriate and quicker for big error tolerances.
+
+\begin{table}
+\centering
+\begin{tabular}{ |c|c| } 
+ \hline
+ Name(s) & Value(s) \\
+ \hline\hline
+ Solver-type & Variable-step  \\ 
+ Solver & ode23tb \\ 
+ Relative tolerance & 0.01 \\ 
+ Absolute tolerance & 0.001 \\
+ Min step size & auto \\
+ Initial step size & auto \\ 
+ Number of consecutive min steps & 100000000 \\
+ Zero-crossing control & Disable All \\
+ \hline
+\end{tabular}
+\caption{}
+\label{tab:config}
+\end{table}
 

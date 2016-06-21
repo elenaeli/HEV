@@ -2297,6 +2297,7 @@
     <bcf:citekey order="58">npg</bcf:citekey>
     <bcf:citekey order="59">lemkeHowson2014Matlab</bcf:citekey>
     <bcf:citekey order="60">ferguson2014game</bcf:citekey>
+    <bcf:citekey order="61">powerguiMatlab</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt" type="entry" sortscheme="nyt">
   <bcf:sorting>

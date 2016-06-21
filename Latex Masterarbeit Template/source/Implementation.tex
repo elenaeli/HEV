@@ -110,6 +110,7 @@ Each of the two tires is connected to the primary block in the Vehicle Dynamics 
 This chapter deals with the implementation of all six game-theoretical approaches in Matlab. Firstly, a description of the initialization and the parent function, which calls each of the solutions and that is embedded in the Simulink model, is given. Then, each function for the game theory solution is explained in detail.
 
 \subsection{Initialization functions}
+\label{sec:initfunc}
 Before starting the simulation, the environment has to be prepared by initializing variables. The initialization function is called \textit{prepare.m} and it calls the functions for preparing the fuel, exhaust emissions and drive cycle data. 
 
 Firstly, the fuel consumption rate lookup table is explained. The data comes from \citet{argonne1999} where a Toyota Prius first-generation model was tested. Nevertheless, due to lack of any newer publicly available reports which state the results of torque-speed relationship and the corresponding fuel consumption and gas emissions, this data is utilized. The fuel data is read from a file, which contains the engine speed in \textit{rpm}, torque in \textit{Nm}, fuel consumption rate in \textit{gal/s} and engine power in \textit{kW}.  A conversion between \textit{gal/s} to \textit{g/s} is done by:
@@ -133,7 +134,6 @@ Lastly, the final step is to prepare the drive cycle data of FTP75 and NEDC. The
  FT75-3 & 681 & 1030 \\ 
  FT75-4 & 1031 & 1500 \\ 
  FT75-5 & 1501 & 1874 \\ 
-
  \hline
 \end{tabular}
 \caption{Drive Cycle splitting in 5 phases}
@@ -250,17 +250,10 @@ $beq = 1$
 \label{tab:A}
 \end{table}
 
-The function produces a vector $X$ containing the solution of the linear system of equations. The vector has length $m+1$ or $n+1$, the number of strategies, depending on whether the function is called for player 1 or player 2. The first $m$ or $n$ numbers of the vector contain the probabilities of each strategy and they must all add up to 1. The last number in the vector is the solution of the last equation where all of the 1's are \ref{tab:A}. That is also the value of the game, corresponding to the individual coalition formed from the player. After the function \textit{value.m} is ran two times for both players, the values of the games are finally available and can be passed to the Shapley value function.
+The function produces a vector $X$ containing the solution of the linear system of equations. The vector has length $m+1$ or $n+1$, the number of strategies, depending on whether the function is called for player 1 or player 2. The first $m$ or $n$ numbers of the vector contain the probabilities of each strategy and they must all add up to 1. The last number in the vector is the solution of the last equation where the column is with all of the 1's as in \ref{tab:A}. That is also the value of the game, corresponding to the individual coalition formed from the player. After the function \textit{value.m} is ran two times for both players, the values of the games are finally available and can be passed to the Shapley value function.
 
-The function \textit{shapleyvalue.m} takes three arguments - the value of the grand coalition, the value of the coalition of player 1 only and the value of the coalition of player 2 only, written as $v_{1,2}$, $v_1$, $v_2$. Then, according to Equation \ref{eq:shapley} the shapley value of the engine is $\frac{1}{2} (v_{1,2} - v_2) + \frac{1}{2} v_1$ since there is one player in the coalition, $k = 1$ and the total number of players is two, $n = 2$. Similarly, the Shapley value of the motor is $\frac{1}{2} (v_{1,2} - v_1) + \frac{1}{2} v_2$.
+The function \textit{shapleyvalue.m} takes three arguments - the value of the grand coalition, the value of the coalition of player 1 only and the value of the coalition of player 2 only, written as $v_{1,2}$, $v_1$, $v_2$. Then, according to Equation \ref{eq:shapley} the Shapley value of the engine is $\frac{1}{2} (v_{1,2} - v_2) + \frac{1}{2} v_1$ since there is one player in the coalition, $k = 1$ and the total number of players is two, $n = 2$. Similarly, the Shapley value of the motor is $\frac{1}{2} (v_{1,2} - v_1) + \frac{1}{2} v_2$.
 
-Although the two Shapley values are computed, it is often the case that the paoyff they constitute is not feasible in pure strategies. When this occurs, two payoffs or two strategy combinations have to be found, whose combination in mixed strategies gives the Shapley value payoff $s$. In order to find the two nearest payoff points $u_1$ and $u_2$, the Matlab function $knnsearch$ is utilized to find the K nearest neighbours of the Shapley value, where K is set to 2. Let a variable $i={1,2}$ take values of either 1 or 2. If the two x coordinates of the two nearest payoffs are different, then the x values can be compared or $i=1$, otherwise the y values are compared and $i=2$. There are three possibilities for the Shapley value, either it lies within the range $s_2(i) < s < s_1(i)$ or within $s_1(i) < s < s_2(i)$ or it is smaller than both of them, $ s < p_1(i), s < p_2(i)$. In the first case the probability of the first closest payoff is $P(u_1) = \frac{s - u_2(i)}{u_1(i)-u_2(i)}$. In the second case it is $P(u_1) = \frac{s - u_1(i)}{u_2(i)-u_1(i)}$. In the third case the probability depends on whether $u_1$ or $u_2$ is bigger. When $u_1 < u_2$ the probabilities are $P(u_1) = \frac{s}{u_1(i)}$ $P(u_2) = 1 - P(u_1)$ and vice versa for $u_2 < u_1$ they are $P(u_1) = \frac{s}{u_2(i)}$ $P(u_2) = 1 - P(u_1)$.
+Although the two Shapley values are computed, it is often the case that the paoyff they constitute is not feasible in pure strategies. When this occurs, two payoffs or two strategy combinations $t_1, t_2$ have to be found, whose combination in mixed strategies gives the Shapley value payoff $s$. In order to find the two nearest payoff points $u_1$ and $u_2$, the Matlab function $knnsearch$ is utilized to find the K nearest neighbours of the Shapley value, where K is set to 2. Let a variable $i=\{1,2\}$ take values of either 1 or 2. If the two x coordinates of the two nearest payoffs are different, then the x values can be compared or $i=1$, otherwise the y values are compared and $i=2$. There are three possibilities for the Shapley value, either it lies within the range $s_2(i) < s < s_1(i)$ or within $s_1(i) < s < s_2(i)$ or it is smaller than both of them, $s < p_1(i), s < p_2(i)$. In the first case the probability of the first closest payoff is $P(u_1) = \frac{s - u_2(i)}{u_1(i)-u_2(i)}$. In the second case it is $P(u_1) = \frac{s - u_1(i)}{u_2(i)-u_1(i)}$. In the third case the probability depends on whether $u_1$ or $u_2$ is bigger. When $u_1 < u_2$ the probabilities are $P(u_1) = \frac{s}{u_1(i)}$ $P(u_2) = 1 - P(u_1)$ and vice versa for $u_2 < u_1$ they are $P(u_1) = \frac{s}{u_2(i)}$ $P(u_2) = 1 - P(u_1)$. The final step is to compute the engine and motor torque by combining the probabilities of the two closest strategies.
 
-
-
-
-
-
-
-
-
+With this implementation description the last solution approach, the Shapley value, the Implementation chapter is finished. The next chapter deals with the Simulation of the whole game-theoretical behaviour.

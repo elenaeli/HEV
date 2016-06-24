@@ -2,11 +2,33 @@
 \label{chp:simulation}
 The following chapter extends the description of the Implementation chapter by providing the specific parameters for the simulation. Firstly, the behaviour during the FTP75 drive cycle is described.
 
-
 \section{FTP75 drive cycle}
-As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is divided into 5 parts with similar duration and with start and end speed demand of 0 \textit{km/h}. A certain number of parameters need to explained, which are utilized in the Simulink model and need to be tuned so that no errors occur. 
+As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is divided into 5 parts with similar duration and with start and end speed demand of 0 \textit{km/h}. The splitting points were selected so that every phase starts and ends with a demanded speed of 0 \textit{km/h}. The following Table \ref{tab:drivecyclephases} shows the duration of each of the five phases:
 
-Table \ref{tab:powergui} shows the parameters about time which concern the simulation. The block is called  Environment block for Simscape Power Systems Specialized Technology as in \citep{powerguiMatlab} and offers a choice of Discrete or a Continuous solver. The first one solves the circuit with a variable-time solver and the second with a fixed-time solver. It is advisable that the powergui block is placed at the top of the Simulink model. For the solver type there are three options, Tustin, Backward Euler (TBE) or a combination of both. They are used for the discretization of the model.
+\begin{table}
+\centering
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Drive cycle phase & Start (s) & End (s) \\
+ \hline\hline
+ FT75-1 & 0 & 340 \\ 
+ FT75-2 & 341 & 680 \\ 
+ FT75-3 & 681 & 1030 \\ 
+ FT75-4 & 1031 & 1500 \\ 
+ FT75-5 & 1501 & 1874 \\ 
+ \hline
+\end{tabular}
+\caption{Drive Cycle splitting in 5 phases}
+\label{tab:drivecyclephases}
+\end{table}
+
+It needs to be noted that each of the five phases of FTP75 is simulated starting from 0s since the battery SOC cannot be initialized properly otherwise. For example, the FTP75-2 drive cycle does not start from 341s and end at 680s, but instead runs from 0-340s. The same goes for the FTP75-3 which lasts from 0-350s, FTP75-4 is from 0-470s and the last FTP75-5 is from 0-374s. That is the reason why time in the x-axis starts from 0 in all of the results in the \ref{chp:results} and \ref{app:1}.
+
+\section{Time step}
+
+A certain number of parameters need to explained, which are utilized in the Simulink model and need to be tuned so that no errors occur. 
+
+Table \ref{tab:powergui} shows the parameters which concern the simulation time. The block specifying the sample time and the solver is called Environment block for Simscape Power Systems Specialized Technology as in \citet{powerguiMatlab}. It offers a choice of either a Discrete or a Continuous solver. The first one solves the circuit with a variable-time solver and the second with a fixed-time solver. It is advisable that the powergui block is placed at the top of the Simulink model. For the solver type there are three options, Tustin, Backward Euler (TBE) or a combination of both. They are used for the discretization of the model.
 
 \begin{table}
 \centering
@@ -23,11 +45,13 @@ Table \ref{tab:powergui} shows the parameters about time which concern the simul
 \label{tab:powergui}
 \end{table}
 
-Table \ref{tab:config} shows the configuration parameters for the Solver. The first one is Type, which can be either Variable-step or Fixed-step. On the one hand, a variable-sized solver slows down the simulation by decreasing the step size when a lot of changes happen in the model for a short period of time; thus, keeping the accuracy. On the other hand, it increase the step size when less alterations in the model occur; hence, preventing redundant steps. If the solver is of fixed-step size the step size is not changed during the simulation. However, the advantage of variable-size solvers is that it is capable of achieving similar accuracy  by reducing the total computation time because it adapts to the changes in the model over time.
+Table \ref{tab:config} shows the configuration parameters for the Solver. The first one is Type, which can be either Variable-step or Fixed-step. On the one hand, a variable-sized solver slows down the simulation by decreasing the step size when a lot of changes happen in the model for a short period of time; thus, keeping the accuracy. On the other hand, it increase the step size when less alterations in the model occur; hence, preventing redundant steps. If the solver is of fixed-step size, the step does not change during the simulation. However, the advantage of variable-size solvers is that they are capable of achieving similar accuracy by reducing the total computation time because they adapt to the changes in the model over time.
 
-Another essential topic is the choice of the Solver for the ordinary differential equation (ODE). A specific issue in ODEs is that they can have one or more derivatives of a variable which is dependent on time. Time is independent $t$ and the dependent variable is $y$. In this case the solver is ode23tb and it is appropriate and quicker for big error tolerances.
+Another essential topic is the choice of the Solver for the ordinary differential equation (ODE). A specific issue in ODEs is that they can have one or more derivatives of a variable which is dependent on time. Time is independent $t$ and the dependent variable is $y$. In this case the solver is ode23tb and it is appropriate and quicker for big error tolerances and is also able to solve stiff problems.
 
-\begin{table}
+The ultimate aim in the choice of a solver would be to achieve maximum accuracy for the shortest simulation time. A typical trade-off when selecting a time step is that whenever it is small, the accuracy grows but the simulation time slows down. The relative tolerance is the biggest solver error which can be accepted. In the case of the relative error exceeding this tolerance, the time step is decreased to meet the tolerance demands. The default value is 1e-3 which is a percentage of the value of the state; hence, the accuracy is 0.1\% of the state. The absolute tolerance is the biggest solver error accepted when the measured state gets close to zero. Its default value is 1e-6 and at the end of each state it can be reset to the maximum value multiplied by the relative tolerance for that state. The minimum step size is the smallest which the solver can take. Whenever a smaller step is required to meet the error tolerances a warning is given. The min step size indicates what is the minimum allowed time step that the solver can take. If the minimum step is violated, a warning is issued. The initial step size is often automatically chosen by examination of the derivatives at the start. The number of consecutive min steps sets a limit on the maximum number of the smallest step sizes that the solver needs before producing a warning. Disabling the Zero-crossing control can speed up the simulation in case of very dynamic models at the cost of accuracy.
+
+\begin{table}[h]
 \centering
 \begin{tabular}{ |c|c| } 
  \hline
@@ -37,13 +61,66 @@ Another essential topic is the choice of the Solver for the ordinary differentia
  Solver & ode23tb \\ 
  Relative tolerance & 0.01 \\ 
  Absolute tolerance & 0.001 \\
- Min step size & auto \\
+ Min step size & 6e-05 \\
  Initial step size & auto \\ 
  Number of consecutive min steps & 100000000 \\
  Zero-crossing control & Disable All \\
  \hline
 \end{tabular}
-\caption{}
+\caption{Solver parameters}
 \label{tab:config}
 \end{table}
 
+\section{Performance}
+A crucial part of the performance of the whole simulated model is the computation time and how it changes during the simulation. The following table gives the computation time of each part of the 5 parts from the FTP75 drive cycle for all of the six game-theoretical approaches.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Game-theoretical approach & Drive cycle & Computation time \\
+ \hline\hline
+ \multirow{5}{*}{Pareto Optimality} & FTP75-1 & 11:40h \\ 
+ & FTP75-2 & 2:12h \\ 
+ & FTP75-3 & 13:11h \\ 
+ & FTP75-4 & 02:11h \\ 
+ & FTP75-5 & 06:15h\\ 
+ \hline 
+ \multirow{5}{*}{Nash Equilibrium} & FTP75-1 & 10:31h \\ 
+ & FTP75-2 & 2:12h\\ 
+ & FTP75-3 & 10:32h\\ 
+ & FTP75-4 & 1:51h\\ 
+ & FTP75-5 & 16:59h\\ 
+ \hline 
+ \multirow{5}{*}{Nash Solution} & FTP75-1 & 13:54h \\ 
+ & FTP75-2 & 1:34h\\ 
+ & FTP75-3 & 12:02h\\ 
+ & FTP75-4 & 1:50h\\ 
+ & FTP75-5 & 17:45h\\  
+ \hline
+  \multirow{5}{*}{Kalai-Smorodinsky Solution} & FTP75-1 & 18:09h \\ 
+ & FTP75-2 & 3:27h\\ 
+ & FTP75-3 & \\ 
+ & FTP75-4 & 1\\ 
+ & FTP75-5 & 1\\  
+ \hline
+ \multirow{5}{*}{The Core} & FTP75-1 & 1 \\ 
+ & FTP75-2 & 1\\ 
+ & FTP75-3 & 1\\ 
+ & FTP75-4 & 1\\ 
+ & FTP75-5 & 1\\ 
+ \hline 
+  \multirow{5}{*}{Shapley Value} & FTP75-1 & 1 \\ 
+ & FTP75-2 & 1\\ 
+ & FTP75-3 & 1\\ 
+ & FTP75-4 & 1\\ 
+ & FTP75-5 & 1\\  
+ \hline
+\end{tabular}
+\caption{Computation time}
+\label{tab:config}
+\end{table}
+
+As it can be seen, the first, third and fifth parts of the FTP75 drive cycle are running considerably slower than the second and fourth. This is due to the fact that the battery needs to be recharged since its SOC falls below 40 \%. Recharging the battery requires negative torque and negative torque is only naturally provided when the vehicle decelerates and the braking power is regenerated and fed to the battery. If the drive cycle demands acceleration and the battery SOC is below 40 \% then the required power to charge the battery is computed in the Battery Available Power in the Game Theory Controller as in Subsection \ref{subsec:powerContr}. Therefore, the Power Controller outputs as a result negative torque demand for the motor and the difference between the demanded speed and the actual speed increases a lot. When the model sees that there are larger errors, it automatically reduces the time step to the minimum of 6e-05. Hence, the computation time increase from around 2 hours for the second and fourth FTP75 cycle to more than 12 hours for the first FTP75 and more than 6 hours for the fifth FTP75. In FTP75-2 and FTP75-4 there is no need to recharge the battery and they both run for around 2 hours even though the duration of all five FTP75 split drive cycles is quite similar. The FTP75-4 even has the largest duration of 470s and still runs far quicker than the others.
+
+In general, when the torque demand is less than 83, which is the the minimum torque that the engine can provide, the simulation runs very fast. This is due to the fact that the embedded Matlab function for solving the game directly passes the whole torque demand to the motor without computing a game-theoretical solution. When the torque demand is bigger than 83 then the simulation runs slower but still acceptably fast because the game-theoretical solution is being computed and torque is distributed between the motor and engine. Only in the case of the battery SOC less than 40 \% is the simulation very slow and this goes on until the target state of charge of 70\% is reached.

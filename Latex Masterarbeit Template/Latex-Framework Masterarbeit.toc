@@ -6,9 +6,9 @@
 \defcounter {refsection}{0}\relax 
 \select@language {UKenglish}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{vii}{chapter*.2}
+\contentsline {chapter}{\nonumberline List of Figures}{viii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{viii}{chapter*.3}
+\contentsline {chapter}{\nonumberline List of Tables}{x}{chapter*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -80,32 +80,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Embedded Matlab function in Simulink}{38}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Strategies computation}{39}{subsubsection*.13}
+\contentsline {subsubsection}{Strategies computation}{39}{subsubsection*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Payoff computation}{39}{subsubsection*.14}
+\contentsline {subsubsection}{Payoff computation}{40}{subsubsection*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{41}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{42}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Pareto Optimality}{41}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Pareto Optimality}{42}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Nash Equilibrium}{41}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Nash Equilibrium}{42}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Nash Bargaining Solution}{42}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Nash Bargaining Solution}{43}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Kalai-Smorodinsky Solution}{42}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Kalai-Smorodinsky Solution}{43}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}The Core}{45}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.8}The Core}{46}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.9}Shapley Value}{46}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.9}Shapley Value}{47}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Simulation}{50}{chapter.4}
+\contentsline {subsubsection}{Mixed strategies}{48}{subsubsection*.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}FTP75 drive cycle}{50}{section.4.1}
+\contentsline {chapter}{\numberline {4}Simulation}{51}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Results}{53}{chapter.5}
+\contentsline {section}{\numberline {4.1}FTP75 drive cycle}{51}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion}{54}{chapter.6}
+\contentsline {section}{\numberline {4.2}Time step}{52}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.18}
+\contentsline {section}{\numberline {4.3}Performance}{54}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1}}{58}{appendix.A}
+\contentsline {chapter}{\numberline {5}Results}{56}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Pareto Optimality}{56}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Nash Equilibrium}{56}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Nash Bargaining solution}{58}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Discussion}{59}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{60}{chapter*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1} Nash Equilibrium Results}{63}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Appendix \ref {app:2} Nash Bargaining Solution Results}{75}{appendix.B}

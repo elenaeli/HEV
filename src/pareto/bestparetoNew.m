@@ -1,6 +1,5 @@
 function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
-	torqueDeviation, fuelConsRate, fuelConsumed, emissions)  
-
+	torqueDeviation, fuelConsRate, fuelConsumed, emissions)
 
     torqueDeviationPareto = zeros(size(paretoIndex,1),1);
     fuelConsRatePareto = zeros(size(paretoIndex,1),1);
@@ -65,6 +64,7 @@ function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStr
        bestPayoffEngPareto = paretoStrategies(1,1);
        bestPayoffMotPareto = paretoStrategies(1,2);     
     end
+    
    bestPayoffEngPareto
    bestPayoffMotPareto
 end

@@ -30,6 +30,7 @@ The NEDC drive cycle was invented to test light-duty cars in Europe. Its duratio
 The Speed Control block takes as input the demanded speed from the drive cycle and the actual speed of the vehicle both in \textit{km/h} and calculates as output the acceleration which lies between -1 and 1 where a negative value means braking and a positive value means acceleration. A value of 0 corresponds to cruising or maintaining a constant speed. In order to calculate the acceleration demand, the difference between the demanded and actual speed is taken.
 
 \subsection{Power Controller}
+\label{subsec:powerContr}
 The Power Controller takes as input the acceleration demand $a$ and the state of charge $SOC$ of the battery which comes from the Electric Motor Controller. In order to transform the acceleration demand into torque demand $\tau_{dem}$, the acceleration is scaled by the maximum torque of 400 \textit{Nm} which can be requested. This value was chosen since this is the maximum output torque of the Toyota Prius electric motor. The minimum demanded torque is -400 \textit{Nm} which corresponds to deceleration. The current motor speed $\omega_{mot}$ is mapped to the torque of the motor which it is capable of generating at this moment. This value is taken as upper limit and its negated value is taken as a lower limit of the torque. 
 
 There are two subsystems in the Power Controller, the Battery Management and the Game Theory Controller. The first of them takes as input the battery $SOC$, its current in \textit{A}, its voltage in \textit{V} and computes the required recharge power $P_{batReq}$ and the battery limit $P_{batLim}$. The recharge power is requested when the SOC of the battery lies between 40 and 60\%. If the SOC falls below 40\% then the battery is forced to be recharged even if that means not meeting the drive cycle requirements and not achieving the demanded speed. After the battery has been charged up to 60\%, the recharging stops and the requested battery power is set to 0. The battery limit calculation takes into account that the maximum voltage of the battery is 200V and that its maximum power is 21 kW.
@@ -121,23 +122,28 @@ where 719.7 * 1000 $g/m^3$ is the density of gasoline and 264.172 $gal/m^3$ conv
 
 The second initialization step is to generate the exhaust emissions lookup tables. The data also comes from \citet{argonne1999} and is read from a file. Exactly the same procedure with the \textit{linspace}, \textit{meshgrid}, \textit{fit}, \textit{feval} functions like in the fuel consumption rate above is applied. The resulting fits of the CO, HC and NOX emissions are shown in Figures \ref{fig:coFit}, \ref{fig:hcFit} and \ref{fig:noxFit}.
 
-Lastly, the final step is to prepare the drive cycle data of FTP75 and NEDC. The FTP75 data is read from a file, which has two columns, the first is the time in seconds and the second is the speed in miles per hour. The \textit{mph} are converted to \textit{km/h} by multiplication with 1,60934. Since the drive cycle's duration is 1874s, it is split into 5 different phases, so that simulation can be simplified in case any errors occur and the whole drive cycle has to be started again. The splitting points were selected so that every phase starts and ends with a demanded speed of 0 \textit{km/h}. The following table shows the duration of each of the five phases:
-
-\begin{table}
+\begin{figure}[h]
 \centering
-\begin{tabular}{ |c|c|c| } 
- \hline
- Drive cycle phase & Start (s) & End (s) \\
- \hline\hline
- FT75-1 & 0 & 340 \\ 
- FT75-2 & 341 & 680 \\ 
- FT75-3 & 681 & 1030 \\ 
- FT75-4 & 1031 & 1500 \\ 
- FT75-5 & 1501 & 1874 \\ 
- \hline
-\end{tabular}
-\caption{Drive Cycle splitting in 5 phases}
-\end{table}
+\includegraphics[scale=0.5]{figures/CO}
+\caption{CO Emissions}
+\label{fig:coFit}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{figures/HC}
+\caption{HC Emissions}
+\label{fig:hcFit}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{figures/NOX}
+\caption{NOX Emissions}
+\label{fig:noxFit}
+\end{figure}
+
+Lastly, the final step is to prepare the drive cycle data of FTP75 and NEDC. The FTP75 data is read from a file, which has two columns, the first is the time in seconds and the second is the speed in miles per hour. The \textit{mph} are converted to \textit{km/h} by multiplication with 1,60934. Since the drive cycle's duration is 1874s, it is split into 5 different phases, so that simulation can be simplified in case any errors occur and the whole drive cycle has to be started again. 
 
 \subsection{Embedded Matlab function in Simulink}
 The Matlab function, incorporated in the Simulink model, is responsible for calculating the payoff functions and afterwards calling all other game-theoretical solutions.
@@ -214,6 +220,8 @@ The last game-theoretical approach to be implemented, the Shapley Value, require
 
 The function which computes the value of the two individual coalitions is \textit{value.m} and takes as input the payoff of one player and the number of that player. The output is a vector with probabilities for each strategy of size $m$ for player 1 or $n$ for player 2. The function is called once for the engine and once for the motor. Firstly, it is tested whether there exists a Saddle point by checking if there is a payoff $u_i$ which is simultaneously a row minimum and a column maximum: $min(max(u_i)) == max(min(u_i'))$. If there is such a payoff point, then in the vector this strategy is marked with probability 1 and all other probabilities are 0. Otherwise, mixed strategies have to be employed. 
 
+\subsubsection{Mixed strategies}
+
 Extending the strategy space to mixed strategies involves assigning probabilities to every pure strategy. This problem can be solved by a system of linear equations such that if the engine payoff matrix is the one shown in Table \ref{tab:payoffEngine} and the motor payoff matrix is in Table \ref{tab:payoffMotor}, then the linear system of equations is constructed in the following way. The system can be solved by linear programming (LP) which is a method for minimizing or maximizing a linear objective function, depending on inequality and equality constraints. Furthermore, the function is constrained subject to lower and upper bounds. The Matlab function is called \textit{linprog} and is invoked by \textit{x = linprog(f,A,b,Aeq,beq,lb,ub)}. The purpose is to minimize the function $f$ subject to the constraints:
 
 \begin{equation}
@@ -254,6 +262,6 @@ The function produces a vector $X$ containing the solution of the linear system 
 
 The function \textit{shapleyvalue.m} takes three arguments - the value of the grand coalition, the value of the coalition of player 1 only and the value of the coalition of player 2 only, written as $v_{1,2}$, $v_1$, $v_2$. Then, according to Equation \ref{eq:shapley} the Shapley value of the engine is $\frac{1}{2} (v_{1,2} - v_2) + \frac{1}{2} v_1$ since there is one player in the coalition, $k = 1$ and the total number of players is two, $n = 2$. Similarly, the Shapley value of the motor is $\frac{1}{2} (v_{1,2} - v_1) + \frac{1}{2} v_2$.
 
-Although the two Shapley values are computed, it is often the case that the paoyff they constitute is not feasible in pure strategies. When this occurs, two payoffs or two strategy combinations $t_1, t_2$ have to be found, whose combination in mixed strategies gives the Shapley value payoff $s$. In order to find the two nearest payoff points $u_1$ and $u_2$, the Matlab function $knnsearch$ is utilized to find the K nearest neighbours of the Shapley value, where K is set to 2. Let a variable $i=\{1,2\}$ take values of either 1 or 2. If the two x coordinates of the two nearest payoffs are different, then the x values can be compared or $i=1$, otherwise the y values are compared and $i=2$. There are three possibilities for the Shapley value, either it lies within the range $s_2(i) < s < s_1(i)$ or within $s_1(i) < s < s_2(i)$ or it is smaller than both of them, $s < p_1(i), s < p_2(i)$. In the first case the probability of the first closest payoff is $P(u_1) = \frac{s - u_2(i)}{u_1(i)-u_2(i)}$. In the second case it is $P(u_1) = \frac{s - u_1(i)}{u_2(i)-u_1(i)}$. In the third case the probability depends on whether $u_1$ or $u_2$ is bigger. When $u_1 < u_2$ the probabilities are $P(u_1) = \frac{s}{u_1(i)}$ $P(u_2) = 1 - P(u_1)$ and vice versa for $u_2 < u_1$ they are $P(u_1) = \frac{s}{u_2(i)}$ $P(u_2) = 1 - P(u_1)$. The final step is to compute the engine and motor torque by combining the probabilities of the two closest strategies.
+Although the two Shapley values are computed, it is often the case that the payoff they constitute is not feasible in pure strategies. When this occurs, two payoffs or two strategy combinations $t_1, t_2$ have to be found, whose combination in mixed strategies gives the Shapley value payoff $s$. In order to find the two nearest payoff points $u_1$ and $u_2$, the Matlab function $knnsearch$ is utilized to find the K nearest neighbours of the Shapley value, where K is set to 2. Let a variable $i=\{1,2\}$ take values of either 1 or 2. If the two x coordinates of the two nearest payoffs are different, then the x values can be compared or $i=1$, otherwise the y values are compared and $i=2$. There are three possibilities for the Shapley value, either it lies within the range $s_2(i) < s < s_1(i)$ or within $s_1(i) < s < s_2(i)$ or it is smaller than both of them, $s < p_1(i), s < p_2(i)$. In the first case the probability of the first closest payoff is $P(u_1) = \frac{s - u_2(i)}{u_1(i)-u_2(i)}$. In the second case it is $P(u_1) = \frac{s - u_1(i)}{u_2(i)-u_1(i)}$. In the third case the probability depends on whether $u_1$ or $u_2$ is bigger. When $u_1 < u_2$ the probabilities are $P(u_1) = \frac{s}{u_1(i)}$ $P(u_2) = 1 - P(u_1)$ and vice versa for $u_2 < u_1$ they are $P(u_1) = \frac{s}{u_2(i)}$ $P(u_2) = 1 - P(u_1)$. The final step is to compute the engine and motor torque by combining the probabilities of the two closest strategies.
 
 With this implementation description the last solution approach, the Shapley value, the Implementation chapter is finished. The next chapter deals with the Simulation of the whole game-theoretical behaviour.

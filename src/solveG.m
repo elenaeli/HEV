@@ -6,68 +6,71 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
     %    engineTorque = 0;
     %    motorTorque = 0;
         
-       [paretoStrategies, paretoIndex, ~, ~] = paretoset(payoffEngine, payoffMotor)   
+       [paretoStrategies, paretoIndex, x, y] = paretoset(payoffEngine, payoffMotor);
 
         payoffE = reshape(payoffEngine,(m)*(e),1);
         payoffM = reshape(payoffMotor,(m)*(e),1);        
         payoffBoth = horzcat(payoffE, payoffM);
                
-       stringRequiredTorque = int2str(requiredTorqueR);
+        stringRequiredTorque = int2str(requiredTorqueR);
 
-    %    [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
-    %        torqueDeviation, fuelConsRate, power );
+       %   [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
+       %       torqueDeviation, fuelConsRate, power );
     
-    % if there are more than one Pareto efficient points
-    if(size(paretoStrategies,1) > 1)
-       [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoNew( paretoStrategies, paretoIndex, ...
-           torqueDeviation, fuelConsRate, fuelConsumed, emissions);
-    end
-    %       figure
-    %       p1 = plot(x,y,'ob');
-    %       title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
-    %       hold on
-    %         
-             %numStratBoth = m+e;  
+     
+     
+       %if there are more than one Pareto efficient points
+       %if(size(paretoStrategies,1) > 1)
+           [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( paretoStrategies, paretoIndex, ...
+           torqueDeviation, fuelConsRate, fuelConsumed, emissions)
+       %end
+          
+             
+             numStratBoth = m+e;  
             
-             %[nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
-             %payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
-             %payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);       
+             [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
+             payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1)
+             payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1)      
              
     %         %[~, indM] = min(payoffEngNash);        
     %               
-    %         conflictPoint = sub2ind([m e], find(nashEqPl1==1), find(nashEqPl2==1));
+             conflictPoint = sub2ind([m e], find(nashEqPl1==1), find(nashEqPl2==1));
     %         
     %         [~, indNP] = nashsolution(payoffBoth, conflictPoint);
     %         payoffEngNashSol = payoffBoth(indNP,1);
     %         payoffMotNashSol = payoffBoth(indNP,2);
-    %         paretoStrInd = horzcat(paretoStrategies, paretoIndex);        
-    % 
-    %         [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd);
-    %         percentReqTorq = linspace(0, requiredTorqueR, 10);
-    %         probKsMixed = zeros(1,2);
-    %         ksMixed = zeros(1,2);
-    %         if ~isempty(linePareto)
-                  % if x and y of the two Pareto points are different
-    %             if linePareto(2,1) - linePareto(1,1) ~=0 && linePareto(1,2) - linePareto(2,2) ~= 0
-    %                 probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
-    %                 probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
-                  % if x are the same
-    %             elseif linePareto(2,1) - linePareto(1,1) == 0
-    %                 probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
-    %                 probKsMixed(1) = 1 - probKsMixed(2);
-                  % if y are the same
-    %             elseif linePareto(1,2) - linePareto(2,2) == 0
-    %                  probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
-    %                  probKsMixed(2) = 1 - probKsMixed(1);
-    %             end             
-    %             ksMixed(1) = linePareto(1,1) + probKsMixed(1)*(linePareto(2,1) - linePareto(1,1));
-    %             ksMixed(2) = min(linePareto(:,2)) + probKsMixed(2)*abs(linePareto(1,2) - linePareto(2,2));
-    %                         
-    %             mixedEngineTorque = min(strategyEng(linePareto(1,3)),strategyEng(linePareto(2,3))) + ...
-    %                 probKsMixed(1)*abs(strategyEng(linePareto(1,3))-strategyEng(linePareto(2,3)));
-    %             mixedMotorTorque = min(strategyMot(linePareto(1,4)),strategyMot(linePareto(2,4))) + ...
-    %                 probKsMixed(1)*abs(strategyMot(linePareto(1,4))-strategyMot(linePareto(2,4)));
-    %         end
+             paretoStrInd = horzcat(paretoStrategies, paretoIndex);     
+     
+            [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd)
+            percentReqTorq = linspace(0, requiredTorqueR, 10);
+            probKsMixed = zeros(1,2);
+            ksMixed = zeros(1,2);
+            if ~isempty(linePareto)
+                linePareto
+                %  if x and y of the two Pareto points are different
+                if linePareto(2,1) - linePareto(1,1) ~=0 && linePareto(1,2) - linePareto(2,2) ~= 0
+                    probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
+                    probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
+                %  if x are the same
+                elseif linePareto(2,1) - linePareto(1,1) == 0
+                    probKsMixed(2) = (ks(1,2) - min(linePareto(:,2))) / (linePareto(1,2) - linePareto(2,2));
+                    probKsMixed(1) = 1 - probKsMixed(2);
+                %  if y are the same
+                elseif linePareto(1,2) - linePareto(2,2) == 0
+                     probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
+                     probKsMixed(2) = 1 - probKsMixed(1);
+                end             
+                ksMixed(1) = linePareto(1,1) + probKsMixed(1)*(linePareto(2,1) - linePareto(1,1));
+                ksMixed(2) = min(linePareto(:,2)) + probKsMixed(2)*abs(linePareto(1,2) - linePareto(2,2));
+                            
+                mixedEngineTorque = min(strategyEng(linePareto(1,3)),strategyEng(linePareto(2,3))) + ...
+                    probKsMixed(1)*abs(strategyEng(linePareto(1,3))-strategyEng(linePareto(2,3)));
+                mixedMotorTorque = min(strategyMot(linePareto(1,4)),strategyMot(linePareto(2,4))) + ...
+                    probKsMixed(1)*abs(strategyMot(linePareto(1,4))-strategyMot(linePareto(2,4)));
+            else               
+                [mixedEngineTorque, mixedMotorTorque] = payofftotorque(ks(1,1), ...
+                ks(1,2), payoffBoth, strategyEng, strategyMot);
+            end
     %         
     %         %payoffCoalCoef = ones(m,e);
     %         %payoffCoalCoef(m:m-1:end-1) = 0.5;
@@ -199,14 +202,19 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
     %         end
 
            
+            
             %lightpurple = [163 154 255] ./ 255;        
             %p10 = plot(payoffStrEng, payoffStrMot, 'o',...
             %    'MarkerFaceColor', lightpurple, 'MarkerEdgeColor', lightpurple, ...
             %    'MarkerSize', 13);
 
             %limegreen = [194 242 1] ./ 255;
+            %figure
+            %p1 = plot(x,y,'ob');
+            %title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
+            %hold on
             %p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
-            %    'MarkerFaceColor', 'g', 'MarkerSize', 12);    
+            %    'MarkerFaceColor', 'g', 'MarkerSize', 13);
             %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
             %    'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
             %    'MarkerSize', 13);    
@@ -233,29 +241,31 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
             %p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', limegreen, ...
             %    'MarkerEdgeColor', limegreen, 'MarkerSize', 7);
             %p2 = p9;
-
+         
             %for r = 1 : size(paretoIndex,1)
             %    linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
             %    p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
-            %        'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor',[0,0.5,0],...
-            %        'MarkerSize',6);
+             %       'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor', [0,0.5,0],...
+              %      'MarkerSize', 6);
             %end
 
             %darkred = [185 16 20] ./ 255;
             %pi = plot(m1, m2, 'o', 'MarkerSize', 4, 'MarkerFaceColor',darkred ,...
             %'MarkerEdgeColor', darkred);
 
-
-            %legend([p1 p2 p3], 'Payoff', ...         
-            %'Pareto optimal payoff', ...  
-            %'Best Pareto payoff', ... 
+%             legend([p1 p2 p3 p4 p7], 'Payoff', ...   
+%             'Pareto optimal payoff',...  
+%             'Best Pareto optimal payoff', ...
+%             'Nash Equilibrium Lemke-Howson k0=8', ...     
+%             'Kalai-Smorodinsky Solution');
+        
+       
             %'Location', 'northwest');       
             %'Nash Equilibrium Lemke-Howson (conflict point)', ... 
-            %'Kalai-Smorodinsky Solution', ...
+         
             %'Core', ...        
             %'Shapley value', ...
-            %'Mixed Strategies', ...
-          
+            %'Mixed Strategies', ...          
 
             %'Ideal point', ...       
             %'Nash Equilibrium Lemke-Howson k0=1', ...
@@ -265,12 +275,12 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
             %'Nash Equilibrium NPG', ...       
 
             %xlabel('Payoff Engine');
-            %ylabel('Payoff Motor');
-            %hold off
-       
-            [ engineTorque, motorTorque ] = payofftotorque(payoffEngNash, ...
-                payoffMotNash, payoffBoth, strategyEng, strategyMot);
-       
+            %ylabel('Payoff Motor');            
+     
+            [ engineTorque, motorTorque ] = payofftotorque(bestPayoffEngPareto, ...
+               bestPayoffMotPareto, payoffBoth, strategyEng, strategyMot)
+            %engineTorque = mixedEngineTorque
+            %motorTorque = mixedMotorTorque
             %end
     catch
     	motorTorque = requiredTorqueR;

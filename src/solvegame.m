@@ -1,9 +1,10 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 139;        
+    requiredTorque = 198;         
     SOC = 58;
     fuelConsumed = 0.98;
-            
+     prevEngTorqueArOut = zeros(10,1);
+    prevMotTorqueArOut = zeros(10,1);        
     requiredTorqueR = 0;
     requiredTorqueR = roundn(requiredTorque,0);       
     
@@ -114,5 +115,28 @@
 
              [engineTorque, motorTorque] = solveG(payoffEngine, payoffMotor, ...
                 strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
-                fuelConsRate, fuelConsumed, emissions, power, m, e);           
+                fuelConsRate, fuelConsumed, emissions, power, m, e)   
+                     
+           
+        if abs(engineTorque - prevEngTorque) > 10 && stage >= 50000                        
+            engineTorque = mean(prevEngTorqueAr, 1);
+            motorTorque = mean(prevMotTorqueAr, 1);
+        end 
+       
+        if mod(stage, 50000) == 0
+            stage = 0;
         end
+        if mod(stage, 5000) == 0            
+            prevEngTorqueAr(ind) = engineTorque;
+            prevMotTorqueAr(ind) = motorTorque;  
+            ind = ind + 1;
+        end
+            
+        prevEngTorqueOut = engineTorque;      
+                  
+        prevEngTorqueArOut = prevEngTorqueAr;
+        prevMotTorqueArOut = prevMotTorqueAr;
+        engineTorque
+        motorTorque
+    end
+    stage = stage + 1;

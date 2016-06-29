@@ -40,6 +40,28 @@
       \verb http://www.selidori.com/tech/00000-04999/472-9tdlU.pdf
       \endverb
     \endentry
+    \entry{badreddin1995analogical}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=9a1b068b9649cbfaf8cda3d279f4c0a1}{Badreddin}{B\bibinitperiod}{E}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{9a1b068b9649cbfaf8cda3d279f4c0a1}
+      \strng{fullhash}{9a1b068b9649cbfaf8cda3d279f4c0a1}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1995}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Fuzzy Systems, 1995. International Joint Conference of the Fourth IEEE International Conference on Fuzzy Systems and The Second International Fuzzy Engineering Symposium., Proceedings of 1995 IEEE Int}
+      \field{title}{Analogical gates: a fuzzy operator approach for locomotion control of a non-holonomic mobile robot}
+      \field{volume}{2}
+      \field{year}{1995}
+      \field{pages}{875\bibrangedash 882}
+      \range{pages}{8}
+    \endentry
     \entry{burch1999advisor}{article}{}
       \name{author}{3}{}{%
         {{uniquename=0,hash=b1afb46e9b4f9043fe82b68a096cc9dd}{Burch}{B\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%

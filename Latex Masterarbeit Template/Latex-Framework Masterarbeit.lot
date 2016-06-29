@@ -10,23 +10,29 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.1}{\ignorespaces Engine payoff matrix\relax }}{13}{table.caption.5}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Engine payoff matrix\relax }}{14}{table.caption.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {2.2}{\ignorespaces Motor payoff matrix\relax }}{14}{table.caption.6}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.1}{\ignorespaces matrix $A$ - left hand-side of system of inequalities\relax }}{49}{table.caption.18}
+\contentsline {table}{\numberline {3.1}{\ignorespaces matrix $A$ - left hand-side of system of inequalities\relax }}{49}{table.caption.21}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.1}{\ignorespaces Drive Cycle splitting in 5 phases\relax }}{51}{table.caption.19}
+\contentsline {table}{\numberline {4.1}{\ignorespaces FTP75 split in 5 phases\relax }}{51}{table.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.2}{\ignorespaces powergui simulation parameters \relax }}{52}{table.caption.20}
+\contentsline {table}{\numberline {4.2}{\ignorespaces powergui simulation parameters \relax }}{52}{table.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.3}{\ignorespaces Solver parameters\relax }}{53}{table.caption.21}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Solver parameters\relax }}{53}{table.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.4}{\ignorespaces Computation time\relax }}{55}{table.caption.22}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Computation time\relax }}{55}{table.caption.25}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces FTP75 fuel consumption and gas emissions\relax }}{62}{table.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces FTP75 speed, distance and battery\relax }}{63}{table.caption.27}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

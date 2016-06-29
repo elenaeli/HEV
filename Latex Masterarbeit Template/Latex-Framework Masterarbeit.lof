@@ -12,27 +12,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Planetary (epicyclic) gear train \citep {planetaryGear}\relax }}{12}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Maximized Nash Product\relax }}{17}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Maximized Nash Product\relax }}{18}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Kalai-Smorodinsky Solution\relax }}{23}{figure.caption.8}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces FTP drive cycle\relax }}{28}{figure.caption.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces NEDC drive cycle\relax }}{29}{figure.caption.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Forces affecting the tire \citep {tireMatlab}\relax }}{36}{figure.caption.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces CO Emissions\relax }}{38}{figure.caption.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces HC Emissions\relax }}{39}{figure.caption.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces NOX Emissions\relax }}{40}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Kalai-Smorodinsky Solution\relax }}{23}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hybrid vehicle model in Simulink\relax }}{28}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces FTP drive cycle\relax }}{29}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Forces affecting the tire \citep {tireMatlab}\relax }}{36}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Power consumption\relax }}{38}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Fuel consumption\relax }}{39}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces CO Emissions\relax }}{40}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces HC Emissions\relax }}{41}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces NOX Emissions\relax }}{42}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -40,58 +40,76 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-1\relax }}{63}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-1\relax }}{64}{figure.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-1\relax }}{64}{figure.caption.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-1\relax }}{65}{figure.caption.27}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-1\relax }}{65}{figure.caption.28}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-2\relax }}{66}{figure.caption.29}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-2\relax }}{66}{figure.caption.30}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-2\relax }}{67}{figure.caption.31}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-2\relax }}{67}{figure.caption.32}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.10}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-2\relax }}{68}{figure.caption.33}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-3\relax }}{68}{figure.caption.34}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-3\relax }}{69}{figure.caption.35}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.13}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-3\relax }}{69}{figure.caption.36}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.14}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-3\relax }}{70}{figure.caption.37}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.15}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-3\relax }}{70}{figure.caption.38}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.16}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-4\relax }}{71}{figure.caption.39}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.17}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-4\relax }}{71}{figure.caption.40}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.18}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-4\relax }}{72}{figure.caption.41}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.19}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-5\relax }}{72}{figure.caption.42}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.20}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-5\relax }}{73}{figure.caption.43}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.21}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-5\relax }}{73}{figure.caption.44}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.22}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-5\relax }}{74}{figure.caption.45}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-1\relax }}{75}{figure.caption.46}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-1\relax }}{68}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-2\relax }}{76}{figure.caption.47}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-1\relax }}{69}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-3\relax }}{76}{figure.caption.48}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-1\relax }}{69}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-4\relax }}{77}{figure.caption.49}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-1\relax }}{70}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-5\relax }}{77}{figure.caption.50}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-1\relax }}{70}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Motor Scope with Nash Equilibrium during FTP75-1\relax }}{71}{figure.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-2\relax }}{71}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-2\relax }}{72}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-2\relax }}{72}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-2\relax }}{73}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-2\relax }}{73}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-3\relax }}{74}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-3\relax }}{74}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-3\relax }}{75}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-3\relax }}{75}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Fuel and Emissions Scope with Nash Equilibrium during FTP75-3\relax }}{76}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-4\relax }}{76}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-4\relax }}{77}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-4\relax }}{77}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Game Theory Scope with Nash Equilibrium during FTP75-5\relax }}{78}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.21}{\ignorespaces Drive Cycle Scope with Nash Equilibrium during FTP75-5\relax }}{78}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.22}{\ignorespaces Power Controller Scope with Nash Equilibrium during FTP75-5\relax }}{79}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Engine Scope with Nash Equilibrium during FTP75-5\relax }}{79}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-1\relax }}{80}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-2\relax }}{81}{figure.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-3\relax }}{81}{figure.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-4\relax }}{82}{figure.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Game Theory Scope with Nash Bargaining solution during FTP75-5\relax }}{82}{figure.caption.56}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Game Theory Scope with Kalai-Smorodinsky solution during FTP75-1\relax }}{83}{figure.caption.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Game Theory Scope with Kalai-Smorodinsky solution during FTP75-2\relax }}{84}{figure.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Game Theory Scope with Kalai-Smorodinsky solution during FTP75-3\relax }}{84}{figure.caption.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Game Theory Scope with Kalai-Smorodinsky solution during FTP75-4\relax }}{85}{figure.caption.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Game Theory Scope with Kalai-Smorodinsky solution during FTP75-5\relax }}{85}{figure.caption.61}

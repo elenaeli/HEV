@@ -18,8 +18,7 @@ function [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( paretoSt
     torqueDeviationPareto = 1 + 99.*(torqueDeviationPareto - min(torqueDeviationPareto))./(max(torqueDeviationPareto) - min(torqueDeviationPareto));
     fuelConsRatePareto = 1 + 99.*(fuelConsRatePareto - min(fuelConsRatePareto))./(max(fuelConsRatePareto) - min(fuelConsRatePareto));
     emissionsPareto = 1 + 99.*(emissionsPareto - min(emissionsPareto))./(max(emissionsPareto) - min(emissionsPareto));
-    
-    %0.5* ((0+10) + (10-(0))*((2*torqueDeviationPareto - (0+100))/(100-(0))) );
+
     for r = 1 : size(paretoIndex,1)
         f = analogicalOR(fuelConsRatePareto(r,1), fuelConsumed);
         ft = analogicalOR(f, torqueDeviationPareto(r,1));

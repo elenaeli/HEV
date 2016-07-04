@@ -1,10 +1,10 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 198;         
+    requiredTorque = 120;         
     SOC = 58;
     fuelConsumed = 0.98;
-     prevEngTorqueArOut = zeros(10,1);
-    prevMotTorqueArOut = zeros(10,1);        
+    prevEngTorqueArOut = zeros(100,1);
+    prevMotTorqueArOut = zeros(100,1);        
     requiredTorqueR = 0;
     requiredTorqueR = roundn(requiredTorque,0);       
     
@@ -109,34 +109,32 @@
                         wSOC*SOC_deviation;
                     fuelConsRate(j,1) = fuelConsumedGPS; 
                     emissions(j,1) = HCEmissions + COEmissions + NOXEmissions;
-                    power(j,1) = powerMotorKW(j);                                
+                    power(j,1) = powerMotorKW(j);                             
                 end
             end
 
-             [engineTorque, motorTorque] = solveG(payoffEngine, payoffMotor, ...
-                strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
-                fuelConsRate, fuelConsumed, emissions, power, m, e)   
-                     
-           
-        if abs(engineTorque - prevEngTorque) > 10 && stage >= 50000                        
-            engineTorque = mean(prevEngTorqueAr, 1);
-            motorTorque = mean(prevMotTorqueAr, 1);
-        end 
-       
-        if mod(stage, 50000) == 0
-            stage = 0;
-        end
-        if mod(stage, 5000) == 0            
-            prevEngTorqueAr(ind) = engineTorque;
-            prevMotTorqueAr(ind) = motorTorque;  
-            ind = ind + 1;
-        end
-            
-        prevEngTorqueOut = engineTorque;      
+        [engineTorque, motorTorque] = solveG(payoffEngine, payoffMotor, ...
+        	strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
+            fuelConsRate, fuelConsumed, emissions, power, m, e);              
                   
-        prevEngTorqueArOut = prevEngTorqueAr;
-        prevMotTorqueArOut = prevMotTorqueAr;
-        engineTorque
-        motorTorque
-    end
-    stage = stage + 1;
+%         if abs(engineTorque - sum(prevEngTorqueAr(prevEngTorqueAr~=0))/sum(prevEngTorqueAr~=0)) > 10 && stage >= 100000                        
+%             engineTorque = sum(prevEngTorqueAr(prevEngTorqueAr~=0))/sum(prevEngTorqueAr~=0);
+%             motorTorque = sum(prevMotTorqueAr(prevMotTorqueAr~=0))/sum(prevMotTorqueAr~=0);
+%         end                     
+%             
+%         if mod(stage, 1000) == 0            
+%             prevEngTorqueAr(ind) = engineTorque;
+%             prevMotTorqueAr(ind) = motorTorque;  
+%             ind = ind + 1;
+%         end
+%         if ind == 100
+%             ind = 1;
+%             prevEngTorqueAr = zeros(100,1);
+%             prevMotTorqueAr = zeros(100,1);   
+%         end    
+%                           
+%         prevEngTorqueArOut = prevEngTorqueAr;
+%         prevMotTorqueArOut = prevMotTorqueAr;
+%       
+        end
+     

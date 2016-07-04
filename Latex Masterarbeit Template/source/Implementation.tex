@@ -1,13 +1,13 @@
 \chapter{Implementation}
 \label{chp:implementation}
-This chapter explains how the hybrid vehicle, which is similar to the Toyota Prius second generation, was modelled in Simulink. Then the implementation details in Matlab of each of the six game-theoretical approaches are described.
+This chapter firstly explains how the hybrid vehicle, which is similar to the Toyota Prius second generation, was modelled in Simulink. Then the implementation details in Matlab of each of the six game-theoretical approaches are described.
 
 \section{Hybrid Vehicle Model}
-The model of the hybrid vehicle is split into different controllers and each of them is responsible for controlling the corresponding part of the hybrid as shown in Figure \ref{fig:hev}. The chapter describes the Drive Cycle Controller, the Power Controller, the Gasoline Engine Controller, the Electric Motor Controller, the Transmission and the Vehicle Dynamics. The game-theoretical logic is included in the Power Controller, which is the principal controller where the solution is computed. It is shown in the next section.
+The model of the hybrid vehicle is split into different controllers and each of them is responsible for controlling the corresponding part of the hybrid as shown in Figure \ref{fig:hev}. This section describes the Drive Cycle Controller, the Power Controller, the Gasoline Engine Controller, the Electric Motor Controller, the Transmission and the Vehicle Dynamics. The game-theoretical logic is included in the Power Controller, which is the principal controller where the solution is computed. The Power Controller is described in the next section.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{figures/hev}
+\includegraphics[scale=0.6]{figures/hev}
 \caption{Hybrid vehicle model in Simulink}
 \label{fig:hev}
 \end{figure}
@@ -15,7 +15,7 @@ The model of the hybrid vehicle is split into different controllers and each of 
 \subsection{Drive Cycle Controller}
 This subsection deals with the demand of speed which comes from the Drive Cycle and how it is transformed to acceleration demand, which corresponds to the acceleration pedal in a vehicle.
 
-Two different drive cycles were simulated. The FTP-75 drive cycle is intended to test light-duty vehicles in the U.S. and measure their gas emissions and fuel economy. It lasts for 1874s, the total distance it covers is 17.77km and the average speed is 34.1 km/h. The drive cycle contains three phases - cold start from 0-504s, transient phase from 505-1369s and hot start from 1370-1874. The last phase is exactly the same as the first phase. Figure \ref{fig:ftp75} shows the time and speed of this drive 
+In total one long drive cycle was simulated. The FTP-75 drive cycle is intended to test light-duty vehicles in the U.S. and measure their gas emissions and fuel economy. It lasts for 1874s, the total distance it covers is 17.77km and the average speed is 34.1 km/h. The drive cycle contains three phases - cold start from 0-504s, transient phase from 505-1369s and hot start from 1370-1874. The last phase is exactly the same as the first phase. Figure \ref{fig:ftp75} shows the time and speed of this drive 
 cycle.
 
 \begin{figure}[h]
@@ -30,33 +30,56 @@ The Speed Control block takes as input the demanded speed from the drive cycle a
 
 \subsection{Power Controller}
 \label{subsec:powerContr}
-The Power Controller takes as input the acceleration demand $a$ and the state of charge $SOC$ of the battery which comes from the Electric Motor Controller. In order to transform the acceleration demand into torque demand $\tau_{dem}$, the acceleration is scaled by the maximum torque of 400 \textit{Nm} which can be requested. This value was chosen since this is the maximum output torque of the Toyota Prius electric motor. The minimum demanded torque is -400 \textit{Nm} which corresponds to deceleration. The current motor speed $\omega_{mot}$ is mapped to the torque of the motor which it is capable of generating at this moment. This value is taken as upper limit and its negated value is taken as a lower limit of the torque. 
+The Power Controller takes as input the acceleration demand $a$ and the state of charge $SOC$ of the battery which comes from the Electric Motor Controller. In order to transform the acceleration demand into torque demand $\tau_{dem}$, the acceleration is scaled by the maximum torque of 400 \textit{Nm} which can be requested. This value was chosen since this is the maximum output torque of the Toyota Prius electric motor. The minimum demanded torque is -400 \textit{Nm} which corresponds to deceleration. The current motor revolution speed $\omega_{mot}$ is mapped to the torque of the motor which it is capable of generating at this moment. This value is taken as upper limit and its negated value is taken as a lower limit of the torque. 
 
 There are two subsystems in the Power Controller, the Battery Management and the Game Theory Controller. The first of them takes as input the battery $SOC$, its current in \textit{A}, its voltage in \textit{V} and computes the required recharge power $P_{batReq}$ and the battery limit $P_{batLim}$. The recharge power is requested when the SOC of the battery lies between 40 and 60\%. If the SOC falls below 40\% then the battery is forced to be recharged even if that means not meeting the drive cycle requirements and not achieving the demanded speed. After the battery has been charged up to 60\%, the recharging stops and the requested battery power is set to 0. The battery limit calculation takes into account that the maximum voltage of the battery is 200V and that its maximum power is 21 kW.
 
 The Game Theory Controller is the primary place where the computation of the solution to the power distribution problem happens. The outputted demanded torque $\tau_{dem}$ is fed into the Game Theory Controller block. In addition, the other inputs of this block are required power, which is:
+
 \begin{equation}
 P = \tau \times \omega
 \end{equation}
-where power $P$ is in \textit{W}, torque $\tau$ is in \textit{Nm} and the velocity $\omega$ is angular \textit{rad/s}.
-The Game Theory Controller also receives the battery SOC in \%, the generator $\omega_{gen}$, engine $\omega_{eng}$, motor $\omega_{mot}$ speeds all in \textit{rad/s}, the Total Fuel consumed up to this moment from the beginning of the drive cycle $TF$ in \textit{litres}, the battery limit and the required battery recharge power $P_{batReq}$ as described in the Battery Management subsystem above. The Game Theory Controller block contains the game-theoretical logic embedded as a Matlab function. Apart from it, it also regulates the speed of the engine by taking the difference between the required driving power $P_{drive}$ and the recharge power for the battery $P_{batReq}$. The resulting power is given as an input to a lookup table to find the corresponding engine speed in \textit{rpm}. To obtain the Generator torque $\tau_{gen}$ the engine torque and the generator speed $\omega_{gen}$ in \textit{rad/s} are taken. If the motor needs to provide additional power for the battery, this power is taken to be the sum of the battery available power and the generator power. The battery available power $P_{batAv}$ is computed in a separate subsystem using the engine torque $\tau_{eng}$, speed $\omega_{eng}$ and power $P_{eng}$, battery recharge power $P_{batReq}$ and battery limit $P_{batLim}$. 
+where power $P$ is in \textit{W}, torque $\tau$ is in \textit{Nm} and the velocity $\omega$ is angular \textit{rad/s}. The Game Theory Controller also receives the battery SOC in \%, the generator $\omega_{gen}$, engine $\omega_{eng}$, motor $\omega_{mot}$ revolution speeds all in \textit{rad/s}, the Total Fuel consumed up to this moment from the beginning of the drive cycle $TF$ in \textit{litres}, the battery limit and the required battery recharge power $P_{batReq}$ as described in the Battery Management subsystem above. The Game Theory Controller block contains the game-theoretical logic embedded as a Matlab function. Apart from it, it also regulates the speed of the engine by taking the difference between the required driving power $P_{drive}$ and the recharge power for the battery $P_{batReq}$. The resulting power is given as an input to a lookup table to find the corresponding engine revolution speed in \textit{rpm}. To obtain the generator torque $\tau_{gen}$ the engine torque and the generator speed $\omega_{gen}$ in \textit{rad/s} are taken. If the motor needs to provide additional power for the battery, this power is taken to be the sum of the battery available power and the generator power. The battery available power $P_{batAv}$ is computed in a separate subsystem using the engine torque $\tau_{eng}$, speed $\omega_{eng}$ and power $P_{eng}$, battery recharge power $P_{batReq}$ and battery limit $P_{batLim}$. 
 Four values come as a result from the Game Theory Controller, the engine throttle $\theta$, the motor torque $\tau_{mot}$, the generator torque $\tau_{gen}$, the reference engine speed in \textit{rpm} $\omega_{eng}$. These are fed to a final Speed Controller block for controlling the engine speed which outputs the final engine throttle $\theta$ as percentage from the maximum possible torque of the engine $\tau_{engMax}$.
 
 \subsection{Engine Controller}
 The Engine Controller receives the throttle in \% as input and sends the torque as output. The Gasoline Engine library block implements a gasoline fuel engine and its speed controller. Firstly, the masked library block and then the extensions added to it to will be explained.
 
-In the Gasoline Engine block the input signal between 0 and 1 indirectly controls the engine speed. Whenever the input is outside of the allowed range it is limited to 0 or 1 respectively. The mapping of speed in \textit{rpm} to torque in \textit{Nm} is implemented by a lookup table. The throttle goes through a Switch block which ensures that the maximum speed of the engine is not exceeded. If this happens, the throttle is set to 0. Otherwise the torque and the angular velocity are measured and after that the torque flows to the output. The angular velocity measured in \textit{rad/s} is fed back to the lookup table in \textit{rpm} to find the corresponding torque and it is also given to the switch block for controlling the maximum speed.
+In the Gasoline Engine block the input signal between 0 and 1 indirectly controls the engine speed. Whenever the input is outside of the allowed range it is limited to 0 or 1 respectively. The mapping of speed in \textit{rpm} to torque in \textit{Nm} is implemented by a lookup table. The throttle goes through a Switch block which ensures that the maximum speed of the engine is not exceeded. If this happens, the throttle is set to 0. Otherwise the torque and the angular velocity are measured and after that the torque flows to the output. The angular velocity measured in \textit{rad/s} is fed back to the lookup table after transformation in \textit{rpm} in order to find the corresponding torque and it is also given to the switch block for controlling the maximum speed.
 
-An additional functionality which was implemented to extend the library block was to limit the torque from 0 to 136 and also speed from 0 to 6000 rpm. Figure \ref{fig:engineTorqueSpeed} shows the torque speed curve of the engine. It provides maximum torque of 135 to 136 in the speed range 2800 - 3200 rpm. For this reason when the acceleration is constant and the engine provides maximum torque, there is a discrepancy in the simulation results, because the speed keeps jumping from 2800 to 3200 quickly, which is inefficient. Therefore, a hysteresis was implemented by a Relay block which has a switch on and a switch off point values. When the signal lies between 2800 and 3200 rpm it is either set to 2800 or to 3200 rpm to prevent such jittering.
+An additional functionality which was implemented to extend the Gasoline Engine library block was to limit the torque from 0 to 136 and also speed from 0 to 6000 rpm. Figure \ref{fig:engineTorqueSpeed} shows the torque speed curve of the engine. It provides maximum torque of 135 to 136 in the speed range 2800 - 3300 rpm. For this reason when the acceleration is constant and the engine provides maximum torque, there is a discrepancy in the simulation results, because the speed keeps jumping from 2800 to 3300 quickly, which is inefficient. Therefore, a hysteresis was implemented which has a switch on and a switch off point values. The aim of a hysteresis is not to allow the input signal to fall between these values. When it is smaller than the lower switch on value, it is limited to this value and when it is larger than the higher switch off value, it remains to this higher value. When the signal lies between 2800 and 3300 rpm it is either set to 2800 or to 3200 rpm to prevent such jittering.
 
-A Driveline environment is connected to the output of the Gasoline Engine block which provides the simulation environment. In addition, attaching a Torsional Spring-Damper \citep{tsdMatlab} allows the torque to flows between two rotating axes, the base and the follower. The input (base) is connected to the output of the Gasoline Engine library block which is the torque, whereas the output (follower) is grounded using an Housing block to prevent it from rotating. The Torsional Spring-Damper takes as parameters the stiffness (spring rate) set to 0 \textit{N*m/rad} and the damping (kinetic friction) set to 0.2079 \textit{N*m*s/rad}. The torque depends on the relative displacement angle and relative angular velocity. Moreover, the outputted torque from the Gasoline Engine block has another connection to an Inertia block, which acts as a rigid rotating body. Torque and angular velocity are measured and given along with the throttle to a Scope block for displaying the results of the engine. Power is also calculated by taking the product of torque and velocity.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{figures/enginecurve}
+\caption{Engine torque versus speed curve}
+\label{fig:engineTorqueSpeed}
+\end{figure}
 
-A separate subsystem is responsible for the fuel and gas emissions calculations. It receives the engine speed in \textit{rpm} and the torque and outputs Total Fuel $TF$ in \textit{l}, Fuel Consumption $FC$ in \textit{l/100km}, CO emissions, HC emissions, NOX emissions all in \textit{g/km}. In order to calculate them lookup tables are applied, which hold the data for the gas emissions in grams per second \textit{g/s}. To transform \textit{g/s} into \textit{g/km} the total distance travelled is required. That is why the average speed of the drive cycle is calculated and is multiplied with the total time. 
+A Driveline environment is connected to the output of the Gasoline Engine block and it provides the simulation environment. In addition, attaching a Torsional Spring-Damper \citep{tsdMatlab} allows the torque to flows between two rotating axes, the base and the follower. The input (base) is connected to the output of the Gasoline Engine library block which is the torque, whereas the output (follower) is grounded using an Housing block to prevent it from rotating. The Torsional Spring-Damper takes as parameters the stiffness (spring rate) set to 0 \textit{N*m/rad} and the damping (kinetic friction) set to 0.2079 \textit{N*m*s/rad}. The torque depends on the relative displacement angle and relative angular velocity. Moreover, the outputted torque from the Gasoline Engine block has another connection to an Inertia block, which acts as a rigid rotating body. Torque and angular velocity are measured and given along with the throttle to a Scope block for displaying the results of the engine. In addition, power is also displayed in the Scope by taking the product of torque and velocity.
+
+A separate subsystem is responsible for the fuel and gas emissions calculations. It receives the engine speed in \textit{rpm} and the torque and outputs Total Fuel $TF$ in \textit{l}, Fuel Consumption $FC$ in \textit{l/100km}, CO emissions, HC emissions, NOX emissions all in \textit{g/km}. In order to calculate them lookup tables are applied, which hold the data for the gas emissions in grams per second \textit{g/s}. To transform \textit{g/s} into \textit{g/km} the total distance travelled in \textit{km} is required. That is why the average speed of the drive cycle is calculated in \textit{km/h} and is multiplied with the total time. 
 
 \subsection{Electric Motor Controller}
-The Electric Motor Controller is a large subsystem containing the battery, a DC/DC converter, the motor and the generator. It receives as input the demanded motor torque and generator torque. It outputs the battery characteristics and the actual motor torque and actual generator torque.
+The Electric Motor Controller is a large subsystem, whose primary parts are the battery, a DC/DC converter, the motor and the generator. It receives as input the demanded motor torque and generator torque. It outputs the battery characteristics and the actual motor torque and actual generator torque. The Electric Motor Controller Simulink model is to be seen in Figure \ref{fig:motorController}
 
-The battery is modelled by a Battery block of a Nickel-Metal-Hydride type. The nominal voltage is 200V and the rated capacity is 6.5Ah. At the beginning of the simulation the battery is fully charged, its state of charge is set to 100\%. The discharge characteristics are shown in Figure \ref{fig:batteryDischarge}. The first figure shows the nominal discharge current and the second shows the discharge curves at the specific discharge currents. The discharge model $f_1$ and charge model $f_2$ of the battery are \citep{batteryMatlab}:
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.48]{figures/electricmotorcontroller}
+\caption{Electric Motor Controller}
+\label{fig:motorController}
+\end{figure}
+
+The battery is modelled by a Battery block of a Nickel-Metal-Hydride type. The nominal voltage is 200V and the rated capacity is 6.5Ah. At the beginning of the simulation the battery is fully charged, its state of charge is set to 100\%. The discharge characteristics are shown in Figure \ref{fig:batteryDischarge}. The first figure shows the nominal discharge current and the second shows the discharge curves at the specific discharge currents. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{figures/battery}
+\caption{Battery Discharge characteristics}
+\label{fig:batteryDischarge}
+\end{figure}
+
+The discharge model $f_1$ and charge model $f_2$ of the battery are \citep{batteryMatlab}:
 
 \begin{equation}
 \begin{split}
@@ -73,18 +96,18 @@ where $E_0$ is the constant voltage, $Exp(s)$ is the exponential zone dynamics i
 
 The DC/DC converter is directly attached to the battery. Its purpose is to convert direct current from one voltage to another, from the battery voltage to the motor and generator voltage. The DC bus voltage of the whole electric system is maintained at 500V. 
 
-The Electric Motor subsystem is modelled similar to the AC6 - 100 kW Interior Permanent Magnet Synchronous Motor (PMSM) Drive library model \citep{ac6Matlab}. The motor is a PMSM as in the Toyota Prius. However, the implemented model in this thesis is a 50 kW instead of 100 kW and the bus voltage is 500VDC instead of 288VDC like in the AC6 library model. In total there are four main parts of the electric motor - the PMSM, the Three-phase Inverter, the VECT controller and the Speed Controller. 
+The Electric Motor subsystem is modelled similar to the AC6 - 100 kW Interior Permanent Magnet Synchronous Motor (PMSM) Drive library model \citep{ac6Matlab}. The motor is a PMSM as in the Toyota Prius. However, the implemented model in this thesis is a 50 kW instead of 100 kW and the bus voltage is 500VDC instead of 288VDC like in the AC6 library model. In total there are four main parts of the electric motor Simulink model - the PMSM, the Three-phase Inverter, the VECT controller and the Speed Controller. 
 
 The inputs of the Motor block are torque in \textit{Nm}, enable 0 or 1, speed in \textit{rad/s} and the plus and minus from the battery. The outputs are the three motor characteristics - stator current in \textit{A}, rotor speed in \textit{rad/s}, electromagnetic torque in \textit{Nm} and the speed control containing the reference torque in \textit{Nm}. The Speed controller receives as input the speed and an Enable signal. The incoming torque is converted to speed using a lookup table and fed into the Speed controller. It outputs the torque and transmits it to the VECT controller, whose output are three reference line currents. They are given to the Three-phase converter which converts voltage. The Simulink library block Permanent Magnet Synchronous Machine \citep{pmsmMatlab} is used for the implementation of the motor itself. On this motor there are 8 poles and the rotor is of type salient-pole, which means that the magnets are buried. It is a three-phrase motor and has a sinusoidal back electromotive force EMF. The mechanical input can either be the torque \textit{Nm} or the speed in \textit{rad/s}, but in this case it is the speed. Depending on the sign of the torque coming as input the block can either work as a motor or as a generator. When the sign is positive it operates as a motor and if it is negative, it acts as a generator. 
 
-The motor's characteristics are plotted in the Electric Motor scope. These include the current in \textit{A}, the rotor speed \textit{rpm}, the measured and the reference torque \textit{Nm} and also the power in \textit{W}. The outputted torque from the motor is limited between -400 and 400 \textit{Nm} and is also used as output from the whole Electric Motor Controller.
+The motor's characteristics are plotted in the Electric Motor scope in the Results chapter in Figure \ref{fig:mpa1}. These include the current in \textit{A}, the rotor revolution speed \textit{rpm}, the measured and the reference torque \textit{Nm} and also the power in \textit{W}. The outputted torque from the motor is limited between -400 and 400 \textit{Nm} and is also used as output from the whole Electric Motor Controller.
 
 The Generator block is modelled in the exact same manner as the Motor block. Again the Simulink block Permanent Magnet Synchronous Machine \citep{pmsmMatlab} is utilized. Nevertheless, the generator is a 30 kW machine in contrast to the 50 kW motor. The minimum and maximum torque are the same as in the motor, -400 and 400 \textit{Nm} and are limited within this range using a Saturation block. The generator's resulting stator current in \textit{A}, rotor speed in \textit{rpm}, measured and reference torque in \textit{Nm} and power in \textit{W} are displayed in the Generator scope.
 
 \subsection{Transmission}
-The main purpose of the transmission or the gearbox is to incorporate the torque from the engine, motor and generator and to transmit the combined torque to the vehicle. In the Toyota Prius this transmission system is called the Power Split Device (PSD). 
+The main purpose of the transmission or the gearbox is to incorporate the torque from the engine, motor and generator and to transmit the combined torque to the wheels. In the Toyota Prius this transmission system is called the Power Split Device (PSD). 
 
-The Transmission subsystem receives as input the torque from the engine, motor and generators. The output is the combined torque of these three which flows into the Vehicle dynamics subsystem where it is transmitted to the wheels. The transmission consists of a planetary gear with a carrier, ring and sun gears. Each of these three gears is connected to one source of torque. The engine is connected to the planetary carrier, the motor is attached to the ring gear and the generator to the sun gear. After merging the torques they are outputted from the ring, where the motor is attached. While the axle of the carrier and thus rotates the ring and sun gears using the inside planet gears, the ring gear axle transmits the torque to the wheels in the Vehicle model. The sun gear's axle, where the generator is attached, is responsible for converting the power of the engine to electrical energy.
+The Transmission subsystem receives as input three signals - torque from the engine, motor and generator. The output is the combined torque of these three which flows into the Vehicle dynamics subsystem where it is transmitted to the wheels. The transmission consists of a planetary gear with a carrier, ring and sun gears. Each of these three gears is connected to one source of torque. The engine is connected to the planetary carrier, the motor is attached to the ring gear and the generator to the sun gear. After merging the torques they are delivered to the wheels from the ring gear, where the motor is attached. While the axle of the carrier is rotating, it also supports the rotation of the ring and sun gears using the inside planet gears. The sun gear's axle, where the generator is attached, is responsible for converting the power of the engine to electrical energy. Finally, the ring gear axle transmits the torque to the wheels in the Vehicle model. 
 
 The Planetary gear block itself is implemented by the model in \citet{planetMatlab}. It consists of one planet-planet gear and one ring-planet gear. The parameter ring/sun gear ratio is fixed and is set to 2.6. When the sun rotates in one direction, the ring co-rotates in the other direction with regard to the carrier gear and vice versa. This gear ratio $g_{RS}$ also corresponds to the number of teeth in the ring and sun gear and to the torque ratio between them $g_{RS} = N_R/N_S = \tau_R/\tau_S$. There are two geometry constraints regarding the radii of the gears. The radius of the carrier is the sum of the radius of the sun and planet gears $r_C = r_S + r_P$, whereas the radius of the ring gear is the sum of the carrier radius and the planet radius $r_R = r_C + r_P$. In addition, there are two kinematic constraints which say that $r_C\omega_C = r_S\omega_S + r_P\omega_P$ and $r_R\omega_R = r_C\omega_C + r_P\omega_P$. This means that the angular velocity of the carrier is the sum of the velocities of the sun and planet gear and the angular velocity of the ring is the sum of the carrier and planet velocities.
 
@@ -99,7 +122,7 @@ Each of the two output shafts of the differential is connected to one inertia bl
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.8]{figures/tire}
+\includegraphics[scale=0.5]{figures/tire}
 \caption{Forces affecting the tire \citep{tireMatlab}}
 \label{fig:tire}
 \end{figure}
@@ -107,7 +130,7 @@ Each of the two output shafts of the differential is connected to one inertia bl
 Each of the two tires is connected to the primary block in the Vehicle Dynamics subsystem. This is the Longitudinal Vehicle Dynamics \citep{vehicleDynMatlab}, which implements the dynamics of a vehicle with two axles and four wheels. Its inputs are the incline angle $\beta$ and the front and rear longitudinal forces $F_{xf}$ and $F_{xr}$, which come from each of the front and rear tires' outputs $F_x$. The block produces as outputs the vehicle velocity $V_x$ and also the vertical load forces for the front and rear tires $F_{zf}$ and $F_{zr}$. These two are transmitted to the $F_z$ input ports of the wheels. In addition, the block calculates the vehicle velocity which is also fed back to the wheels' ports $V_x$. Before sending the output of the whole Vehicle Dynamics subsystem, the speed is transformed from \textit{m/s} to \textit{km/h}.
 
 \section{Game-theoretical algorithms}
-This chapter deals with the implementation of all six game-theoretical approaches in Matlab. Firstly, a description of the initialization and the parent function, which calls each of the solutions and that is embedded in the Simulink model, is given. Then, each function for the game theory solution is explained in detail.
+This section deals with the implementation of all six game-theoretical approaches in Matlab. Firstly, a description of the initialization function and the parent function, which calls each of the solutions and is embedded in the Simulink model, is given. Then, each function computing a game theory solution is explained in detail.
 
 \subsection{Initialization functions}
 \label{sec:initfunc}
@@ -117,62 +140,60 @@ Firstly, the fuel consumption rate lookup table is explained. The data comes fro
 \begin{equation}
 gps = \frac{galps * 719.7 * 1000}{264.172}
 \end{equation}
-where 719.7 * 1000 $g/m^3$ is the density of gasoline and 264.172 $gal/m^3$ converts $gal$ to $m^3$. After the conversions the minimum and maximum speed, torque, fuel consumption rate and power are given to the Matlab \textit{linspace} function in order to generate linearly spaced vectors of size 10 for each of the inputs. Then the function \textit{meshgrid} is applied to produce a grid from the input vectors of torque and speed. The torque and speed are also passed to two \textit{fit} functions, once with the fuel consumption rate and once with the power in order to fit a polynomial surface to the data. Moreover, the fuel and power consumption surface is plotted. For this purpose a polynomial function has to be chosen. Experimentation was done with different polynomial curves like poly22, poly23 and finally poly22 was chosen. The first 2 corresponds to the degree in x and the second 2 or 3 corresponds to the degree in y. Finally, the fuel consumption rate and the power lookup tables are created by the function \textit{feval} which takes the fuel and power fit and evaluates the function at the grid points, returned by the meshgrid function. The resulting 3D plots are shown in Figure \ref{fig:fuelFit} and Figure \ref{fig:powerFit}.
+where 719.7 * 1000 $g/m^3$ is the density of gasoline and 264.172 $gal/m^3$ converts $gal$ to $m^3$. After the conversions the minimum and maximum speed, torque, fuel consumption rate and power are given to the Matlab \textit{linspace} function in order to generate linearly spaced vectors of size 10 for each of the inputs. Then the function \textit{meshgrid} is applied to produce a grid from the input vectors of torque and speed. The torque and speed are also passed to two \textit{fit} functions, once with the fuel consumption rate and once with the power in order to fit a polynomial surface to the data. Moreover, the fuel and power consumption surface is plotted. For this purpose a polynomial function has to be chosen. Experimentation was done with different polynomial curves like poly22, poly23 and finally poly22 was chosen. The first 2 corresponds to the degree in x and the second 2 or 3 corresponds to the degree in y. Finally, the fuel consumption rate and the power lookup tables are created by the function \textit{feval} which takes the fuel and power fit and evaluates the function at the grid points, returned by the meshgrid function. The resulting 3D plots are shown in Figure \ref{fig:powerFit} and Figure \ref{fig:fuelFit}.
+
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/power}
+\begin{minipage}{.5\textwidth}
+ 	\centering
+	\includegraphics[scale=0.35]{figures/power}
 \caption{Power consumption}
 \label{fig:powerFit}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+\includegraphics[scale=0.35]{figures/fuel}
+  \caption{Fuel consumption}
+  \label{fig:fuelFit}
+\end{minipage}
 \end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.4]{figures/fuel}
-\caption{Fuel consumption}
-\label{fig:fuelFit}
-\end{figure}
-
 
 The second initialization step is to generate the exhaust emissions lookup tables. The data also comes from \citet{argonne1999} and is read from a file. Exactly the same procedure with the \textit{linspace}, \textit{meshgrid}, \textit{fit}, \textit{feval} functions like in the fuel consumption rate above is applied. The resulting fits of the CO, HC and NOX emissions are shown in Figures \ref{fig:coFit}, \ref{fig:hcFit} and \ref{fig:noxFit}.
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{figures/CO}
-\caption{CO Emissions}
-\label{fig:coFit}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{figures/HC}
-\caption{HC Emissions}
-\label{fig:hcFit}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{figures/NOX}
-\caption{NOX Emissions}
-\label{fig:noxFit}
+\begin{figure}[!htb]
+\minipage{0.32\textwidth}
+  \includegraphics[scale=0.29]{figures/CO}
+  \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
+  \caption{CO emissions}\label{fig:awesome_image1}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[scale=0.29]{figures/HC}
+   \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
+  \caption{HC emissions}\label{fig:awesome_image2}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[scale=0.29]{figures/NOX}
+   \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
+  \caption{NOX emissions}\label{fig:awesome_image3}
+\endminipage
 \end{figure}
 
 Lastly, the final step is to prepare the drive cycle data of FTP75. The FTP75 data is read from a file, which has two columns, the first is the time in seconds and the second is the speed in miles per hour. The \textit{mph} are converted to \textit{km/h} by multiplication with 1,60934. Since the drive cycle's duration is 1874s, it is split into 5 different phases, so that simulation can be simplified in case any errors occur and the whole drive cycle has to be started again. 
 
 \subsection{Embedded Matlab function in Simulink}
-The Matlab function, incorporated in the Simulink model, is responsible for calculating the payoff functions and afterwards calling all other game-theoretical solutions.
-The inputs it receives are the required torque in \textit{Nm}, the State of Charge (SOC) of the battery in \% and the fuel consumed in $l$ at this time step. In addition, it takes two lookup tables, containing the data of the fuel consumption and gas emissions. Any required torque between 0 and 83, which is the minimum torque that the engine can produce, is automatically passed only to the motor. No game has to be played, since the engine is incapable of providing such a small amount of torque. Negative required torque is also directly attributed to the motor only, because the engine is also unable to provide negative torque. During torque demands less than 0, the battery is recharged and the motor is transforming the mechanical energy to electric energy and sending it to the battery. Therefore, only when the torque demand lies within the range 83-400, a game-theoretical solution is computed.
+The Matlab function, incorporated in the Simulink model, is the main computation unit of the solution of the game. It is responsible for calculating the payoff functions and afterwards calling all other game-theoretical solutions. The inputs it receives are the required torque in \textit{Nm}, the State of Charge (SOC) of the battery in \% and the fuel consumed in $l$ at this time step. In addition, it takes two lookup tables, containing the data of the fuel consumption and gas emissions. Any required torque between 0 and 83, which is the minimum torque that the engine can produce, is automatically passed only to the motor. No game has to be played, since the engine is incapable of providing such a small amount of torque. Negative required torque is also directly attributed to the motor only, because the engine is also unable to provide negative torque. During torque demands less than 0, the battery is recharged and the motor is transforming the mechanical energy to electric energy and sending it to the battery. Therefore, only when the torque demand lies within the range 83-400, a game-theoretical solution is computed.
 
 \subsubsection{Strategies computation}
 A crucial parameter, which influences the performance of the whole embedded function and thus the whole computation time of the simulation, is the number of pure strategies for each player during the game. A value of 7 is chosen to be the number of strategies after experimenting with values between 5 and 15. For 15 strategies the computation times becomes too large and there is not a big difference to the solution with 7 strategies; hence, the smaller number 7 was chosen.
 
-The strategies represent how much torque the engine and the motor contribute and this is expressed as \% of the required torque or of the maximum torque they are capable of generating. Therefore, the maximum motor and engine strategies are taken to be the minimum of two values - required torque and maximum engine/motor torque. Then, the engine and the motor strategies are computed by the \textit{linspace} Matlab function, which creates a linearly spaced vector between two values with a specific length, in this case 7. Consequently, 0\%, 16.66\%, 33.32\%, 49.98\%, 66.64\%, 83.3\%, 100\% of the required torque are taken as the strategies. For the motor these two minimum and maximum values of the vector are 0 and the required torque respectively, since the motor can produce any torque between 0 and 400, which is also the maximum torque that can be requested. For the engine these two values are 83 (its minimum torque capability) and either the required torque or 136 (maximum torque capability), whichever is smaller. To illustrate this with an example, if the required torque is 120, then the strategies of the motor will be 0, 19.99, 39.98, 59.97, 79.96, 99.95 and 120 \textit{Nm}. The strategies of the engine will be 83, 89.16, 95.32, 101.48, 107.64, 113.8, 120 \textit{Nm}. 
+The strategies represent how much torque the engine and the motor contribute and this is expressed as \% of the required torque or of the maximum torque they are capable of generating. Therefore, the maximum motor and engine strategies are required, where it is distinguished between two cases. Firstly, if the required torque is negative, then the maximum motor and engine torque strategies are always 0. The engine is not capable of supplying negative torque at all. The motor's minimum torque strategy is taken as the maximum of two values - the minimum motor torque capability -400 \textit{Nm} and the required torque, whichever is bigger. Secondly, if the required torque is positive, the maximum motor torque strategy is computed by taking the minimum of two values - the maximum motor torque capability 400 \textit{Nm} and the required torque. For the engine the same logic is applied by taking the minimum of two values - the maximum engine torque 136 \textit{Nm} and the required torque. The minimum motor torque is in this case 0 and the minimum engine torque is 83 \textit{Nm}. Then, the engine and the motor strategies are computed by the \textit{linspace} Matlab function, which creates a linearly spaced vector between two values with a specific length, in this case 7. Consequently, 0\%, 16.66\%, 33.32\%, 49.98\%, 66.64\%, 83.3\%, 100\% of the required torque are taken as the strategies. To illustrate this with an example, if the required torque is 120, then the strategies of the motor will be 0, 19.99, 39.98, 59.97, 79.96, 99.95 and 120 \textit{Nm}. The strategies of the engine will be 83, 89.16, 95.32, 101.48, 107.64, 113.8, 120 \textit{Nm}. 
 
 \subsubsection{Payoff computation}
 The payoff function of the motor is computed as shown in Equation \ref{eq:payoffMotor}. Each of the components of the payoff has a different weight. After conducting experiments, the following weights were established: $w_1 = w_{FCR} = 3$ for fuel consumption rate, $w_2 = w_{TD} = 0.5$ for torque deviation, which corresponds to fulfilling the driver demands, $w_3 = w_{HC} = 45$ for HC emissions, $w_4 = w_{CO} = 25$ for CO emissions, $w_5 = w_{NOX} = 65$ for NOX emissions, $w_6 = w_{TF} = 0.5$ for accumulated total fuel consumed to this moment.
 The payoff function of the engine is also implemented as in Equation \ref{eq:payoffEngine}. The respective weights are $w_7 = w_{PC} = 0.5$ for the power consumed by the motor and the $w_8 = w_{SOC} = 1$ is for the battery SOC deviation from the target 70 \%.
 
-The payoff matrix of the engine is of size $m \times n$. The calculation of each component in the payoff function is explained in detail next. In order to calculate the fuel consumption rate in \textit{g/s} a 2D lookup table of size $10 \times 10$ is utilized. For a given torque and speed of the engine, it outputs the fuel consumption rate. In order to find the closest value to the engine strategy from all 10 torque values in the lookup table, the minimum absolute difference between all 10 torque values and the engine strategy is taken. To find the engine speed, an interpolation between the torque and speeds values at the specific point of the engine strategy is required. Then, when the torque and the engine speed, corresponding to this torque, are known they are given to the fuel consumption table to find the fuel consumption rate. The torque deviation is computed as the absolute difference between the required torque and the total torque (sum of the motor and engine strategies). After that, the gas emissions are the next components in the payoff function. The same torque and corresponding engine speed are used as inputs to the CO, NOX and HC emissions lookup tables, which work in the same manner as the fuel consumption lookup table.
+The payoff matrix of the engine is of size $m \times n$. The calculation of each component in the payoff function is explained in detail next. In order to calculate the fuel consumption rate in \textit{g/s} a 2D lookup table of size $10 \times 10$ is utilized. For a given torque and speed of the engine, it outputs the fuel consumption rate in \textit{g/s}. In order to find the closest value to the engine strategy from all 10 torque values in the lookup table, the minimum absolute difference between all 10 torque values and the engine strategy is taken. To find the engine speed, an interpolation between the torque and speeds values at the specific point of the engine strategy is required. Then, when the torque and the engine speed, corresponding to this torque, are known they are given to the fuel consumption table to find the fuel consumption rate. The torque deviation is computed as the absolute difference between the required torque and the total actual torque (sum of the motor and engine strategies). After that, the gas emissions are the next components in the payoff function. The same torque and corresponding engine speed are used as inputs to the 3 lookup tables for CO, NOX and HC emissions, which work in the same manner as the fuel consumption lookup table.
 
 Similarly, the engine payoff is also a $10 \times 10$ matrix. The calculation of the first component in this payoff function, the torque deviation, was explained above. The power consumed by the motor in $kW$ is computed according to:
 \begin{equation}
@@ -180,13 +201,31 @@ P = \frac{\tau \times v}{9,5488 \cdot 1000}
 \end{equation}
 where the velocity is in \textit{rpm} and thus the factor 9,5488 is needed to convert it to \textit{rad/s} and 1000 is for obtaining the power in $kW$ instead of $W$. The SOC deviation is computed by taking the absolute difference between the 70 \% target, which is the charged capacity that the battery tries to maintain, and the SOC at this time step. This deviation can at most be 30 \% and this happens when the battery is fully charged at 100 \% or when the battery is charged at its minimum allowed charge state of 40 \%. The battery SOC must not fall below this percentage. If this happens, a recharging process immediately starts even if the driver demands cannot be met any more.
 
-With this the description of the payoff function is finished. The next subsection explains the game-theoretical approaches implementation in Matlab.
+With this the description of the payoff functions of the engine and motor is finished. The next subsection explains the game-theoretical approaches implementation in Matlab.
 
 \subsection{Pareto Efficiency}
-Implementation of the Pareto Efficiency is done in the function \textit{paretoset.m}. Firstly, this function receives the payoff of the engine and motor in two variables. All outcomes in both payoff matrices are examined in order. For each payoff it is checked whether there exists another payoff with a smaller engine payoff (x-coordinate) and a smaller motor payoff (y-coordinate). If that is the case, then the current payoff is not a Pareto outcome and a flag is set. If after checking all outcomes against the current outcome there is still no smaller payoff for both players, then this is regarded as a Pareto efficient outcome. Furthermore, it is verified that another outcome with a difference of at most 0.000001 from the current outcome is not already saved in the Pareto efficiency vector. The function outputs the set of Pareto efficient payoffs in a matrix where each row holds the x and y values of the Pareto outcome. In addition, the indices of the Pareto efficient points inside the payoff matrices are returned in the same way.
+Implementation of Pareto Efficiency is done in the function \textit{paretoset.m}. Firstly, this function receives the payoff of the engine and motor in two variables. All outcomes in both payoff matrices are examined in order. For each payoff it is checked whether there exists another payoff with a smaller engine payoff (x-coordinate) and a smaller motor payoff (y-coordinate). If that is the case, then the current payoff is not a Pareto outcome and a flag is set. If after checking all outcomes against the current outcome there is still no smaller payoff for both players, then this is regarded as a Pareto efficient outcome. Furthermore, it is verified that another outcome with a difference of at most 0.000001 from the current outcome is not already saved in the Pareto efficiency vector. The function outputs the set of all Pareto efficient payoffs in a matrix where each row holds the x and y values of the Pareto outcome. In addition, the indices of the Pareto efficient points inside the payoff matrices are returned in the same way.
 
 \subsection{Pareto Optimality}
-Due to the fact that there can be more than one Pareto efficient points, a criteria has to be defined in order to choose a single point to be the solution. This single solution or Pareto Optimality is implemented in the function \textit{bestpareto.m}. The function takes as input the outputs of the \textit{paretoset.m} function and additionally the torque deviation, the fuel consumption rate and the motor power. Three different criteria are defined regarding the choice of the solution point. First of all, the point with the smallest absolute torque deviation is taken as the Pareto optimal point. In case that the size of the vector returned by this minimum absolute difference is bigger than 1, or when there are more than one such points, then a second criterion is applied. Thus, the point with the minimum fuel consumption rate is taken. Again, if the size of the returned vector is bigger than 1, a third criterion is exploited. The point with the minimal power, consumed from the motor, is taken as final solution. As output the function returns a pair of x and y coordinates of the Pareto optimal solution payoff.
+\label{subsec:paretoImpl}
+Due to the fact that there can be more than one Pareto efficient points, a criteria has to be defined in order to choose a single point to be the solution. This single solution or Pareto Optimality is implemented in the function \textit{bestpareto.m}. The function takes as input the outputs of the \textit{paretoset.m} function and additionally the torque deviation, the fuel consumption rate, the total fuel consumed and the emissions. As already mentioned in subsection \ref{subsec:paretoFund} an optimal choice between all Pareto efficient points will be to take a combination of the four criteria - torque deviation, fuel consumption rate, total fuel and emissions. Analogical gates as in \citet{badreddin1995analogical} are fit for exactly this purpose. To implement them, the four criteria are combined in three different steps with two analogical OR and one analogical AND operators. Firstly, a linearization of the values of all four criteria is needed. This is done by mapping them to a common range from 0 to 100. Then, for every Pareto efficient outcome, the fuel consumption rate $FCR$ is combined with the total fuel $TF$ by analogical OR operator which is:
+
+\begin{equation}
+z = x \oplus y = x \xi(y,x) + y \xi(x,y)
+\end{equation}
+
+where the function $\xi$ is defined as:
+\begin{equation}
+\xi(x,y) =  e^{-\Big(\frac{ax^2+bxy}{x^2+y^2}\Big)}
+\end{equation}
+
+Then, the same analogical OR operator is applied to the result from the combined $FCR$ and $TF$ with the torque deviation. Finally, the accumulated result is processed with an analogical AND operator with the sum of all emissions of HC, CO and NOX, which are treated as one number. An analogical AND operator is:
+
+\begin{equation}
+z = x \otimes y = x[1 - \xi(y,x)] + y[1 - \xi(x,y)]
+\end{equation}
+
+As output the function returns a pair of x and y coordinates of the Pareto optimal solution payoff.
 
 \subsection{Nash Equilibrium}
 The algorithm for finding Nash Equilibrium, the Lemke-Howson algorithm, was explained thoroughly in Subsection \ref{subsubsec:lemkehowson}. There are various algorithms for computing Nash Equilibria, for example, the \textit{NPG} Matlab function as described in \citet{npg}. However, this function is too slow in comparison with the Lemke-Howson function \citep{lemkeHowson2014Matlab}. Therefore, it was decided not to use the \textit{NPG} function at all. The Lemke-Howson function takes as input the two payoff matrices of the engine and motor and the initial pivot $k$. The pivot is the starting label to drop, as already explained in Subsection \ref{subsubsec:lemkehowson}. Since there are $m+n$ labels (strategies) which can be dropped first and they can end up in a different Nash Equilibrium node in the graph, it is inefficient to experiment with all different starting strategies. Experiments were done with $1$, $\frac{m+n}{4}$, $\frac{m+n}{2}$, $\frac{3(m+n)}{4}$ and $m+n$ as the first strategy to be dropped. In order to decide which number to use, the Matlab function NPG is run. The Lemke-Howson solution with the $k$-th strategy, which is closest to the NPG solution is chosen, $k = \frac{m+n}{2}$ and it is passed as input to the Lemke-Howson algorithm, whose detailed implementation will not be explained. In principle, it is implemented as a complementary pivoting algorithm for bimatrix games. Originally it returns the mixed strategy Nash Equilibrium in a pair of two cell arrays, one for each player's mixed strategy distribution. Nevertheless, cells are not supported in code generation for the Simulink model. Therefore, the algorithm was slightly altered so that it returns the pair of payoffs which represent one Nash Equilibrium in normal arrays instead of cells.
@@ -278,4 +317,4 @@ The function \textit{shapleyvalue.m} takes three arguments - the value of the gr
 
 Although the two Shapley values are computed, it is often the case that the payoff they constitute is not feasible in pure strategies. When this occurs, two payoffs or two strategy combinations $t_1, t_2$ have to be found, whose combination in mixed strategies gives the Shapley value payoff $s$. In order to find the two nearest payoff points $u_1$ and $u_2$, the Matlab function $knnsearch$ is utilized to find the K nearest neighbours of the Shapley value, where K is set to 2. Let a variable $i=\{1,2\}$ take values of either 1 or 2. If the two x coordinates of the two nearest payoffs are different, then the x values can be compared or $i=1$, otherwise the y values are compared and $i=2$. There are three possibilities for the Shapley value, either it lies within the range $s_2(i) < s < s_1(i)$ or within $s_1(i) < s < s_2(i)$ or it is smaller than both of them, $s < p_1(i), s < p_2(i)$. In the first case the probability of the first closest payoff is $P(u_1) = \frac{s - u_2(i)}{u_1(i)-u_2(i)}$. In the second case it is $P(u_1) = \frac{s - u_1(i)}{u_2(i)-u_1(i)}$. In the third case the probability depends on whether $u_1$ or $u_2$ is bigger. When $u_1 < u_2$ the probabilities are $P(u_1) = \frac{s}{u_1(i)}$ $P(u_2) = 1 - P(u_1)$ and vice versa for $u_2 < u_1$ they are $P(u_1) = \frac{s}{u_2(i)}$ $P(u_2) = 1 - P(u_1)$. The final step is to compute the engine and motor torque by combining the probabilities of the two closest strategies.
 
-With this implementation description the last solution approach, the Shapley value, the Implementation chapter is finished. The next chapter deals with the Simulation of the whole game-theoretical behaviour.
+With the description of the last solution approach, the Shapley value, the Implementation chapter is finished. The next chapter deals with the Simulation of the whole game-theoretical behaviour.

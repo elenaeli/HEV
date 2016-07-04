@@ -6,3 +6,9 @@ formatSpec = '%f';
 EngineSpeedPower.speed = fscanf(fileSpeed, formatSpec);
 EngineSpeedPower.power = fscanf(filePower, formatSpec);
 EngineSpeedPower.torque = fscanf(fileTorque, formatSpec);
+
+figure
+plot(EngineSpeedPower.speed, EngineSpeedPower.torque);
+xlabel('speed (rpm)');
+ylabel('torque (Nm)');
+title(' Engine torque versus speed curve');

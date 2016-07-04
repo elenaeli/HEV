@@ -1,9 +1,10 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 240;         
+    requiredTorque = 198;         
     SOC = 58;
     fuelConsumed = 0.98;
-            
+     prevEngTorqueArOut = zeros(10,1);
+    prevMotTorqueArOut = zeros(10,1);        
     requiredTorqueR = 0;
     requiredTorqueR = roundn(requiredTorque,0);       
     
@@ -116,40 +117,30 @@
                 strategyEng, strategyMot, requiredTorqueR, torqueDeviation,...
                 fuelConsRate, fuelConsumed, emissions, power, m, e)   
                      
-            if abs(engineTorque - prevEngTorque) > 10 || abs(motorTorque - prevMotTorque) > 10 && stage > 3
-                && 
-                stage
-                e = nnz([prevTorque1(1) prevTorque2(1) prevTorque3(1)]);
-                m = nnz([prevTorque1(2) prevTorque2(2) prevTorque3(2)]);
-                engineTorque = (prevTorque1(1) + prevTorque2(1) + prevTorque3(1))/e;
-                motorTorque = (prevTorque1(2) + prevTorque2(2) + prevTorque3(2))/m;
-            end
-              if mod(stage, 3) == 1
-                prevTorque1(1) = engineTorque;
-                prevTorque1(2) = motorTorque;   
-                
-            elseif mod(stage, 3) == 2
-                prevTorque2(1) = engineTorque;
-                prevTorque2(2) = motorTorque;
-                
-            elseif mod(stage, 3) == 0
-                prevTorque3(1) = engineTorque;
-                prevTorque3(2) = motorTorque;
-                
-            end
+           
+                if abs(engineTorque - prevEngTorque) > 10 && stage >= 100000                        
+            engineTorque = mean(prevEngTorqueAr, 1);
+            motorTorque = mean(prevMotTorqueAr, 1);
+        end 
+       
+        if mod(stage, 100000) == 0
+            stage = 0;
+        end      
             
-            prevTorque1
-            prevTorque2
-            prevTorque3
-            prevEngTorque
-            prevMotTorque
-            
-            prevEngTorque = engineTorque;
-            prevMotTorque = motorTorque;               
-            engineTorque
-            motorTorque
-            stage = stage + 1;
-            
-        
-                
+        if mod(stage, 1000) == 0            
+            prevEngTorqueAr(ind) = engineTorque;
+            prevMotTorqueAr(ind) = motorTorque;  
+            ind = ind + 1;
         end
+        if ind == 100
+            ind = 1;
+        end    
+        prevEngTorqueOut = engineTorque;      
+                  
+        prevEngTorqueArOut = prevEngTorqueAr;
+        prevMotTorqueArOut = prevMotTorqueAr;
+      
+    end
+    stage = stage + 1;      
+    stageOut = stage;    
+    indOut = ind;

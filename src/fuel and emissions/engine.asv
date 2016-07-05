@@ -13,13 +13,7 @@ xlabel('speed (rpm)');
 ylabel('torque (Nm)');
 title(' Engine torque versus speed curve');
 
-motorSpeedCurve = [0, 1200, 2000, 3000, 4000, 5000, 6000];
-motorTorqueCurve = [400 400 225 150 100 80 70];
-
 figure
 plot(motorSpeedCurve, motorTorqueCurve);
-xlabel('speed (rpm)');
-ylabel('torque (Nm)');
-title(' Motor torque versus speed curve');
-hold on
-
+motorSpeedCurve = [0, 1200, 2000, 3000, 4000, 5000, 6000];
+motorTorqueCurve = [400 399 225 150 100 80 70];

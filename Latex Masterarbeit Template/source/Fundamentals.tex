@@ -131,7 +131,8 @@ To summarize, the game defined is a two-player cooperative bimatrix non-zero-sum
 This thesis examines a variety of solution approaches for cooperative games which are later applied and simulated as described. The following section describes the theoretical and mathematical definitions of the six solution concepts. These are Pareto Optimality, Nash Equilibrium, Nash bargaining solution, Kalai-Smorodinsky bargaining solution, the Core and the Shapley value.
 
 \subsection{Pareto Efficiency and Pareto Optimality}
-In the literature two terms are often used to refer to the same concept - Pareto Efficiency and Pareto Optimality. However, they are used with distinct meanings throughout this thesis. Pareto Efficiency denotes an allocation of resources such that no player can improve their outcome without impairing another player. In the strategy space of the game there can exist more than one Pareto efficient outcome. Therefore, we define a Pareto optimal outcome, or Pareto Optimality, as the single best outcome from the set of all Pareto efficient outcomes. The criteria for determining the best outcome are four - torque deviation in \textit{Nm}, fuel consumption rate in \textit{gps}, total fuel consumed in \textit{l}, gas emissions in \textit{gps}. Torque deviation is defined as the absolute difference between the required and the actual torque at this stage of the game. Instead of restricting the solution to only of these criteria, all of them can be merged together in order to choose a single Pareto optimal solution. Analogical gates are used for this combination purpose as described by \citet{badreddin1995analogical}.
+\label{subsec:paretoFund}
+In the literature two terms are often used to refer to the same concept - Pareto Efficiency and Pareto Optimality. However, they are used with distinct meanings throughout this thesis. Pareto Efficiency denotes an allocation of resources such that no player can improve their outcome without impairing another player. In the strategy space of the game there can exist more than one Pareto efficient outcome. Therefore, we define a Pareto optimal outcome, or Pareto Optimality, as the single best outcome from the set of all Pareto efficient outcomes. The criteria for determining the best outcome are four - torque deviation in \textit{Nm}, fuel consumption rate in \textit{gps}, total fuel consumed in \textit{l} and gas emissions in \textit{gps}. Torque deviation is defined as the absolute difference between the required and the actual torque at this stage of the game. Instead of restricting the solution to only one of these criteria, all of them can be merged together in order to choose a single Pareto optimal solution. Analogical gates are used for the purpose of combining them as described by \citet{badreddin1995analogical}. The basic idea is to take OR and AND operators so that in the end from the four inputs one output is produced. The exact implementation details are given in \ref{subsec:paretoImpl}.
 
 \subsection{Nash Bargaining solution}
 \label{subsec:nashbargFun}
@@ -147,7 +148,7 @@ so that $u^* = (u_1^*,u_2^*) \in P$ and $u_i^* < c_i$ for $i = 1,2$, meaning tha
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{figures/nashSolution}
+\includegraphics[scale=0.4]{figures/nashSolution}
 \caption{Maximized Nash Product}
 \label{fig:nashSol}
 \end{figure}
@@ -181,7 +182,7 @@ There a number of reasons for the different Nash Equilibrium solutions that the 
 
 As discussed in \citet{shapley1974note} the Lemke-Howson algorithm possesses a significant weakness, namely that it is neither guaranteed that the algorithm will find all possible solutions, nor that it will tell if there are any unfound solutions.
 
-The fundamentals of the Lemke-Howson algorithm are described next. Let us assume a scenario of a 2-player bimatrix game as the one used throughout this thesis, where the players $1$ and $2$ each have $n$ and $m$ number of pure strategies and their payoffs are in the matrices $A = (a_{ij}: i \in \{1,...,m\}, j \in \{ m+1,...,m+n\})$ and $B = (b_{ij}: i \in \{1,...,m\}, j \in \{m+1,...,m+n\})$ respectively. The mixed strategies are the vectors $s=(s_1,s_2...,s_m)$ and $t=(t_{m+1},t_{m+2},...,t_{m+n})$ where $S = \{s \geq 0; \sum_{i=1}^{m}s_i = 1\}$ and $T = \{t \geq 0; \sum_{j=m+1}^{m+n}t_i = 1\}$ are the sets for the mixed strategies spaces. Then, the payoff for player 1 is $\sum_{i=1}^{m}\sum_{j=m+1}^{m+n} a_{ij} s_i t_j$ and the payoff for player 2 is $\sum_{i=1}^{m} \sum_{j=m+1}^{m+n} b_{ij} s_i t_j$. An equilibrium is a pair of strategies $(s^*,t^*)$ satisfying:
+The fundamentals of the Lemke-Howson algorithm are described next. Let us assume a scenario of a 2-player bimatrix game as the one used throughout this thesis, where the players $1$ and $2$ each have $m$ and $n$ number of pure strategies and their payoffs are in the matrices $A = (a_{ij}: i \in \{1,...,m\}, j \in \{ m+1,...,m+n\})$ and $B = (b_{ij}: i \in \{1,...,m\}, j \in \{m+1,...,m+n\})$ respectively. The mixed strategies are the vectors $s=(s_1,s_2...,s_m)$ and $t=(t_{m+1},t_{m+2},...,t_{m+n})$ where $S = \{s \geq 0; \sum_{i=1}^{m}s_i = 1\}$ and $T = \{t \geq 0; \sum_{j=m+1}^{m+n}t_i = 1\}$ are the sets for the mixed strategies spaces. Then, the payoff for player 1 is $\sum_{i=1}^{m}\sum_{j=m+1}^{m+n} a_{ij} s_i t_j$ and the payoff for player 2 is $\sum_{i=1}^{m} \sum_{j=m+1}^{m+n} b_{ij} s_i t_j$. An equilibrium is a pair of strategies $(s^*,t^*)$ satisfying:
 \begin{equation}
 \sum_{i=1}^{m} \sum_{j=m+1}^{m+n} a_{ij}s_i^*t_j^* = \max_{s \in S} \sum_{i=1}^{m} \sum_{j=m+1}^{m+n} a_{ij}s_i t_j^*
 \end{equation}
@@ -230,10 +231,8 @@ The Nash Bargaining solution has the significant disadvantage that it is not mon
 
 The axiom states that if for two bargaining games $(P,c)$ and $(R,c)$ such that $P \subset R$ the equation $m_i(P) = m_i(R)$ holds for player $i$, then for player $j \neq i$ it is true that $f_j(R,c) \geq f_j(P,c)$.
 
-$m_i(P,c)$ and $m_i(R,c)$ denote the minimum payoffs for players $i = 1,2$. They are defined as $m_i(P) = min(u_i | (u_1,u_2) \in P$. The point $m(P) = (m_1(P),m_2(P))$ is called the ideal point of the game, because that is where both players achieve minimum payoffs; hence, the ideal outcome of the game. However, often this point is not feasible. As in the Nash solution, the conflict point is also crucial in the Kalai-Smorodinsky solution. A further term is required and this is the Utility Boundary of the utility space $P$ of a game:
+$m_i(P,c)$ and $m_i(R,c)$ denote the minimum payoffs for players $i = 1,2$. They are defined as $m_i(P) = min(u_i | (u_1,u_2) \in P$. The point $m(P) = (m_1(P),m_2(P))$ is called the ideal point of the game, because that is where both players achieve minimum payoffs; hence, the ideal outcome of the game. However, often this point is not feasible. As in the Nash solution, the conflict point is also crucial in the Kalai-Smorodinsky solution. Consequently, the Kalai-Smorodinsky solution is defined as follows:
 
-
-Consequently, the Kalai-Smorodinsky solution is defined as follows:
 \begin{equation}
 \label{eq:kalaismorodinsky}
 \frac{c_2 - u_2}{c_1 - u_1} = \frac{c_2 - m_2}{c_1 - m_1}
@@ -244,11 +243,11 @@ so that
 u_i \leq v_i, \frac{c_2 - v_2}{c_1 - v_1} = \frac{c_2 - m_2}{c_1 - m_1} 
 \end{equation}
 
-where $(v_1,v_2) \in P$. The pair $(u_1,u_2)$ is the Kalai-Smorodinsky solution. As \citet{kalai1975other} point out, this solution is graphically represented as the intersection point of the line $L(c,m)$ and the utility (payoff) boundary $H(P)$ as shown in Figure \ref{fig:ksSol}. $L(c,m)$ is the line connecting the conflict point $c$ and the ideal point $m$. The utility boundary $H(P)$ or also called the Pareto frontier is defined as the set of all Pareto efficient points. For all random payoffs of one player the boundary gives the minimal possible payoff of the other player. If the Pareto frontier only contains one Pareto efficient point then the Kalai-Smorodinsky solution is the ideal point itself $u = m(P)$.
+where $(v_1,v_2) \in P$. The pair $(u_1,u_2)$ is the Kalai-Smorodinsky solution. A further term is required and this is the Utility Boundary $H$ of the utility space $P$ of a game. As \citet{kalai1975other} point out, the Kalai-Smorodinksy solution is graphically represented as the intersection point of the line $L(c,m)$ and the utility (payoff) boundary $H(P)$ as shown in Figure \ref{fig:ksSol}. $L(c,m)$ is the line connecting the conflict point $c$ and the ideal point $m$. The utility boundary $H(P)$ or also called the Pareto frontier is defined as the set of all Pareto efficient points. For all random payoffs of one player the boundary gives the minimal possible payoff of the other player. If the Pareto frontier only contains one Pareto efficient point then the Kalai-Smorodinsky solution is the ideal point itself $u = m(P)$.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{figures/kalaiSmorodinskySolution}
+\includegraphics[scale=0.4]{figures/kalaiSmorodinskySolution}
 \caption{Kalai-Smorodinsky Solution}
 \label{fig:ksSol}
 \end{figure}
@@ -288,3 +287,5 @@ In addition, the Shapley value is the single point which satisfies the following
 
 The general idea of the Shapley value is permutations of players and especially which player arrives first, meaning which player is able to make the decision first. The order of the players is irrelevant and all of the various orders have the same probability. Since there are $n!$ permutations of the players, the probability of each of them is $\frac{1}{n!}$ as shown in Equation \ref{eq:shapley}. Additionally, the probability of player $i$ being at the $k$-th place is $\frac{(k-1)!(n-k)!}{n!}$.
 On the one hand, a player who has an influence on the value of the coalition is called a crucial or pivot player. A player $i$ is a pivot player whenever $K$ is a winning coalition and without him the coalition $K-\{i\}$ is a losing coalition. On the other hand, a player is called a dummy player when a coalition $K$ has the same value regardless whether $i$ is participating in it or not, $[v(K) - v(K-\{i\})]=0$.
+
+With the Shapley value, which was the final game-theoretical solution concept, the Fundamentals chapter is closed. To conclude, the chapter described the principles of hybrid vehicles and defined the game to be played formally. In addition, it described the theoretical principles of six game theory solution approaches applicable to cooperative games with two players.

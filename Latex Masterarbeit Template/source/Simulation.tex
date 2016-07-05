@@ -76,51 +76,25 @@ A crucial part of the performance of the whole simulated model is the computatio
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ |c|c|c| } 
+\begin{tabular}{ |p{1.5cm}|p{1.5cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|} 
  \hline
- Game-theoretical approach & Drive cycle & Computation time \\
+  \cline{3-8}
+   & Drive cycle & \multicolumn{6}{|c|}{Game-theoretical solution} \\
+   \cline{3-8}
+   & & Pareto Optimality & Nash Equilibrium & Nash Solution & Kalai- Smorodinsky Solution & The Core & Shapley Value\\
  \hline\hline
- \multirow{5}{*}{Pareto Optimality} & FTP75-1 & 11:40h \\ 
- & FTP75-2 & 2:12h \\ 
- & FTP75-3 & 13:11h \\ 
- & FTP75-4 & 02:11h \\ 
- & FTP75-5 & 06:15h\\ 
- \hline 
- \multirow{5}{*}{Nash Equilibrium} & FTP75-1 & 10:31h \\ 
- & FTP75-2 & 2:12h\\ 
- & FTP75-3 & 10:32h\\ 
- & FTP75-4 & 1:51h\\ 
- & FTP75-5 & 16:59h\\ 
- \hline 
- \multirow{5}{*}{Nash Solution} & FTP75-1 & 13:54h \\ 
- & FTP75-2 & 1:34h\\ 
- & FTP75-3 & 12:02h\\ 
- & FTP75-4 & 1:50h\\ 
- & FTP75-5 & 17:45h\\  
- \hline
-  \multirow{5}{*}{Kalai-Smorodinsky Solution} & FTP75-1 & 18:09h \\ 
- & FTP75-2 & 3:27h\\ 
- & FTP75-3 & \\ 
- & FTP75-4 & 1\\ 
- & FTP75-5 & 1\\  
- \hline
- \multirow{5}{*}{The Core} & FTP75-1 & 1 \\ 
- & FTP75-2 & 1\\ 
- & FTP75-3 & 1\\ 
- & FTP75-4 & 1\\ 
- & FTP75-5 & 1\\ 
- \hline 
-  \multirow{5}{*}{Shapley Value} & FTP75-1 & 1 \\ 
- & FTP75-2 & 1\\ 
- & FTP75-3 & 1\\ 
- & FTP75-4 & 1\\ 
- & FTP75-5 & 1\\  
+ \multirow{5}{*}{\parbox{1.5cm}{Compu- tation time (h)}} 
+ & FTP75-1 & 11.35 & 10:31 & 13:54 & 18:09 & 21:59 & \\ 
+ & FTP75-2 & 2:12 & 2:12 & 1:34 & 3:27 & & \\ 
+ & FTP75-3 & 13:11 & 13:11 & 10:32 & 12:02 & & \\ 
+ & FTP75-4 & 2:09 & 2:11 & 1:51 & 1:50 & & \\ 
+ & FTP75-5 & & 06:15 & 16:59 & 17:45 & & \\ 
  \hline
 \end{tabular}
 \caption{Computation time}
 \label{tab:config}
 \end{table}
 
-As it can be seen, the first, third and fifth parts of the FTP75 drive cycle are running considerably slower than the second and fourth. This is due to the fact that the battery needs to be recharged since its SOC falls below 40 \%. Recharging the battery requires negative torque and negative torque is only naturally provided when the vehicle decelerates and the braking power is regenerated and fed to the battery. If the drive cycle demands acceleration and the battery SOC is below 40 \% then the required power to charge the battery is computed in the Battery Available Power in the Game Theory Controller as in Subsection \ref{subsec:powerContr}. Therefore, the Power Controller outputs as a result negative torque demand for the motor and the difference between the demanded speed and the actual speed increases a lot. When the model sees that there are larger errors, it automatically reduces the time step to the minimum of 6e-05. Hence, the computation time increase from around 2 hours for the second and fourth FTP75 cycle to more than 12 hours for the first FTP75 and more than 6 hours for the fifth FTP75. In FTP75-2 and FTP75-4 there is no need to recharge the battery and they both run for around 2 hours even though the duration of all five FTP75 split drive cycles is quite similar. The FTP75-4 even has the largest duration of 470s and still runs far quicker than the others.
+As it can be seen, the first, third and fifth parts of the FTP75 drive cycle are running considerably slower than the second and fourth. This is due to the fact that the battery needs to be recharged since its SOC falls below 40 \%. Recharging the battery requires negative torque and negative torque is only naturally provided when the vehicle decelerates and the braking power is regenerated and fed to the battery. If the drive cycle demands acceleration and the battery SOC is below 40 \% then the required power to charge the battery is computed in the Battery Available Power in the Game Theory Controller as in Subsection \ref{subsec:powerContr}. Therefore, the Power Controller outputs as a result negative torque demand for the motor and the difference between the demanded speed and the actual speed increases a lot. When the model sees that there are larger errors, it automatically reduces the time step to the minimum of 6e-05. Hence, the computation time increase from around 2 hours for the second and fourth FTP75 cycle to more than 12 hours for the first FTP75 and more than 6 hours for the fifth FTP75. In FTP75-2 and FTP75-4 there is no need to recharge the battery and they both run for around 2 hours even though the duration of all five FTP75 split drive cycles is quite similar. Although FTP75-4 even has the largest duration of 470s, it still runs far quicker than the others.
 
 In general, when the torque demand is less than 83, which is the the minimum torque that the engine can provide, the simulation runs very fast. This is due to the fact that the embedded Matlab function for solving the game directly passes the whole torque demand to the motor without computing a game-theoretical solution. When the torque demand is bigger than 83 then the simulation runs slower but still acceptably fast because the game-theoretical solution is being computed and torque is distributed between the motor and engine. Only in the case of the battery SOC less than 40 \% is the simulation very slow and this goes on until the target state of charge of 70\% is reached.

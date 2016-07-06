@@ -1,8 +1,8 @@
 %function [engineTorque,motorTorque] = solvegame(requiredTorque, fuelConsumed, ...
 %    SOC, FuelConsTable, GasEmisTable)
-    requiredTorque = 120;         
-    SOC = 58;
-    fuelConsumed = 0.98;
+    requiredTorque = 145;         
+    SOC = 75;
+    fuelConsumed = 0.48;
     prevEngTorqueArOut = zeros(100,1);
     prevMotTorqueArOut = zeros(100,1);        
     requiredTorqueR = 0;
@@ -70,7 +70,7 @@
             wFuel = 3;
             wPower = 0.5;  
             wTank = 0.5;
-            wDrDem = 1;
+            wDrDem = 0.5;
             wSOC = 1;
             wNOX = 65;
             wCO = 25;
@@ -137,4 +137,5 @@
 %         prevMotTorqueArOut = prevMotTorqueAr;
 %       
         end
+        
      

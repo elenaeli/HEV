@@ -114,34 +114,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.1}Game Theory torque distribution results}{57}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Real-time game-theoretical simulation results}{57}{section.5.2}
+\contentsline {section}{\numberline {5.2}Real-time game-theoretical simulation results}{58}{section.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.1}Pareto Optimality}{58}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{71}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{66}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining solution}{71}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining solution}{73}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky solution}{73}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky solution}{74}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}The core}{73}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}The core}{75}{subsection.5.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Shapley Value}{73}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.6}Shapley Value}{75}{subsection.5.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Goals related results}{74}{section.5.3}
+\contentsline {section}{\numberline {5.3}Goals related results}{75}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Fuel Emissions results}{74}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Fuel Emissions results}{75}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Battery consumption}{74}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Battery consumption}{76}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Conclusion}{77}{chapter.6}
+\contentsline {chapter}{\numberline {6}Conclusion}{79}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Goals}{77}{section.6.1}
+\contentsline {section}{\numberline {6.1}Goals}{79}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{78}{chapter*.39}
+\contentsline {chapter}{\nonumberline Bibliography}{80}{chapter*.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1} Nash Equilibrium Results}{81}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1} Nash Equilibrium Results}{83}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Appendix \ref {app:2} Nash Bargaining Solution Results}{84}{appendix.B}
+\contentsline {chapter}{\numberline {B}Appendix \ref {app:2} Nash Bargaining Solution Results}{86}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Appendix \ref {app:3} Kalai-Smorodinsky Solution Results}{87}{appendix.C}
+\contentsline {chapter}{\numberline {C}Appendix \ref {app:3} Kalai-Smorodinsky Solution Results}{89}{appendix.C}

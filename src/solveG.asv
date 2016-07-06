@@ -20,8 +20,8 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
         numStratBoth = m+e;  
             
         [nashEqPl1, nashEqPl2] = LemkeHowson(-payoffEngine, -payoffMotor, ceil(1/2*numStratBoth));                     
-        payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1)
-        payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1)      
+        payoffEngNash = payoffEngine(nashEqPl1==1, nashEqPl2==1);
+        payoffMotNash = payoffMotor(nashEqPl1==1, nashEqPl2==1);    
              
         %[~, indM] = min(payoffEngNash);        
                   
@@ -32,12 +32,11 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
         payoffMotNashSol = payoffBoth(indNP,2);
         paretoStrInd = horzcat(paretoStrategies, paretoIndex);     
      
-        [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd)
+        [ks, linePareto] = kalaismorodinskysolution(payoffBoth, conflictPoint, paretoStrategies, paretoStrInd);
             
         probKsMixed = zeros(1,2);
         ksMixed = zeros(1,2);
-        if ~isempty(linePareto)
-            linePareto
+        if ~isempty(linePareto)            
             %  if x and y of the two Pareto points are different
         	if linePareto(2,1) - linePareto(1,1) ~=0 && linePareto(1,2) - linePareto(2,2) ~= 0
                probKsMixed(1) = (ks(1,1) - linePareto(1,1)) / (linePareto(2,1) - linePareto(1,1));
@@ -101,165 +100,158 @@ function [engineTorque,motorTorque] = solveG(payoffEngine, payoffMotor, ...
         
         coreSol = core(payoffImput);
         indCore = find(coreSol);
-        payoffCore = payoffImput(:,1:2)
-        imputInd
-          
-       % if there are more than one Pareto efficient points         
-       if(size(paretoStrategies,1) > 1)
-           [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( payoffCore, imputInd, ...
-           torqueDeviation, fuelConsRate, fuelConsumed, emissions);
-       else
-           bestPayoffEngPareto = payoffCore(1,1);
-           bestPayoffMotPareto = payoffCore(1,2);          
-       end
+        payoffCore = payoffImput(:,1:2);
+                  
+        % if there are more than one Pareto efficient points         
+        if(size(paretoStrategies,1) > 1)
+            [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( payoffCore, imputInd, ...
+            torqueDeviation, fuelConsRate, fuelConsumed, emissions);
+        else
+            bestPayoffEngPareto = payoffCore(1,1);
+            bestPayoffMotPareto = payoffCore(1,2);          
+        end
             
-            Xengine = zeros(m,1);
-            Xmotor = zeros(m,1);
-            [Xengine, X2, A1, b1, v1] = mixedstrategies(payoffEngine,1);
-            [Xmotor, X1, A2, b2, v2] = mixedstrategies(payoffMotor,2);
-            coder.varsize('payoffStrEng');
-            coder.varsize('payoffStrMot');        
+        Xengine = zeros(m,1);
+        Xmotor = zeros(m,1);
+        [Xengine, X2, A1, b1, v1] = mixedstrategies(payoffEngine,1);
+        [Xmotor, X1, A2, b2, v2] = mixedstrategies(payoffMotor,2);
+        coder.varsize('payoffStrEng');
+        coder.varsize('payoffStrMot');        
            
-            if  ~isempty(A1) && ~isempty(A2) && ~isempty(b1) && ~isempty(b2)
-                mixedStrEng = find(abs(Xengine-0)>0.001);
-                mixedStrMot = find(abs(Xmotor-0)>0.001);         
-                payoffProbMixedStrEng = zeros(size(mixedStrEng,1),2);
-                payoffProbMixedStrMot = zeros(size(mixedStrMot,1),2);
-                payoffStrEng = 0;
-                for i = 1 : size(mixedStrEng,1)        
-                    payoffProbMixedStrEng(i,1) = payoffEngine(mixedStrEng(i));
-                    payoffProbMixedStrEng(i,2) = Xengine(mixedStrEng(i));
-                    payoffStrEng = payoffStrEng + payoffEngine(mixedStrEng(i))*Xengine(mixedStrEng(i));
-                end
-    
-                payoffStrMot = 0;
-                for j = 1 : size(mixedStrMot,1)
-                    payoffProbMixedStrMot(j,1) = payoffMotor(mixedStrMot(j));
-                    payoffProbMixedStrMot(j,2) = Xmotor(mixedStrMot(j));    
-                    payoffStrMot = payoffStrMot + payoffMotor(mixedStrMot(j))*Xmotor(mixedStrMot(j));
-                end         
+        if  ~isempty(A1) && ~isempty(A2) && ~isempty(b1) && ~isempty(b2)
+            mixedStrEng = find(abs(Xengine-0)>0.001);
+            mixedStrMot = find(abs(Xmotor-0)>0.001);         
+            payoffProbMixedStrEng = zeros(size(mixedStrEng,1),2);
+            payoffProbMixedStrMot = zeros(size(mixedStrMot,1),2);
+            payoffStrEng = 0;
+            for i = 1 : size(mixedStrEng,1)        
+                payoffProbMixedStrEng(i,1) = payoffEngine(mixedStrEng(i));
+                payoffProbMixedStrEng(i,2) = Xengine(mixedStrEng(i));
+                payoffStrEng = payoffStrEng + payoffEngine(mixedStrEng(i))*Xengine(mixedStrEng(i));
+            end
+            payoffStrMot = 0;
+            for j = 1 : size(mixedStrMot,1)
+                payoffProbMixedStrMot(j,1) = payoffMotor(mixedStrMot(j));
+                payoffProbMixedStrMot(j,2) = Xmotor(mixedStrMot(j));    
+                payoffStrMot = payoffStrMot + payoffMotor(mixedStrMot(j))*Xmotor(mixedStrMot(j));
+            end         
+        else
+            pureStrEng = find(Xengine);
+            pureStrMot = find(X2);    
+            payoffStrEng = payoffEngine(pureStrEng, pureStrMot);
+            payoffStrMot = payoffMotor(pureStrEng, pureStrMot);           
+        end
+        m1 = min(payoffBoth(:,1));
+        m2 = min(payoffBoth(:,2));
+        v12 = min(min(payoffWholeCoalBefore));
+        [ shEngine, shMotor ] = shapleyvalue(v12, v1, v2);
+        if ~ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true)           
+            IDX = zeros(1,2);
+            IDX = knnsearch(payoffBoth,[shEngine shMotor],'K', 2);
+            [idr1, idc1] = ind2sub(size(payoffEngine), IDX(1));        
+            [idr2, idc2] = ind2sub(size(payoffEngine), IDX(2));
+            nearestSh1 = [idr1 idc1];
+            nearestSh2 = [idr2 idc2];
+            payoffNearestSh1 = [payoffEngine(idr1,idc1) payoffMotor(idr1,idc1)];
+            payoffNearestSh2 = [payoffEngine(idr2,idc2) payoffMotor(idr2,idc2)];
+            probNearSh1 = 0;
+            probNearSh2 = 0;
+            if payoffNearestSh1(1) ~= payoffNearestSh2(1)
+                j = 1;
+                shapley = shEngine;
             else
-                pureStrEng = find(Xengine);
-                pureStrMot = find(X2);    
-                payoffStrEng = payoffEngine(pureStrEng, pureStrMot);
-                payoffStrMot = payoffMotor(pureStrEng, pureStrMot);           
+                j = 2;
+                shapley = shMotor;
             end
-            m1 = min(payoffBoth(:,1));
-            m2 = min(payoffBoth(:,2));
-    
-            v12 = min(min(payoffWholeCoalBefore));
-            [ shEngine, shMotor ] = shapleyvalue(v12, v1, v2);
-            if ~ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true)           
-                IDX = zeros(1,2);
-                IDX = knnsearch(payoffBoth,[shEngine shMotor],'K', 2);
-                [idr1, idc1] = ind2sub(size(payoffEngine), IDX(1));        
-                [idr2, idc2] = ind2sub(size(payoffEngine), IDX(2));
-                nearestSh1 = [idr1 idc1];
-                nearestSh2 = [idr2 idc2];
-                payoffNearestSh1 = [payoffEngine(idr1,idc1) payoffMotor(idr1,idc1)];
-                payoffNearestSh2 = [payoffEngine(idr2,idc2) payoffMotor(idr2,idc2)];
-                probNearSh1 = 0;
-                probNearSh2 = 0;
-                if payoffNearestSh1(1) ~= payoffNearestSh2(1)
-                    j = 1;
-                    shapley = shEngine;
-                else
-                    j = 2;
-                    shapley = shMotor;
+            if payoffNearestSh2(j) < shapley &&  ...
+                shapley < payoffNearestSh1(j)
+                probNearSh2 = (shapley - payoffNearestSh2(j)) / ...
+                    (payoffNearestSh1(j) - payoffNearestSh2(j));
+                probNearSh1 = 1 - probNearSh2;
+            elseif payoffNearestSh1(j) < shapley && ...                    
+                shapley < payoffNearestSh2(j)
+                probNearSh1 = (shapley - payoffNearestSh1(j)) / ...
+                   (payoffNearestSh2(j) - payoffNearestSh1(j));
+                probNearSh2 = 1 - probNearSh1;
+            elseif shapley < payoffNearestSh1(j) &&  ...
+                shapley < payoffNearestSh2(j)            
+                if payoffNearestSh1(j) < payoffNearestSh2(j)
+                    probNearSh1 = shapley / payoffNearestSh1(j);
+                    probNearSh2 = 0;
+                elseif payoffNearestSh2(j) < payoffNearestSh1(j)
+                    probNearSh2 = shapley / payoffNearestSh2(j);
+                    probNearSh1 = 0;
                 end
-                if payoffNearestSh2(j) < shapley &&  ...
-                    shapley < payoffNearestSh1(j)
-                    probNearSh2 = (shapley - payoffNearestSh2(j)) / ...
-                        (payoffNearestSh1(j) - payoffNearestSh2(j));
-                    probNearSh1 = 1 - probNearSh2;
-                elseif payoffNearestSh1(j) < shapley && ...                    
-                    shapley < payoffNearestSh2(j)
-                    probNearSh1 = (shapley - payoffNearestSh1(j)) / ...
-                        (payoffNearestSh2(j) - payoffNearestSh1(j));
-                    probNearSh2 = 1 - probNearSh1;
-                elseif shapley < payoffNearestSh1(j) &&  ...
-                    shapley < payoffNearestSh2(j)            
-                    if payoffNearestSh1(j) < payoffNearestSh2(j)
-                        probNearSh1 = shapley / payoffNearestSh1(j);
-                        probNearSh2 = 0;
-                    elseif payoffNearestSh2(j) < payoffNearestSh1(j)
-                        probNearSh2 = shapley / payoffNearestSh2(j);
-                        probNearSh1 = 0;
-                    end
-                end
-                probNearSh1;
-                probNearSh2;
-                shapleyEngineTorque = probNearSh1*strategyEng(idr1) + probNearSh2*strategyEng(idr2);
-                shapleyMotorTorque = probNearSh1*strategyMot(idc1) + probNearSh2*strategyMot(idc2);        
-            else
-                 [~, ind] = ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true); 
-                 idr1 = 0;
-                 idc1 = 0;
-                 [idr1, idc1] = ind2sub(size(payoffEngine), ind);             
-                 shapleyEngineTorque = strategyEng(idr1);
-                 shapleyMotorTorque = strategyMot(idc1);    
             end
-         
-            
-            lightpurple = [163 154 255] ./ 255;        
-            p10 = plot(payoffStrEng, payoffStrMot, 'o',...
-               'MarkerFaceColor', lightpurple, 'MarkerEdgeColor', lightpurple, ...
-               'MarkerSize', 13);
+            probNearSh1;
+            probNearSh2;
+            shapleyEngineTorque = probNearSh1*strategyEng(idr1) + probNearSh2*strategyEng(idr2);
+            shapleyMotorTorque = probNearSh1*strategyMot(idc1) + probNearSh2*strategyMot(idc2);        
+        else
+            [~, ind] = ismembertol([shEngine, shMotor],payoffBoth,0.001,'ByRows',true); 
+            idr1 = 0;
+            idc1 = 0;
+            [idr1, idc1] = ind2sub(size(payoffEngine), ind);             
+            shapleyEngineTorque = strategyEng(idr1);
+            shapleyMotorTorque = strategyMot(idc1);    
+        end         
+        lightpurple = [163 154 255] ./ 255;        
+        %p10 = plot(payoffStrEng, payoffStrMot, 'o',...
+        %   'MarkerFaceColor', lightpurple, 'MarkerEdgeColor', lightpurple, ...
+        %s   'MarkerSize', 13);
+        limegreen = [194 242 1] ./ 255;
+        figure
+        p1 = plot(x,y,'ob');
+        title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
+        hold on
+        p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
+           'MarkerFaceColor', 'g', 'MarkerSize', 13);
+        %p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
+        %   'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
+        %   'MarkerSize', 13);    
+        p4 = plot(payoffEngNash, payoffMotNash, 'oy', ...
+        'MarkerFaceColor', 'y', 'MarkerSize', 11);     
+        %p41 = plot(bestPayoffEngNashLH(1), bestPayoffMotNashLH(1), 'oc', ...
+        %   'MarkerFaceColor', 'c', 'MarkerSize', 9);      
+        %p42 = plot(bestPayoffEngNashLH(2), bestPayoffMotNashLH(2), 'o', ...
+        %   'MarkerFaceColor', 'r', 'MarkerEdgeColor','r','MarkerSize', 7);     
+        %p43 = plot(bestPayoffEngNashLH(3), bestPayoffMotNashLH(3), 'o', ...
+        %   'MarkerFaceColor', limegreen,'MarkerEdgeColor', limegreen, 'MarkerSize', 5);         
+        p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
+           'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
+           'MarkerSize', 9);
+        purple = [118 31 133] ./ 255;        
+        p7 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
+           'MarkerEdgeColor', purple, 'MarkerSize', 8);
+        pink = [254 164 191] ./ 255;       
+        p8 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
+           'MarkerFaceColor',pink, 'MarkerEdgeColor',pink,...
+           'MarkerSize', 7);      
+        red = [1 0 0];
+        p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', red, ...
+           'MarkerEdgeColor', red, 'MarkerSize', 8);
+        p2 = p9;
+      
+        for r = 1 : size(paretoIndex,1)
+            linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
+            p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
+                'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor', [0,0.5,0],...
+                'MarkerSize', 7);
+        end
 
-            limegreen = [194 242 1] ./ 255;
-            figure
-            p1 = plot(x,y,'ob');
-            title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
-            hold on
-            p3 = plot(bestPayoffEngPareto, bestPayoffMotPareto, 'og', ...
-               'MarkerFaceColor', 'g', 'MarkerSize', 13);
-            p5 = plot(payoffEngNashNPG, payoffMotNashNPG, 'o', ...
-               'MarkerFaceColor','m', 'MarkerEdgeColor', 'm',...
-               'MarkerSize', 13);    
-            p4 = plot(payoffEngNash, payoffMotNash, 'oy', ...
-               'MarkerFaceColor', 'y', 'MarkerSize', 10);     
-            %p41 = plot(bestPayoffEngNashLH(1), bestPayoffMotNashLH(1), 'oc', ...
-            %   'MarkerFaceColor', 'c', 'MarkerSize', 9);      
-            %p42 = plot(bestPayoffEngNashLH(2), bestPayoffMotNashLH(2), 'o', ...
-            %   'MarkerFaceColor', 'r', 'MarkerEdgeColor','r','MarkerSize', 7);     
-            %p43 = plot(bestPayoffEngNashLH(3), bestPayoffMotNashLH(3), 'o', ...
-            %   'MarkerFaceColor', limegreen,'MarkerEdgeColor', limegreen, 'MarkerSize', 5);         
-            p6 = plot(payoffEngNashSol, payoffMotNashSol,'or', ...
-               'MarkerFaceColor',[1,0.6,0] , 'MarkerEdgeColor', [1,0.6,0] ,...
-               'MarkerSize', 9);
-
-            purple = [118 31 133] ./ 255;        
-            p7 = plot(ks(1,1), ks(1,2), 'o', 'MarkerFaceColor', purple, ...
-               'MarkerEdgeColor', purple, 'MarkerSize', 9);
-            pink = [254 164 191] ./ 255;       
-            p8 = plot(payoffBoth(imput(indCore),1), payoffBoth(imput(indCore),2), 'o', ...
-               'MarkerFaceColor',pink, 'MarkerEdgeColor',pink,...
-               'MarkerSize', 8);      
-
-            p9 = plot(shEngine, shMotor, 'o', 'MarkerFaceColor', limegreen, ...
-               'MarkerEdgeColor', limegreen, 'MarkerSize', 7);
-            p2 = p9;
-         
-            for r = 1 : size(paretoIndex,1)
-               linearIndex = sub2ind([m e], paretoIndex(r,2), paretoIndex(r,1));           
-               p2 = plot(x(linearIndex), y(linearIndex), 'o', ...
-                   'MarkerEdgeColor', [0,0.5,0], 'MarkerFaceColor', [0,0.5,0],...
-                   'MarkerSize', 6);
-            end
-
-            darkred = [185 16 20] ./ 255;
-            pi = plot(m1, m2, 'o', 'MarkerSize', 4, 'MarkerFaceColor',darkred ,...
-            'MarkerEdgeColor', darkred);
-
-            legend([p1 p2 p3 p4 p7], 'Payoff', ...   
+        darkred = [185 16 20] ./ 255;
+        %pi = plot(m1, m2, 'o', 'MarkerSize', 4, 'MarkerFaceColor',darkred ,...
+        %'MarkerEdgeColor', darkred);
+        legend([p1 p2 p3 p4 p6 p7 p8 p9], 'Payoff', ...   
             'Pareto optimal payoff',...  
             'Best Pareto optimal payoff', ...
-            'Nash Equilibrium Lemke-Howson k0=8', ...   
+            'Nash Equilibrium', ...   
             'Nash Solution', ...     
-            'Kalai-Smorodinsky Solution');
-        
+            'Kalai-Smorodinsky Solution', ...
+            'Core', ...        
+            'Shapley value', ...
+            'Location', 'northwest');               
        
-%             'Location', 'northwest');       
 %             'Nash Equilibrium Lemke-Howson (conflict point)', ... 
 %          
 %             'Core', ...        

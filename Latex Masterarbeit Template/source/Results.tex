@@ -4,6 +4,38 @@
 \section{Game Theory torque distribution results}
 This chapter is split into two parts, emphasizing the game-theoretical solution results on the one hand and the simulation results on the other. The first part is intended to show the distinctions between the solution approaches from a theoretical and mathematical point of view. It discusses and compares the results of the six different game theory approaches by showing graphically the payoffs of the game and marking the corresponding solution payoff with different colours. The second part of the chapter focuses on the real-time simulation of the whole hybrid vehicle system. It presents Simulink scopes which show the different characteristics of the engine, motor, generator and how their power, torque, revolution speed behave during the FTP75 drive cycle, which lasts for 1874s.
 
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+ 	\centering
+	\includegraphics[scale=0.406]{figures/gametheory/100nm}
+	\caption{Game theory solutions 100 Nm}
+	\label{fig:100nm}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  	\centering
+	\includegraphics[scale=0.385]{figures/gametheory/145nm}
+  	\caption{Game theory solutions 145 Nm}
+  	\label{fig:145nm}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+ 	\centering
+	\includegraphics[scale=0.38]{figures/gametheory/178nm}
+	\caption{Game theory solutions 178 Nm}
+	\label{fig:178nm}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  	\centering
+	\includegraphics[scale=0.392]{figures/gametheory/280nm}
+  	\caption{Game theory solutions 280 Nm}
+  	\label{fig:280nm}
+\end{minipage}
+\end{figure}
+
 \section{Real-time game-theoretical simulation results}
 
 For each of the six game-theoretical solutions different scopes are presented, from which the most important one is the Game Theory Scope, which displays the distribution of motor and engine torque. Then, the Drive Cycle and the Power Controller Scopes are the next in order of significance, because they show how the driver demands are met, which is the first goal of the game. The Power Controller is essential, because it displays the SOC of the battery along with the revolution speeds of the engine, motor and generator. Moreover, the Fuel and Emissions Scope is crucial, since it concerns the other goal of the game - fuel consumption and gas emissions minimization. The other important Scopes are the Engine and Motor since they show speed, torque and power. For the first two solution approaches, the important scopes are given for the 5 phases of FTP75 and for the next five solution approaches only the Game Theory Scope is shown, because it is the most crucial and little change can be noticed in the other scopes, while varying the choice of game-theoretical solution approach.
@@ -31,7 +63,7 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-1/powerController30Juni}
 \caption{Power Controller Scope with Pareto Optimality during FTP75-1}
 \label{fig:pcpo1}
-\includegraphics[scale=0.4]{figures/Pareto/FTP75-1/fuelEmissions30Juni}
+\includegraphics[scale=0.43]{figures/Pareto/FTP75-1/fuelEmissions30Juni}
 \caption{Fuel and Emissions Scope with Pareto Optimality during FTP75-1}
 \label{fig:fepo1}
 \end{figure}
@@ -39,10 +71,10 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 
 \begin{figure}[hp]
 \centering
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-1/engine30Juni}
+\includegraphics[scale=0.42]{figures/Pareto/FTP75-1/engine30Juni}
 \caption{Engine Scope with Pareto Optimality during FTP75-1}
 \label{fig:epo1}
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-1/motor30Juni}
+\includegraphics[scale=0.42]{figures/Pareto/FTP75-1/motor30Juni}
 \caption{Motor Scope with Pareto Optimality during FTP75-1}
 \label{fig:mpo1}
 \end{figure}
@@ -64,17 +96,17 @@ The FTP75-2 results are in Figures \ref{fig:gtpo2}, \ref{fig:dcpo2}, \ref{fig:pc
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-2/powerController03Juli}
 \caption{Power Controller Scope with Pareto Optimality during FTP75-2}
 \label{fig:pcpo2}
-\includegraphics[scale=0.4]{figures/Pareto/FTP75-2/fuelEmissions03Juli}
+\includegraphics[scale=0.43]{figures/Pareto/FTP75-2/fuelEmissions03Juli}
 \caption{Fuel and Emissions Scope with Pareto Optimality during FTP75-2}
 \label{fig:fepo2}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-2/engine03Juli}
+\includegraphics[scale=0.42]{figures/Pareto/FTP75-2/engine03Juli}
 \caption{Engine Scope with Pareto Optimality during FTP75-2}
 \label{fig:epo2}
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-2/motor03Juli}
+\includegraphics[scale=0.42]{figures/Pareto/FTP75-2/motor03Juli}
 \caption{Motor Scope with Pareto Optimality during FTP75-2}
 \label{fig:mpo2}
 \end{figure}
@@ -96,23 +128,13 @@ In FTP75-3 the SOC again falls below 40 \% and then the difference between actua
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-3/powerController08Juni}
 \caption{Power Controller Scope with Pareto Optimality during FTP75-3}
 \label{fig:pcpo3}
-\includegraphics[scale=0.4]{figures/Pareto/FTP75-3/fuelEmissions08Juni}
-\caption{Fuel and Emissions Scope with Pareto Optimality during FTP75-3}
-\label{fig:fepo3}
-\end{figure}
-
-\begin{figure}[hp]
-\centering
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-3/engine08Juni}
-\caption{Engine Scope with Pareto Optimality during FTP75-3}
-\label{fig:epo3}
-\includegraphics[scale=0.37]{figures/Pareto/FTP75-3/motor08Juni}
+\includegraphics[scale=0.42]{figures/Pareto/FTP75-3/motor08Juni}
 \caption{Motor Scope with Pareto Optimality during FTP75-3}
 \label{fig:mpo3}
 \end{figure}
 
-In FTP75-4 similarly to the FTP75-2 the motor is prompted for negative torque much more frequently than the other phases FTP75-1 and FTP75-3 because there are more sudden accelerations and decelerations and the speed demand is changing more abruptly. It can be concluded that in this phase the drive cycle demands are again met very accurately like in FTP75-2, since there are almost no differences in the demanded and actual speeds in Figure \ref{fig:dcpo4}. The battery is both recharging during deceleration, corresponding to negative torque and discharging during acceleration with positive torque.
 
+In FTP75-4 similarly to the FTP75-2 the motor is prompted for negative torque much more frequently than the other phases FTP75-1 and FTP75-3 because there are more sudden accelerations and decelerations and the speed demand is changing more abruptly. It can be concluded that in this phase the drive cycle demands are again met very accurately like in FTP75-2, since there are almost no differences in the demanded and actual speeds in Figure \ref{fig:dcpo4}. The battery is both recharging during deceleration, corresponding to negative torque and discharging during acceleration with positive torque.
 
 \begin{figure}[hp]
 \centering
@@ -134,10 +156,29 @@ In FTP75-4 similarly to the FTP75-2 the motor is prompted for negative torque mu
 \label{fig:mpo4}
 \end{figure}
 
-
 In the last phase, the FTP75-5, the battery has to be recharged in the 50s and the maximum difference of demanded and actual speed this incurs is 70 \textit{km/h}. During recharge mode the engine and motor are constantly contributing torque, because the torque demand is high. At 110s the maximum speed of this phase 85 \textit{km/h} is reached. At 120s the battery is already at the target 60 \% and the actual speed tries to keep up with the demanded speed. However, it goes up and down before it comes to the right demanded speed at 170s, similarly as in FTP75-3. After acceleration was kept constant, it takes time for it to adjust to the right amount and influence the actual speed correctly. After 170s the actual speed starts to meet the demand again. 
 
 For the next game-theoretical approaches only the Game Theory scope will be shown, since there is little difference in the other scopes. Moreover, it is crucial to examine the motor and engine torque distribution differences between the different game theory approaches because that is the main topic in this thesis.
+
+\begin{figure}[hp]
+\centering
+\includegraphics[scale=0.45]{figures/Pareto/FTP75-5/gameTheory05Juli}
+\caption{Game Theory Scope with Pareto Optimality during FTP75-5}
+\label{fig:gtpo5}
+\includegraphics[scale=0.41]{figures/Pareto/FTP75-5/driveCycle05Juli}
+\caption{Drive Cycle Scope with Pareto Optimality during FTP75-5}
+\label{fig:dcpo5}
+\end{figure}
+
+\begin{figure}[hp]
+\centering
+\includegraphics[scale=0.4]{figures/Pareto/FTP75-5/powerController05Juli}
+\caption{Power Controller Scope with Pareto Optimality during FTP75-5}
+\label{fig:pcpo5}
+\includegraphics[scale=0.37]{figures/Pareto/FTP75-5/motor05Juli}
+\caption{Motor Scope with Pareto Optimality during FTP75-5}
+\label{fig:mpo5}
+\end{figure}
 
 \subsection{Nash Equilibrium}
 This section discusses the Game Theory Scope of all of the five phases in the FTP75 drive cycle when the game-theoretical solution is the Nash Equilibrium. The results are compared to the Pareto Optimality solution.
@@ -169,9 +210,8 @@ The Kalai-Smorodinsky solution produces exactly the same results for the FTP75-1
 \subsection{Shapley Value}
 After the implementation of the last game-theoretical solution as described in \ref{subsec:shapleyimpl}, the simulation was found to be extremely slow mainly because of the \textit{mixedstrategies.m} Function, which contains the slow \textit{linprog} function. Without the \textit{linprog} function a coalitional form of the game for the individual coalitions $\{1\}$ and $\{2\}$ cannot be found; hence, the concept of Shapley value cannot be applied at all. Taking into account the importance of the \textit{linprog}, it is impossible to replace it with another faster function, because a system of linear equations has to be solved at any case. For this reason and also because there are too much results in the Appendices, it was decided that the Shapley Value will not be simulated.
 
-
 \section{Goals related results}
-The last section of this chapter desrcibes the results related to the initial goals of the thesis, instead of presenting the results of each game-theoretical approach like in the previous section.
+The last section of this chapter describes the results related to the initial goals of the thesis, instead of presenting the results of each game-theoretical approach like in the previous section.
 
 \subsection{Fuel Emissions results}
 To address the goal of fuel economy and minimizing gas emissions, the following results are presented in Table \ref{tab:fuelEmis}. After a thorough examination of total fuel in \textit{l}, fuel consumption in \textit{g/s}, CO, HC and NOX emissions in \textit{g/s}, a few conclusions can be made. Firstly, the best results are generated from the Nash Solution and the Kalai-Smorodinksy Solution. Since these two are very similar, also their fuel consumption and gas emissions are almost the same. A slight difference between the two is visible only in the last FTP75-5 drive cycle, where the Kalai-Smorodinsky solution achieves smaller values of 1.513 \textit{l}, 11.49 \textit{g/s} fuel, 6.144 \textit{g/km} CO, 3.033 \textit{g/km} HC and 3.119 \textit{g/km} NOX emissions.
@@ -186,42 +226,39 @@ To address the goal of fuel economy and minimizing gas emissions, the following 
    & & Pareto Optimality & Nash Equilibrium & Nash Solution & Kalai- Smorodinsky Solution & The Core & Shapley Value\\
  \hline\hline
  \multirow{5}{*}{\parbox{1.5cm}{Total fuel (l)}} 
- & FTP75-1 & 0.398 & 0.406 & 0.397 & 0.397 & & \\ 
- & FTP75-2 & 0.554 & 0.5635 & 0.554 & 0.554 & & \\  
+ & FTP75-1 & 0.398 & 0.406 & 0.397 & 0.397 & 0.3977 & \\ 
+ & FTP75-2 & 0.554 & 0.5635 & 0.554 & 0.554 & 0.5542 & \\  
  & FTP75-3 & 0.917 & 0.901 & 0.893 & 0.893 & & \\ 
  & FTP75-4 & 1.112 & 1.097 & 1.089 & 1.09 & & \\ 
- & FTP75-5 & & 1.566 & 1.543 & 1.513 & &\\ 
+ & FTP75-5 & 1.47 & 1.566 & 1.543 & 1.513 & &\\ 
  \hline 
  \multirow{5}{*}{\parbox{1.5cm}{Fuel consumption (g/s)}} 
- & FTP75-1 & 10.88 & 11.13 & 10.85 & 10.85 & &\\ 
- & FTP75-2 & 6.077 & 6.109 & 6.082 & 6.082 & &\\ 
+ & FTP75-1 & 10.88 & 11.13 & 10.85 & 10.85 & 10.88 &\\ 
+ & FTP75-2 & 6.077 & 6.109 & 6.082 & 6.082 & 6.077 &\\ 
  & FTP75-3 & 11.77 & 11.65 & 11.7 & 11.71 & & \\ 
  & FTP75-4 & 6.384 & 6.384 & 6.384 & 6.384 & &\\ 
- & FTP75-5 & & 12.8 & 12.17 & 11.49 & & \\ 
- \hline 
- 
+ & FTP75-5 & 10.79 & 12.8 & 12.17 & 11.49 & & \\ 
+ \hline
  \multirow{5}{*}{\parbox{1.5cm}{CO (g/km)}} 
- & FTP75-1 & 6.108 & 6.304 & 6.086 & 6.093 & & \\ 
- & FTP75-2 & 2.33 & 2.334 & 2.328 & 2.328 & & \\ 
+ & FTP75-1 & 6.108 & 6.304 & 6.086 & 6.093 & 6.104 & \\ 
+ & FTP75-2 & 2.33 & 2.334 & 2.328 & 2.328 & 2.33 & \\ 
  & FTP75-3 & 5.863 & 5.818 & 5.841 & 5.844 & & \\ 
  & FTP75-4 & 2.361 & 2.361 & 2.361 & 2.361 & & \\ 
- & FTP75-5 & & 6.878 & 6.516 & 6.144 & & \\  
+ & FTP75-5 & 4.866 & 6.878 & 6.516 & 6.144 & & \\  
  \hline 
- 
  \multirow{5}{*}{\parbox{1.5cm}{HC (g/km)}} 
- & FTP75-1 & 1.843 & 1.979 & 1.937 & 1.938 & & \\ 
- & FTP75-2 & 1.484 & 1.487 & 1.484 & 1.484 & & \\  
+ & FTP75-1 & 1.843 & 1.979 & 1.937 & 1.938 & 1.942 & \\ 
+ & FTP75-2 & 1.484 & 1.487 & 1.484 & 1.484 & 1.484 & \\  
  & FTP75-3 & 2.18 & 2.166 & 2.172 & 2.173 & & \\ 
  & FTP75-4 & 1.636 & 1.636 & 1.636 & 1.636 & & \\ 
- & FTP75-5 & & 2.225 & 2.133 & 2.033 & & \\  
+ & FTP75-5 & 1.997 & 2.225 & 2.133 & 2.033 & & \\  
  \hline
-
  \multirow{5}{*}{\parbox{1.5cm}{NOX (g/km)}} 
- & FTP75-1 & 3.022 & 3.113 & 3.011 & 3.014 & & \\
- & FTP75-2 & 1.116 & 1.123 & 1.116 & 1.116 & & \\ 
+ & FTP75-1 & 3.022 & 3.113 & 3.011 & 3.014 & 3.02 & \\
+ & FTP75-2 & 1.116 & 1.123 & 1.116 & 1.116 & 1.116 & \\ 
  & FTP75-3 & 3.006 & 2.975 & 2.989 & 2.992 & & \\ 
  & FTP75-4 & 1.084 & 1.084 & 1.084 & 1.084 & & \\ 
- & FTP75-5 & & 3.511 & 3.321 & 3.119 & & \\ 
+ & FTP75-5 & 2.672 & 3.511 & 3.321 & 3.119 & & \\ 
  \hline  
 \end{tabular}
 \caption{FTP75 fuel consumption and gas emissions}
@@ -230,7 +267,6 @@ To address the goal of fuel economy and minimizing gas emissions, the following 
 
 
 \subsection{Battery consumption}
-
 \begin{table}[h]
 \centering
 \begin{tabular}{ |p{1.5cm}|p{1.5cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|} 
@@ -241,25 +277,25 @@ To address the goal of fuel economy and minimizing gas emissions, the following 
    & & Pareto Optimality & Nash Equilibrium & Nash Solution & Kalai- Smorodinsky Solution & The Core & Shapley Value\\
  \hline\hline
  \multirow{5}{*}{\parbox{1.5cm}{Average speed (km/h)}}
- & FTP75-1 & 38.71 & 38.63 & 38.79 & 38.77 & & \\
- & FTP75-2 & 27.27 & 27.27 & 27.27 & 27.27 & & \\ 
+ & FTP75-1 & 38.71 & 38.63 & 38.79 & 38.77 & 38.72 & \\
+ & FTP75-2 & 27.27 & 27.27 & 27.27 & 27.27 & 27.27 & \\ 
  & FTP75-3 & 29.82 & 29.84 & 29.83 & 29.83 & & \\ 
  & FTP75-4 & 23.48 & 23.48 & 23.48 & 23.48 & & \\ 
- & FTP75-5 & & 29.84 & 29.83 & 29.83 & & \\ 
+ & FTP75-5 & 31.85 & 29.84 & 29.83 & 29.83 & & \\ 
  \hline 
  \multirow{5}{*}{\parbox{1.5cm}{Total distance (km)}}
- & FTP75-1 & 3.656 & 3.648 & 3.664 & 3.661 & & \\ 
- & FTP75-2 & 2.576 & 2.576 & 2.576 & 2.676 & & \\ 
+ & FTP75-1 & 3.656 & 3.648 & 3.664 & 3.661 & 3.667 & \\ 
+ & FTP75-2 & 2.576 & 2.576 & 2.576 & 2.676 & 2.576 & \\ 
  & FTP75-3 & 2.899 & 2.901 & 2.901 & 2.9 & & \\ 
  & FTP75-4 & 3.066 & 3.066 & 3.066 & 3.066 & & \\ 
- & FTP75-5 & & 3.664 & 3.73 & 3.083 & & \\ 
+ & FTP75-5 & 3.308 & 3.664 & 3.73 & 3.083 & & \\ 
  \hline 
  \multirow{5}{*}{\parbox{1.5cm}{Final SOC (\%)}}
- & FTP75-1 & 60.322 & 60.508 & 60.554 & 60.54 & & \\ 
- & FTP75-2 & 46.13 & 46.494 & 46.422 & 46.408 & & \\ 
+ & FTP75-1 & 60.322 & 60.508 & 60.554 & 60.54 & 60.5317 & \\ 
+ & FTP75-2 & 46.13 & 46.494 & 46.422 & 46.408 & 46.349 & \\ 
  & FTP75-3 & 57.1694 & 56.953 & 56.933 & 56.981 & & \\ 
  & FTP75-4 & 42.1812 & 41.929 & 41.927 & 41.975 & & \\ 
- & FTP75-5 & & 49.141 & 46.955 & 42.871 & & \\ 
+ & FTP75-5 & 42.153 & 49.141 & 46.955 & 42.871 & & \\ 
  \hline
 
  \hline

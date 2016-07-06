@@ -12,18 +12,18 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
         payoffM = reshape(payoffMotor,(m)*(e),1);        
         payoffBoth = horzcat(payoffE, payoffM);
                
-        stringRequiredTorque = int2str(requiredTorqueR);
+    %    stringRequiredTorque = int2str(requiredTorqueR);
 
     %    [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestpareto( paretoStrategies, paretoIndex, ...
     %        torqueDeviation, fuelConsRate, power );
     % if there are more than one Pareto efficient points
-    if(size(paretoStrategies,1) > 1)
-       [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( paretoStrategies, paretoIndex, ...
-           torqueDeviation, fuelConsRate, fuelConsumed, emissions);
-    else
-       bestPayoffEngPareto = paretoStrategies(1,1);
-       bestPayoffMotPareto = paretoStrategies(1,2);   
-    end
+%     if(size(paretoStrategies,1) > 1)
+%        [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( paretoStrategies, paretoIndex, ...
+%            torqueDeviation, fuelConsRate, fuelConsumed, emissions);
+%     else
+%        bestPayoffEngPareto = paretoStrategies(1,1);
+%        bestPayoffMotPareto = paretoStrategies(1,2);   
+%     end
     %   figure
     %   p1 = plot(x,y,'ob');
     %   title(['Game payoffs, required torque = ', stringRequiredTorque, 'Nm'] );
@@ -74,55 +74,51 @@ function [engineTorque,motorTorque] = solve(payoffEngine, payoffMotor, ...
     %       ks(1,2), payoffBoth, strategyEng, strategyMot);
     %   end     
     
-%      percentReqTorq = linspace(0, requiredTorqueR, 10);
-%      payoffCoalCoef = ones(m,e);
-%      payoffCoalCoef(m:m-1:end-1) = 0.5;
-%              
-%      [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoffWholeCoalBefore ] = ...
-%     	coalitionpayoffs(payoffMotor, payoffEngine, torqueDeviation, percentReqTorq);
-%                        
-%       payoffMotCoalVec = reshape(payoffMotorCoal,(m)*(e),1);
-%       payoffEngCoalVec = reshape(payoffEngineCoal,(m)*(e),1);
-%             
-%       % get all undominated strategies (pareto optimality)
-%       [undomImp, undomImpInd] = checkimputation(payoffBoth, ...
-%         paretoStrategies, payoffMotCoalVec, payoffEngCoalVec, payoffWholeCoal);        
-%       imputM = zeros(1,size(undomImpInd,2));
-%       imputE = zeros(1,size(undomImpInd,2));
-%       for i = 1 : size(undomImpInd,2)             
-%           if all(undomImp(i,1) <= payoffEngine(m,:))
-%           	imputM(1,i) = undomImpInd(i);
-%           end                
-%           if all(undomImp(i,2) <= payoffMotor(:,e))
-%               imputE(1,i) = undomImpInd(i);
-%       	  end
-%       end
-%       coder.varsize('imput');  
-%       imput = undomImpInd;
-%       imput(imput==0) = [];
-%             
-%       payoffImput = zeros(size(imput,1),3);
-%       for i = 1 : size(imput,1)
-%       	  payoffImput(i,1) = payoffBoth(imput(i),1);
-%           payoffImput(i,2) = payoffBoth(imput(i),2);       
-%           [r, c] = ind2sub(size(payoffWholeCoal), imput(i));
-%           imputInd(i,:) = [r c];
-%           payoffImput(i,3) = payoffWholeCoal(r,c);          
-%       end
-%                    
-%       coreSol = core(payoffImput);
-%       indCore = find(coreSol);
-%       payoffCore = payoffImput(:,1:2);
-%       
-%             
-%       % if there are more than one Pareto efficient points
-%       if(size(paretoStrategies,1) > 1)
-%           [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( payoffCore, imputInd, ...
-%           torqueDeviation, fuelConsRate, fuelConsumed, emissions);
-%       else
-%           bestPayoffEngPareto = payoffCore(1,1);
-%           bestPayoffMotPareto = payoffCore(1,2);          
-%       end
+     percentReqTorq = linspace(0, requiredTorqueR, 10);         
+     [ payoffWholeCoal, coeffCoal, payoffEngineCoal, payoffMotorCoal, payoffWholeCoalBefore ] = ...
+    	coalitionpayoffs(payoffMotor, payoffEngine, torqueDeviation, percentReqTorq);
+                       
+      payoffMotCoalVec = reshape(payoffMotorCoal,(m)*(e),1);
+      payoffEngCoalVec = reshape(payoffEngineCoal,(m)*(e),1);
+            
+      % get all undominated strategies (pareto optimality)
+      [undomImp, undomImpInd] = checkimputation(payoffBoth, ...
+        paretoStrategies, payoffMotCoalVec, payoffEngCoalVec, payoffWholeCoal);        
+      imputM = zeros(1,size(undomImpInd,2));
+      imputE = zeros(1,size(undomImpInd,2));
+      for i = 1 : size(undomImpInd,2)             
+          if all(undomImp(i,1) <= payoffEngine(m,:))
+          	imputM(1,i) = undomImpInd(i);
+          end                
+          if all(undomImp(i,2) <= payoffMotor(:,e))
+              imputE(1,i) = undomImpInd(i);
+      	  end
+      end
+      coder.varsize('imput');  
+      imput = undomImpInd;
+      imput(imput==0) = [];
+            
+      payoffImput = zeros(size(imput,1),3);
+      for i = 1 : size(imput,1)
+      	  payoffImput(i,1) = payoffBoth(imput(i),1);
+          payoffImput(i,2) = payoffBoth(imput(i),2);       
+          [r, c] = ind2sub(size(payoffWholeCoal), imput(i));
+          imputInd(i,:) = [r c];
+          payoffImput(i,3) = payoffWholeCoal(r,c);          
+      end
+                   
+      coreSol = core(payoffImput);
+      indCore = find(coreSol);
+      payoffCore = payoffImput(:,1:2);
+                  
+      % if there are more than one Pareto efficient points
+      if(size(paretoStrategies,1) > 1)
+          [ bestPayoffEngPareto, bestPayoffMotPareto ] = bestparetoAnal( payoffCore, imputInd, ...
+          torqueDeviation, fuelConsRate, fuelConsumed, emissions);
+      else
+          bestPayoffEngPareto = payoffCore(1,1);
+          bestPayoffMotPareto = payoffCore(1,2);          
+      end
     
 %              Xengine = zeros(m,1);
 %              Xmotor = zeros(m,1);

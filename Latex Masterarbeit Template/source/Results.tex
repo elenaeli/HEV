@@ -1,25 +1,25 @@
 \chapter{Results}
 \label{chp:results}
 
-This chapter is split into three sections, emphasizing the game-theoretical solution results in the first section and the simulation results of the hybrid model in the second and third sections. The first part is intended to show the distinctions between the solution approaches from a theoretical and mathematical point of view. It discusses and compares the results of the six different game theory approaches by showing graphically the payoffs of the game and marking the solutions with different colours. The second part of the chapter focuses on the first goal of the game - meeting the driver demands by distributing the torque between the engine and motor. For this purpose results of the real-time simulation of the whole hybrid vehicle system with the six game theory approaches are presented. They include Simulink scopes with the torque distribution, the demanded and actual speed and different characteristics of the engine, motor, generator. In particular, it is shown how power, torque and revolution speed behave during the FTP75 drive cycle. The last third section focuses on the presentation of the next goals of the game - saving fuel, minimizing emissions and maintaining the target SOC of the battery.
+This chapter is split into three sections, emphasizing the game-theoretical solution results in the first section and the simulation results of the hybrid model in the second and third sections. The first part is intended to show the distinctions between the solution approaches from a theoretical point of view by showing graphically the payoffs of the game. The second part of the chapter focuses on the first goal of the game - meeting the driver demands by distributing the torque between the engine and motor. For this purpose Simulink scopes of the real-time simulation of the whole hybrid vehicle system with the six game theory approaches are presented. The last third section focuses on the presentation of the next goals of the game - saving fuel, minimizing emissions and maintaining the target SOC of the battery.
 
 \section{Game Theory payoffs}
 First of all, the game-theoretical solutions can be represented graphically in a 2D coordinate system, where the x axis is the engine payoff and the y axis is the motor payoff. The following results present the solution at a single stage of the game, where the inputs (as in the Matlab embedded function described in subsection \ref{subsec:embeddedfunc}) are SOC of 75 \% and total fuel consumed is 0.48 \textit{l}. The required torque varies in four different figures. 
 
-Figure \ref{fig:100nm} shows the results for torque demand of 100 \textit{Nm}. Five of the game theory solutions are at the same point, while only the Shapley value marked in red is a different point. It is also important that the Shapley value is not a feasible outcome in pure strategies and therefore does not correspond to any payoff in the figure. The Shapley value is computed with mixed strategies. In Figure \ref{fig:145nm} where the torque demand is 145 \textit{Nm} the Shapley value is again an infeasible outcome marked in red. The best Pareto outcome is marked with light green and the two Pareto outcomes are in dark green. The other solutions are distributed among these two Pareto points. The Nash Equilibrium, Nash solution and Kalai-Smorodinsky solution are equivalent with the right-most Pareto outcome. The pink points are the solutions of the core and they are the same as the two Pareto outcomes.
+Figure \ref{fig:100nm} shows the results for torque demand of 100 \textit{Nm}. Five of the game theory solutions are at the same point, while only the Shapley value marked in red is a different point. It is also important that the Shapley value is not a feasible outcome in pure strategies and therefore does not correspond to any payoff in the figure. In Figure \ref{fig:145nm} where the torque demand is 145 \textit{Nm} the Shapley value is again an infeasible outcome marked in red. The best Pareto outcome is marked with light green and the two Pareto outcomes are in dark green. The other solutions are distributed among these two Pareto points. The Nash Equilibrium, Nash solution and Kalai-Smorodinsky solution are equivalent with the right-most Pareto outcome. The pink points are the solutions of the core and they are the same as the two Pareto outcomes.
 
 \begin{figure}[h]
 \centering
 \begin{minipage}{.5\textwidth}
  	\centering
 	\includegraphics[scale=0.406]{figures/gametheory/100nm}
-	\caption{Game theory solutions 100 Nm}
+	\caption{Game theory solutions for torque 100 Nm}
 	\label{fig:100nm}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   	\centering
 	\includegraphics[scale=0.385]{figures/gametheory/145nm}
-  	\caption{Game theory solutions 145 Nm}
+  	\caption{Game theory solutions for torque 145 Nm}
   	\label{fig:145nm}
 \end{minipage}
 \end{figure}
@@ -31,20 +31,20 @@ For a torque demand of 178 \textit{Nm} Figure \ref{fig:178nm} shows that there a
 \begin{minipage}{.5\textwidth}
  	\centering
 	\includegraphics[scale=0.38]{figures/gametheory/178nm}
-	\caption{Game theory solutions 178 Nm}
+	\caption{Game theory solutions for torque 178 Nm}
 	\label{fig:178nm}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   	\centering
 	\includegraphics[scale=0.392]{figures/gametheory/280nm}
-  	\caption{Game theory solutions 280 Nm}
+  	\caption{Game theory solutions for torque 280 Nm}
   	\label{fig:280nm}
 \end{minipage}
 \end{figure}
 
 \section{Hybrid model game-theoretical simulation}
 
-For each of the six game-theoretical solutions different scopes are presented, from which the most important one is the Game Theory Scope, which displays the distribution of motor and engine torque. Then, the Drive Cycle and the Power Controller scopes are next in order of significance, because the Driver Cycle scope shows how the driver demands are met, which is the first goal of this game. The Power Controller is essential, because it displays the SOC of the battery along with the revolution speeds of the engine, motor and generator. Moreover, the Fuel and Emissions scope is crucial, since it concerns the second goal of the game - fuel consumption and gas emissions minimization. The other important scopes are the Engine and Motor since they show speed, torque and power. For the first solution approach, the important scopes are given for the 5 phases of FTP75 and for the next five solution approaches only the Game Theory scope is shown, because little change can be noticed in the other scopes, while varying the choice of game-theoretical solution approach.
+For each of the six game-theoretical solutions different scopes are presented, from which the most important one is the Game Theory scope, displaying the distribution of motor and engine torque. Then, the Drive Cycle and the Power Controller scopes are next in order of significance, because the Driver Cycle scope shows how the driver demands are met, which is the first goal of this game. The Power Controller is essential, because it displays the SOC of the battery along with the revolution speeds of the engine, motor and generator. Moreover, the Fuel and Emissions scope is crucial, since it concerns the second goal of the game - fuel consumption and gas emissions minimization. The Engine and Motor scopes show revolution speed, torque and power. For the first solution approach, the important scopes are given for the 5 phases of FTP75 and for the next five solution approaches only the Game Theory scope is shown, because little change can be noticed in the other scopes, while varying the choice of game-theoretical solution approach.
 
 \subsection{Pareto Optimality}
 This section deals with the first game-theoretical solution, Pareto Optimality, and its corresponding results during the FTP75 drive cycle. 
@@ -56,10 +56,10 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-1/gameTheory30Juni}
-\caption{Game Theory Scope with Pareto Optimality during FTP75-1}
+\caption{Game Theory scope with Pareto Optimality during FTP75-1}
 \label{fig:gtpo1}
 \includegraphics[scale=0.41]{figures/Pareto/FTP75-1/driveCycle30Juni}
-\caption{Drive Cycle Scope with Pareto Optimality during FTP75-1}
+\caption{Drive Cycle scope with Pareto Optimality during FTP75-1}
 \label{fig:dcpo1}
 \end{figure}
 
@@ -67,10 +67,10 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-1/powerController30Juni}
-\caption{Power Controller Scope with Pareto Optimality during FTP75-1}
+\caption{Power Controller scope with Pareto Optimality during FTP75-1}
 \label{fig:pcpo1}
 \includegraphics[scale=0.43]{figures/Pareto/FTP75-1/fuelEmissions30Juni}
-\caption{Fuel and Emissions Scope with Pareto Optimality during FTP75-1}
+\caption{Fuel and Emissions scope with Pareto Optimality during FTP75-1}
 \label{fig:fepo1}
 \end{figure}
 
@@ -78,42 +78,42 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.42]{figures/Pareto/FTP75-1/engine30Juni}
-\caption{Engine Scope with Pareto Optimality during FTP75-1}
+\caption{Engine scope with Pareto Optimality during FTP75-1}
 \label{fig:epo1}
 \includegraphics[scale=0.42]{figures/Pareto/FTP75-1/motor30Juni}
-\caption{Motor Scope with Pareto Optimality during FTP75-1}
+\caption{Motor scope with Pareto Optimality during FTP75-1}
 \label{fig:mpo1}
 \end{figure}
 
-The FTP75-2 results are in Figures \ref{fig:gtpo2}, \ref{fig:dcpo2}, \ref{fig:pcpo2}, \ref{fig:fepo2}, \ref{fig:epo2} and \ref{fig:mpo2}. They show that in the second phase of the drive cycle there is a much frequent switching on and off of the engine compared to the first phase. Moreover, the motor requests negative torque much more often. This is due to the fact that in Figure \ref{fig:dcpo2} there are more decelerations than in Figure \ref{fig:dcpo1} where the braking power is automatically used for recharging. Since the battery SOC does not fall below 40 \% and it does not have to be recharged purposefully in FTP75-2, the drive cycle demands are met very well and the actual and demanded speed are always close. Therefore, this phase also runs very fast compared to FTP75-1.
+The FTP75-2 results are in Figures \ref{fig:gtpo2}, \ref{fig:dcpo2}, \ref{fig:pcpo2}, \ref{fig:fepo2}, \ref{fig:epo2} and \ref{fig:mpo2}. In the second phase of the drive cycle there is a much frequent switching on and off of the engine compared to the first phase. Moreover, the motor requests negative torque much more often. This is due to the fact that in Figure \ref{fig:dcpo2} there are more decelerations than in Figure \ref{fig:dcpo1} where the braking power is automatically used for recharging. Since the battery SOC does not fall below 40 \% and it does not have to be recharged purposefully in FTP75-2, the drive cycle demands are met very well and the actual and demanded speed are always close. Therefore, this phase also runs very fast compared to FTP75-1.
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-2/gameTheory03Juli}
-\caption{Game Theory Scope with Pareto Optimality during FTP75-2}
+\caption{Game Theory scope with Pareto Optimality during FTP75-2}
 \label{fig:gtpo2}
 \includegraphics[scale=0.41]{figures/Pareto/FTP75-2/driveCycle03Juli}
-\caption{Drive Cycle Scope with Pareto Optimality during FTP75-2}
+\caption{Drive Cycle scope with Pareto Optimality during FTP75-2}
 \label{fig:dcpo2}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-2/powerController03Juli}
-\caption{Power Controller Scope with Pareto Optimality during FTP75-2}
+\caption{Power Controller scope with Pareto Optimality during FTP75-2}
 \label{fig:pcpo2}
 \includegraphics[scale=0.43]{figures/Pareto/FTP75-2/fuelEmissions03Juli}
-\caption{Fuel and Emissions Scope with Pareto Optimality during FTP75-2}
+\caption{Fuel and Emissions scope with Pareto Optimality during FTP75-2}
 \label{fig:fepo2}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.42]{figures/Pareto/FTP75-2/engine03Juli}
-\caption{Engine Scope with Pareto Optimality during FTP75-2}
+\caption{Engine scope with Pareto Optimality during FTP75-2}
 \label{fig:epo2}
 \includegraphics[scale=0.42]{figures/Pareto/FTP75-2/motor03Juli}
-\caption{Motor Scope with Pareto Optimality during FTP75-2}
+\caption{Motor scope with Pareto Optimality during FTP75-2}
 \label{fig:mpo2}
 \end{figure}
 
@@ -122,72 +122,72 @@ In FTP75-3 as shown in Figures \ref{fig:gtpo3}, \ref{fig:dcpo3}, \ref{fig:pcpo3}
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-3/gameTheory08Juni}
-\caption{Game Theory Scope with Pareto Optimality during FTP75-3}
+\caption{Game Theory scope with Pareto Optimality during FTP75-3}
 \label{fig:gtpo3}
 \includegraphics[scale=0.41]{figures/Pareto/FTP75-3/driveCycle08Juni}
-\caption{Drive Cycle Scope with Pareto Optimality during FTP75-3}
+\caption{Drive Cycle scope with Pareto Optimality during FTP75-3}
 \label{fig:dcpo3}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-3/powerController08Juni}
-\caption{Power Controller Scope with Pareto Optimality during FTP75-3}
+\caption{Power Controller scope with Pareto Optimality during FTP75-3}
 \label{fig:pcpo3}
 \includegraphics[scale=0.42]{figures/Pareto/FTP75-3/engine08Juni}
-\caption{Engine Scope with Pareto Optimality during FTP75-3}
+\caption{Engine scope with Pareto Optimality during FTP75-3}
 \label{fig:epo3}
 \end{figure}
 
 
-In FTP75-4 results are displayed in Figure \ref{fig:gtpo4}, \ref{fig:dcpo4}, \ref{fig:pcpo4} and \ref{fig:mpo4}. Similarly to the FTP75-2, in FTP75-4 the motor is prompted for negative torque much more frequently than the other phases FTP75-1 and FTP75-3 because there are more sudden accelerations and decelerations and the speed demand is changing more abruptly. It can be concluded that in this phase the drive cycle demands are again met very accurately like in FTP75-2, since there are almost no differences in the demanded and actual speeds in Figure \ref{fig:dcpo4}. The battery mode in Figure \ref{fig:pcpo4} keeps alternating from recharge mode during deceleration with negative torque and discharge mode during acceleration with positive torque.
+In FTP75-4 results are displayed in Figure \ref{fig:gtpo4}, \ref{fig:dcpo4}, \ref{fig:pcpo4} and \ref{fig:mpo4}. Similarly to the FTP75-2, in FTP75-4 the motor is prompted for negative torque much more frequently than the other phases, because there are more sudden accelerations and decelerations and the speed demand is changing more abruptly. It can be concluded that in this phase the drive cycle demands are again met very accurately like in FTP75-2 as in \ref{fig:dcpo4}. The battery mode in Figure \ref{fig:pcpo4} keeps alternating from recharge mode during deceleration with negative torque and discharge mode during acceleration with positive torque.
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-4/gameTheory05Juli}
-\caption{Game Theory Scope with Pareto Optimality during FTP75-4}
+\caption{Game Theory scope with Pareto Optimality during FTP75-4}
 \label{fig:gtpo4}
 \includegraphics[scale=0.41]{figures/Pareto/FTP75-4/driveCycle05Juli}
-\caption{Drive Cycle Scope with Pareto Optimality during FTP75-4}
+\caption{Drive Cycle scope with Pareto Optimality during FTP75-4}
 \label{fig:dcpo4}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-4/powerController05Juli}
-\caption{Power Controller Scope with Pareto Optimality during FTP75-4}
+\caption{Power Controller scope with Pareto Optimality during FTP75-4}
 \label{fig:pcpo4}
 \includegraphics[scale=0.37]{figures/Pareto/FTP75-4/motor05Juli}
-\caption{Motor Scope with Pareto Optimality during FTP75-4}
+\caption{Motor scope with Pareto Optimality during FTP75-4}
 \label{fig:mpo4}
 \end{figure}
 
-In the last phase FTP75-5 in Figures \ref{fig:gtpo5}, \ref{fig:dcpo5}, \ref{fig:pcpo5} and \ref{fig:mpo5}, the battery has to be recharged at 50s and the maximum difference of demanded and actual speed this incurs is 70 \textit{km/h}. During recharge mode the engine and motor are constantly contributing torque, because the torque demand is high. At 110s the maximum speed of this phase 85 \textit{km/h} is reached. At 120s the battery is already at the target 60 \% and the actual speed tries to keep up with the demanded speed. However, it goes up and down before it comes to the right demanded speed at 170s, similarly as in FTP75-3. After acceleration was kept constant, it takes time for it to adjust to the right amount and influence the actual speed correctly. After 170s the actual speed starts to meet the demand again. 
+In the last phase FTP75-5 in Figures \ref{fig:gtpo5}, \ref{fig:dcpo5}, \ref{fig:pcpo5} and \ref{fig:mpo5}, the battery has to be recharged at 50s and the maximum difference of demanded and actual speed this incurs is 70 \textit{km/h}. During recharge mode the engine and motor are constantly contributing torque, because the torque demand is high. At 110s the maximum speed of this phase 91.25 \textit{km/h} is reached. At 120s the battery is already at the target 60 \% and the actual speed tries to keep up with the demanded speed. However, it goes up and down before it comes to the right demanded speed at 170s, similarly as in FTP75-3. After acceleration was kept constant, it takes time for it to adjust to the right amount and influence the actual speed correctly. After 170s the actual speed starts to meet the demand again. 
 
 For the next game-theoretical approaches only the Game Theory scope will be shown, since there is little difference in the other scopes. Moreover, it is crucial to examine the motor and engine torque distribution differences between the different game theory approaches because that is the main topic in this thesis.
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-5/gameTheory05Juli}
-\caption{Game Theory Scope with Pareto Optimality during FTP75-5}
+\caption{Game Theory scope with Pareto Optimality during FTP75-5}
 \label{fig:gtpo5}
 \includegraphics[scale=0.41]{figures/Pareto/FTP75-5/driveCycle05Juli}
-\caption{Drive Cycle Scope with Pareto Optimality during FTP75-5}
+\caption{Drive Cycle scope with Pareto Optimality during FTP75-5}
 \label{fig:dcpo5}
 \end{figure}
 
 \begin{figure}[hp]
 \centering
 \includegraphics[scale=0.4]{figures/Pareto/FTP75-5/powerController05Juli}
-\caption{Power Controller Scope with Pareto Optimality during FTP75-5}
+\caption{Power Controller scope with Pareto Optimality during FTP75-5}
 \label{fig:pcpo5}
 \includegraphics[scale=0.37]{figures/Pareto/FTP75-5/motor05Juli}
-\caption{Motor Scope with Pareto Optimality during FTP75-5}
+\caption{Motor scope with Pareto Optimality during FTP75-5}
 \label{fig:mpo5}
 \end{figure}
 
 \subsection{Nash Equilibrium}
-This section discusses the Game Theory Scope of all of the five phases in the FTP75 drive cycle when the game is solved with Nash Equilibrium. The results are compared to the Pareto Optimality solution. FTP75-1, FTP75-2, FTP75-3, FTP75-4 and FTP75-5 results are displayed respectively in Figures \ref{fig:gtne1}, \ref{fig:gtne2}, \ref{fig:gtne3}, \ref{fig:gtne4} and \ref{fig:gtne5} in Appendix \ref{app:1}.
+This section discusses the Game Theory scope of all of the five phases in the FTP75 drive cycle when the game is solved with Nash Equilibrium. The results are compared to the Pareto Optimality solution. FTP75-1, FTP75-2, FTP75-3, FTP75-4 and FTP75-5 results are displayed respectively in Figures \ref{fig:gtne1}, \ref{fig:gtne2}, \ref{fig:gtne3}, \ref{fig:gtne4} and \ref{fig:gtne5} in Appendix \ref{app:1}.
 
 As seen in Figure \ref{fig:gtne1} FTP75-1 of the Nash Equilibrium produces slight differences in comparison with Figure \ref{fig:gtpo1}. In particular, the engine torque demand at time 160-165s is wider with Nash Equilibrium than with Pareto Optimality. In the former solution it ranges between 110-136 \textit{Nm} and in the latter its range is between 85-136 \textit{Nm}. Then at time 170-175s with Nash Equilibrium solution the engine torque demand goes directly from 0 to 136 and back to 0 \textit{Nm} again, whereas with Pareto Optimality it jumps between 85 and 136 \textit{Nm}. At time 230-270s the Nash Equilibrium again performs better, because the engine torque, which looks sinusoidal, undergoes less changes than with Pareto Optimality. The same conclusions at the same time periods are drawn also for the motor torque, whose change depends on the engine torque.
 
@@ -198,16 +198,10 @@ The Nash Bargaining solution presented in Figure \ref{fig:gtns1} results are ver
 
 Despite the similarity, in FTP75-1 there is a difference at time from 160s to 170s in Figure \ref{fig:gtne1} where the Nash Equilibrium requests the maximum engine torque of 136 \textit{Nm} and then requests 115 \textit{Nm}, whereas in the Nash Bargaining solution in Figure \ref{fig:gtns1} after prompting for 136 \textit{Nm} it goes down to 90 \textit{Nm}. The same happens between 190s and 200s. Furthermore, the next difference is visible between 230s and 275s, where the motor torque is 0 \textit{Nm} and the engine torque in Nash Equilibrium is changing in the range from 100 to 128 \textit{Nm}. In the Nash Bargaining solution this also happens, but the change is more abrupt and it is either 100 or 128 \textit{Nm} rather than taking values in between them. Except for these cases, the game theory solutions with Nash Equilibrium and with Nash Bargaining solution are the same.
 
-The FTP75-2 is also very similar to the Nash Equilibrium FTP75-2. At time 70-75s the Nash Bargaining solution requests again a wider range of torque from the engine, from 95 to 136 \textit{Nm}, while the Nash Equilibrium requests from only 110 to 136 \textit{Nm}. The same applies for the next peaks in Figure \ref{fig:gtns2}. Regarding the motor torque, both solutions produce exactly the same output.
-
-Results of FTP75-3 with Nash Bargaining solution in \ref{fig:gtns3} also resemble the Nash Equilibrium in Figure \ref{fig:gtne3}. The outline of the engine torque is the same except that the Nash Bargaining solution requests a wide variety of torque in the upper range between 90 and 136 \textit{Nm}. The motor torque is again the same as in the Nash Equilibrium with exception that at time 185s there is a more sudden change than in the Nash Equilibrium solution, which corresponds to the same time where the engine also undergoes a bigger change than in the Nash Equilibrium, which is seen from the thicker lines.
-
-The same applies to the FTP75-4 drive cycle phase shown in Figure \ref{fig:gtns4}, where the Nash Bargaining solution gives a wider variety of engine torque output, while keeping the motor torque almost unchanged. However, at times 140s and 170s the motor torque of the Nash Bargaining solution is 125 \textit{Nm}, which is higher than in the Nash Equilibrium solution of 110 \textit{Nm}. This is due to the fact that the Nash Bargaining solution outputs engine torque in the range of 90 \textit{Nm} and 136, while the Nash Equilibrium only restricts it between 118 and 136 \textit{Nm}.
-
-In the FTP75-5 the most obvious difference is that at time 120-125s the Nash Equilibrium produces torque between 110 and 136 \textit{Nm}, while the Nash Bargaining solution in Figure \ref{fig:gtns5} outputs a range of 95 to 136 \textit{Nm}. The same applies for the other peaks.
+FTP75-2, FTP75-3, FTP75-4 and FTP 75-5 are also very similar to the Nash Equilibrium. The visible difference in all of them is that the Nash Bargaining solution requests a wider range of torque from the engine, from 95 to 136 \textit{Nm}, while the Nash Equilibrium requests from only 110 to 136 \textit{Nm}.
 
 \subsection{Kalai-Smorodinsky solution}
-The Kalai-Smorodinsky solution produces exactly the same results as the Nash solution does for FTP75-1 and FTP75-2 as shown in Figures \ref{fig:gtks1}, \ref{fig:gtks2}. The first visible difference between the two solutions appears in FTP75-3 in Figure \ref{fig:gtks3} at time 235-240s where the Kalai-Smorodinsky solution of the motor torque is going up and down from 0 to 90 repeatedly \textit{Nm}, while the Nash solution repeats this only 2 times - from 0 to 90, then to 0 and then to 90 again. This also affects the engine torque which behaves similarly in the range from 95 to 136 \textit{Nm} in the Kalai-Smorodinsky solution, but rather stays at 136 \textit{Nm} for the Nash solution. In the FTP75-4 in Figure \ref{fig:gtks4} there is no variation in comparison to the Nash Bargaining solution just as in FTP75-5 where also no variation is visible. The almost identical results of the Kalai-Smorodinsky and the Nash solution come from fact that their concepts are very similar. Firstly, they both use the conflict point as a part of the computation. The Kalai-Smorodinksy solution is assumed to be an extension of the Nash solution, because it replaces one of the four axioms of the Nash solution with a new axiom for Individual Monotonicity and in addition takes into a account the ideal minimum payoff point.
+The Kalai-Smorodinsky solution produces exactly the same results as the Nash solution does for FTP75-1 and FTP75-2 as shown in Figures \ref{fig:gtks1}, \ref{fig:gtks2}. The first visible difference between the two solutions appears in FTP75-3 in Figure \ref{fig:gtks3} at time 235-240s where the Kalai-Smorodinsky solution of the motor torque is going up and down from 0 to 90 repeatedly \textit{Nm}, while the Nash solution repeats this only 2 times. This also affects the engine torque which behaves similarly in the range from 95 to 136 \textit{Nm} in the Kalai-Smorodinsky solution, but rather stays at 136 \textit{Nm} for the Nash solution. In FTP75-4 and FTP75-5 in Figures \ref{fig:gtks4} and \ref{fig:gtks5} there is no difference between the two solutions. The almost identical results of the Kalai-Smorodinsky and the Nash solution come from fact that their concepts are very similar. Firstly, they both use the conflict point as a part of the computation. The Kalai-Smorodinksy solution is assumed to be an extension of the Nash solution by taking into account additionally the ideal minimum payoff point.
 
 \subsection{The core}
 Solving the game with the Core generates exactly the same results as Pareto Optimality, due to the fact that all outcomes which are in the core are always Pareto optimal and in two-player cooperative games the two concepts produce equivalent solutions. Therefore, the Simulink scopes of the Core are not shown. However to prove that the core was also simulated, the fuel, emissions and battery related values are shown in the tables in the next section \ref{sec:goalresults}.

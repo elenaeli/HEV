@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  8 JUL 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  11 JUL 2016 14:37
 entering extended mode
 **"./Latex-Framework Masterarbeit.tex"
 ("Latex-Framework Masterarbeit.tex"
@@ -1216,7 +1216,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 
 
 ] [9] [10] [11]
-<figures/planetaryGear.png, id=408, 1915.155pt x 1029.8475pt>
+<figures/planetaryGear.png, id=412, 1915.155pt x 1029.8475pt>
 File: figures/planetaryGear.png Graphic file (type png)
 
 <use figures/planetaryGear.png>
@@ -1224,7 +1224,7 @@ Package pdftex.def Info: figures/planetaryGear.png used on input line 36.
 (pdftex.def)             Requested size: 287.26085pt x 154.47046pt.
  [12 <./figures/planetaryGear.png (PNG copy)>]
 [13] [14] [15] [16]
-<figures/nashSolution.png, id=449, 606.76688pt x 517.935pt>
+<figures/nashSolution.png, id=453, 606.76688pt x 517.935pt>
 File: figures/nashSolution.png Graphic file (type png)
 
 <use figures/nashSolution.png>
@@ -1235,7 +1235,7 @@ Package pdftex.def Info: figures/nashSolution.png used on input line 151.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17] [18 <./figures/nashSolution.png>] [19] [20] [21] [22]
-<figures/kalaiSmorodinskySolution.png, id=511, 590.205pt x 518.6878pt>
+<figures/kalaiSmorodinskySolution.png, id=515, 590.205pt x 518.6878pt>
 File: figures/kalaiSmorodinskySolution.png Graphic file (type png)
 
 <use figures/kalaiSmorodinskySolution.png>
@@ -1261,7 +1261,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-<figures/hev/hev.png, id=544, 700.11563pt x 576.65437pt>
+<figures/hev/hev.png, id=548, 700.11563pt x 576.65437pt>
 File: figures/hev/hev.png Graphic file (type png)
 
 <use figures/hev/hev.png>
@@ -1275,15 +1275,11 @@ Overfull \hbox (13.7672pt too wide) in paragraph at lines 10--11
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/FTP75.png, id=546, 907.89188pt x 642.90187pt>
+<figures/FTP75.png, id=550, 907.89188pt x 642.90187pt>
 File: figures/FTP75.png Graphic file (type png)
  <use figures/FTP75.png>
 Package pdftex.def Info: figures/FTP75.png used on input line 23.
-(pdftex.def)             Requested size: 408.54758pt x 289.30316pt.
-
-Overfull \hbox (2.24216pt too wide) in paragraph at lines 23--24
- [][] 
- []
+(pdftex.def)             Requested size: 272.36966pt x 192.87204pt.
 
 [27
 
@@ -1294,7 +1290,7 @@ Overfull \hbox (2.24216pt too wide) in paragraph at lines 23--24
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28 <./figures/hev/hev.png>]
-<figures/hev/powercontroller.png, id=557, 822.07124pt x 481.04718pt>
+<figures/hev/powercontroller.png, id=561, 822.07124pt x 481.04718pt>
 File: figures/hev/powercontroller.png Graphic file (type png)
 
 <use figures/hev/powercontroller.png>
@@ -1306,7 +1302,7 @@ Package pdftex.def Info: figures/hev/powercontroller.png used on input line 37.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29 <./figures/FTP75.png (PNG copy)>] [30 <./figures/hev/powercontroller.png>]
-<figures/hev/enginecontroller.png, id=569, 816.04875pt x 430.60875pt>
+<figures/hev/enginecontroller.png, id=573, 816.04875pt x 430.60875pt>
 File: figures/hev/enginecontroller.png Graphic file (type png)
 
 <use figures/hev/enginecontroller.png>
@@ -1318,21 +1314,15 @@ Overfull \hbox (1.71796pt too wide) in paragraph at lines 57--58
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31] <figures/enginecurve.png, id=575, 649.67719pt x 505.13719pt>
+[31 <./figures/hev/enginecontroller.png>]
+<figures/enginecurve.png, id=580, 649.67719pt x 505.13719pt>
 File: figures/enginecurve.png Graphic file (type png)
 
 <use figures/enginecurve.png>
 Package pdftex.def Info: figures/enginecurve.png used on input line 68.
-(pdftex.def)             Requested size: 259.86627pt x 202.05128pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[32 <./figures/hev/enginecontroller.png>]
-<figures/hev/electricmotorcontroller.png, id=585, 863.47594pt x 462.22687pt>
+(pdftex.def)             Requested size: 194.90465pt x 151.54233pt.
+ [32 <./figures/enginecurve.png (PNG copy)>]
+<figures/hev/electricmotorcontroller.png, id=589, 863.47594pt x 462.22687pt>
 File: figures/hev/electricmotorcontroller.png Graphic file (type png)
 
 <use figures/hev/electricmotorcontroller.png>
@@ -1347,50 +1337,54 @@ Overfull \hbox (8.15833pt too wide) in paragraph at lines 82--83
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/battery.png, id=587, 650.43pt x 482.55281pt>
+<figures/battery.png, id=591, 650.43pt x 482.55281pt>
 File: figures/battery.png Graphic file (type png)
 
 <use figures/battery.png>
 Package pdftex.def Info: figures/battery.png used on input line 91.
-(pdftex.def)             Requested size: 325.2142pt x 241.2758pt.
+(pdftex.def)             Requested size: 273.17873pt x 202.67079pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33 <./figures/enginecurve.png (PNG copy)>]
+
 Overfull \hbox (14.47696pt too wide) in paragraph at lines 108--108
 [] 
  []
 
-[34 <./figures/hev/electricmotorcontroller.png>] [35 <./figures/battery.png (PN
-G copy)>]
+[33] [34 <./figures/hev/electricmotorcontroller.png>]
 
-LaTeX Warning: Reference `fig:mpa1' on page 36 undefined on input line 117.
+LaTeX Warning: Reference `fig:mpa1' on page 35 undefined on input line 117.
 
-<figures/hev/transmissioncontroller.png, id=610, 764.8575pt x 371.13657pt>
+[35 <./figures/battery.png (PNG copy)>]
+<figures/hev/transmissioncontroller.png, id=614, 764.8575pt x 371.13657pt>
 File: figures/hev/transmissioncontroller.png Graphic file (type png)
 
 <use figures/hev/transmissioncontroller.png>
 Package pdftex.def Info: figures/hev/transmissioncontroller.png used on input l
 ine 128.
 (pdftex.def)             Requested size: 382.42781pt x 185.56783pt.
- [36] [37 <./figures/hev/transmissioncontroller.png>]
-<figures/hev/vehiclecontroller.png, id=624, 810.02625pt x 331.99031pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36] [37 <./figures/hev/transmissioncontroller.png>]
+<figures/hev/vehiclecontroller.png, id=629, 810.02625pt x 331.99031pt>
 File: figures/hev/vehiclecontroller.png Graphic file (type png)
 
 <use figures/hev/vehiclecontroller.png>
 Package pdftex.def Info: figures/hev/vehiclecontroller.png used on input line 1
 42.
 (pdftex.def)             Requested size: 405.01213pt x 165.99474pt.
- [38 <./figures/hev/vehiclecontroller.png>] <figures/tire.png, id=636, 163.3603
-pt x 211.54031pt>
-File: figures/tire.png Graphic file (type png)
 
-<use figures/tire.png>
+<figures/tire.png, id=633, 163.3603pt x 211.54031pt>
+File: figures/tire.png Graphic file (type png)
+ <use figures/tire.png>
 Package pdftex.def Info: figures/tire.png used on input line 153.
 (pdftex.def)             Requested size: 81.67995pt x 105.76988pt.
- [39 <./figures/tire.png>]
-<figures/power.png, id=649, 581.92406pt x 463.7325pt>
+
+[38 <./figures/hev/vehiclecontroller.png>] [39 <./figures/tire.png>]
+<figures/power.png, id=653, 581.92406pt x 463.7325pt>
 File: figures/power.png Graphic file (type png)
  <use figures/power.png>
 Package pdftex.def Info: figures/power.png used on input line 178.
@@ -1405,7 +1399,7 @@ Overfull \hbox (81.25984pt too wide) in paragraph at lines 179--179
 [] [] 
  []
 
-<figures/fuel.png, id=650, 589.4522pt x 487.06969pt>
+<figures/fuel.png, id=654, 589.4522pt x 487.06969pt>
 File: figures/fuel.png Graphic file (type png)
  <use figures/fuel.png>
 Package pdftex.def Info: figures/fuel.png used on input line 184.
@@ -1420,17 +1414,19 @@ Overfull \hbox (81.25984pt too wide) in paragraph at lines 185--185
 [] [] 
  []
 
-[40]
 
-LaTeX Warning: Reference `fig:coFit' on page 41 undefined on input line 190.
-
-
-LaTeX Warning: Reference `fig:hcFit' on page 41 undefined on input line 190.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig:noxFit' on page 41 undefined on input line 190.
+LaTeX Warning: Reference `fig:coFit' on page 40 undefined on input line 190.
 
-<figures/CO.png, id=658, 487.8225pt x 389.95688pt>
+
+LaTeX Warning: Reference `fig:hcFit' on page 40 undefined on input line 190.
+
+
+LaTeX Warning: Reference `fig:noxFit' on page 40 undefined on input line 190.
+
+<figures/CO.png, id=656, 487.8225pt x 389.95688pt>
 File: figures/CO.png Graphic file (type png)
  <use figures/CO.png>
 Package pdftex.def Info: figures/CO.png used on input line 194.
@@ -1455,7 +1451,7 @@ Overfull \hbox (235.65169pt too wide) in paragraph at lines 196--196
 [] 
  []
 
-<figures/HC.png, id=659, 487.06969pt x 391.4625pt>
+<figures/HC.png, id=657, 487.06969pt x 391.4625pt>
 File: figures/HC.png Graphic file (type png)
  <use figures/HC.png>
 Package pdftex.def Info: figures/HC.png used on input line 199.
@@ -1480,7 +1476,7 @@ Overfull \hbox (235.65169pt too wide) in paragraph at lines 201--201
 [] 
  []
 
-<figures/NOX.png, id=660, 487.06969pt x 387.69844pt>
+<figures/NOX.png, id=658, 487.06969pt x 387.69844pt>
 File: figures/NOX.png Graphic file (type png)
  <use figures/NOX.png>
 Package pdftex.def Info: figures/NOX.png used on input line 204.
@@ -1505,8 +1501,9 @@ Overfull \hbox (235.65169pt too wide) in paragraph at lines 206--206
 [] 
  []
 
-[41 <./figures/power.png> <./figures/fuel.png> <./figures/CO.png> <./figures/HC
-.png> <./figures/NOX.png>] [42] [43] [44] [45] [46] [47] [48] [49] [50]
+[40] [41 <./figures/power.png> <./figures/fuel.png> <./figures/CO.png> <./figur
+es/HC.png> <./figures/NOX.png>] [42] [43] [44] [45] [46] [47] [48] [49]
+[50]
 Overfull \hbox (2.92296pt too wide) in paragraph at lines 331--331
 []|$\OML/cmm/m/it/10.95 a[]$| 
  []
@@ -1751,7 +1748,7 @@ Overfull \hbox (2.92296pt too wide) in paragraph at lines 337--337
 []|$\OML/cmm/m/it/10.95 a[]$| 
  []
 
-[51] [52]) [53]
+[51]) [52]
 \openout2 = `source/Simulation.aux'.
 
  (source/Simulation.tex
@@ -1770,11 +1767,11 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-[54
+[53
 
 
 
-] [55] [56]
+] [54] [55]
 Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\T1/cmr/m/n/10.95 Drive
  []
@@ -1849,7 +1846,7 @@ Overfull \hbox (0.58475pt too wide) in paragraph at lines 79--94
  [][] 
  []
 
-[57]) [58]
+[56]) [57]
 \openout2 = `source/Results.aux'.
 
  (source/Results.tex
@@ -1868,7 +1865,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-[59
+[58
 
 
 
@@ -1931,11 +1928,8 @@ Overfull \hbox (81.25984pt too wide) in paragraph at lines 40--40
 [] [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[60 <./figures/gametheory/100nm.png> <./figures/gametheory/145nm.png>] [61 <./f
-igures/gametheory/178nm.png> <./figures/gametheory/280nm.png>]
+[59 <./figures/gametheory/100nm.png> <./figures/gametheory/145nm.png> <./figure
+s/gametheory/178nm.png> <./figures/gametheory/280nm.png>] [60]
 <figures/Pareto/FTP75-1/gameTheory30Juni.png, id=814, 864.22874pt x 516.42938pt
 >
 File: figures/Pareto/FTP75-1/gameTheory30Juni.png Graphic file (type png)
@@ -2081,18 +2075,8 @@ line 137.
 
 LaTeX Warning: Float too large for page by 24.49823pt on input line 140.
 
-[62] [63 <./figures/Pareto/FTP75-1/gameTheory30Juni.png> <./figures/Pareto/FTP7
-5-1/driveCycle30Juni.png>] [64 <./figures/Pareto/FTP75-1/powerController30Juni.
-png> <./figures/Pareto/FTP75-1/fuelEmissions30Juni.png>] [65 <./figures/Pareto/
-FTP75-1/engine30Juni.png> <./figures/Pareto/FTP75-1/motor30Juni.png>] [66 <./fi
-gures/Pareto/FTP75-2/gameTheory03Juli.png> <./figures/Pareto/FTP75-2/driveCycle
-03Juli.png>] [67 <./figures/Pareto/FTP75-2/powerController03Juli.png> <./figure
-s/Pareto/FTP75-2/fuelEmissions03Juli.png>] [68 <./figures/Pareto/FTP75-2/engine
-03Juli.png> <./figures/Pareto/FTP75-2/motor03Juli.png>] [69 <./figures/Pareto/F
-TP75-3/gameTheory08Juni.png> <./figures/Pareto/FTP75-3/driveCycle08Juni.png>]
-[70 <./figures/Pareto/FTP75-3/powerController08Juni.png> <./figures/Pareto/FTP7
-5-3/engine08Juni.png>]
-<figures/Pareto/FTP75-4/gameTheory05Juli.png, id=903, 864.98157pt x 514.92375pt
+
+<figures/Pareto/FTP75-4/gameTheory05Juli.png, id=849, 864.98157pt x 514.92375pt
 >
 File: figures/Pareto/FTP75-4/gameTheory05Juli.png Graphic file (type png)
  <use figures/Pareto/FTP75-4/gameTheory05Juli.png>
@@ -2100,14 +2084,14 @@ Package pdftex.def Info: figures/Pareto/FTP75-4/gameTheory05Juli.png used on in
 put line 147.
 (pdftex.def)             Requested size: 389.23811pt x 231.71355pt.
 
-<figures/Pareto/FTP75-4/driveCycle05Juli.png, id=904, 916.1728pt x 544.28343pt>
+<figures/Pareto/FTP75-4/driveCycle05Juli.png, id=850, 916.1728pt x 544.28343pt>
 File: figures/Pareto/FTP75-4/driveCycle05Juli.png Graphic file (type png)
 <use figures/Pareto/FTP75-4/driveCycle05Juli.png>
 Package pdftex.def Info: figures/Pareto/FTP75-4/driveCycle05Juli.png used on in
 put line 150.
 (pdftex.def)             Requested size: 375.63329pt x 223.15765pt.
 
-<figures/Pareto/FTP75-4/powerController05Juli.png, id=905, 840.89156pt x 687.31
+<figures/Pareto/FTP75-4/powerController05Juli.png, id=851, 840.89156pt x 687.31
 781pt>
 File: figures/Pareto/FTP75-4/powerController05Juli.png Graphic file (type png)
  <use figures/Pareto/FTP75-4/powerController05Juli.png>
@@ -2115,7 +2099,7 @@ Package pdftex.def Info: figures/Pareto/FTP75-4/powerController05Juli.png used
 on input line 157.
 (pdftex.def)             Requested size: 336.35066pt x 274.92226pt.
 
-<figures/Pareto/FTP75-4/motor05Juli.png, id=906, 787.44188pt x 723.45282pt>
+<figures/Pareto/FTP75-4/motor05Juli.png, id=852, 787.44188pt x 723.45282pt>
 File: figures/Pareto/FTP75-4/motor05Juli.png Graphic file (type png)
 
 <use figures/Pareto/FTP75-4/motor05Juli.png>
@@ -2126,8 +2110,20 @@ ine 160.
 
 LaTeX Warning: Float too large for page by 0.24808pt on input line 163.
 
-
-<figures/Pareto/FTP75-5/gameTheory05Juli.png, id=911, 865.73438pt x 515.67656pt
+[61] [62 <./figures/Pareto/FTP75-1/gameTheory30Juni.png> <./figures/Pareto/FTP7
+5-1/driveCycle30Juni.png>] [63 <./figures/Pareto/FTP75-1/powerController30Juni.
+png> <./figures/Pareto/FTP75-1/fuelEmissions30Juni.png>] [64 <./figures/Pareto/
+FTP75-1/engine30Juni.png> <./figures/Pareto/FTP75-1/motor30Juni.png>] [65 <./fi
+gures/Pareto/FTP75-2/gameTheory03Juli.png> <./figures/Pareto/FTP75-2/driveCycle
+03Juli.png>] [66 <./figures/Pareto/FTP75-2/powerController03Juli.png> <./figure
+s/Pareto/FTP75-2/fuelEmissions03Juli.png>] [67 <./figures/Pareto/FTP75-2/engine
+03Juli.png> <./figures/Pareto/FTP75-2/motor03Juli.png>] [68 <./figures/Pareto/F
+TP75-3/gameTheory08Juni.png> <./figures/Pareto/FTP75-3/driveCycle08Juni.png>]
+[69 <./figures/Pareto/FTP75-3/powerController08Juni.png> <./figures/Pareto/FTP7
+5-3/engine08Juni.png>] [70 <./figures/Pareto/FTP75-4/gameTheory05Juli.png> <./f
+igures/Pareto/FTP75-4/driveCycle05Juli.png>] [71 <./figures/Pareto/FTP75-4/powe
+rController05Juli.png> <./figures/Pareto/FTP75-4/motor05Juli.png>]
+<figures/Pareto/FTP75-5/gameTheory05Juli.png, id=923, 865.73438pt x 515.67656pt
 >
 File: figures/Pareto/FTP75-5/gameTheory05Juli.png Graphic file (type png)
  <use figures/Pareto/FTP75-5/gameTheory05Juli.png>
@@ -2135,7 +2131,7 @@ Package pdftex.def Info: figures/Pareto/FTP75-5/gameTheory05Juli.png used on in
 put line 171.
 (pdftex.def)             Requested size: 389.57687pt x 232.0523pt.
 
-<figures/Pareto/FTP75-5/driveCycle05Juli.png, id=912, 915.42pt x 539.76656pt>
+<figures/Pareto/FTP75-5/driveCycle05Juli.png, id=924, 915.42pt x 539.76656pt>
 File: figures/Pareto/FTP75-5/driveCycle05Juli.png Graphic file (type png)
 
 <use figures/Pareto/FTP75-5/driveCycle05Juli.png>
@@ -2143,7 +2139,7 @@ Package pdftex.def Info: figures/Pareto/FTP75-5/driveCycle05Juli.png used on in
 put line 174.
 (pdftex.def)             Requested size: 375.32463pt x 221.30573pt.
 
-<figures/Pareto/FTP75-5/powerController05Juli.png, id=913, 837.1275pt x 684.306
+<figures/Pareto/FTP75-5/powerController05Juli.png, id=925, 837.1275pt x 684.306
 56pt>
 File: figures/Pareto/FTP75-5/powerController05Juli.png Graphic file (type png)
  <use figures/Pareto/FTP75-5/powerController05Juli.png>
@@ -2151,229 +2147,226 @@ Package pdftex.def Info: figures/Pareto/FTP75-5/powerController05Juli.png used
 on input line 181.
 (pdftex.def)             Requested size: 334.84506pt x 273.71777pt.
 
-<figures/Pareto/FTP75-5/motor05Juli.png, id=914, 785.93625pt x 724.20563pt>
+<figures/Pareto/FTP75-5/motor05Juli.png, id=926, 785.93625pt x 724.20563pt>
 File: figures/Pareto/FTP75-5/motor05Juli.png Graphic file (type png)
 
 <use figures/Pareto/FTP75-5/motor05Juli.png>
 Package pdftex.def Info: figures/Pareto/FTP75-5/motor05Juli.png used on input l
 ine 184.
 (pdftex.def)             Requested size: 290.79185pt x 267.95189pt.
- [71] [72 <./figures/Pareto/FTP75-4/gameTheory05Juli.png> <./figures/Pareto/FTP
-75-4/driveCycle05Juli.png>]
-[73 <./figures/Pareto/FTP75-4/powerController05Juli.png> <./figures/Pareto/FTP7
-5-4/motor05Juli.png>] [74 <./figures/Pareto/FTP75-5/gameTheory05Juli.png> <./fi
-gures/Pareto/FTP75-5/driveCycle05Juli.png>] [75 <./figures/Pareto/FTP75-5/power
-Controller05Juli.png> <./figures/Pareto/FTP75-5/motor05Juli.png>] [76] [77]
-Underfull \hbox (badness 10000) in paragraph at lines 230--230
+ [72] [73 <./figures/Pareto/FTP75-5/gameTheory05Juli.png> <./figures/Pareto/FTP
+75-5/driveCycle05Juli.png>]
+[74 <./figures/Pareto/FTP75-5/powerController05Juli.png> <./figures/Pareto/FTP7
+5-5/motor05Juli.png>] [75] [76]
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
 []|\T1/cmr/m/n/10.95 Drive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/cmr/m/n/10.95 Pareto
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 Op-tim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/cmr/m/n/10.95 Nash
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 Equi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/cmr/m/n/10.95 Nash
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 Solu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/cmr/m/n/10.95 Kalai-
  []
 
 
-Overfull \hbox (3.23448pt too wide) in paragraph at lines 232--232
+Overfull \hbox (3.23448pt too wide) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 Smorod-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 in-sky
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \T1/cmr/m/n/10.95 Solu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 []|\T1/cmr/m/n/10.95 The
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--234
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []\T1/cmr/m/n/10.95 Total
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
 []\T1/cmr/m/n/10.95 Fuel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
 \T1/cmr/m/n/10.95 con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
 \T1/cmr/m/n/10.95 sump-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
 \T1/cmr/m/n/10.95 tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--248
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 []\T1/cmr/m/n/10.95 CO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 249--249
 []\T1/cmr/m/n/10.95 HC
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
 []\T1/cmr/m/n/10.95 NOX
  []
 
 
-Overfull \hbox (0.58475pt too wide) in paragraph at lines 227--270
+Overfull \hbox (0.58475pt too wide) in paragraph at lines 221--264
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 54.4255pt on input line 272.
+LaTeX Warning: Float too large for page by 54.4255pt on input line 266.
 
-[78]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--287
+Underfull \hbox (badness 10000) in paragraph at lines 281--281
 []|\T1/cmr/m/n/10.95 Drive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\T1/cmr/m/n/10.95 Pareto
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 Op-tim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\T1/cmr/m/n/10.95 Nash
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 Equi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\T1/cmr/m/n/10.95 Nash
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 Solu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\T1/cmr/m/n/10.95 Kalai-
  []
 
 
-Overfull \hbox (3.23448pt too wide) in paragraph at lines 289--289
+Overfull \hbox (3.23448pt too wide) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 Smorod-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 in-sky
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 \T1/cmr/m/n/10.95 Solu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\T1/cmr/m/n/10.95 The
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
 []\T1/cmr/m/n/10.95 Average
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--291
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
 \T1/cmr/m/n/10.95 speed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 []\T1/cmr/m/n/10.95 Total
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 \T1/cmr/m/n/10.95 dis-tance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--305
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
 []\T1/cmr/m/n/10.95 Final
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--305
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
 \T1/cmr/m/n/10.95 SOC
  []
 
 
-Overfull \hbox (0.58475pt too wide) in paragraph at lines 284--315
+Overfull \hbox (0.58475pt too wide) in paragraph at lines 278--309
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [79] [80] [81]
+) [77] [78] [79]
 \openout2 = `source/Conclusion.aux'.
 
  (source/Conclusion.tex
@@ -2392,11 +2385,11 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 1.
 
-) [82
+[80
 
 
 
-]
+] [81]) [82]
 chapter without number
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -2435,7 +2428,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              by `\normalfont \bfseries ' on input line 2.
 
 
-<figures/NashEquilibrium/FTP75-1/gameTheory13Juni.png, id=1039, 836.3747pt x 50
+<figures/NashEquilibrium/FTP75-1/gameTheory13Juni.png, id=1040, 836.3747pt x 50
 5.89pt>
 File: figures/NashEquilibrium/FTP75-1/gameTheory13Juni.png Graphic file (type p
 ng)
@@ -2444,7 +2437,7 @@ Package pdftex.def Info: figures/NashEquilibrium/FTP75-1/gameTheory13Juni.png u
 sed on input line 9.
 (pdftex.def)             Requested size: 376.36514pt x 227.64839pt.
 
-<figures/NashEquilibrium/FTP75-2/gameTheory13Juni.png, id=1040, 867.99281pt x 5
+<figures/NashEquilibrium/FTP75-2/gameTheory13Juni.png, id=1041, 867.99281pt x 5
 20.19344pt>
 File: figures/NashEquilibrium/FTP75-2/gameTheory13Juni.png Graphic file (type p
 ng)
@@ -2457,7 +2450,7 @@ sed on input line 19.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashEquilibrium/FTP75-3/gameTheory15Juni.png, id=1041, 866.48718pt x 5
+<figures/NashEquilibrium/FTP75-3/gameTheory15Juni.png, id=1042, 866.48718pt x 5
 17.935pt>
 File: figures/NashEquilibrium/FTP75-3/gameTheory15Juni.png Graphic file (type p
 ng)
@@ -2470,7 +2463,7 @@ sed on input line 29.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashEquilibrium/FTP75-4/gameTheory15Juni.png, id=1042, 866.48718pt x 5
+<figures/NashEquilibrium/FTP75-4/gameTheory15Juni.png, id=1043, 866.48718pt x 5
 18.6878pt>
 File: figures/NashEquilibrium/FTP75-4/gameTheory15Juni.png Graphic file (type p
 ng)
@@ -2483,7 +2476,7 @@ sed on input line 38.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashEquilibrium/FTP75-5/gameTheory16Juni.png, id=1043, 864.22874pt x 5
+<figures/NashEquilibrium/FTP75-5/gameTheory16Juni.png, id=1044, 864.22874pt x 5
 16.42938pt>
 File: figures/NashEquilibrium/FTP75-5/gameTheory16Juni.png Graphic file (type p
 ng)
@@ -2518,7 +2511,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              by `\normalfont \bfseries ' on input line 53.
 
 
-<figures/NashSolution/FTP75-1/gameTheory17Juni.png, id=1065, 866.48718pt x 517.
+<figures/NashSolution/FTP75-1/gameTheory17Juni.png, id=1066, 866.48718pt x 517.
 935pt>
 File: figures/NashSolution/FTP75-1/gameTheory17Juni.png Graphic file (type png)
 
@@ -2527,7 +2520,7 @@ Package pdftex.def Info: figures/NashSolution/FTP75-1/gameTheory17Juni.png used
  on input line 60.
 (pdftex.def)             Requested size: 389.91562pt x 233.06859pt.
 
-<figures/NashSolution/FTP75-2/gameTheory19Juni.png, id=1066, 867.24pt x 517.182
+<figures/NashSolution/FTP75-2/gameTheory19Juni.png, id=1067, 867.24pt x 517.182
 19pt>
 File: figures/NashSolution/FTP75-2/gameTheory19Juni.png Graphic file (type png)
 
@@ -2540,7 +2533,7 @@ Package pdftex.def Info: figures/NashSolution/FTP75-2/gameTheory19Juni.png used
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashSolution/FTP75-3/gameTheory20Juni.png, id=1067, 863.47594pt x 517.
+<figures/NashSolution/FTP75-3/gameTheory20Juni.png, id=1068, 863.47594pt x 517.
 935pt>
 File: figures/NashSolution/FTP75-3/gameTheory20Juni.png Graphic file (type png)
 
@@ -2553,7 +2546,7 @@ Package pdftex.def Info: figures/NashSolution/FTP75-3/gameTheory20Juni.png used
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashSolution/FTP75-4/gameTheory21Juni.png, id=1068, 862.72313pt x 517.
+<figures/NashSolution/FTP75-4/gameTheory21Juni.png, id=1069, 862.72313pt x 517.
 18219pt>
 File: figures/NashSolution/FTP75-4/gameTheory21Juni.png Graphic file (type png)
 
@@ -2566,7 +2559,7 @@ Package pdftex.def Info: figures/NashSolution/FTP75-4/gameTheory21Juni.png used
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/NashSolution/FTP75-5/gameTheory22Juni.png, id=1069, 865.73438pt x 517.
+<figures/NashSolution/FTP75-5/gameTheory22Juni.png, id=1070, 865.73438pt x 517.
 935pt>
 File: figures/NashSolution/FTP75-5/gameTheory22Juni.png Graphic file (type png)
 
@@ -2600,7 +2593,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              by `\normalfont \bfseries ' on input line 98.
 
 
-<figures/KalaiSmorodinsky/FTP75-1/gameTheory23Juni.png, id=1090, 867.24pt x 519
+<figures/KalaiSmorodinsky/FTP75-1/gameTheory23Juni.png, id=1091, 867.24pt x 519
 .44063pt>
 File: figures/KalaiSmorodinsky/FTP75-1/gameTheory23Juni.png Graphic file (type 
 png)
@@ -2609,7 +2602,7 @@ Package pdftex.def Info: figures/KalaiSmorodinsky/FTP75-1/gameTheory23Juni.png
 used on input line 104.
 (pdftex.def)             Requested size: 390.2544pt x 233.74612pt.
 
-<figures/KalaiSmorodinsky/FTP75-2/gameTheory23Juni.png, id=1091, 866.48718pt x 
+<figures/KalaiSmorodinsky/FTP75-2/gameTheory23Juni.png, id=1092, 866.48718pt x 
 516.42938pt>
 File: figures/KalaiSmorodinsky/FTP75-2/gameTheory23Juni.png Graphic file (type 
 png)
@@ -2622,7 +2615,7 @@ used on input line 112.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/KalaiSmorodinsky/FTP75-3/gameTheory25Juni.png, id=1092, 862.72313pt x 
+<figures/KalaiSmorodinsky/FTP75-3/gameTheory25Juni.png, id=1093, 862.72313pt x 
 516.42938pt>
 File: figures/KalaiSmorodinsky/FTP75-3/gameTheory25Juni.png Graphic file (type 
 png)
@@ -2635,7 +2628,7 @@ used on input line 120.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/KalaiSmorodinsky/FTP75-4/gameTheory25Juni.png, id=1093, 860.46469pt x 
+<figures/KalaiSmorodinsky/FTP75-4/gameTheory25Juni.png, id=1094, 860.46469pt x 
 512.66531pt>
 File: figures/KalaiSmorodinsky/FTP75-4/gameTheory25Juni.png Graphic file (type 
 png)
@@ -2648,7 +2641,7 @@ used on input line 128.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/KalaiSmorodinsky/FTP75-5/gameTheory26Juni.png, id=1094, 863.47594pt x 
+<figures/KalaiSmorodinsky/FTP75-5/gameTheory26Juni.png, id=1095, 863.47594pt x 
 515.67656pt>
 File: figures/KalaiSmorodinsky/FTP75-5/gameTheory26Juni.png Graphic file (type 
 png)
@@ -2891,10 +2884,6 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to '"Latex-Framework Masterarbeit".run.xm
 l'.
 \openout1 = `"Latex-Framework Masterarbeit.run.xml"'.
@@ -2905,10 +2894,10 @@ l'.
 ### simple group (level 1) entered at line 64 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19727 strings out of 493634
- 323588 string characters out of 3141315
- 896807 words of memory out of 3000000
- 22339 multiletter control sequences out of 15000+200000
+ 19732 strings out of 493634
+ 323636 string characters out of 3141315
+ 896893 words of memory out of 3000000
+ 22342 multiletter control sequences out of 15000+200000
  34453 words of font info for 78 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  59i,19n,66p,2144b,3064s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2940,10 +2929,10 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurb10
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
 
-Output written on "Latex-Framework Masterarbeit.pdf" (105 pages, 3874689 bytes)
+Output written on "Latex-Framework Masterarbeit.pdf" (105 pages, 3878109 bytes)
 .
 PDF statistics:
- 1894 PDF objects out of 2073 (max. 8388607)
- 292 named destinations out of 1000 (max. 500000)
- 844 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1902 PDF objects out of 2073 (max. 8388607)
+ 294 named destinations out of 1000 (max. 500000)
+ 860 words of extra memory for PDF output out of 10000 (max. 10000000)
 

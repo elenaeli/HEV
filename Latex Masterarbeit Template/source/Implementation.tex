@@ -20,7 +20,7 @@ cycle.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.45]{figures/FTP75}
+\includegraphics[scale=0.3]{figures/FTP75}
 \caption{FTP drive cycle}
 \label{fig:ftp75}
 \end{figure}
@@ -65,7 +65,7 @@ An additional functionality which was implemented to extend the Gasoline Engine 
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{figures/enginecurve}
+\includegraphics[scale=0.3]{figures/enginecurve}
 \caption{Engine torque versus speed curve}
 \label{fig:engineTorqueSpeed}
 \end{figure}
@@ -88,8 +88,8 @@ The battery is modelled by a Battery block of a Nickel-Metal-Hydride type. The n
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{figures/battery}
-\caption{Battery Discharge characteristics}
+\includegraphics[scale=0.42]{figures/battery}
+\caption{Battery discharge characteristics}
 \label{fig:batteryDischarge}
 \end{figure}
 
@@ -140,7 +140,7 @@ The last subsystem models the vehicle dynamics and is shown in Figure \ref{fig:v
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{figures/hev/vehiclecontroller}
-\caption{Vehicle Dynamics Controller}
+\caption{Vehicle dynamics Controller}
 \label{fig:vehiclecontroller}
 \end{figure}
 
@@ -316,7 +316,7 @@ Extending the strategy space to mixed strategies involves assigning probabilitie
               \right.
 \end{equation}
 
-The first argument $f$ is the function to be minimized. $A$ is the matrix containing the left side of the system of linear inequalities, whereas $b$ is the right hand-side of this system. Generally, $Aeq$ is also a matrix with the left hand-side of the system of linear equations and $beq$ is the corresponding left-hand side of the system. Since in our case we only have one equation, $Aeq$ is a vector and $beq$ is a scalar. Moreover, as optional arguments lower an upper bounds can be specified which are the vectors $lb$ and $ub$. The last column of $A$ is added to fulfil the constraint that the probabilities of all pure strategies have to sum up to 1. To summarize, only $A$ is a matrix, as shown in Table \ref{tab:A} and all other arguments are vectors except for $beq$ which is a scalar.
+The first argument $f$ is the function to be minimized. $A$ is the matrix containing the left side of the system of linear inequalities as shown in Table \ref{tab:A}, whereas $b$ is the right hand-side of this system. Generally, $Aeq$ is also a matrix with the left hand-side of the system of linear equations and $beq$ is the corresponding left-hand side of the system. Since in our case we only have one equation, $Aeq$ is a vector and $beq$ is a scalar. Moreover, as optional arguments lower an upper bounds can be specified which are the vectors $lb$ and $ub$. The last column of $A$ is added to fulfil the constraint that the probabilities of all pure strategies have to sum up to 1. To summarize, only $A$ is a matrix and all other arguments are vectors except for $beq$ which is a scalar.
 
 $f = [0, 0, 0, 0, 0, 0, 0, -1]$ \\
 $lb = [0, 0, 0, 0, 0, 0, 0, -Inf]$ \\
@@ -336,7 +336,7 @@ $beq = 1$
  $a_{6,1}$ & $a_{6,2}$ & $a_{6,3}$ & $a_{6,4}$ & $a_{6,5}$ & $a_{6,6}$ & $a_{6,7}$ & 1 \\ \hline
  $a_{7,1}$ & $a_{7,2}$ & $a_{7,3}$ & $a_{7,4}$ & $a_{7,5}$ & $a_{7,6}$ & $a_{7,7}$ & 1 \\ \hline
 \end{tabular}
-\caption{ matrix $A$ - left hand-side of system of inequalities}
+\caption{ Matrix $A$, left hand-side of system of inequalities}
 \label{tab:A}
 \end{table}
 

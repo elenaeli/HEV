@@ -411,7 +411,7 @@
       \verb http://de.mathworks.com/help/physmod/sps/powersys/ref/powergui.html
       \endverb
     \endentry
-    \entry{vehicleDynMatlab}{online}{}
+    \entry{engineMatlab}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
       }
@@ -420,6 +420,28 @@
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
       \field{extrayear}{5}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Gasoline Engine}
+      \field{urlday}{12}
+      \field{urlmonth}{07}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://de.mathworks.com/help/physmod/sdl/drive/gasolineengine.html
+      \endverb
+    \endentry
+    \entry{vehicleDynMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2d2b0d998977e6379aad61f1b56ac3c1}{MathWorks}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{6}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -441,7 +463,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{extrayear}{6}
+      \field{extrayear}{7}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -463,7 +485,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{extrayear}{7}
+      \field{extrayear}{8}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -485,7 +507,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{extrayear}{8}
+      \field{extrayear}{9}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -507,7 +529,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{extrayear}{9}
+      \field{extrayear}{10}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -529,7 +551,7 @@
       \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{extrayear}{10}
+      \field{extrayear}{11}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -541,6 +563,27 @@
       \field{year}{2016}
       \verb{url}
       \verb http://de.mathworks.com/help/physmod/sdl/drive/torsionalspringdamper.html
+      \endverb
+    \endentry
+    \entry{hevMatlab}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=9c2763fad29083f979c69132267fe078}{Mercier}{M\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9c2763fad29083f979c69132267fe078}
+      \strng{fullhash}{9c2763fad29083f979c69132267fe078}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hybrid Electric Vehicle (HEV) Power Train Using Battery Model}
+      \field{urlday}{12}
+      \field{urlmonth}{07}
+      \field{urlyear}{2016}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://de.mathworks.com/matlabcentral/fileexchange/33310-hybrid-electric-vehicle--hev--power-train-using-battery-model
       \endverb
     \endentry
     \entry{nash1950equilibrium}{article}{}

@@ -2,7 +2,7 @@
 \label{chp:simulation}
 The following chapter extends the description of the Implementation chapter by providing the specific parameters for the simulation. Firstly, the behaviour during the FTP75 drive cycle is described.
 
-\section{FTP75 drive cycle split}
+\section{FTP75 Drive Cycle Split}
 As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is divided into 5 parts with similar duration and with a start and end speed demand of 0 \textit{km/h} for simplicity. The following Table \ref{tab:drivecyclephases} shows the duration of each of the five phases:
 
 \begin{table}
@@ -18,13 +18,13 @@ As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is d
  FT75-5 & 1501 & 1874 & 374\\ 
  \hline
 \end{tabular}
-\caption{FTP75 split in 5 phases}
+\caption{FTP75 Split In 5 Phases}
 \label{tab:drivecyclephases}
 \end{table}
 
 Each of the five phases of FTP75 is simulated starting from time 0s since the battery SOC cannot be initialized properly otherwise. For example, the FTP75-2 drive cycle does not start from 341s and end at 680s, but instead runs from 0-340s. The same goes for FTP75-3 which originally lasts from 681-1030s and is modified to 0-350s, FTP75-4 is originally from 1031-1500s, modified to 0-470s. The last FTP75-5 normally runs from 1500-1874s, but is changed to 0-374s. That is the reason why time in the x-axis starts from 0s in all of the results in Chapter \ref{chp:results} and Appendix \ref{app:1}.
 
-\section{Time step}
+\section{Time Step}
 
 A certain number of parameters, which are utilized in the Simulink model and are tuned so that no errors occur, are explained next. 
 
@@ -41,7 +41,7 @@ Table \ref{tab:powergui} shows the parameters which concern the simulation time.
  Sample time (s) & 6e-05 \\ 
  \hline
 \end{tabular}
-\caption{Powergui simulation parameters }
+\caption{Powergui Simulation Parameters}
 \label{tab:powergui}
 \end{table}
 
@@ -67,7 +67,7 @@ The ultimate aim in the choice of a solver would be to achieve maximum accuracy 
  Zero-crossing control & Disable All \\
  \hline
 \end{tabular}
-\caption{Solver parameters}
+\caption{Solver Parameters}
 \label{tab:config}
 \end{table}
 
@@ -76,22 +76,22 @@ A crucial part of the performance of the whole simulated model is the computatio
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ |p{1.5cm}|p{1.5cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|} 
+\begin{tabular}{ |p{1.5cm}|p{1.5cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|} 
  \hline
-  \cline{3-8}
-   & Drive cycle & \multicolumn{6}{|c|}{Game-theoretical solution} \\
-   \cline{3-8}
-   & & Pareto Optimality & Nash Equilibrium & Nash Solution & Kalai- Smorodinsky Solution & The Core & Shapley Value\\
+  \cline{3-7}
+   & Drive cycle & \multicolumn{5}{|c|}{Game-theoretical solution} \\
+   \cline{3-7}
+   & & Pareto Optimality & Nash Equilibrium & Nash Solution & Kalai- Smorodinsky Solution & The Core\\
  \hline\hline
  \multirow{5}{*}{\parbox{1.5cm}{Compu- tation time (h)}} 
- & FTP75-1 & 11.35 & 10:31 & 13:54 & 18:09 & 21:59 & \\ 
- & FTP75-2 & 2:12 & 2:12 & 1:34 & 3:27 & 3:31 & \\ 
- & FTP75-3 & 13:11 & 13:11 & 10:32 & 12:02 & 6:37 & \\ 
- & FTP75-4 & 2:09 & 2:11 & 1:51 & 1:50 & 3:18 & \\ 
- & FTP75-5 & 9:41 & 06:15 & 16:59 & 17:45 & & \\ 
+ & FTP75-1 & 11:35 & 10:31 & 13:54 & 18:09 & 21:59 \\ 
+ & FTP75-2 & 2:12 & 2:12 & 1:34 & 3:27 & 3:31 \\ 
+ & FTP75-3 & 13:11 & 13:11 & 10:32 & 12:02 & 6:37 \\ 
+ & FTP75-4 & 2:09 & 2:11 & 1:51 & 1:50 & 3:18 \\ 
+ & FTP75-5 & 9:41 & 06:15 & 16:59 & 17:45 & 7:17 \\ 
  \hline
 \end{tabular}
-\caption{Computation time}
+\caption{Computation Time}
 \label{tab:config}
 \end{table}
 

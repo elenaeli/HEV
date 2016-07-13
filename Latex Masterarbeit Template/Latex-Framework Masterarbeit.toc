@@ -16,21 +16,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Goals}{2}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}State of the art}{2}{section.1.3}
+\contentsline {section}{\numberline {1.3}State Of The Art}{2}{section.1.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.4}Content}{7}{section.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Fundamentals}{8}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Hybrid vehicles}{8}{section.2.1}
+\contentsline {section}{\numberline {2.1}Hybrid Vehicles}{8}{section.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Definition}{8}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Classification}{9}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}Driving behaviour}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.3}Driving Behaviour}{9}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Vehicle configuration of Toyota Prius}{10}{section.2.2}
+\contentsline {section}{\numberline {2.2}Vehicle Configuration Of Toyota Prius}{10}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Internal Combustion Engine}{10}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
@@ -42,17 +42,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.5}Differential}{12}{subsection.2.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Game definition}{13}{section.2.3}
+\contentsline {section}{\numberline {2.3}Game Definition}{13}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Game-theoretical solution approaches}{16}{section.2.4}
+\contentsline {section}{\numberline {2.4}Game-theoretical Solution Approaches}{16}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency and Pareto Optimality}{16}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Pareto Efficiency And Pareto Optimality}{16}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Nash Bargaining solution}{17}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Nash Bargaining Solution}{17}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}Nash Equilibrium}{18}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Lemke-Howson algorithm}{19}{subsubsection*.8}
+\contentsline {subsubsection}{Lemke-Howson Algorithm}{19}{subsubsection*.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.4}Kalai-Smorodinsky Bargaining Solution}{22}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
@@ -66,7 +66,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Drive Cycle Controller}{27}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Power Controller}{29}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Power Controller}{28}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.3}Engine Controller}{31}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
@@ -74,17 +74,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.5}Transmission Controller}{36}{subsection.3.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.6}Vehicle dynamics Controller}{37}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.6}Vehicle Dynamics Controller}{37}{subsection.3.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Game-theoretical algorithms}{39}{section.3.2}
+\contentsline {section}{\numberline {3.2}Game-theoretical Algorithms}{39}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Initialization functions}{39}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Initialization Functions}{39}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Embedded Matlab function in Simulink}{41}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Embedded Matlab Function In Simulink}{41}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Strategies computation}{42}{subsubsection*.22}
+\contentsline {subsubsection}{Strategies Computation}{41}{subsubsection*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Payoff computation}{43}{subsubsection*.23}
+\contentsline {subsubsection}{Payoff Computation}{42}{subsubsection*.23}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{44}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
@@ -96,51 +96,51 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.7}Kalai-Smorodinsky Solution}{46}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}The Core}{48}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.8}Core}{48}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.9}Shapley Value}{49}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mixed strategies}{50}{subsubsection*.24}
+\contentsline {subsubsection}{Mixed Strategies}{50}{subsubsection*.24}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Simulation}{53}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}FTP75 drive cycle split}{53}{section.4.1}
+\contentsline {section}{\numberline {4.1}FTP75 Drive Cycle Split}{53}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Time step}{54}{section.4.2}
+\contentsline {section}{\numberline {4.2}Time Step}{54}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Performance}{56}{section.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Results}{58}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Game Theory payoffs}{58}{section.5.1}
+\contentsline {section}{\numberline {5.1}Game Theory Payoffs}{58}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Hybrid model game-theoretical simulation}{60}{section.5.2}
+\contentsline {section}{\numberline {5.2}Hybrid Model Game-theoretical Simulation}{59}{section.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.1}Pareto Optimality}{60}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{72}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{70}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining solution}{75}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining Solution}{75}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky solution}{75}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky Solution}{75}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}The core}{76}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}Core}{76}{subsection.5.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.6}Shapley Value}{76}{subsection.5.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Fuel, emissions and battery}{76}{section.5.3}
+\contentsline {section}{\numberline {5.3}Fuel, Emissions And Battery}{76}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Fuel consumption and gas emissions}{77}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Fuel Consumption And Gas Emissions}{77}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Speed, distance and battery}{77}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Speed, Distance And Battery}{77}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Conclusion}{80}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Goals and results evaluation}{80}{section.6.1}
+\contentsline {section}{\numberline {6.1}Goals And Results Evaluation}{80}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Relation to state of the art research}{81}{section.6.2}
+\contentsline {section}{\numberline {6.2}Relation To State Of The Art Research}{81}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Future work}{82}{section.6.3}
+\contentsline {section}{\numberline {6.3}Future Work}{82}{section.6.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Bibliography}{83}{chapter*.46}
 \defcounter {refsection}{0}\relax 

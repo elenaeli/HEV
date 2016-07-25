@@ -586,6 +586,27 @@
       \verb http://de.mathworks.com/matlabcentral/fileexchange/33310-hybrid-electric-vehicle--hev--power-train-using-battery-model
       \endverb
     \endentry
+    \entry{hevMatlab2}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=87dd974209ecee97b03c2e380906bc3d}{Miller}{M\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{87dd974209ecee97b03c2e380906bc3d}
+      \strng{fullhash}{87dd974209ecee97b03c2e380906bc3d}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hybrid-Electric Vehicle Model in Simulink}
+      \field{urlday}{25}
+      \field{urlmonth}{07}
+      \field{urlyear}{2016}
+      \field{year}{2010}
+      \verb{url}
+      \verb http://www.mathworks.com/matlabcentral/fileexchange/28441-hybrid-electric-vehicle-model-in-simulink
+      \endverb
+    \endentry
     \entry{nash1950equilibrium}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=4af92f2a7d1f65fedb682523fb4a6cdc}{Nash}{N\bibinitperiod}{John\bibnamedelima F}{J\bibinitperiod\bibinitdelim F\bibinitperiod}{}{}{}{}}%

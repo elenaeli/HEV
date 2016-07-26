@@ -30,124 +30,124 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Motor Torque Speed Curve\relax }}{32}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Electric Motor Controller\relax }}{33}{figure.caption.15}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Electric Motor Controller\relax }}{34}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Battery Discharge Characteristics\relax }}{34}{figure.caption.16}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Battery Discharge Characteristics\relax }}{35}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Transmission Controller\relax }}{36}{figure.caption.17}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Transmission Controller\relax }}{37}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Vehicle Dynamics Controller\relax }}{38}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Forces Affecting The Tire \citep {tireMatlab}\relax }}{39}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Power Consumption\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Power Consumption\relax }}{41}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Fuel Consumption\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Fuel Consumption\relax }}{41}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.14}{\ignorespaces CO Emissions\relax }}{41}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.15}{\ignorespaces HC Emissions\relax }}{41}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.16}{\ignorespaces NOX Emissions\relax }}{41}{figure.caption.21}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces NOX Emissions\relax }}{42}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Analogical gates\relax }}{45}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Solutions for 100 Nm\relax }}{60}{figure.caption.31}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Solutions for 145 Nm\relax }}{60}{figure.caption.31}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Solutions for 178 Nm\relax }}{61}{figure.caption.32}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Solutions for 280 Nm\relax }}{61}{figure.caption.32}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-1\relax }}{63}{figure.caption.33}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-1\relax }}{63}{figure.caption.33}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-1\relax }}{64}{figure.caption.34}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Fuel And Emissions Scope With Pareto Optimality During FTP75-1\relax }}{64}{figure.caption.34}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.35}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.35}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-2\relax }}{66}{figure.caption.36}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-2\relax }}{66}{figure.caption.36}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-2\relax }}{67}{figure.caption.37}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Fuel and Emissions Scope With Pareto Optimality During FTP75-2\relax }}{67}{figure.caption.37}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-2\relax }}{68}{figure.caption.38}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-2\relax }}{68}{figure.caption.38}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-3\relax }}{69}{figure.caption.39}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-3\relax }}{69}{figure.caption.39}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-3\relax }}{70}{figure.caption.40}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-3\relax }}{70}{figure.caption.40}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-4\relax }}{72}{figure.caption.41}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-4\relax }}{72}{figure.caption.41}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-4\relax }}{73}{figure.caption.42}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-4\relax }}{73}{figure.caption.42}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-5\relax }}{74}{figure.caption.43}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-5\relax }}{74}{figure.caption.43}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-5\relax }}{75}{figure.caption.44}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-5\relax }}{75}{figure.caption.44}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Analogical Gates\relax }}{46}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Solutions for 100 Nm\relax }}{60}{figure.caption.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Solutions for 145 Nm\relax }}{61}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Solutions for 178 Nm\relax }}{62}{figure.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Solutions for 280 Nm\relax }}{63}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-1\relax }}{64}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-1\relax }}{64}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Fuel And Emissions Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-1\relax }}{66}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-1\relax }}{66}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-2\relax }}{67}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-2\relax }}{67}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-2\relax }}{68}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Fuel and Emissions Scope With Pareto Optimality During FTP75-2\relax }}{68}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-2\relax }}{69}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-2\relax }}{69}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-3\relax }}{71}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-3\relax }}{71}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-3\relax }}{72}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-3\relax }}{72}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-4\relax }}{73}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-4\relax }}{73}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-4\relax }}{74}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-4\relax }}{74}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Game Theory Scope With Pareto Optimality During FTP75-5\relax }}{75}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Drive Cycle Scope With Pareto Optimality During FTP75-5\relax }}{75}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-5\relax }}{76}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Motor Scope With Pareto Optimality During FTP75-5\relax }}{76}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-1\relax }}{87}{figure.caption.48}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-2\relax }}{88}{figure.caption.49}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-3\relax }}{88}{figure.caption.50}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-4\relax }}{89}{figure.caption.51}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-5\relax }}{89}{figure.caption.52}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-1\relax }}{90}{figure.caption.53}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-1\relax }}{88}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-2\relax }}{91}{figure.caption.54}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-2\relax }}{89}{figure.caption.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-3\relax }}{91}{figure.caption.55}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-3\relax }}{89}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-4\relax }}{92}{figure.caption.56}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-4\relax }}{90}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-5\relax }}{92}{figure.caption.57}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Game Theory Scope With Nash Equilibrium During FTP75-5\relax }}{90}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-1\relax }}{93}{figure.caption.58}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-1\relax }}{91}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-2\relax }}{94}{figure.caption.59}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-2\relax }}{92}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-3\relax }}{94}{figure.caption.60}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-3\relax }}{92}{figure.caption.58}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-4\relax }}{95}{figure.caption.61}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-4\relax }}{93}{figure.caption.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-5\relax }}{95}{figure.caption.62}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Game Theory Scope With Nash Bargaining Solution During FTP75-5\relax }}{93}{figure.caption.60}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-1\relax }}{94}{figure.caption.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-2\relax }}{95}{figure.caption.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-3\relax }}{95}{figure.caption.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-4\relax }}{96}{figure.caption.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Game Theory Scope With Kalai-Smorodinsky Solution During FTP75-5\relax }}{96}{figure.caption.65}

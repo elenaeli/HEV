@@ -8,38 +8,36 @@ First of all, the game-theoretical solutions can be represented graphically in a
 
 Figure \ref{fig:100nm} shows the results for torque demand of 100 \textit{Nm}. Five of the game theory solutions are at the same point, while only the Shapley value marked in red is a different point. It is also important that the Shapley value is not a feasible outcome in pure strategies and therefore does not correspond to any payoff in the figure. In Figure \ref{fig:145nm} where the torque demand is 145 \textit{Nm} the Shapley value is again an infeasible outcome marked in red. The best Pareto outcome is marked with light green and the two Pareto outcomes are in dark green. The other solutions are distributed among these two Pareto points. The Nash Equilibrium, Nash solution and Kalai-Smorodinsky solution are equivalent with the right-most Pareto outcome. The pink points are the solutions of the core and they are the same as the two Pareto outcomes.
 
+
 \begin{figure}[h]
-\centering
-\begin{minipage}{.5\textwidth}
- 	\centering
-	\includegraphics[scale=0.395]{figures/gametheory/100nm}
+	\centering
+	\includegraphics[scale=0.55]{figures/gametheory/100nm}
 	\caption{Solutions for 100 Nm}
 	\label{fig:100nm}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  	\centering
-	\includegraphics[scale=0.39]{figures/gametheory/145nm}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.59]{figures/gametheory/145nm}
   	\caption{Solutions for 145 Nm}
   	\label{fig:145nm}
-\end{minipage}
 \end{figure}
+
 
 For a torque demand of 178 \textit{Nm} Figure \ref{fig:178nm} shows that there are four different Pareto outcomes. All of them are also in the core. The best Pareto outcome is the left-most one and all of the other solutions Nash Equilibrium, Nash and Kalai-Smorodinsky solutions are equivalent with the right-most Pareto outcome. In the last Figure \ref{fig:280nm} with torque 280 \textit{Nm} there are again two Pareto outcomes.
 
 \begin{figure}[h]
-\centering
-\begin{minipage}{.5\textwidth}
  	\centering
-	\includegraphics[scale=0.395]{figures/gametheory/178nm}
+	\includegraphics[scale=0.57]{figures/gametheory/178nm}
 	\caption{Solutions for 178 Nm}
 	\label{fig:178nm}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
+\end{figure}
+
+\begin{figure}[h]
   	\centering
-	\includegraphics[scale=0.405]{figures/gametheory/280nm}
+	\includegraphics[scale=0.59]{figures/gametheory/280nm}
   	\caption{Solutions for 280 Nm}
   	\label{fig:280nm}
-\end{minipage}
 \end{figure}
 
 \section{Hybrid Model Game-theoretical Simulation}
@@ -55,7 +53,7 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 
 \begin{figure}[hp]
 \centering
-\includegraphics[scale=0.47]{figures/Pareto/FTP75-1/gameTheory30Juni}
+\includegraphics[scale=0.475]{figures/Pareto/FTP75-1/gameTheory30Juni}
 \caption{Game Theory Scope With Pareto Optimality During FTP75-1}
 \label{fig:gtpo1}
 \includegraphics[scale=0.45]{figures/Pareto/FTP75-1/driveCycle30Juni}
@@ -178,10 +176,10 @@ For the next game-theoretical approaches only the Game Theory scope will be show
 
 \begin{figure}[hp]
 \centering
-\includegraphics[scale=0.44]{figures/Pareto/FTP75-5/powerController05Juli}
+\includegraphics[scale=0.46]{figures/Pareto/FTP75-5/powerController05Juli}
 \caption{Power Controller Scope With Pareto Optimality During FTP75-5}
 \label{fig:pcpo5}
-\includegraphics[scale=0.46]{figures/Pareto/FTP75-5/motor05Juli}
+\includegraphics[scale=0.48]{figures/Pareto/FTP75-5/motor05Juli}
 \caption{Motor Scope With Pareto Optimality During FTP75-5}
 \label{fig:mpo5}
 \end{figure}
@@ -198,7 +196,7 @@ The Nash Bargaining solution presented in Figure \ref{fig:gtns1} results are ver
 
 Despite the similarity, in FTP75-1 there is a difference at time from 160s to 170s in Figure \ref{fig:gtne1} where the Nash Equilibrium requests the maximum engine torque of 136 \textit{Nm} and then requests 115 \textit{Nm}, whereas in the Nash Bargaining solution in Figure \ref{fig:gtns1} after prompting for 136 \textit{Nm} it goes down to 90 \textit{Nm}. The same happens between 190s and 200s. Furthermore, the next difference is visible between 230s and 275s, where the motor torque is 0 \textit{Nm} and the engine torque in Nash Equilibrium is changing in the range from 100 to 128 \textit{Nm}. In the Nash Bargaining solution this also happens, but the change is more abrupt and it is either 100 or 128 \textit{Nm} rather than taking values in between them. Except for these cases, the game theory solutions with Nash Equilibrium and with Nash Bargaining solution are the same.
 
-FTP75-2, FTP75-3, FTP75-4 and FTP 75-5 are also very similar to the Nash Equilibrium. The visible difference in all of them is that the Nash Bargaining solution requests a wider range of torque from the engine, from 95 to 136 \textit{Nm}, while the Nash Equilibrium requests from only 110 to 136 \textit{Nm}.
+FTP75-2, FTP75-3, FTP75-4 and FTP75-5 are also very similar to the Nash Equilibrium. The visible difference in all of them is that the Nash Bargaining solution requests a wider range of torque from the engine, from 95 to 136 \textit{Nm}, while the Nash Equilibrium requests from only 110 to 136 \textit{Nm}.
 
 \subsection{Kalai-Smorodinsky Solution}
 The Kalai-Smorodinsky solution produces exactly the same results as the Nash solution does for FTP75-1 and FTP75-2 as shown in Figures \ref{fig:gtks1}, \ref{fig:gtks2}. The first visible difference between the two solutions appears in FTP75-3 in Figure \ref{fig:gtks3} at time 235-240s where the Kalai-Smorodinsky solution of the motor torque is going up and down from 0 to 90 repeatedly \textit{Nm}, while the Nash solution repeats this only 2 times. This also affects the engine torque which behaves similarly in the range from 95 to 136 \textit{Nm} in the Kalai-Smorodinsky solution, but rather stays at 136 \textit{Nm} for the Nash solution. In FTP75-4 and FTP75-5 in Figures \ref{fig:gtks4} and \ref{fig:gtks5} there is no difference between the two solutions. The almost identical results of the Kalai-Smorodinsky and the Nash solution come from fact that their concepts are very similar. Firstly, they both use the conflict point as a part of the computation. The Kalai-Smorodinksy solution is assumed to be an extension of the Nash solution by taking into account additionally the ideal minimum payoff point.

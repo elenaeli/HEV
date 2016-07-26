@@ -82,25 +82,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Embedded Matlab Function In Simulink}{41}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Strategies Computation}{42}{subsubsection*.22}
+\contentsline {subsubsection}{Strategies Computation}{42}{subsubsection*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Payoff Computation}{42}{subsubsection*.23}
+\contentsline {subsubsection}{Payoff Computation}{43}{subsubsection*.24}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Pareto Efficiency}{44}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Pareto Optimality}{44}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Pareto Optimality}{45}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Nash Equilibrium}{45}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Nash Equilibrium}{46}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Nash Bargaining Solution}{46}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Nash Bargaining Solution}{47}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Kalai-Smorodinsky Solution}{46}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Kalai-Smorodinsky Solution}{47}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}Core}{48}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.8}Core}{49}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.9}Shapley Value}{49}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.9}Shapley Value}{50}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mixed Strategies}{50}{subsubsection*.25}
+\contentsline {subsubsection}{Mixed Strategies}{51}{subsubsection*.26}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Simulation}{54}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -118,34 +118,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.1}Pareto Optimality}{61}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{71}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Nash Equilibrium}{70}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining Solution}{76}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Nash Bargaining Solution}{77}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky Solution}{76}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Kalai-Smorodinsky Solution}{78}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Core}{77}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.5}Core}{78}{subsection.5.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Shapley Value}{77}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.6}Shapley Value}{78}{subsection.5.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Fuel, Emissions And Battery}{77}{section.5.3}
+\contentsline {section}{\numberline {5.3}Fuel, Emissions And Battery}{79}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Fuel Consumption And Gas Emissions}{78}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Fuel Consumption And Gas Emissions}{79}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Speed, Distance And Battery}{78}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Speed, Distance And Battery}{79}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Conclusion}{81}{chapter.6}
+\contentsline {chapter}{\numberline {6}Conclusion}{82}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Goals And Results Evaluation}{81}{section.6.1}
+\contentsline {section}{\numberline {6.1}Goals And Results Evaluation}{82}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Relation To State Of The Art Research}{82}{section.6.2}
+\contentsline {section}{\numberline {6.2}Relation To State Of The Art Research}{83}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Future Work}{83}{section.6.3}
+\contentsline {section}{\numberline {6.3}Future Work}{84}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{84}{chapter*.47}
+\contentsline {chapter}{\nonumberline Bibliography}{85}{chapter*.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix \ref {app:1} Nash Equilibrium Results}{87}{appendix.A}
+\contentsline {chapter}{\numberline {A}Appendix \ref {app:1} Nash Equilibrium Results}{88}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Appendix \ref {app:2} Nash Bargaining Solution Results}{90}{appendix.B}
+\contentsline {chapter}{\numberline {B}Appendix \ref {app:2} Nash Bargaining Solution Results}{91}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Appendix \ref {app:3} Kalai-Smorodinsky Solution Results}{93}{appendix.C}
+\contentsline {chapter}{\numberline {C}Appendix \ref {app:3} Kalai-Smorodinsky Solution Results}{94}{appendix.C}

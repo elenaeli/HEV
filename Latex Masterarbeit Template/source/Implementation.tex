@@ -64,7 +64,7 @@ In the Gasoline Engine block the input signal between 0 and 1 indirectly control
 
 An additional functionality which was implemented to extend the Gasoline Engine library block was to limit the torque from 0 to 136 and also revolution speed from 0 to 6000 rpm. Figure \ref{fig:engineTorqueSpeed} shows the torque speed curve of the engine, while the curve of the motor is in Figure \ref{fig:motorTorqueSpeed}. The engine provides maximum torque of 136 \textit{Nm} in the speed range 2800 - 3300 rpm. For this reason when the acceleration is constant there is a discrepancy in the simulation results, because the speed keeps jumping from 2800 to 3300 quickly, which is inefficient. Therefore, a hysteresis was implemented which has a switch on and a switch off point values. The aim of a hysteresis is not to allow the input signal to fall between these values. When it is smaller than the lower switch on value 2800 \textit{rpm}, it is limited to this value. Whenever it is larger than the higher switch off value 3300 \textit{rpm}, it remains set to this value to prevent jittering. 
 
-It is crucial to note that the reason for this jittering is that the model of the engine is not dynamic, but static, meaning that the actual torque is determined by the torque versus speed curve and does not depend on the torque from a previous time step. However, the electric motor model is dynamic because there is a reference and an actual torque. After researching for hybrid models in Simulink, the only two models found were the one from \citet{hevMatlab} and \citet{hevMatlab2}. Both of them assume a static model for the engine and a dynamic model for the electric motor.
+It is crucial to note that the reason for this jittering is that the model of the engine is not dynamic, but static, meaning that the actual torque is determined by the torque versus speed curve and does not depend on the torque from a previous time step. However, the electric motor model is dynamic because there is a reference and an actual torque. After researching for hybrid models in Simulink, the only two models found were the one from \citet{hevMatlab} and \citet{hevMatlab2}. Both of them assume a static model for the engine and a dynamic model for the electric motor. That is why only a static model of the engine was built in this thesis.
 
 \begin{figure}[h]
 \centering
@@ -137,7 +137,7 @@ The Transmission Controller shown in Figure \ref{fig:transmissioncontroller} rec
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.53]{figures/hev/transmissioncontroller}
+\includegraphics[scale=0.55]{figures/hev/transmissioncontroller}
 \caption{Transmission Controller}
 \label{fig:transmissioncontroller}
 \end{figure}
@@ -189,13 +189,13 @@ where 719.7 * 1000 $g/m^3$ is the density of gasoline and 264.172 $gal/m^3$ conv
 \centering
 \begin{minipage}{.5\textwidth}
  	\centering
-	\includegraphics[scale=0.35]{figures/power}
+	\includegraphics[scale=0.36]{figures/power}
 	\caption{Power Consumption}
 	\label{fig:powerFit}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   	\centering
-	\includegraphics[scale=0.35]{figures/fuel}
+	\includegraphics[scale=0.36]{figures/fuel}
   	\caption{Fuel Consumption}
   	\label{fig:fuelFit}
 \end{minipage}
@@ -203,23 +203,29 @@ where 719.7 * 1000 $g/m^3$ is the density of gasoline and 264.172 $gal/m^3$ conv
 
 The second initialization step is to generate the exhaust emissions lookup tables. The data also comes from \citet{argonne1999} and is read from a file. Exactly the same procedure with the \textit{linspace}, \textit{meshgrid}, \textit{fit}, \textit{feval} functions like in the fuel consumption rate above is applied. The resulting fits of the CO, HC and NOX emissions are shown in Figures \ref{fig:coFit}, \ref{fig:hcFit} and \ref{fig:noxFit}.
 
-\begin{figure}[!htb]
-\minipage{0.32\textwidth}
-  \includegraphics[scale=0.29]{figures/CO}
-  \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
-  \caption{CO Emissions}\label{fig:coFit}
-\endminipage\hfill
-\minipage{0.32\textwidth}
-  \includegraphics[scale=0.29]{figures/HC}
-   \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
-  \caption{HC Emissions}\label{fig:hcFit}
-\endminipage\hfill
-\minipage{0.32\textwidth}%
-  \includegraphics[scale=0.29]{figures/NOX}
-   \captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
-  \caption{NOX Emissions}\label{fig:noxFit}
-\endminipage
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.42]{figures/CO}  
+  \caption{CO Emissions}
+  \label{fig:coFit}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  	\centering
+  \includegraphics[scale=0.42]{figures/HC}  
+  \caption{HC Emissions}
+  \label{fig:hcFit}
+\end{minipage}
 \end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.43]{figures/NOX}
+  \caption{NOX Emissions}
+  \label{fig:noxFit}
+\end{figure}
+
 
 Lastly, the final step is to prepare the drive cycle data of FTP75. The FTP75 data is read from a file, which has two columns, the first is the time in seconds and the second is the speed in miles per hour. The \textit{mph} are converted to \textit{km/h} by multiplication with 1,60934. Since the drive cycle's duration is 1874s, it is split into 5 different phases, so that simulation can be simplified in case any errors occur and the whole drive cycle has to be started again. 
 
@@ -273,7 +279,7 @@ As output the function returns a pair of x and y coordinates of the single Paret
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/analogicalgates}
-\caption{Analogical gates}
+\caption{Analogical Gates}
 \label{fig:analgates}
 \end{figure}
 
@@ -315,13 +321,13 @@ Computation of the core requires finding all imputations. For this reason coalit
 
 The next step for computing the core is to extract the imputations from all allocations. The function \textit{checkimputation.m} takes as arguments the original payoffs of the engine and motor, the modified engine and motor payoffs as column vectors, the grand coalition payoffs matrix and in addition the Pareto efficient payoffs. Since an imputation is always Pareto efficient when it fulfils the condition for Group Rationality as described in Subsection \ref{subsec:core}, it is sufficient to only extract the imputations from the Pareto efficient allocations. All Pareto efficient payoffs are examined and for each of them it is verified that no other Pareto payoffs dominates it and that it is individually rational. Domination means that there is no other payoff that is smaller and individual rationality is conformed to when the player receives a smaller payoff in the coalition than when they act alone. The function returns the imputation payoffs and their indices.
 
-In the end, the function for computing the core \textit{core.m} can be called with imputation payoff allocation. The function goes over all imputations and checks whether both players achieve a smaller payoff in the coalition than on their own like in Equation \ref{eq:core}. If this is the case, then the imputation also belongs to the core of the game. As output the function returns the indices of the core allocations.
+In the end, the function for computing the core \textit{core.m} can be called by passing all payoff allocations which are imputations. The function goes over all imputations and checks whether both players achieve a smaller payoff in the coalition than on their own like in Equation \ref{eq:core}. If this is the case, then the imputation also belongs to the core of the game. As output the function returns the indices of the core allocations.
 
 \subsection{Shapley Value}
 \label{subsec:shapleyimpl}
 The last game-theoretical approach to be implemented, the Shapley Value, requires an additional transformation of the game space. Although all previous solution approaches work with the strategic form of the game, the Shapley Value cannot be computed solely from the strategic form, but rather calls for a coalitional form. The core also demanded the value of the coalitions, but these values are in matrix form and the coalition payoffs were computed by element-wise multiplication of the payoff matrix of the engine and motor with the coalition coefficients. In addition, for the grand coalition the sum of the two new engine and motor coalition payoff matrices was taken. However, these matrix forms are not sufficient for the Shapley Value. Rather, a single value is needed for each of the three coalitions - player one coalition, player two coalition and the grand coalition, denoted as $v(\{1\})$, $v(\{2\})$ and $v(\{1,2\})$ respectively. The value of the grand coalition is already available, because it is the minimum sum of both players' payoff matrices $v(\{1,2\}) = min(A+B)$. However, the first two values of the individual coalitions are more complex to find, because it is possible that there is no solution in pure strategies and hence no value. It is essential that the values of the two resulting games are computed. In the first game the coalition is individual and includes only the first player, the engine, while in the second game the individual coalition contains only the second player, the motor. That is why the strategic form of the game has to be transformed to coalitional form by finding the characteristic function. According to \citet{ferguson2014game} the value of the resulting game is equivalent to the Saddle point as described in \ref{subsec:shapleyfund}. When no Saddle point exists, thus no solution in pure strategies, mixed strategies have to be computed.
 
-The function which computes the value of the two individual coalitions is \textit{value.m} and takes as input the payoff of one player and the number of that player. The output is a vector with probabilities for each strategy of size $m$ for player 1 or $n$ for player 2. The function is called once for the engine and once for the motor. Firstly, it is tested whether there exists a Saddle point by checking if there is a payoff $u_i$ which is simultaneously a row minimum and a column maximum: $min(max(u_i)) == max(min(u_i'))$. If there is such a payoff point, then in the vector this strategy is marked with probability 1 and all other probabilities are 0. Otherwise, mixed strategies have to be employed. 
+The function which computes the value of the two individual coalitions is \textit{value.m} and takes as input the payoff of one player and the number of that player. The output is a vector with probabilities for each strategy of size $m$ for player 1 or $n$ for player 2. The function is called once for the engine and once for the motor. Firstly, it is tested whether there exists a Saddle point by checking if there is a payoff $u_i$ which is simultaneously a row minimum and a column maximum: $min(max(u_i)) == max(min(u_i))$. If there is such a payoff point, then in the vector this strategy is marked with probability 1 and all other probabilities are 0. Otherwise, mixed strategies have to be employed. 
 
 \subsubsection{Mixed Strategies}
 

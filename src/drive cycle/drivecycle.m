@@ -19,7 +19,7 @@ accel = struct('seconds', accel(:,1), 'kph', accel(:,2));
 accel.time = 0.5* ((0+10) + (10-(0))*((2*accel.seconds - (1+21))/(21-(1))) ); 
 
 figure
-plot(ftp75.seconds, ftp75.kph);
+plot(ftp75.seconds, ftp75.kph, 'LineWidth', 2);
 title('FTP75 drive cycle');
 xlabel('time (s)','FontSize',11)
 ylabel('speed (km/h)','FontSize',11)

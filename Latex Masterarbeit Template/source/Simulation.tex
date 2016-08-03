@@ -21,11 +21,11 @@ As already explained in subsection \ref{sec:initfunc} the FTP75 drive cycle is d
  FT75-5 & 1501 & 1874 & 374\\ 
  \hline
 \end{tabular}
-\caption{FTP75 Split In 5 Phases}
+\caption{FTP75 Split in 5 Phases}
 \label{tab:drivecyclephases}
 \end{table}
 
-Each of the five phases of FTP75 is simulated starting from time 0s since the battery SOC cannot be initialized properly otherwise. For example, the FTP75-2 drive cycle does not start from 341s and end at 680s, but instead runs from 0-340s. The same goes for FTP75-3 which originally lasts from 681-1030s and is modified to 0-350s, FTP75-4 is originally from 1031-1500s, modified to 0-470s. The last FTP75-5 normally runs from 1500-1874s, but is changed to 0-374s. That is the reason why time in the x-axis starts from 0s in all of the results in Chapter \ref{chp:results} and Appendix \ref{app:1}.
+Each of the five phases of FTP75 is simulated starting from time 0s since the battery SOC cannot be initialized properly otherwise. For example, the FTP75-2 drive cycle does not start from 341s and end at 680s, but instead runs from 0-340s. The same goes for FTP75-3 which originally lasts from 681-1030s and is modified to 0-350s, FTP75-4 is originally from 1031-1500s, modified to 0-470s. The last FTP75-5 normally runs from 1500-1874s, but is changed to 0-374s. That is the reason why time in the x-axis starts from 0s in all of the results in Section \ref{sec:results} and Appendix \ref{app:1}.
 
 \subsection{Time Step}
 
@@ -106,6 +106,7 @@ This chapter shortly described the details of the simulation parameters regardin
 
 
 \section{Results}
+\label{sec:results}
 This section is split into three parts, emphasizing the game-theoretical solution results in the first and the simulation results of the hybrid model in the second and third. The first part is intended to show the distinctions between the solution approaches from a theoretical point of view by showing graphically the payoffs of the game. The second part of the chapter focuses on the first goal of the game - meeting the driver demands by distributing the torque between the engine and motor. The last part focuses on the presentation of the next goals of the game - saving fuel, minimizing emissions and maintaining the target SOC of the battery.
 
 \subsection{Payoffs}
@@ -147,7 +148,7 @@ For a torque demand of 178 \textit{Nm} Figure \ref{fig:178nm} shows that there a
 
 \subsection{Hybrid Model Game-theoretical Simulation}
 
-For each of the six game-theoretical solutions different scopes are presented, from which the most important one is the Game Theory scope, displaying the distribution of motor and engine torque. Then, the Drive Cycle and the Power Controller scopes are next in order of significance, because the Driver Cycle scope shows how the driver demands are met, which is the first goal of this game. The Power Controller is essential, because it displays the SOC of the battery along with the revolution speeds of the engine, motor and generator. Moreover, the Fuel and Emissions scope is crucial, since it concerns the second goal of the game - fuel consumption and gas emissions minimization. The Engine and Motor scopes show revolution speed, torque and power. For the first solution approach, the important scopes are given for the 5 phases of FTP75 and for the next five solution approaches only the Game Theory scope is shown, because little change can be noticed in the other scopes, while varying the choice of game-theoretical solution approach.
+For each of the six game-theoretical solutions different scopes are presented, from which the most important one is the Game Theory scope, displaying the distribution of motor and engine torque. Then, the Drive Cycle and the Power Controller scopes are next in order of significance, because the Driver Cycle scope shows how the driver demands are met, which is the first goal of this game. The Power Controller is essential, because it displays the SOC of the battery along with the revolution speeds of the engine, motor and generator. Moreover, the Fuel and Emissions scope is crucial, since it concerns the second goal of the game - fuel consumption and gas emissions minimization. The Engine and Motor scopes show revolution speed, torque and power. For the first solution approach, the important scopes are given for the 5 phases of FTP75 and for the next solution approaches only the Game Theory scope is shown, because little change can be noticed in the other scopes, while varying the choice of game-theoretical solution approach.
 
 \subsubsection{Pareto Optimality}
 This section deals with the first game-theoretical solution, Pareto Optimality, and its corresponding results during the FTP75 drive cycle. 
@@ -173,7 +174,7 @@ It should be noted that during the first simulation of the Pareto Optimality sol
 \caption{Power Controller Scope With Pareto Optimality During FTP75-1}
 \label{fig:pcpo1}
 \includegraphics[scale=0.49]{figures/Pareto/FTP75-1/fuelEmissions30Juni}
-\caption{Fuel And Emissions Scope With Pareto Optimality During FTP75-1}
+\caption{Fuel and Emissions Scope With Pareto Optimality During FTP75-1}
 \label{fig:fepo1}
 \end{figure}
 
@@ -310,9 +311,9 @@ The Kalai-Smorodinsky solution produces exactly the same results as the Nash sol
 Solving the game with the Core generates exactly the same results as Pareto Optimality, due to the fact that all outcomes which are in the core are always Pareto optimal and in two-player cooperative games the two concepts produce equivalent solutions. Therefore, the Simulink scopes of the Core are not shown. However to prove that the core was also simulated, the fuel, emissions and battery related values are shown in the tables in the next section \ref{sec:goalresults}.
 
 \subsubsection{Shapley Value}
-After the implementation of the last game-theoretical solution as described in \ref{subsec:shapleyimpl}, the simulation was found to be extremely slow mainly because of the \textit{mixedstrategies.m} function, which contains the slow \textit{linprog} function. Without the \textit{linprog} function a coalitional form of the game for the individual coalitions $\{1\}$ and $\{2\}$ cannot be found; hence, the concept of Shapley value would not have been applicable at all. Taking into account the importance of \textit{linprog}, it is impossible to replace it with another faster function, because a system of linear equations has to be solved at any case. For this reason and also because of the large number of result scopes in the Appendices, it was decided that the Shapley Value will not be simulated.
+After the implementation of the last game-theoretical solution as described in \ref{subsec:shapleyimpl}, the simulation was found to be extremely slow mainly because of the function computing the mixed strategies, which contains the slow \textit{linprog} function. Without the \textit{linprog} function a coalitional form of the game for the individual coalitions $\{1\}$ and $\{2\}$ cannot be found; hence, the concept of Shapley value would not have been applicable at all. Taking into account the importance of \textit{linprog}, it is impossible to replace it with another faster function, because a system of linear equations has to be solved at any case. For this reason and also because of the large number of result scopes in the Appendices, it was decided that the Shapley Value will not be simulated.
 
-\subsection{Fuel Consumption And Gas Emissions}
+\subsection{Fuel Consumption and Gas Emissions}
 \label{sec:goalresults}
 The last section of this chapter describes the results, related to the second goal of the game - fuel consumption and gas emissions minimization.
 
@@ -363,11 +364,11 @@ To address the goal of fuel economy and minimizing gas emissions, the following 
  & FTP75-5 & 2.672 & 3.511 & 3.321 & 3.119 & 2.779 \\ 
  \hline  
 \end{tabular}
-\caption{FTP75 Fuel Consumption And Gas Emissions}
+\caption{FTP75 Fuel Consumption and Gas Emissions}
 \label{tab:fuelEmis}
 \end{table}
 
-\subsection{Speed, Distance And Battery}
+\subsection{Speed, Distance and Battery}
 The last results are presented in Table \ref{tab:soc} where general characteristics are given like the average speed achieved and also the total distance travelled during all 5 phases of FTP75. 
 
 Regarding the average speed and total distance travelled, in FTP75-2 and FTP75-4 the results of all approaches are the same since there is no purposeful recharging of the battery, which can lead to different speed and total distance. In contrast, in FTP75-1, FTP75-3 and FTP75-5 small differences can be noticed which is exactly due to this recharge mode.
@@ -408,6 +409,6 @@ The last and most important result, however, is the SOC of the battery. It can b
 
  \hline
 \end{tabular}
-\caption{FTP75 Speed, Distance And Battery}
+\caption{FTP75 Speed, Distance and Battery}
 \label{tab:soc}
 \end{table}

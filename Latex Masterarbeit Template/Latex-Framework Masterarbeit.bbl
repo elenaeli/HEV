@@ -732,6 +732,27 @@
       \field{title}{A note on the Lemke-Howson algorithm}
       \field{year}{1974}
     \endentry
+    \entry{hybridClassification}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=53092a17afa460689ca931f0d459e399}{Toyota}{T\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{53092a17afa460689ca931f0d459e399}
+      \strng{fullhash}{53092a17afa460689ca931f0d459e399}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Technology File}
+      \field{urlday}{27}
+      \field{urlmonth}{07}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://www.toyota-global.com/innovation/environmental_technology/technology_file/
+      \endverb
+    \endentry
     \entry{von1952theory}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=7def203b8ec7da1ce1ecfd50236086c9}{Von\bibnamedelima Stackelberg}{V\bibinitperiod\bibinitdelim S\bibinitperiod}{Heinrich}{H\bibinitperiod}{}{}{}{}}%

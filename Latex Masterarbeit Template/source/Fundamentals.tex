@@ -17,13 +17,13 @@ Hybrid vehicles can be classified into three distinct types - serial, parallel a
 \begin{minipage}{.52\textwidth}
  	\centering
 	\includegraphics[scale=0.59]{figures/serial}
-	\caption{Serial Hybrid}
+	\caption{Serial Hybrid \citep{hybridClassification}}
 	\label{fig:serialhybrid}
 \end{minipage}%
 \begin{minipage}{.52\textwidth}
   	\centering
 	\includegraphics[scale=0.59]{figures/parallel}
-	\caption{Parallel Hybrid}
+	\caption{Parallel Hybrid \citep{hybridClassification}}
 	\label{fig:parallelhybrid}
 \end{minipage}
 \end{figure}
@@ -31,7 +31,7 @@ Hybrid vehicles can be classified into three distinct types - serial, parallel a
 \subsection{Driving Behaviour}
 A typical driving cycle begins by starting up. In the beginning it is efficient to use the motor for the low speed range up to the middle speed range and the engine can remain shut down. While maintaining a constant speed during cruising, power is distributed between the motor and engine so that both of them provide torque. In acceleration mode power is taken also from the battery, while both the engine and motor drive the vehicle again. During deceleration, the power from braking is recovered instead of lost and used to recharge the battery. The motor acts as a generator to convert the energy. This process is called regenerative braking. If the State of Charge of the battery falls below a certain percentage, it needs to be recharged by the engine which acts as a generator.
 
-\section{Vehicle Configuration Of Toyota Prius}
+\section{Vehicle Configuration of Toyota Prius}
 This section gives an overview of the main components which every conventional car nowadays, not only hybrid cars, possesses. Furthermore, it describes the special hybrid components while specifically adhering to one particular model of a hybrid car, namely the Toyota Prius, which was the first mass-produced hybrid car in 1997. The vehicle, whose parameters are used throughout this thesis for the Simulink vehicle model and for the simulation, is the Toyota Prius second generation, manufactured from 2003 to 2009.
 
 \subsection{Internal Combustion Engine}
@@ -195,7 +195,7 @@ Therefore, in an Nash Equilibrium state no player has the incentive to deviate f
 \label{subsubsec:lemkehowson}
 One of the most popular algorithms for finding a Nash Equilibrium for bimatrix non-zero-sum games is the Lemke-Howson algorithm \citep{lemke1964equilibrium}. The Matlab implementation developed by \citet{lemkeHowson2014Matlab} was utilized to find one Nash Equilibrium in mixed strategies. This function contains a parameter, which affects the final result of the algorithm. Changing the parameter yields different Nash equilibria as output. This parameter $k$ is the initial pivot, a number between 1 and $m+n$, where $m$ and $n$ are the number of strategies of player 1 and player 2 respectively. The general idea of the the algorithm is that it works on two graphs containing nodes and edges, one graph per player. It starts at the (0,0) point. It selects a $k$, the pivot, or the label of the graph, containing the strategy to be dropped first when traversing the graph. From there a path to the end is followed in order to find a Nash Equilibrium. 
 
-There a number of reasons for the different Nash Equilibrium solutions that the algorithm produces. According to \citet{lemke1964equilibrium} there exist an odd number of Nash Equilibria in any non-degenerate game. A non-degenerate game is a game where no mixed strategy with a support of size $k$ has more than $k$ pure strategies \citep{nisan2007algorithmic}. Moreover, a support of a mixed strategy is defined as the set of pure strategies with positive probabilities. Since there is an odd number of Nash Equilibria, there must be at least one Equilibrium, which proves that the algorithm will always find one solution in mixed strategies. However, which of all Nash Equilibria is found depends on which strategy label is dropped first. The initial pivot label which the algorithm drops can belong to either of the two players and be any of their $m$ or $n$ strategies.
+There a number of reasons for the different Nash Equilibrium solutions that the algorithm produces. According to \citet{lemke1964equilibrium} there exist an odd number of Nash Equilibria in any non-degenerate game. A non-degenerate game is a game where no mixed strategy with a support of size $k$ has more than $k$ pure strategies \citep{nisan2007algorithmic}. Moreover, a support of a mixed strategy is defined as the set of pure strategies with positive probabilities. Since there is an odd number of Nash Equilibria, there must be at least one Equilibrium, which proves that the algorithm will always find one solution in mixed strategies. However, which Nash Equilibrium from the set of all Nash Equilibria is found depends on which strategy label is dropped first. The initial pivot label which the algorithm drops can belong to either of the two players and can be any of their $m$ or $n$ strategies.
 
 As discussed in \citet{shapley1974note} the Lemke-Howson algorithm possesses a significant weakness, namely that it is neither guaranteed that the algorithm will find all possible solutions, nor that it will tell if there are any unfound solutions.
 
@@ -239,9 +239,9 @@ T^j = \{ t \in \tilde{T}: t_j = 0 \} \text{ for } j \in \{m+1,...,m+n\}
 
 The Lemke-Howson algorithm represents the strategies of both players in two graphs with nodes and edges. The already mentioned definitions are required in order to define a labelling for the graphs. A labelling of a node consists of all of the labels of all surrounding regions of this node. Let the nonempty label of $s \in \tilde{S}$ be $L'(s) = \{ k: s \in S^k \}$ and similarly the nonempty label of $t \in \tilde{T}$ be $L''(t) = \{ k: t \in T^k \}$ and the label of the node pair with pure strategies $(s,t) \in \tilde{S} \times \tilde{T}$ be $L(s,t) = L'(s) \cup L''(t)$. A node pair $(s,t)$ is completely labelled whenever $L(s,t) = K$, meaning that it contains the labels for all regions $k \in K$. A node pair is almost completely labelled if $L(s,t) = K - \{k\}$ for some $k \in K$. 
 
-Then, as in \citet{shapley1974note} a node pair $(s,t) \in S \times T$ is an equilibrium point of (A,B) if and only if $(s,t)$ is completely labelled. Let the two graphs be $G' \in \tilde{S}$ and $G'' \in \tilde{T}$. Two nodes are adjacent if they are at the two ends of the same edge which means that their labels differ in exactly one element. The set of $k$ almost completely labelled nodes in the graphs and their edges are the disjoint paths of the graph and cycles. The equilibria of the game are always located at the end of these paths. Also, the starting node, by default (0,0) is called an artificial equilibria and it is also located at the end of a path.
+Then, as in \citet{shapley1974note} a node pair $(s,t) \in S \times T$ is an equilibrium point of (A,B) if and only if $(s,t)$ is completely labelled. Let the two graphs be $G' \in \tilde{S}$ and $G'' \in \tilde{T}$. Two nodes are adjacent if they are at the two ends of the same edge which means that their labels differ in exactly one element. The set of $k$ almost completely labelled nodes in the graphs and their edges are the disjoint paths of the graph and cycles. The equilibria of the game are always located at the end of these paths. Also, the starting node, by default (0,0) is called an artificial equilibrium and it is also located at the end of a path.
 
-The algorithm works by starting at $(s,t) = (0,0) \in G' \times G'' $. Then a label $k$, which is to be dropped from $(s,t)$, is chosen (initial pivot). This $k$ can belong to either $n$ or $m$. Let this node be $(s,t)$ and its new label (after dropping $k$) be $l$. Then, if $l=k$ a Nash Equilibrium is reached. If $l\neq k$, then the algorithm continues by dropping another label and continuing until a completely labelled node has been reached, which is an equilibrium point.
+The algorithm works by starting at $(s,t) = (0,0) \in G' \times G'' $. Then a label $k$, which is to be dropped from $(s,t)$, is chosen (initial pivot). This $k$ can belong to either $n$ or $m$. Let this node be $(s,t)$ and its new label (after dropping $k$) be $l$. Then, if $l=k$ a Nash Equilibrium is reached. If $l\neq k$, then the algorithm continues by dropping another label until a completely labelled node has been reached, which is an equilibrium point.
 
 \subsection{Kalai-Smorodinsky Bargaining Solution}
 The Nash Bargaining solution has the significant disadvantage that it is not monotonic. The third of the four axioms defined above Independence of Irrelevant Alternatives was criticized as in \citet{kalai1975other}. Therefore, \citet{kalai1975other} propose another unique bargaining solution called the Kalai-Smorodinsky solution. They replace the third axiom with another axiom for Individual Monotonicity, which the Nash solution does not conform to. 

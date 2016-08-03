@@ -10,9 +10,9 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Serial Hybrid\relax }}{10}{figure.caption.4}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Serial Hybrid \citep {hybridClassification}\relax }}{10}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Parallel Hybrid\relax }}{10}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Parallel Hybrid \citep {hybridClassification}\relax }}{10}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Planetary (Epicyclic) Gear Train \citep {planetaryGear}\relax }}{12}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Hybrid Vehicle Model In Simulink\relax }}{29}{figure.caption.11}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hybrid Vehicle Model in Simulink\relax }}{29}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces FTP75 Drive Cycle\relax }}{30}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
@@ -42,7 +42,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Vehicle Dynamics Controller\relax }}{39}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Forces Affecting The Tire \citep {tireMatlab}\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Forces Affecting the Tire \citep {tireMatlab}\relax }}{40}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Power Consumption\relax }}{42}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
@@ -72,7 +72,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Power Controller Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Fuel And Emissions Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.39}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Fuel and Emissions Scope With Pareto Optimality During FTP75-1\relax }}{65}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Engine Scope With Pareto Optimality During FTP75-1\relax }}{66}{figure.caption.40}
 \defcounter {refsection}{0}\relax 

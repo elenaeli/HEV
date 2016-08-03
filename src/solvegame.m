@@ -2,7 +2,7 @@
 %    SOC, FuelConsTable, GasEmisTable)
     requiredTorque = 100;         
     SOC = 75;
-    fuelConsumed = 0.48;
+    fuelConsumed = 0.97;
     prevEngTorqueArOut = zeros(100,1);
     prevMotTorqueArOut = zeros(100,1);        
     requiredTorqueR = 0;

@@ -1,18 +1,15 @@
+%% Kalai-Smorodinsky
+% It is the intersection of the line between the ideal point where both 
+% players get minimum payoffs and the conflict point (the same as in 
+% Nash Solution. The conflict point is taken to be the Nash 
+% Equilibrium) with the Pareto Front.
 function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint, pareto, paretoStrInd )    
-    % A function to find the Kalai Smorodinsky bargaining solution. It
-    % is the intersection of the line between the ideal point where both 
-    % players get minimum payoffs and the conflict point (the same as in 
-    % Nash Solution. The conflict point is taken to be the Nash 
-    % Equilibrium) with the Pareto Front.
-    
     coder.extrinsic('ismembertol');
+    
     % ideal point m (often not feasible)
     m1 = min(payoffBoth(:,1));
     m2 = min(payoffBoth(:,2));    
-    %darkred = [185 16 20] ./ 255;
-    %plot(m1, m2, 'o', 'MarkerSize', 3, 'MarkerFaceColor',darkred ,...
-    %    'MarkerEdgeColor', darkred);
-   
+     
     % conflict and ideal point
     cP = [payoffBoth(conflictPoint,1) payoffBoth(conflictPoint,2)];
     mP = [m1 m2];
@@ -64,7 +61,7 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         payoffParetoFront = horzcat(xPar, yPar);
     else
         % interpolate from smaller to bigger x coordinate (1st to 2nd
-        % pareto point)  
+        % Pareto point)  
         if xy == 2        
             yP12 = linspace(pareto(1,2),pareto(2,2),100);
             xP12 = interp1(yPar(1:2), xPar(1:2), yP12); 
@@ -72,11 +69,10 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
             xP12 = linspace(pareto(1,1),pareto(2,1),100); 
             yP12 = interp1(xPar(1:2), yPar(1:2), xP12);     
         end     
-        %plot(xP12,yP12,'b');      
         payoffParetoFront = horzcat(xP12', yP12');
         if size(pareto,1) >= 3
             % interpolate from smaller to bigger x/y coordinate (2nd to 3rd
-            % pareto point)      
+            % Pareto point)      
             if xy == 2
                 yP23 = linspace(pareto(2,2),pareto(3,2),100);           
                 xP23 = interp1(yPar(2:3), xPar(2:3), yP23);
@@ -84,9 +80,10 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
                 xP23 = linspace(pareto(2,1),pareto(3,1),100);           
                 yP23 = interp1(xPar(2:3), yPar(2:3), xP23);
             end           
-            %plot(xP23, yP23,'b');           
             payoffParetoFront = horzcat(vertcat(xP12',xP23'), vertcat(yP12',yP23'));
             if size(pareto,1) >= 4        
+                % interpolate from smaller to bigger x/y coordinate (3rd
+                % to 4th Pareto point)   
                 if xy == 2
                     yP34 = linspace(pareto(3,2),pareto(4,2),100);               
                     xP34 = interp1(yPar(3:4), xPar(3:4), yP34);
@@ -94,9 +91,10 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
                     xP34 = linspace(pareto(3,1),pareto(4,1),100);               
                     yP34 = interp1(xPar(3:4), yPar(3:4), xP34);
                 end
-                %plot(xP34, yP34,'b');     
                 payoffParetoFront = horzcat(vertcat(xP12',xP23',xP34'), vertcat(yP12',yP23',yP34'));
-                if size(pareto,1) >= 5       
+                if size(pareto,1) >= 5   
+                    % interpolate from smaller to bigger x/y coordinate
+                    % (4th to 5th Pareto point)   
                     if xy == 2
                         yP45 = linspace(pareto(4,2),pareto(5,2),100);                                   
                         xP45 = interp1(yPar(4:5), xPar(4:5), yP45);                   
@@ -104,7 +102,6 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
                         xP45 = linspace(pareto(4,j),pareto(5,j),100);                                   
                         yP45 = interp1(xPar(4:5), yPar(4:5), xP45);
                     end
-                    %plot(xP45, yP45,'b');
                     payoffParetoFront = horzcat(vertcat(xP12',xP23',xP34',xP45'), vertcat(yP12',yP23',yP34',yP45'));
                 end
             end         
@@ -116,6 +113,7 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
     l = zeros(1,size(payoffParetoFront,1));  
     
     for u = 1 : size(payoffParetoFront,1)       
+        % as in the KS equation
         u2c2 = -payoffParetoFront(u,2) + payoffBoth(conflictPoint,2);
         u1c1 = -payoffParetoFront(u,1) + payoffBoth(conflictPoint,1);
         m2c2 = -m2 + payoffBoth(conflictPoint,2);
@@ -135,7 +133,7 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
     end    
     diff = r - l;
     % take the minimum absolute difference to be the KS solution
-    [minDiff, minInd] = min(abs(diff));    
+    [~, minInd] = min(abs(diff));    
     ks(1,1) = payoffParetoFront(minInd,1);
     ks(1,2) = payoffParetoFront(minInd,2); 
     
@@ -143,8 +141,12 @@ function [ ks, linePareto] = kalaismorodinskysolution( payoffBoth, conflictPoint
         linePareto = [];
     else
         linePareto = zeros(2,4);
+        % if only one Pareto point, then the Pareto frontier line is the
+        % point itself
         if size(paretoStrInd,1) == 1
              linePareto = paretoStrInd;
+        % if more than one Pareto points, save the points as the Pareto 
+        % frontier 
         else
             for i = 1: size(paretoStrInd,1)-1
                 if ks(1,1) >= paretoStrInd(i,1) && ks(1,1) <= paretoStrInd(i+1,1)

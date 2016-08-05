@@ -1,3 +1,5 @@
+%% Mixed strategies
+% Compute mixed strategies when there is no Saddle Point in pure strategies
 function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )     
     [m,n] = size(payoff);   
     coder.extrinsic('linprog');
@@ -7,11 +9,13 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
     coder.varsize('X2');
    
     v = Inf;
-    % There is a saddle point in pure strategies
+    % if there is a Saddle point in pure strategies
     if min(max(payoff))==max(min(payoff,[],2))
         maxP = max(payoff);
         for i=1:m
             for j=1:n
+                % Saddle point is a point which is a column maximum and a row
+                % minimum at the same time
                 if isequal(maxP(j),payoff(i,j))      
                     if isequal(payoff(i,j),min(payoff(i,:)))
                         min(payoff(i,:));
@@ -34,20 +38,19 @@ function [X1, X2, A, b, v] = mixedstrategies( payoff, playerNum )
             X1(s) = 1.0;
         end       
         
-    % There is no saddle point in pure strategies, so extend to mixed
+    % If there is no Saddle point in pure strategies, extend to mixed
     % strategies by solving linear system of equations Ax = b by linear
     % programming
     else
-        % add last equation x1 + x2 + ... xm = 1, probabilities must sum up
-        % to 1
-        %lin = zeros(m,n);
-        %lin(m,:) = ones(1,m)       
-    
+        % function to mo minimize
         f = [zeros(m,1); -1];
+        % lower bounds
         lb = [zeros(m,1) ;-Inf];
+        % inequality constraints Ax <= b
         A = [payoff ones(m,1)];
         b = zeros(m,1);     
 
+        % equality constraints Ax = b
         Aeq = [ones(1,m) 0];
         beq = 1;
 

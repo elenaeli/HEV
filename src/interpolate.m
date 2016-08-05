@@ -1,4 +1,4 @@
-% function to interpolate between x and y coordinates of 
+% function to interpolate between x and y coordinates
     function Y = interpolate(j,x,y,X)
        if j == 1
            Y = interp1(x, y, X);

@@ -1,4 +1,4 @@
-function nashEqbm = LemkeHowson(varargin)
+function nashEqbm = LemkeHowsonOriginal(varargin)
     % function nashEqbm = LEMKEHOWSON(varargin)
     %
     % This function computes a sample mixed strategy Nash equilibrium in a

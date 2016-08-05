@@ -1,11 +1,15 @@
+%% Imputations
+% check if the input payoff is an imputation
+
 function [imput, imputIndex] = checkimputation(payoff, pareto,...
     payoffMotCoal, payoffEngCoal, payoffWholeCoal)
+
     count = 1;
     m = size(payoff,1);
     imput = zeros(m,2);
     imputIndex = zeros(m,1);
-
     flag = 0;
+    
     for i = 1 : size(payoff,1)
         for j = 1 : size(pareto,1)     
             sum12 = payoff(i,1) + payoff(i,2);
@@ -24,6 +28,7 @@ function [imput, imputIndex] = checkimputation(payoff, pareto,...
                 break;
             end        
         end 
+        % it is an imputation
         if flag == 0            
             imput(count,1) = payoff(i,1);    
             imput(count,2) = payoff(i,2);
